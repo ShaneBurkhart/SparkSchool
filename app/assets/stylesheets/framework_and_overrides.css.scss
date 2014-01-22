@@ -36,6 +36,8 @@ main {
   @extend .container;
   background-color: #eee;
   padding-bottom: 80px;
+  padding-left: 0px;
+  padding-right: 0px;
   width: 100%;
   margin-top: 51px; // accommodate the navbar
   }
@@ -73,4 +75,11 @@ section {
 }
 #error_explanation h2 {
   font-size: 16px;
+}
+
+
+
+.blue{
+  background-color: #0379ff;
+  color: #ffffff;
 }
