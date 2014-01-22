@@ -1,7 +1,38 @@
-.blue
+.mega-header
+  .banner-position
+    %h1
+      = image_tag "logo-large.png"
+    %hr
+    %p.lead Learn to make electrical devices.
+    %p.promo We give you the tools you need to make your own hardware.
+    %hr
+    %form{role: "form"}
+      .form-group
+        = text_field_tag "email", "", class: "form-control input-lg", placeholder: "Email"
+        %p We'll let you know when we launch.
+        %button.btn.btn-warning.btn-lg Keep me updated
+  .learn-more
+    = link_to "Learn More", "#more", class: "btn btn-sm btn-default"
+#more
   .container
     .row
-      .col-md-4
-        %h1 Learn to make electrical devices for free.
-        %p.lead Finally clear and easy to understand lessons.
-      .col-md-8
+      .col-md-4.text-center
+        %span.glyphicon.glyphicon-globe
+        %h3 Virtual learning
+        %p Our online lessons make circuit theory easy to understand.  With simulations and step by step tutorials, you will be on your way to creating your own devices in no time.
+      .col-md-4.text-center
+        %span.glyphicon.glyphicon-home
+        %h3 Everything you need
+        %p Whether it's basic circuit theory, or you want to make an electric device, we have what you need.  Best of all, it's all right from your home.
+      .col-md-4.text-center
+        %span.glyphicon.glyphicon-send
+        %h3 Better kits
+        %p With hardware, not everthing can be done online, so we provide kits that will enhance your learning.  You aren't just putting these things together.  Every aspect, from design to part selection, is explained.
+  %form{role: "form"}
+    .form-group
+      %h3 Signup now
+      = text_field_tag "email", "", class: "form-control input-lg", placeholder: "Email"
+      %p We'll let you know when we launch.
+      %button.btn.btn-warning.btn-lg Keep me updated
+
+%footer

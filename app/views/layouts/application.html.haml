@@ -8,8 +8,9 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
-    %header
-      = render 'layouts/navigation'
-    %main{:role => "main"}
+    - unless current_page? root_path
+      %header
+        = render 'layouts/navigation'
+    %main{:role => "main", class: current_page?(root_path) ? "" : "navbar-offset"}
       = render 'layouts/messages'
       = yield

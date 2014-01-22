@@ -1,3 +1,86 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.mega-header{
+  height: 100%;
+  min-height: 500px;
+  color: white;
+  padding: 100px 0px;
+  position: relative;
+  background-image: image-url("blue-circuit.png");
+  background-color:#0060ea;
+
+  .banner-position{
+    height: 500px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+
+    hr{
+      margin: 25px 0px;
+      border-top: 0;
+      height: 1px;
+    }
+
+    p.lead{
+      font-size: 3em;
+      margin-bottom: 0px;
+    }
+
+    p.promo{
+      font-size: 1.4em;
+    }
+
+    form{
+      text-align: center;
+
+      .form-group{
+        display: inline-block;
+        width: 400px;
+      }
+    }
+  }
+
+  .learn-more{
+    position: absolute;
+    bottom: 0;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+
+    .btn{
+      border-radius: 17px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+}
+
+#more{
+  padding: 70px 0px;
+
+  span.glyphicon{
+    font-size: 100px;
+  }
+
+  h3{
+    margin-top: 10px;
+  }
+
+  form{
+    text-align: center;
+    margin-top: 30px;
+
+    .form-group{
+      width: 400px;
+      display: inline-block;
+    }
+  }
+}
