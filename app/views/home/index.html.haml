@@ -35,4 +35,10 @@
       %p We'll let you know when we launch.
       %button.btn.btn-warning.btn-lg Keep me updated
 
-%footer
+:javascript
+  $('a').click(function(){
+    $('html, body').animate({
+      scrollTop: $( $(this).attr('href') ).offset().top
+    }, 500);
+    return false;
+  });
