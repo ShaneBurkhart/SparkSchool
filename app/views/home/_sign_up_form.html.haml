@@ -4,6 +4,10 @@
   .form-group
     - if header
       %h3 Signup now
+    - if flash[:notice]
+      %p.text-success= flash[:notice]
+    - if flash[:error]
+      %p.text-danger= flash[:error]
     = f.input_field :email, class: "form-control input-lg", placeholder: "Email"
     = f.input :sign_up_form, as: :hidden
     %p We'll let you know when we launch.

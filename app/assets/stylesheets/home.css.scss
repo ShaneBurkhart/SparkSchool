@@ -28,6 +28,21 @@
       height: 1px;
     }
 
+    p.text-success{
+      &:hover{
+        color: #00d900;
+      }
+      color: #00d900;
+    }
+
+    p.text-danger{
+      &:hover{
+        color: #ffb7b7;
+      }
+      color: #ffb7b7;
+    }
+
+
     p.lead{
       font-size: 3em;
       margin-bottom: 0px;
