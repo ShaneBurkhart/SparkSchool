@@ -1,5 +1,6 @@
 SparkAcademy::Application.routes.draw do
   root :to => "home#index"
-  devise_for :users, :controllers => {:registrations => "registrations"}
-  resources :users
+  resources :beta_users, path: "/users"
+  #devise_for :users, :controllers => {:registrations => "registrations"}
+  #resources :users
 end
