@@ -1,0 +1,11 @@
+- header = header || false
+- @user.sign_up_form = name || "Form"
+= simple_form_for @user, html: {role: "form"} do |f|
+  .form-group
+    - if header
+      %h3 Signup now
+    = f.input_field :email, class: "form-control input-lg", placeholder: "Email"
+    = f.input :sign_up_form, as: :hidden
+    %p We'll let you know when we launch.
+    %button.btn.btn-warning.btn-lg Keep me updated
+

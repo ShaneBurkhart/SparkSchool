@@ -3,14 +3,11 @@
     %h1
       = image_tag "logo-large.png"
     %hr
-    %p.lead Learn to make electrical devices.
-    %p.promo We give you the tools you need to make your own hardware.
+    %p.lead Learn to make electrical devices
+    %p.promo We give you the resources to get started making the devices you want
     %hr
-    %form{role: "form"}
-      .form-group
-        = text_field_tag "email", "", class: "form-control input-lg", placeholder: "Email"
-        %p We'll let you know when we launch.
-        %button.btn.btn-warning.btn-lg Keep me updated
+    = render "sign_up_form", name: "Home Bottom"
+
   .learn-more
     = link_to "Learn More", "#more", class: "btn btn-sm btn-default"
 #more
@@ -28,12 +25,7 @@
         %span.glyphicon.glyphicon-send
         %h3 Better kits
         %p With hardware, not everthing can be done online, so we provide kits that will enhance your learning.  You aren't just putting these things together.  Every aspect, from design to part selection, is explained.
-  %form{role: "form"}
-    .form-group
-      %h3 Signup now
-      = text_field_tag "email", "", class: "form-control input-lg", placeholder: "Email"
-      %p We'll let you know when we launch.
-      %button.btn.btn-warning.btn-lg Keep me updated
+  = render "sign_up_form", name: "Home Bottom", header: true
 
 :javascript
   $('a').click(function(){
