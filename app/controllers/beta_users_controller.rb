@@ -4,8 +4,8 @@ class BetaUsersController < ApplicationController
     if @beta_user.save
       redirect_to root_path, flash: {notice: "Thanks for signing up!  We'll keep you updated."}
     else
-      flash[:error] = "Sorry but something went wrong."
-      render "home/index"
+      flash[:error] = @beta_user.errors.full_messages.to_sentence
+      redirect_to root_path
     end
   end
 end
