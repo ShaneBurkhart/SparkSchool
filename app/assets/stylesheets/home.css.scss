@@ -58,7 +58,6 @@
       .form-group{
         display: inline-block;
         width: 400px;
-        max-width: 100%;
       }
     }
   }
@@ -76,6 +75,12 @@
       padding-left: 20px;
       padding-right: 20px;
     }
+  }
+}
+
+.sign-up-form{
+  .form-group{
+    max-width: 100%;
   }
 }
 
