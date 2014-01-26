@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "team@sparkschool.co"
+  default from: "\"Spark School\" <team@sparkschool.co>"
 
   def welcome_email(user)
     @user = user

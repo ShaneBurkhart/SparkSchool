@@ -2,7 +2,7 @@
 %html
   %head
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
-    %title= content_for?(:title) ? yield(:title) : 'Spark School'
+    %title= content_for?(:title) ? yield(:title) : 'Learn to make electrical devices | Spark School'
     %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Spark School'}"}
     = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
@@ -24,7 +24,6 @@
                 = link_to "Shane Burkhart", "http://shaneburkhart.me"
                 and
                 = link_to "Ryan Endacott", "https://github.com/ryan-endacott"
-            .col-md-6.text-right
               %p
                 Follow us on
                 = link_to "Twitter", "https://twitter.com/SparkSchoolCo"
