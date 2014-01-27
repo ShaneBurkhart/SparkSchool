@@ -7,8 +7,8 @@ class BlogsController < ApplicationController
 
   def show
     @blog = Blog.find params[:id]
-    if params[:title].blank?
-      redirect_to blog_title_path(@blog, @blog.title)
+    if params[:title].blank? or params[:title] != @blog.link_title
+      redirect_to blog_title_path(@blog, @blog.link_title)
     end
   end
 

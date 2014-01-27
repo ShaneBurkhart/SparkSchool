@@ -2,7 +2,7 @@
   .row
     .col-md-8
       - @blogs.each do |blog|
-        %h2= link_to blog.title, blog_path(blog)
+        %h2= link_to blog.title, blog_title_path(blog, blog.link_title)
         .body
           = markdown(blog.body)
     .col-md-4.side-bar

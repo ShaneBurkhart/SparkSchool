@@ -23,6 +23,16 @@ describe Blog do
     @blog.should respond_to(:tag)
   end
 
+  it "should respond to link_title" do
+    @blog.should respond_to(:link_title)
+  end
+
+  it "should have proper link_title" do
+    @title = "This is the best title  evvvaaarrrr-2222 !!!"
+    @blog.title = @title
+    @blog.link_title.should eq(@title.gsub(/[^a-zA-Z0-9\s\-]/, '').gsub(/\s+/, "-").gsub(/\-+\z/, '').downcase)
+  end
+
   context "when brand new" do
     it "should be invalid with no attrs" do
       @blog.should_not be_valid
