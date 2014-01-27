@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140126194741) do
+ActiveRecord::Schema.define(version: 20140127181324) do
 
   create_table "beta_users", force: true do |t|
     t.string   "email"
@@ -24,6 +24,12 @@ ActiveRecord::Schema.define(version: 20140126194741) do
     t.string   "title"
     t.text     "body"
     t.string   "tag"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "newsletter_users", force: true do |t|
+    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
