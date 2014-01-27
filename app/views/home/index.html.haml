@@ -13,7 +13,10 @@
         %span.glyphicon.glyphicon-cog
         %h3 Better kits
         %p With hardware, not everything can be done online, so we provide kits that will enhance your learning.  You aren't just putting these things together.  Every aspect, from design to part selection, is explained.
-  = render "sign_up_form", name: "Home Bottom", header: true
+    %br
+    .row.text-center
+      .col-md-12
+        = link_to "Let's get started!", new_user_registration_path,  class: "btn btn-warning btn-lg"
 
 :javascript
   $('a').click(function(){
