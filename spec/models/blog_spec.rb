@@ -1,5 +1,17 @@
 require 'spec_helper'
 
 describe Blog do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  before(:each) do
+    @blog = Blog.new
+  end
+
+  it "should respond to title" do
+    @blog.should respond_to(:title)
+  end
+
+  it "should respond to title" do
+    @blog.should respond_to(:title)
+  end
+
 end
