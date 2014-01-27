@@ -1,5 +1,12 @@
 %h1
   %strong Spark School Blog
+- if current_user && current_user.admin?
+  .well
+    %p.lead Admin controls
+    = link_to "Create new post", new_blog_path, class: "btn btn-default"
+    - if @blog
+      = link_to "Edit post", edit_blog_path(@blog), class: "btn btn-default"
+      = link_to "Delete post", blog_path(@blog), class: "btn btn-danger", confirm: "Are you sure?", method: :delete
 .well
   %p.lead Stay updated with our newsletter!
   %p Sign up and we will keep you updated when we post new content.

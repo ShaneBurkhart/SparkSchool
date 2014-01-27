@@ -1,4 +1,5 @@
 class BlogsController < ApplicationController
+  before_filter :authenticate_user!, except: [:index, :show]
   before_filter :new_newsletter_user, only: [:index, :show]
 
   def index
@@ -19,7 +20,7 @@ class BlogsController < ApplicationController
   def create
     @blog = Blog.new blog_params
     if @blog.save
-      redirect_to blogs_path, flash: {notice: "Successfully created blog post."}
+      redirect_to blog_path(@blog), flash: {notice: "Successfully created blog post."}
     else
       render "new"
     end
@@ -39,7 +40,7 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
     @blog.attributes = blog_params
     if @blog.save
-      redirect_to blogs_path, flash: {notice: "Successfully updated blog."}
+      redirect_to blog_path(@blog), flash: {notice: "Successfully updated blog."}
     else
       render "edit"
     end

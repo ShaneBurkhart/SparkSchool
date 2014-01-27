@@ -1,0 +1,10 @@
+.container
+  .row
+    .col-md-8
+      %h2= @blog.title
+      .body
+        = markdown(@blog.body)
+    .col-md-4.side-bar
+      = render "side_bar"
+
+
