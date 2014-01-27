@@ -100,4 +100,40 @@ describe User do
 
   end
 
+  describe "roles" do
+
+    before(:each) do
+      @user = User.create!(@attr)
+      @valid_roles = ["Admin", "User"]
+      @invalid_roles = ["Viewer", "Manager"]
+    end
+
+    it "should respond to role" do
+      User.new.should respond_to(:role)
+    end
+
+    it "should respond to admin?" do
+      User.new.should respond_to("admin?")
+    end
+
+    it "should respond to user?" do
+      User.new.should respond_to("user?")
+    end
+
+    it "should accept valid role types" do
+      @valid_roles.each do |role|
+        @user.role = role
+        @user.should be_valid
+      end
+    end
+
+    it "should decline invalid role types" do
+      @invalid_roles.each do |role|
+        @user.role = role
+        @user.should_not be_valid
+      end
+    end
+
+  end
+
 end
