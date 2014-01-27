@@ -11,22 +11,26 @@
     - unless current_page? root_path
       %header
         = render 'layouts/navigation'
-    %main{:role => "main", class: current_page?(root_path) ? "" : "navbar-offset"}
+    - else
+      = render 'layouts/mega_header'
+    %main{:role => "main", class: current_page?(root_path) ? "" : "full-screen navbar-offset"}
       - unless current_page? root_path
         = render 'layouts/messages'
       = yield
-      %footer
-        .container
-          .row
-            .col-md-6
-              %p
-                Created by
-                = link_to "Shane Burkhart", "http://shaneburkhart.me"
-                and
-                = link_to "Ryan Endacott", "https://github.com/ryan-endacott"
-              %p
-                Follow us on
-                = link_to "Twitter", "https://twitter.com/SparkSchoolCo"
+      #push
+    %footer
+      .container
+        .row
+          .col-md-6
+            %p
+              Created by
+              = link_to "Shane Burkhart", "http://shaneburkhart.me"
+              and
+              = link_to "Ryan Endacott", "https://github.com/ryan-endacott"
+            %p
+              Follow us on
+              = link_to "Twitter", "https://twitter.com/SparkSchoolCo"
+
 
     <!-- begin olark code -->
     <script data-cfasync="false" type='text/javascript'>/*<![CDATA[*/window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){
