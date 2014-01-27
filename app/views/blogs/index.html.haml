@@ -4,7 +4,8 @@
       - @blogs.each do |blog|
         %h2= link_to blog.title, blog_path(blog)
         .body
-          = blog.body
-    .col-md-4
-      %h1 Spark School Blog
+          = markdown(blog.body)
+    .col-md-4.side-bar
+      = render "side_bar"
+
 

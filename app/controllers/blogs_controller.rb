@@ -1,4 +1,5 @@
 class BlogsController < ApplicationController
+  before_filter :new_newsletter_user, only: [:index, :show]
 
   def index
     @blogs = Blog.limit(15)
@@ -7,7 +8,7 @@ class BlogsController < ApplicationController
   def show
     @blog = Blog.find params[:id]
     if params[:title].blank?
-      redirect_to @blog, @blog.title
+      redirect_to blog_title_path(@blog, @blog.title)
     end
   end
 
@@ -47,5 +48,9 @@ class BlogsController < ApplicationController
   private
     def blog_params
       params.require(:blog).permit(:title, :body, :tag)
+    end
+
+    def new_newsletter_user
+      @newsletter_user = NewsletterUser.new
     end
 end

@@ -12,6 +12,7 @@ gem 'devise'
 gem 'figaro'
 gem 'haml-rails'
 gem 'simple_form'
+gem 'redcarpet'
 group :development do
   gem 'sqlite3'
   gem 'better_errors'

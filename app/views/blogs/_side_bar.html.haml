@@ -1,0 +1,15 @@
+%h1
+  %strong Spark School Blog
+.well
+  %p.lead Stay updated with our newsletter!
+  %p Sign up and we will keep you updated when we post new content.
+  = simple_form_for @newsletter_user, url: newsletter_path do |f|
+    = f.input_field :email, class: "form-control", placeholder: "example@domain.com"
+    %br
+    = f.button :submit, "Keep me posted", class: "btn-warning"
+
+
+.well
+  %p.lead What are you working on?
+  %p We want to know all about you what you are working.  Tell us and we might put it on our blog.
+
