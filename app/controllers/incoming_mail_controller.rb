@@ -1,5 +1,17 @@
 class IncomingMailController < ApplicationController
-  skip_before_filter :verify_authenticity_token
+  skip_before_filter :verify_authenticity_token, only: [:parse]
+  before_filter :authenticate_user!, except: [:parse]
+  authorize_resource except: [:parse]
+
+  def index
+    @mail = IncomingMail.all
+  end
+
+  def destroy
+    @mail = IncomingMail.find(params[:id])
+    @mail.destroy
+    redirect_to incoming_mail_index_path
+  end
 
   def parse
     @mail = IncomingMail.new

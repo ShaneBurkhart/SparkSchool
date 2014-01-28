@@ -1,0 +1,15 @@
+.container
+  %table.table
+    %tr
+      %th From
+      %th Subject
+      %th Sent
+      %th
+    - @mail.each do |m|
+      %tr
+        %td= m.from
+        %td= m.subject
+        %td
+          = distance_of_time_in_words(Time.now, m.created_at)
+          ago
+        %td= link_to "Delete", incoming_mail_path(m), class: "pull-right", method: :delete, confirm: "Are you sure?"

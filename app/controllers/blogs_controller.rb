@@ -1,6 +1,7 @@
 class BlogsController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
   before_filter :new_newsletter_user, only: [:index, :show]
+  authorize_resource except: [:index, :show]
 
   def index
     @blogs = Blog.limit(15)
