@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140128182220) do
+ActiveRecord::Schema.define(version: 20140128202635) do
 
   create_table "beta_users", force: true do |t|
     t.string   "email"
@@ -28,6 +28,13 @@ ActiveRecord::Schema.define(version: 20140128182220) do
     t.datetime "updated_at"
   end
 
+  create_table "courses", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "incoming_mails", force: true do |t|
     t.string   "from"
     t.string   "to"
@@ -37,8 +44,25 @@ ActiveRecord::Schema.define(version: 20140128182220) do
     t.datetime "updated_at"
   end
 
+  create_table "lessons", force: true do |t|
+    t.integer  "unit_id"
+    t.string   "name"
+    t.text     "description"
+    t.integer  "lesson_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "newsletter_users", force: true do |t|
     t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "units", force: true do |t|
+    t.integer  "course_id"
+    t.string   "name"
+    t.integer  "unit_number"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
