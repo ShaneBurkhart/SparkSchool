@@ -9,4 +9,10 @@ SparkAcademy::Application.routes.draw do
 
   devise_for :users, :controllers => {:registrations => "registrations"}
   #resources :users
+
+
+  #private mail url
+  post "/_incoming_mail", to: "incoming_mail#parse"
+  resources :incoming_mail, only: [:index, :destroy]
+
 end

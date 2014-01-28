@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140127190626) do
+ActiveRecord::Schema.define(version: 20140128182220) do
 
   create_table "beta_users", force: true do |t|
     t.string   "email"
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(version: 20140127190626) do
     t.string   "title"
     t.text     "body"
     t.string   "tag"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "incoming_mails", force: true do |t|
+    t.string   "from"
+    t.string   "to"
+    t.string   "subject"
+    t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

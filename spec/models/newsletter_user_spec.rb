@@ -46,7 +46,7 @@ describe NewsletterUser do
 
     it "should be invalid when there is a duplicate" do
       @email = "shaneburkhart@gmail.com"
-      NewsletterUser.find_or_create_by_email(@email)
+      NewsletterUser.find_or_create_by(email: @email)
       NewsletterUser.new(email: @email).should_not be_valid
     end
 
