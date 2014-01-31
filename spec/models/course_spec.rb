@@ -14,12 +14,19 @@ describe Course do
     Course.new.should respond_to(:units)
   end
 
+  it "should respond to tag" do
+    Course.new.should respond_to(:tag)
+  end
+
+
+
   describe "validations" do
 
     before(:each) do
       @valid_attrs = {
         name: "Microcontrollers",
-        description: "Some awesome stuff about MCU's."
+        description: "Some awesome stuff about MCU's.",
+        tag: "MCU"
       }
     end
 
@@ -33,6 +40,20 @@ describe Course do
       Course.new(@valid_attrs).should_not be_valid
     end
 
+    it "should not be valid without tag" do
+      @valid_attrs.delete :tag
+      Course.new(@valid_attrs).should_not be_valid
+    end
+
+    it "should not be valid with duplicate tags" do
+      @other_attrs = {
+        name: "Some name",
+        description: "A description",
+        tag: @valid_attrs[:tag]
+      }
+      Course.create(@valid_attrs)
+      Course.new(@other_attrs).should_not be_valid
+    end
   end
 
 end

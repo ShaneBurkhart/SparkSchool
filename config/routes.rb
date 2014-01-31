@@ -7,8 +7,18 @@ SparkAcademy::Application.routes.draw do
   post "/newsletter", to: "newsletter_users#create" # has to go after resource!!!
 
 
+  #tutorial routes
+  resources :courses, except: ["show"]
+  get "courses/:tag", to: "courses#show", as: "course_tag" #this will be show.  tag is to make it more use friendly
+
+
+  #devise and user routes
   devise_for :users, :controllers => {:registrations => "registrations"}
   #resources :users
+
+
+  #user homepage.  shows their current progress
+  #get "dashboard", to: "dashboard#index"
 
 
   #private mail url

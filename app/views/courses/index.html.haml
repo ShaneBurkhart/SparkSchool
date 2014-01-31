@@ -1,0 +1,4 @@
+.container
+  - @courses.each do |course|
+    %h2= link_to course.name, course_tag_path(course.tag)
+    %p= course.description

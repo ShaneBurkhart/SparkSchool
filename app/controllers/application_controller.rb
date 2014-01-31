@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
     redirect_to root_path
   end
 
+  def not_found
+    raise ActionController::RoutingError.new('Course not found')
+  end
+
 end
