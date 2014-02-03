@@ -8,7 +8,11 @@ SparkAcademy::Application.routes.draw do
 
 
   #tutorial routes
-  resources :courses, except: ["show"]
+  resources :courses, except: ["show"] do
+    resources :units, except: ["index", "show"] do
+      resources :lessongs, except: ["index", "show"]
+    end
+  end
   get "courses/:tag", to: "courses#show", as: "course_tag" #this will be show.  tag is to make it more use friendly
 
 

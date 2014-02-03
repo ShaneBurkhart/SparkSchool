@@ -1,0 +1,11 @@
+= simple_form_for @unit, url: course_units_path do |f|
+  .row
+    .col-md-8
+      = f.input :name, input_html: {class: "form-control"}
+  .row
+    .col-md-2
+      = f.input :unit_number, input_html: {class: "form-control"}
+  = f.input :course_id, as: :hidden, input_html: {value: params[:course_id]}
+  %br
+  = f.button :submit, class: "btn"
+
