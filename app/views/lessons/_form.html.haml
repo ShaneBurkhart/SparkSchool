@@ -1,13 +1,17 @@
-= simple_form_for @course do |f|
+= simple_form_for @lesson, url: course_unit_lessons_path do |f|
   .row
     .col-md-8
       = f.input :name, input_html: {class: "form-control"}
   .row
-    .col-md-5
-      = f.input :tag, input_html: {class: "form-control"}
+    .col-md-2
+      = f.input :lesson_number, input_html: {class: "form-control"}
   .row
     .col-md-8
       = f.input :description, input_html: {class: "form-control", rows: 10}
+
+  = f.input :unit_id, as: :hidden, input_html: {value: params[:unit_id]}
+
   %br
+
   = f.button :submit, class: "btn"
 
