@@ -1,3 +1,52 @@
 // Place all the styles related to the lessons controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.lessons{
+
+  h2{
+    margin-top: 0px;
+  }
+}
+
+.lesson-container{
+  border-radius: 6px;
+  background-color: #fbfbfb;
+  border: 1px solid #dcdcdc;
+  margin-bottom: 20px;
+
+  .grey-circuit{
+    border-radius: 6px 0px 0px 6px;
+    background-image: image-url("grey-circuit.png");
+    background-color:#e0e0e0;
+    height: 110px;
+
+    .glyph{
+      background-color: #fbfbfb;
+      border-radius: 50%;
+      height: 90px;
+      width: 90px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+  }
+
+  &.large{
+    margin-top: 21px;
+
+    h1{
+      margin-top: 30px;
+    }
+
+    .blue-circuit{
+      height: 150px;
+
+      .glyph{
+        margin-top: 30px;
+      }
+    }
+  }
+
+}
+
+

@@ -1,12 +1,20 @@
+.courses-header
+  .container
+    %h1 Learn to make hardware.
+    %p.lead Start with the first course and work your way up.
+    %p= link_to "Start from the beginning", "", class: "btn btn-warning"
+
 .container
-  %h1
+  %h2
     Courses
     - if can?(:create, Course)
       = link_to "New Course", new_course_path, class: "btn btn-success"
-  - @courses.each_slice(2) do |slice|
-    .row
-      - slice.each do |course|
-        .col-md-6
-          .well
-            %h2= link_to course.name, course_tag_path(course.tag)
-            %p= course.description
+  - @courses.each do |course|
+    .course-container
+      .row
+        .col-md-3
+          .blue-circuit.text-center
+            = image_tag "blue-circuit.png", class: "glyph"
+        .col-md-9
+          %h2= link_to course.name, course_tag_path(course.tag)
+          %p= course.description
