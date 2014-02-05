@@ -3,11 +3,16 @@ class CoursesController < ApplicationController
   authorize_resource except: [:index, :show]
 
   def index
-    @courses = Course.all
+    if can? :manage, Course
+      @courses = Course.all
+    else
+      @courses = Course.where(published: true).all
+    end
   end
 
   def show
-    @course = Course.find_by(tag: params[:tag]) || not_found
+    @course = Course.find_by(tag: params[:tag])
+    not_found if @course.nil? || (!@course.published? && cannot?(:manage, Course))
   end
 
   def new

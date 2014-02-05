@@ -1,5 +1,6 @@
 class LessonsController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
+  before_filter :lessons_in_order, only: [:new, :edit]
   authorize_resource except: [:index, :show]
 
   def new
@@ -44,5 +45,8 @@ class LessonsController < ApplicationController
       params.require(:lesson).permit(:name, :unit_id, :description, :lesson_number)
     end
 
+    def lessons_in_order
+      @lessons = Lesson.where(unit_id: params[:unit_id]).order(lesson_number: :asc)
+    end
 
 end

@@ -18,6 +18,13 @@ describe Course do
     Course.new.should respond_to(:tag)
   end
 
+  it "should respond to published" do
+    Course.new.should respond_to(:published)
+  end
+
+  it "should respond to published?" do
+    Course.new.should respond_to(:published?)
+  end
 
 
   describe "validations" do

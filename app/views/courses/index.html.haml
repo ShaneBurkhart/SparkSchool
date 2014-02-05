@@ -1,5 +1,8 @@
 .container
-  %h1 Courses
+  %h1
+    Courses
+    - if can?(:create, Course)
+      = link_to "New Course", new_course_path, class: "btn btn-success"
   - @courses.each_slice(2) do |slice|
     .row
       - slice.each do |course|

@@ -9,7 +9,7 @@ class UnitsController < ApplicationController
   def create
     @unit = Unit.new unit_params
     if @unit.save
-      redirect_to courses_tag_path(@unit.course.tag), flash: {notice: "Successfully created unit."}
+      redirect_to course_tag_path(@unit.course.tag), flash: {notice: "Successfully created unit."}
     else
       flash[:error] = "Something went wrong."
       render "new"
@@ -24,7 +24,7 @@ class UnitsController < ApplicationController
     @unit = Unit.find params[:id]
     @unit.attributes = unit_params
     if @unit.save
-      redirect_to courses_tag_path(@unit.course.tag), flash: {notice: "Successfully updated unit."}
+      redirect_to course_tag_path(@unit.course.tag), flash: {notice: "Successfully updated unit."}
     else
       flash[:error] = "Something went wrong."
       render "edit"
