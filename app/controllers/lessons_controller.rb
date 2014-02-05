@@ -1,15 +1,17 @@
 class LessonsController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
-  before_filter :lessons_in_order, only: [:new, :edit]
+  before_filter :lessons_in_order, except: [:index, :show]
+  before_filter :parameter_objects, except: [:index, :show]
   authorize_resource except: [:index, :show]
 
   def show
     @course_tag = params[:tag]
+    @lesson_number = lesson_number
     @course = Course.find_by(tag: params[:tag])
     not_found if @course.nil? #if course doesn't exist then raise route error
     @lessons = @course.ordered_lessons #lessons ordered by unit then lesson number
-    not_found if @lessons.length < lesson_number || lesson_number < 1 #check if in range
-    @lesson = @lessons[lesson_number - 1]
+    not_found if @lessons.length < @lesson_number || @lesson_number < 1 #check if in range
+    @lesson = @lessons[@lesson_number - 1]
     @counter = 1
   end
 
@@ -57,6 +59,11 @@ class LessonsController < ApplicationController
 
     def lessons_in_order
       @lessons = Lesson.where(unit_id: params[:unit_id]).order(lesson_number: :asc)
+    end
+
+    def parameter_objects
+      @course = Course.find(params[:course_id])
+      @unit = Unit.find(params[:unit_id])
     end
 
     def lesson_number

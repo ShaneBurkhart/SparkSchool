@@ -1,5 +1,6 @@
 class UnitsController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
+  before_filter :parameter_objects, except: [:index, :show]
   authorize_resource except: [:index, :show]
 
   def new
@@ -42,6 +43,10 @@ class UnitsController < ApplicationController
 
     def unit_params
       params.require(:unit).permit(:name, :course_id, :unit_number)
+    end
+
+    def parameter_objects
+      @course = Course.find(params[:course_id])
     end
 
 end

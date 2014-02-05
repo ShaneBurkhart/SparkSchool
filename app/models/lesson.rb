@@ -7,6 +7,7 @@ class Lesson < ActiveRecord::Base
   private
 
     def duplicate_lesson_number_for_unit
-      errors.add(:lesson_number, "already exists for this unit") if Lesson.find_by(unit_id: self.unit_id, lesson_number: self.lesson_number)
+      @lesson = Lesson.find_by(unit_id: self.unit_id, lesson_number: self.lesson_number)
+      errors.add(:lesson_number, "already exists for this unit") if @lesson && @lesson.id != self.id
     end
 end

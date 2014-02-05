@@ -13,6 +13,7 @@ class Unit < ActiveRecord::Base
   private
 
     def duplicate_unit_number_for_course
-      errors.add(:unit_number, "already exists for this course") if Unit.find_by(course_id: self.course_id, unit_number: self.unit_number)
+      @unit = Unit.find_by(course_id: self.course_id, unit_number: self.unit_number)
+      errors.add(:unit_number, "already exists for this course") if @unit && @unit.id != self.id
     end
 end

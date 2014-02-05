@@ -5,7 +5,7 @@
         %p= unit.name
         %ul.nav.nav-pills.nav-stacked
           - unit.ordered_lessons.each do |lesson|
-            %li
+            %li{class: @counter == @lesson_number ? "active" : ""}
               = link_to lesson.name, course_tag_lesson_path(@course_tag, @counter)
               - @counter += 1
     .col-md-9

@@ -1,6 +1,6 @@
 .row
   .col-md-8
-    = simple_form_for @lesson, url: course_unit_lessons_path do |f|
+    = simple_form_for [@course, @unit, @lesson] do |f|
       .row
         .col-md-12
           = f.input :name, input_html: {class: "form-control"}
