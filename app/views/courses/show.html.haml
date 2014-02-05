@@ -11,8 +11,10 @@
     .col-md-4
       .well
         %h3 Your progress
+        .progress
+          .progress-bar{role: "progressbar", style: "width: 60%;" }
+            %span.sr-only 60% Complete
         = link_to "Start the course", course_tag_lesson_path(@course.tag, 1), class: "btn btn-success"
-        = link_to "Resume where you left off", "", class: "btn btn-primary"
     .col-md-8
       - @course.ordered_units.each do |unit|
         %h2
