@@ -12,6 +12,7 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find_by(tag: params[:tag])
+    @counter = 1
     not_found if @course.nil? || (!@course.published? && cannot?(:manage, Course))
   end
 

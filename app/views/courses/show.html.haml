@@ -24,7 +24,8 @@
         - unit.ordered_lessons.each do |lesson|
           .well
             %h3
-              = lesson.name
+              = link_to lesson.name, course_tag_lesson_path(@course.tag, @counter)
+              - @counter += 1
               - if can?(:manage, Lesson)
                 = link_to "Edit", edit_course_unit_lesson_path(@course, unit, lesson), class: "btn btn-default"
                 = link_to "Delete", course_unit_lesson_path(@course, unit, lesson), class: "btn btn-danger", confirm: "Are you sure you want to delete this Unit?", method: :delete
