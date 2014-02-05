@@ -54,7 +54,7 @@ class LessonsController < ApplicationController
   private
 
     def lesson_params
-      params.require(:lesson).permit(:name, :unit_id, :description, :lesson_number)
+      params.require(:lesson).permit(:name, :unit_id, :description, :lesson_number, :body)
     end
 
     def lessons_in_order

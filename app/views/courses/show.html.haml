@@ -3,7 +3,7 @@
     .row
       .col-md-3
         .blue-circuit.text-center
-          = image_tag "blue-circuit.png", class: "glyph"
+          /= image_tag "blue-circuit.png", class: "glyph"
       .col-md-9
         %h1
           = @course.name
@@ -14,6 +14,7 @@
         %p= @course.description
   .row
     .col-md-4
+      /= link_to "Back to courses", courses_path, class: "btn btn-default btn-block btn-lg"
       .well
         %h3 Your progress
         .progress
@@ -41,3 +42,4 @@
                     - if can?(:manage, Lesson)
                       = link_to "Edit", edit_course_unit_lesson_path(@course, unit, lesson), class: "btn btn-default"
                       = link_to "Delete", course_unit_lesson_path(@course, unit, lesson), class: "btn btn-danger", confirm: "Are you sure you want to delete this Unit?", method: :delete
+                  %p.description= lesson.description

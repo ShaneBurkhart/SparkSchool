@@ -5,8 +5,10 @@
 .courses-header{
   background-color:#0060ea;
   background-image: image-url("spot-texture.png");
-  padding: 30px;
+  padding: 25px 0px 35px;
+  margin-bottom: 15px;
   color: #ffffff;
+  border-bottom: 4px solid #002e72;
 }
 
 .course-container{
@@ -17,9 +19,9 @@
 
   .blue-circuit{
     border-radius: 6px 0px 0px 6px;
-    background-image: image-url("blue-circuit.png");
+    background-image: image-url("blue-circuit-small.png");
     background-color:#0060ea;
-    height: 110px;
+    height: 150px;
 
     .glyph{
       background-color: #fbfbfb;
