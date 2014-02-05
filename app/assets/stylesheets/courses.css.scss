@@ -29,7 +29,7 @@
     border-radius: 6px 0px 0px 6px;
     background-color:#0060ea;
     background-image: image-url("blue-circuit-small.png");
-    height: 150px;
+    height: 110px;
 
     .glyph{
       background-color: #fbfbfb;
@@ -64,18 +64,17 @@
   background-color: #fbfbfb;
   border: 1px dashed #dcdcdc;
   margin-bottom: 20px;
-  height: 150px;
 
   .grey-circuit{
     border-radius: 6px 0px 0px 6px;
     background-color:#e0e0e0;
     background-image: image-url("grey-circuit.png");
-    height: 150px;
+    height: 110px;
   }
 
   p.lead{
     font-size: 2em;
     color: #aaaaaa;
-    margin-top: 50px;
+    margin-top: 35px;
   }
 }
