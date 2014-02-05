@@ -17,10 +17,18 @@
   border: 1px solid #dcdcdc;
   margin-bottom: 20px;
 
+  h1, h2, h3, h4, p{
+    color: #333333;
+
+    &:hover{
+      text-decoration: none;
+    }
+  }
+
   .blue-circuit{
     border-radius: 6px 0px 0px 6px;
-    background-image: image-url("blue-circuit-small.png");
     background-color:#0060ea;
+    background-image: image-url("blue-circuit-small.png");
     height: 150px;
 
     .glyph{
