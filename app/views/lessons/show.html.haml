@@ -1,0 +1,14 @@
+.container
+  .row
+    .col-md-3
+      - @course.ordered_units.each do |unit|
+        %p= unit.name
+        %ul.nav.nav-pills.nav-stacked
+          - unit.ordered_lessons.each do |lesson|
+            %li
+              = link_to lesson.name, course_tag_lesson_path(@course_tag, @counter)
+              - @counter += 1
+    .col-md-9
+      %h1= @lesson.name
+      .lesson-body
+        = markdown(@lesson.description)

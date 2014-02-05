@@ -26,6 +26,13 @@ describe Course do
     Course.new.should respond_to(:published?)
   end
 
+  it "should respond to ordered_lessons" do
+    Course.new.should respond_to(:ordered_lessons)
+  end
+
+  it "should respond to ordered_units" do
+    Course.new.should respond_to(:ordered_units)
+  end
 
   describe "validations" do
 

@@ -18,6 +18,10 @@ describe Unit do
     Unit.new.should respond_to(:lessons)
   end
 
+  it "should respond to ordered_lessons" do
+    Unit.new.should respond_to(:ordered_lessons)
+  end
+
   describe "validations" do
 
     before(:each) do

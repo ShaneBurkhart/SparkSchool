@@ -11,17 +11,17 @@
     .col-md-4
       .well
         %h3 Your progress
-        = link_to "Start the course", "", class: "btn btn-success"
+        = link_to "Start the course", course_tag_lesson_path(@course.tag, 1), class: "btn btn-success"
         = link_to "Resume where you left off", "", class: "btn btn-primary"
     .col-md-8
-      - @course.units.order(unit_number: :asc).each do |unit|
+      - @course.ordered_units.each do |unit|
         %h2
           = unit.name
           - if can?(:manage, Unit) and can?(:create, Lesson)
             = link_to "Edit", edit_course_unit_path(@course, unit), class: "btn btn-default"
             = link_to "Delete", course_unit_path(@course, unit), class: "btn btn-danger", confirm: "Are you sure you want to delete this Unit?", method: :delete
             = link_to "New Lesson", new_course_unit_lesson_path(@course, unit), class: "btn btn-success"
-        - unit.lessons.order(lesson_number: :asc).each do |lesson|
+        - unit.ordered_lessons.each do |lesson|
           .well
             %h3
               = lesson.name

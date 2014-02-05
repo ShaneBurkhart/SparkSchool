@@ -3,6 +3,16 @@ class LessonsController < ApplicationController
   before_filter :lessons_in_order, only: [:new, :edit]
   authorize_resource except: [:index, :show]
 
+  def show
+    @course_tag = params[:tag]
+    @course = Course.find_by(tag: params[:tag])
+    not_found if @course.nil? #if course doesn't exist then raise route error
+    @lessons = @course.ordered_lessons #lessons ordered by unit then lesson number
+    not_found if @lessons.length < lesson_number || lesson_number < 1 #check if in range
+    @lesson = @lessons[lesson_number - 1]
+    @counter = 1
+  end
+
   def new
     @lesson = Lesson.new
   end
@@ -47,6 +57,10 @@ class LessonsController < ApplicationController
 
     def lessons_in_order
       @lessons = Lesson.where(unit_id: params[:unit_id]).order(lesson_number: :asc)
+    end
+
+    def lesson_number
+      params[:lesson_number].to_i
     end
 
 end

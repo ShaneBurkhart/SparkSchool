@@ -14,7 +14,10 @@ SparkAcademy::Application.routes.draw do
     end
   end
   get "courses/:tag", to: "courses#show", as: "course_tag" #this will be show.  tag is to make it more use friendly
-
+  get "courses/:tag/:lesson_number", #finds course by tag then looks for lesson relative to course
+        to: "lessons#show",
+        as: "course_tag_lesson",
+        constraints: {lesson_number: /\d/} #makes it only integers
 
   #devise and user routes
   devise_for :users, :controllers => {:registrations => "registrations"}

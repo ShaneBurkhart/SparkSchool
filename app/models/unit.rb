@@ -6,6 +6,10 @@ class Unit < ActiveRecord::Base
 
   has_many :lessons, dependent: :destroy
 
+  def ordered_lessons
+    self.lessons.order(lesson_number: :asc)
+  end
+
   private
 
     def duplicate_unit_number_for_course
