@@ -1,5 +1,5 @@
 class Lesson < ActiveRecord::Base
-  validates :name, :description, :unit_id, :lesson_number, presence: true
+  validates :name, :description, :body, :unit_id, :lesson_number, presence: true
   validate :duplicate_lesson_number_for_unit
 
   belongs_to :unit

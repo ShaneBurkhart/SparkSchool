@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140205002742) do
+ActiveRecord::Schema.define(version: 20140205214351) do
 
   create_table "beta_users", force: true do |t|
     t.string   "email"
@@ -49,10 +49,11 @@ ActiveRecord::Schema.define(version: 20140205002742) do
   create_table "lessons", force: true do |t|
     t.integer  "unit_id"
     t.string   "name"
-    t.text     "description"
+    t.string   "description"
     t.integer  "lesson_number"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "body"
   end
 
   create_table "newsletter_users", force: true do |t|

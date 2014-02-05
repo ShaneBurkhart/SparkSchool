@@ -10,6 +10,10 @@ describe Lesson do
     Lesson.new.should respond_to(:description)
   end
 
+  it "should respond to body" do
+    Lesson.new.should respond_to(:body)
+  end
+
   it "should respond to unit" do
     Lesson.new.should respond_to(:unit)
   end
@@ -24,6 +28,7 @@ describe Lesson do
       @valid_attrs = {
         name: "I/O pins",
         description: "I/O pins are awesome!",
+        body: "I/O pins are awesome!",
         unit_id: 1,
         lesson_number: 1
       }
@@ -36,6 +41,11 @@ describe Lesson do
 
     it "should not be valid without description" do
       @valid_attrs.delete :description
+      Lesson.new(@valid_attrs).should_not be_valid
+    end
+
+    it "should not be valid without body" do
+      @valid_attrs.delete :body
       Lesson.new(@valid_attrs).should_not be_valid
     end
 
