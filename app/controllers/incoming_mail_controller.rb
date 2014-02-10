@@ -15,8 +15,11 @@ class IncomingMailController < ApplicationController
 
   def parse
     @mail = IncomingMail.new
-    @mail.from = params[:headers][:From]
-    @mail.to = params[:header][:To]
+    puts params[:envelope][:from]
+    puts params[:envelope][:to]
+    puts params[:headers][:subject]
+    @mail.from = params[:envelope][:from]
+    @mail.to = params[:envelope][:to]
     @mail.subject = params[:headers][:subject]
     @mail.body = params[:html] || params[:plain]
 
