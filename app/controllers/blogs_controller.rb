@@ -7,7 +7,7 @@ class BlogsController < ApplicationController
     if current_user and current_user.admin?
       @blogs = Blog.order(created_at: :desc)
     else
-      @blogs = Blog.where(published: true)
+      @blogs = Blog.where(published: true).order(created_at: :desc)
     end
   end
 
