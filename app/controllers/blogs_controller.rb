@@ -13,12 +13,11 @@ class BlogsController < ApplicationController
 
   def show
     @blog = Blog.find params[:id]
+    if (!current_user or !current_user.admin?) and !@blog.published?
+      blog_not_found
+    end
     if params[:title].blank? or params[:title] != @blog.link_title
-      if @blog.published?
-        redirect_to blog_title_path(@blog, @blog.link_title)
-      else
-        blog_not_found
-      end
+      redirect_to blog_title_path(@blog, @blog.link_title)
     end
   end
 
