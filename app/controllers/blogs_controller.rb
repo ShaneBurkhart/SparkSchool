@@ -5,7 +5,7 @@ class BlogsController < ApplicationController
 
   def index
     if current_user and current_user.admin?
-      @blogs = Blog.all
+      @blogs = Blog.order(created_at: :desc)
     else
       @blogs = Blog.where(published: true)
     end
