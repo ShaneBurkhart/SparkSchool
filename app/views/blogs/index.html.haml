@@ -1,11 +1,12 @@
 .container
   .row
-    .col-md-8
+    .col-md-7
       - @blogs.each do |blog|
-        %h2= link_to blog.title, blog_title_path(blog, blog.link_title)
-        .body
-          = markdown(blog.body)
-    .col-md-4.side-bar
+        .blog
+          %h2= link_to blog.title, blog_title_path(blog, blog.link_title)
+          .body
+            = markdown(blog.body)
+    .col-md-4.col-md-offset-1.side-bar
       = render "side_bar"
 
 

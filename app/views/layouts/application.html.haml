@@ -18,7 +18,7 @@
         = render 'layouts/messages'
       = yield
       #push
-    %footer
+    %footer{ class: current_page?(root_path) ? "dark" : "" }
       .container
         .row
           //.col-md-2
