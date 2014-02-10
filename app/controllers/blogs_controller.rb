@@ -4,13 +4,21 @@ class BlogsController < ApplicationController
   authorize_resource except: [:index, :show]
 
   def index
-    @blogs = Blog.limit(15)
+    if current_user and current_user.admin?
+      @blogs = Blog.all
+    else
+      @blogs = Blog.where(published: true)
+    end
   end
 
   def show
     @blog = Blog.find params[:id]
     if params[:title].blank? or params[:title] != @blog.link_title
-      redirect_to blog_title_path(@blog, @blog.link_title)
+      if @blog.published?
+        redirect_to blog_title_path(@blog, @blog.link_title)
+      else
+        blog_not_found
+      end
     end
   end
 
@@ -49,7 +57,7 @@ class BlogsController < ApplicationController
 
   private
     def blog_params
-      params.require(:blog).permit(:title, :body, :tag)
+      params.require(:blog).permit(:title, :body, :tag, :published)
     end
 
     def new_newsletter_user

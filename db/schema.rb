@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140205214351) do
+ActiveRecord::Schema.define(version: 20140210174034) do
 
   create_table "beta_users", force: true do |t|
     t.string   "email"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20140205214351) do
     t.string   "tag"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "published"
   end
 
   create_table "courses", force: true do |t|

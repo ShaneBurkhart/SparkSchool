@@ -12,4 +12,7 @@ class ApplicationController < ActionController::Base
     raise ActionController::RoutingError.new('Course not found')
   end
 
+  def blog_not_found
+    raise ActionController::RoutingError.new('Blog not found')
+  end
 end

@@ -7,12 +7,21 @@ describe Blog do
     @valid_attrs = {
       title: "Great post",
       body: "Amazing body",
-      tag: "Electronics"
+      tag: "Electronics",
+      published: true
     }
   end
 
   it "should respond to title" do
     @blog.should respond_to(:title)
+  end
+
+  it "should respond to published" do
+    @blog.should respond_to(:published)
+  end
+
+  it "should respond to published?" do
+    @blog.should respond_to(:published?)
   end
 
   it "should respond to body" do
@@ -57,6 +66,7 @@ describe Blog do
       @blog.attributes = @valid_attrs
       @blog.should_not be_valid
     end
+
   end
 
 end
