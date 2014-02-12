@@ -3,5 +3,7 @@
 FactoryGirl.define do
   factory :course do
     name "MyString"
+    description "Some awesome stuff about MCU's."
+    tag "MCU"
   end
 end
