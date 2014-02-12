@@ -1,12 +1,6 @@
 SparkAcademy::Application.routes.draw do
   root :to => "home#index"
 
-
-  #temporary
-  devise_for :users, skip: [:registrations, :password]
-
-
-
   resources :beta_users, path: "/users"
 
   #blog routes
@@ -14,7 +8,6 @@ SparkAcademy::Application.routes.draw do
   get "/blog/:id/:title", to: "blogs#show", as: "blog_title"
   post "/newsletter", to: "newsletter_users#create" # has to go after resource!!!
 
-=begin
   #tutorial routes
   resources :courses, except: ["show"] do
     resources :units, except: ["index", "show"] do
@@ -36,7 +29,6 @@ SparkAcademy::Application.routes.draw do
   #user homepage.  shows their current progress
   #get "dashboard", to: "dashboard#index"
 
-=end
 
   #private mail url
   post "/_incoming_mail", to: "incoming_mail#parse"
