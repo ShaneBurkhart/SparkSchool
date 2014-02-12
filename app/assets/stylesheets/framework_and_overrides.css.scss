@@ -1,6 +1,12 @@
 // import the CSS framework
 @import "bootstrap";
 
+h1, h2, h3, h4, h5{
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
 // make all images responsive by default
 img {
   @extend .img-responsive;

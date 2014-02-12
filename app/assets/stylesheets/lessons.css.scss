@@ -60,3 +60,61 @@
 }
 
 
+/*  Lesson/show  */
+
+.table-of-contents-header{
+  margin-top: 20px;
+  color: #555;
+}
+
+.course-table-of-contents{
+  padding: 20px 0px;
+
+  p.unit-name{
+    margin-bottom: 5px;
+    margin-left: 20px;
+    color: #888;
+    font-size: .9em;
+  }
+
+  ul{
+    list-style: none;
+    padding: 0px;
+
+    li{
+      padding: 5px 30px;
+
+      p{
+        margin: 0px;
+        color: #005de6;
+      }
+
+      &.active, &:hover{
+        background-color: #085ad2;
+
+        p{
+          color: #fff;
+
+          &:hover{
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.lesson-body{
+
+  img{
+    max-width: 100%;
+    height: auto;
+    padding: 0px 30px;
+  }
+
+  p{
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 20px;
+  }
+}

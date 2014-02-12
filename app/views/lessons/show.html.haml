@@ -2,14 +2,29 @@
 .container
   .row
     .col-md-3
-      - @course.ordered_units.each do |unit|
-        %p= unit.name
-        %ul.nav.nav-pills.nav-stacked
-          - unit.ordered_lessons.each do |lesson|
-            %li{class: @counter == @lesson_number ? "active" : ""}
-              = link_to lesson.name, course_tag_lesson_path(@course_tag, @counter)
-              - @counter += 1
+      %h3.table-of-contents-header Table of Contents
+      .well-no-padding.course-table-of-contents
+        - @course.ordered_units.each do |unit|
+          %p.unit-name= unit.name
+          %ul
+            - unit.ordered_lessons.each do |lesson|
+              %a{ href: course_tag_lesson_path(@course_tag, @counter) }
+                %li{class: @counter == @lesson_number ? "active" : ""}
+                  %p= lesson.name
+                  - @counter += 1
     .col-md-9
       %h1= @lesson.name
       .lesson-body
-        = markdown(@lesson.description)
+        = markdown(@lesson.body)
+        %br
+        .row
+          .col-md-6
+            %p
+              - if (@lesson_number - 2) >= 0
+                = link_to "Previous Lesson: #{@lessons[@lesson_number - 2].name}"
+              - else
+                = link_to "Back to Course: #{@course.name}", course_tag_path(@course.tag)
+          .col-md-6
+            %p.text-right
+              - if (@lesson_number + 1 < @lessons.length)
+                = link_to "Next Lesson: #{@lessons[@lesson_number].name}", course_tag_lesson_path(@course.tag, @lesson_number + 1)
