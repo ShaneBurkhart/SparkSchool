@@ -16,7 +16,14 @@
     = f.button :submit, "Keep me posted", class: "btn-warning"
 
 
-//.well
-//  %p.lead What are you working on?
-//  %p We want to know all about you what you are working.  Tell us and we might put it on our blog.
+.well
+  %p.lead Working on something awesome?  Let us know.
+  = form_tag blog_hack_and_tell_path, class: 'simple_form' do
+    %p We're really interested in seeing what you build with Spark School's help.  Whether you're creating a life-changing product or a helpful hack, we want to hear about it.
+    = email_field_tag 'email', nil, placeholder: 'Your email', class: 'form-control'
+    %br
+    = text_area_tag 'message', nil, placeholder: 'Your awesome project.', rows: 4, cols: 38, class: 'form-control'
+    %br
+    %br
+    = submit_tag 'Let us know', class: 'btn btn-warning'
 
