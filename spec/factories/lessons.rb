@@ -5,6 +5,7 @@ FactoryGirl.define do
     unit_id 1
     name "MyString"
     description "MyText"
-    lesson_number 1
+    sequence(:lesson_number)
+    body 'mybody'
   end
 end
