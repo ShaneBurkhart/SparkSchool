@@ -4,6 +4,6 @@ FactoryGirl.define do
   factory :unit do
     course_id 1
     name "MyString"
-    unit_number 10
+    sequence(:unit_number)
   end
 end
