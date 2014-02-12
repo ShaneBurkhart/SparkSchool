@@ -25,6 +25,7 @@ describe Unit do
   describe "validations" do
 
     before(:each) do
+      FactoryGirl.create(:course, id: 1)
       @valid_attrs = {
         name: "I/O pins",
         course_id: 1,
@@ -53,7 +54,14 @@ describe Unit do
       Unit.new(@valid_attrs).should_not be_valid
     end
 
+    it 'requires a parent course' do
+      build(:unit, course_id: 3).should_not be_valid
+      create(:course, id: 3, tag: 'newtag')
+      build(:unit, course_id: 3).should be_valid
+    end
+
     it "should be able to have same unit_number with different course" do
+      create(:course, id: 2, tag: 'differentthanoriginaltag')
       Unit.create(@valid_attrs)
       @valid_attrs[:name] = "what is an MCU's" #so doesn't interfere with check in future
       @valid_attrs[:course_id] = 2
