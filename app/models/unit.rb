@@ -3,6 +3,7 @@ class Unit < ActiveRecord::Base
   validate :duplicate_unit_number_for_course
 
   belongs_to :course
+  validates_presence_of :course
 
   has_many :lessons, dependent: :destroy
 
