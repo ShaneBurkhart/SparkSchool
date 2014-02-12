@@ -37,11 +37,16 @@ describe Lesson do
     end
 
     context "when making relations" do
-      it "has parent unit" do
-        build(:lesson, unit_id: 3).should_not be_valid
-        create(:unit, id: 3)
-        build(:lesson, unit_id: 3).should be_valid
+
+      context "when unit doesn't exist" do
+        it { expect(build(:lesson, unit_id: 3)).to_not be_valid }
       end
+
+      context "when unit exists" do
+        before { create(:unit, id: 3) }
+        it { expect(build(:lesson, unit_id: 3)).to be_valid }
+      end
+
     end
 
   end

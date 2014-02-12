@@ -2,5 +2,7 @@
 
 FactoryGirl.define do
   factory :lesson_rating do
+    lesson_id 1
+    liked true
   end
 end
