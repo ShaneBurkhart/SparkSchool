@@ -3,6 +3,7 @@ class Lesson < ActiveRecord::Base
   validate :duplicate_lesson_number_for_unit
 
   belongs_to :unit
+  validates_presence_of :unit
 
   private
 

@@ -25,6 +25,8 @@ describe Lesson do
   describe "validations" do
 
     before(:each) do
+      create(:course, id: 1)
+      create(:unit, id: 1)
       @valid_attrs = {
         name: "I/O pins",
         description: "I/O pins are awesome!",
@@ -70,8 +72,15 @@ describe Lesson do
       Lesson.create(@valid_attrs)
       @valid_attrs[:name] = "what is an MCU's" #so doesn't interfere with check in future
       @valid_attrs[:description] = "what is an MCU's" #so doesn't interfere with check in future
+      create(:unit, id: 2)
       @valid_attrs[:unit_id] = 2
       Lesson.new(@valid_attrs).should be_valid
+    end
+
+    it 'should require a parent unit' do
+      build(:lesson, unit_id: 3).should_not be_valid
+      create(:unit, id: 3)
+      build(:lesson, unit_id: 3).should be_valid
     end
 
   end
