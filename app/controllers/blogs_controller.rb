@@ -54,6 +54,11 @@ class BlogsController < ApplicationController
     end
   end
 
+  def hack_and_tell
+    AdminMailer.hack_and_tell_email(params[:email], params[:message]).deliver
+    redirect_to blogs_path, flash: {notice: 'Thanks for letting us know!'}
+  end
+
   private
     def blog_params
       params.require(:blog).permit(:title, :body, :tag, :published)
