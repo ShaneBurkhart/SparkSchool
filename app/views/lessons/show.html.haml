@@ -21,10 +21,12 @@
           .col-md-6
             %p
               - if (@lesson_number - 2) >= 0
-                = link_to "Previous Lesson: #{@lessons[@lesson_number - 2].name}"
+                = link_to "Previous Lesson: #{@lessons[@lesson_number - 2].name}", course_tag_lesson_path(@course.tag, @lesson_number - 1)
               - else
                 = link_to "Back to Course: #{@course.name}", course_tag_path(@course.tag)
           .col-md-6
             %p.text-right
-              - if (@lesson_number + 1 < @lessons.length)
+              - if (@lesson_number < @lessons.length)
                 = link_to "Next Lesson: #{@lessons[@lesson_number].name}", course_tag_lesson_path(@course.tag, @lesson_number + 1)
+              - else
+                = link_to "Go to Courses", courses_path
