@@ -12,6 +12,7 @@ SparkAcademy::Application.routes.draw do
   #blog routes
   resources :blogs, path: "/blog"
   get "/blog/:id/:title", to: "blogs#show", as: "blog_title"
+  post '/blog/hack_and_tell', to: 'blogs#hack_and_tell'
   post "/newsletter", to: "newsletter_users#create" # has to go after resource!!!
 
 =begin
