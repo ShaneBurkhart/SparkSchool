@@ -124,3 +124,27 @@
     text-align: center;
   }
 }
+
+.rate{
+
+  h3{
+    margin-top: 0px;
+    font-size: 20px;
+  }
+
+  .glyphicon{
+    font-size: 30px;
+  }
+
+  .glyphicon-thumbs-up{
+    &:hover, .active{
+      color: green;
+    }
+  }
+
+  .glyphicon-thumbs-down{
+    &:hover, .active{
+      color: red;
+    }
+  }
+}

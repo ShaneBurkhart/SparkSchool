@@ -3,52 +3,58 @@ require 'spec_helper'
 describe LessonRating do
 
   before do
+    create(:course, id: 1)
+    create(:unit, id: 1)
     create(:lesson, id: 1)
+    create(:user, id: 1)
   end
 
-  let(:resource) { create(:lesson_rating) }
+  subject { create(:lesson_rating, id: 1) }
 
-  it { expect(resource).to respond_to(:lesson_id) }
-  it { expect(resource).to respond_to(:lesson) }
-  it { expect(resource).to respond_to(:liked) }
-  it { expect(resource).to respond_to(:like?) }
-  it { expect(resource).to respond_to(:user_id) }
-  it { expect(resource).to respond_to(:user) }
+  it { should respond_to(:lesson_id) }
+  it { should respond_to(:lesson) }
+  it { should respond_to(:liked) }
+  it { should respond_to(:like?) }
+  it { should respond_to(:user_id) }
+  it { should respond_to(:user) }
 
   describe "validations" do
 
     context "when missing attributes" do
-      it { expect(build(:lesson_rating, lesson_id: nil)).to_not be_valid }
-      it { expect(build(:lesson_rating, liked: nil)).to_not be_valid }
-      it { expect(build(:lesson_rating, user_id: nil)).to_not be_valid }
+      it { should validate_presence_of(:lesson_id) }
+      it { should validate_presence_of(:liked) }
+      it { should validate_presence_of(:user_id) }
     end
 
-    context "when making relation" do
+    context "when making relations with" do
 
       describe "user" do
-        let(:lesson_rating) { build(:lesson_rating, user_id: 3) }
+        subject { build(:lesson_rating, user_id: 3) }
 
         context "when doesn't exist" do
-          it { expect(lesson_rating).to_not be_valid }
+          it { should_not be_valid }
         end
 
         context "when exists" do
-          before { create(:user, id: 3) }
-          it { expect(lesson_rating).to be_valid }
+          before { create(:user, id: 3, email: "someother@email.com") }
+          it { should be_valid }
         end
 
       end
 
       describe "lesson" do
-        let(:lesson_rating) { build(:lesson_rating, lesson_id: 3) }
+        subject { build(:lesson_rating, lesson_id: 3) }
 
         context "when doesn't exist" do
-          it { expect(lesson_rating).to_not be_valid }
+          it { should_not be_valid }
         end
 
         context "when exists" do
-          before { create(:lesson, id: 3) }
-          it { expect(lesson_rating).to be_valid }
+          before do
+            create(:lesson, id: 3)
+          end
+
+          it { should be_valid }
         end
 
       end

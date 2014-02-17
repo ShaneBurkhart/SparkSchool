@@ -3,6 +3,7 @@ class Lesson < ActiveRecord::Base
   validate :duplicate_lesson_number_for_unit
 
   belongs_to :unit
+  has_many :ratings, class_name: "LessonRating", foreign_key: "lesson_id"
 
   private
 

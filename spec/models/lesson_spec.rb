@@ -7,44 +7,45 @@ describe Lesson do
     create(:unit, id: 1)
   end
 
-  let(:resource) { create(:lesson) }
+  subject { create(:lesson) }
 
-  it { expect(resource).to respond_to(:name) }
-  it { expect(resource).to respond_to(:description) }
-  it { expect(resource).to respond_to(:body) }
-  it { expect(resource).to respond_to(:unit) }
-  it { expect(resource).to respond_to(:lesson_number) }
-  it { expect(resource).to respond_to(:ratings) }
+  it { should respond_to(:name) }
+  it { should respond_to(:description) }
+  it { should respond_to(:body) }
+  it { should respond_to(:unit) }
+  it { should respond_to(:lesson_number) }
+  it { should respond_to(:ratings) }
 
   describe "validations" do
 
     context "when missing attributes" do
-      it { expect(build(:lesson, name: nil)).to_not be_valid }
-      it { expect(build(:lesson, description: nil)).to_not be_valid }
-      it { expect(build(:lesson, body: nil)).to_not be_valid }
-      it { expect(build(:lesson, unit_id: nil)).to_not be_valid }
-      it { expect(build(:lesson, lesson_number: nil)).to_not be_valid }
+      it { should validate_presence_of(:name) }
+      it { should validate_presence_of(:description) }
+      it { should validate_presence_of(:body) }
+      it { should validate_presence_of(:unit_id) }
+      it { should validate_presence_of(:lesson_number) }
     end
 
     context "when lesson_number exists" do
-      it { expect(build(:lesson, lesson_number: resource.lesson_number)).to_not be_valid }
+      it { expect(build(:lesson, lesson_number: subject.lesson_number)).to_not be_valid }
     end
 
     context "when same lesson_number but different unit" do
       before { create(:unit, id: 2) }
-      it { expect(resource).to be_valid }
+      it { should be_valid }
       it { expect(build(:lesson, unit_id: 2)).to be_valid }
     end
 
     context "when making relations" do
+      subject { build(:lesson, unit_id: 3) }
 
       context "when unit doesn't exist" do
-        it { expect(build(:lesson, unit_id: 3)).to_not be_valid }
+        it { should_not be_valid }
       end
 
       context "when unit exists" do
         before { create(:unit, id: 3) }
-        it { expect(build(:lesson, unit_id: 3)).to be_valid }
+        it { should be_valid }
       end
 
     end

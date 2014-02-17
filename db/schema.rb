@@ -48,6 +48,9 @@ ActiveRecord::Schema.define(version: 20140212164053) do
   end
 
   create_table "lesson_ratings", force: true do |t|
+    t.integer  "lesson_id"
+    t.integer  "user_id"
+    t.boolean  "liked"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
