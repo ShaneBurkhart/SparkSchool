@@ -11,6 +11,10 @@
   border-bottom: 4px solid #002e72;
 }
 
+p.large-percent{
+  font-size: 40px;
+}
+
 .course-container{
   border-radius: 6px;
   background-color: #fbfbfb;
@@ -24,6 +28,11 @@
       text-decoration: none;
     }
   }
+
+  .green{
+    color: green;
+  }
+
 
   .blue-circuit{
     border-radius: 6px 0px 0px 6px;

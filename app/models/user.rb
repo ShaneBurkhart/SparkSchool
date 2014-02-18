@@ -16,6 +16,10 @@ class User < ActiveRecord::Base
     return self.role == "User"
   end
 
+  def completed_lesson? lesson_id
+    CompletedLesson.find_by(lesson_id: lesson_id, user_id: self.id)
+  end
+
 
   private
 

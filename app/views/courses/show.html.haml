@@ -7,6 +7,8 @@
           /= image_tag "blue-circuit.png", class: "glyph"
       .col-md-9
         %h1
+          - if @course.progress(current_user) == 100
+            %i.glyphicon.glyphicon-ok.green
           = @course.name
           - if can?(:manage, Course) and can?(:create, Unit)
             = link_to "Edit", edit_course_path(@course), class: "btn btn-default"
@@ -18,10 +20,16 @@
       /= link_to "Back to courses", courses_path, class: "btn btn-default btn-block btn-lg"
       .well
         %h3 Your progress
+        %p.large-percent= "#{@course.progress(current_user).to_i}%"
         .progress
-          .progress-bar{role: "progressbar", style: "width: 60%;" }
-            %span.sr-only 60% Complete
-        = link_to "Start the course", course_tag_lesson_path(@course.tag, 1), class: "btn btn-success"
+          .progress-bar{role: "progressbar", style: "width: #{ @course.progress(current_user) }%;" }
+            %span.sr-only= "#{@course.progress(current_user)}% Complete"
+        - if !current_user
+          %p= link_to "Login to track progress", lesson_lesson_redirect_path
+        - if current_user && @current_lesson_number && @course.progress(current_user) != 0
+          = link_to "Resume course", course_tag_lesson_path(@course.tag, @current_lesson_number), class: "btn btn-warning"
+        - else
+          = link_to "Start the course", course_tag_lesson_path(@course.tag, 1), class: "btn btn-success"
     .col-md-8
       .lessons
         - @course.ordered_units.each do |unit|

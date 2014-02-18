@@ -12,6 +12,15 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find_by(tag: params[:tag])
+    @current_lesson_number = @course.ordered_lessons.count
+    if current_user
+      @course.ordered_lessons.each_with_index do |lesson, index|
+        if !current_user.completed_lesson?(lesson.id)
+          @current_lesson_number = index + 1
+          break
+        end
+      end
+    end
     @counter = 1
     not_found if @course.nil? || (!@course.published? && cannot?(:manage, Course))
   end

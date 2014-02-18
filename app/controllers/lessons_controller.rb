@@ -76,7 +76,9 @@ class LessonsController < ApplicationController
 
     def update_user_progress
       if current_user
+        @course = Course.find_by(tag: params[:tag])
         @lessons = @course.ordered_lessons #lessons ordered by unit then lesson number
+        @lesson_number = lesson_number
         @lesson = @lessons[@lesson_number - 1]
         CompletedLesson.find_or_create_by_user_id_and_lesson_id(current_user.id, @lesson.id)
       end

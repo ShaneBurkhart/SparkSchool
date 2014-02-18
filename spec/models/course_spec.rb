@@ -33,7 +33,7 @@ describe Course do
   it "should respond to ordered_units" do
     Course.new.should respond_to(:ordered_units)
   end
-
+#NEED SOMETHING FOR COURSE PROGRESS
   describe "validations" do
 
     before(:each) do

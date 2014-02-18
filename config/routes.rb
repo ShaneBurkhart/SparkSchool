@@ -14,6 +14,7 @@ SparkAcademy::Application.routes.draw do
   end
   post "lesson/rate", to: "lessons#rate"
   get "lesson/rate_redirect", to: "lessons#rate_redirect"
+  get "lesson/lesson_redirect", to: "lessons#rate_redirect"
   get "courses/:tag", to: "courses#show", as: "course_tag" #this will be show.  tag is to make it more use friendly
   get "courses/:tag/:lesson_number", #finds course by tag then looks for lesson relative to course
         to: "lessons#show",

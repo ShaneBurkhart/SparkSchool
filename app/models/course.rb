@@ -22,4 +22,21 @@ class Course < ActiveRecord::Base
     self.units.order(unit_number: :asc)
   end
 
+  def progress current_user
+    return 0 if !current_user
+    comp = 0
+    tot = 0
+    self.units.each do |unit|
+      unit.lessons.each do |lesson|
+        comp += 1 if current_user.completed_lesson?(lesson.id)
+        tot += 1
+      end
+    end
+    if tot > 0
+      comp * 100.0 / tot
+    else
+      0
+    end
+  end
+
 end

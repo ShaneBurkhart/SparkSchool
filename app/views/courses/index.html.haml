@@ -16,7 +16,10 @@
           .blue-circuit.text-center
             /= image_tag "blue-circuit.png", class: "glyph"
         .col-md-9
-          %h2= link_to course.name, course_tag_path(course.tag)
+          %h2
+            - if course.progress(current_user) == 100
+              %i.glyphicon.glyphicon-ok.green
+            = link_to course.name, course_tag_path(course.tag)
           %p= course.description
   .new-course-container
     .row
