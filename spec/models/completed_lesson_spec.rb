@@ -42,6 +42,38 @@ describe CompletedLesson do
       it { should be_valid }
     end
 
+    context "when making relations" do
+
+      describe "with user" do
+        subject { build(:completed_lesson, user_id: 3) }
+
+        context "when user doesn't exist" do
+          it { should_not be_valid }
+        end
+
+        context "when user exists" do
+          before { create(:user, id: 3, email: "asdf@asdffdsa.com") }
+          it { should be_valid }
+        end
+
+      end
+
+      describe "with lesson" do
+        subject { build(:completed_lesson, lesson_id: 3) }
+
+        context "when lesson doesn't exist" do
+          it { should_not be_valid }
+        end
+
+        context "when lesson exists" do
+          before { create(:lesson, id: 3) }
+          it { should be_valid }
+        end
+
+      end
+
+    end
+
   end
 
 end

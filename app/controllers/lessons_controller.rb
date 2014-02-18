@@ -3,6 +3,7 @@ class LessonsController < ApplicationController
   before_filter :lessons_in_order, except: [:rate_redirect, :rate, :index, :show]
   before_filter :parameter_objects, except: [:rate_redirect, :rate, :index, :show]
   authorize_resource except: [:index, :show, :rate_redirect, :rate]
+  before_filter :update_user_progress, only: [:show]
 
   def show
     @course_tag = params[:tag]
@@ -72,6 +73,14 @@ class LessonsController < ApplicationController
   end
 
   private
+
+    def update_user_progress
+      if current_user
+        @lessons = @course.ordered_lessons #lessons ordered by unit then lesson number
+        @lesson = @lessons[@lesson_number - 1]
+        CompletedLesson.find_or_create_by_user_id_and_lesson_id(current_user.id, @lesson.id)
+      end
+    end
 
     def lesson_params
       params.require(:lesson).permit(:name, :unit_id, :description, :lesson_number, :body)
