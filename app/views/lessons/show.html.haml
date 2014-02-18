@@ -12,14 +12,20 @@
                 %li{class: @counter == @lesson_number ? "active" : ""}
                   %p= lesson.name
                   - @counter += 1
-      .well.rate
+      .well.rate{ data: { lesson_id: @lesson.id, liked: @lesson_rating.nil? ? "" : "#{@lesson_rating.like?}"} }
         %h3 Was this lesson helpful?
         .row
           - if current_user
             .col-xs-offset-2.col-xs-4.text-center
-              %span.glyphicon.glyphicon-thumbs-up
+              - if @lesson_rating && @lesson_rating.like?
+                %span.glyphicon.glyphicon-thumbs-up.rate-button.active
+              - else
+                %span.glyphicon.glyphicon-thumbs-up.rate-button
             .col-xs-4.text-center
-              %span.glyphicon.glyphicon-thumbs-down
+              - if @lesson_rating && !@lesson_rating.like?
+                %span.glyphicon.glyphicon-thumbs-down.rate-button.active
+              - else
+                %span.glyphicon.glyphicon-thumbs-down.rate-button
           - else
             .col-xs-12
               = link_to "Sign in to rate lesson", "#"
@@ -43,3 +49,42 @@
                 = link_to "Next Lesson: #{@lessons[@lesson_number].name}", course_tag_lesson_path(@course.tag, @lesson_number + 1)
               - else
                 = link_to "Go to Courses", courses_path
+
+:javascript
+  $(function(){
+
+    $(".rate-button").click(function(){
+      var ele = $(this),
+          container = $(".rate").first(),
+          lesson_id = container.data("lesson-id"),
+          liked = container.attr("data-liked");
+
+      if(ele.hasClass("glyphicon-thumbs-up")){
+        if(liked == true || liked == "true") return;
+        liked = true;
+      }else{
+        if(liked == false || liked == "false") return;
+        liked = false;
+      }
+
+      $.ajax({
+        url : "/lesson/rate",
+        type : "POST",
+        dataType : "json",
+        data : {
+          "lesson_id" : lesson_id,
+          "liked" : liked
+        }
+      }).done(function(){
+        if(liked){
+          $(".glyphicon-thumbs-down").removeClass("active");
+          ele.addClass("active");
+        }else{
+          $(".glyphicon-thumbs-up").removeClass("active");
+          ele.addClass("active");
+        }
+      });
+      container.attr("data-liked", liked);
+
+    });
+  });

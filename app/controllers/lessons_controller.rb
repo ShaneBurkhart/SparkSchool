@@ -1,7 +1,7 @@
 class LessonsController < ApplicationController
-  before_filter :authenticate_user!, except: [:index, :show]
-  before_filter :lessons_in_order, except: [:index, :show]
-  before_filter :parameter_objects, except: [:index, :show]
+  before_filter :authenticate_user!, except: [:rate, :index, :show]
+  before_filter :lessons_in_order, except: [:rate, :index, :show]
+  before_filter :parameter_objects, except: [:rate, :index, :show]
   authorize_resource except: [:index, :show]
 
   def show
@@ -12,6 +12,7 @@ class LessonsController < ApplicationController
     @lessons = @course.ordered_lessons #lessons ordered by unit then lesson number
     not_found if @lessons.length < @lesson_number || @lesson_number < 1 #check if in range
     @lesson = @lessons[@lesson_number - 1]
+    @lesson_rating = LessonRating.find_by(lesson_id: @lesson.id, user_id: current_user.id) if current_user
     @counter = 1
   end
 
@@ -49,6 +50,20 @@ class LessonsController < ApplicationController
     @course_tag = @lesson.unit.course.tag
     @lesson.destroy
     redirect_to course_tag_path(@course_tag), flash: {notice: "Successfully deleted lesson."}
+  end
+
+  def rate
+    if(!current_user)
+      render json: {status: "You are not logged in."}, status: 500
+      return
+    end
+    @lesson_rating = LessonRating.find_or_create_by_user_id_and_lesson_id(current_user.id, params[:lesson_id])
+    @lesson_rating.liked = params[:liked]
+    if @lesson_rating.save
+      render json: @lesson_rating, status: 200
+    else
+       render json: @lesson_rating, status: 500
+    end
   end
 
   private

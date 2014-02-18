@@ -13,7 +13,6 @@ describe LessonRating do
 
   it { should respond_to(:lesson_id) }
   it { should respond_to(:lesson) }
-  it { should respond_to(:liked) }
   it { should respond_to(:like?) }
   it { should respond_to(:user_id) }
   it { should respond_to(:user) }
@@ -59,6 +58,24 @@ describe LessonRating do
 
       end
 
+    end
+
+    context "when lesson_id and user_id already exists" do
+      before { build(:lesson_rating, id: 1).save } # to save to db.  Probably something else wrong
+      subject { build(:lesson_rating, id: nil) }
+      it { should_not be_valid }
+    end
+
+    context "when user_id same but lesson_id different" do
+      before { create(:lesson, id: 5) }
+      subject { build(:lesson_rating, lesson_id: 5) }
+      it { should be_valid }
+    end
+
+    context "when lesson_id same but user_id different" do
+      before { create(:user, id: 5, email: "asdf@asdfdfsa.com") }
+      subject { build(:lesson_rating, user_id: 5) }
+      it { should be_valid }
     end
 
   end

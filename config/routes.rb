@@ -12,6 +12,7 @@ SparkAcademy::Application.routes.draw do
       resources :lessons, except: ["index", "show"]
     end
   end
+  post "lesson/rate", to: "lessons#rate"
   get "courses/:tag", to: "courses#show", as: "course_tag" #this will be show.  tag is to make it more use friendly
   get "courses/:tag/:lesson_number", #finds course by tag then looks for lesson relative to course
         to: "lessons#show",
