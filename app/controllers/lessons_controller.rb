@@ -1,8 +1,8 @@
 class LessonsController < ApplicationController
-  before_filter :authenticate_user!, except: [:rate, :index, :show]
-  before_filter :lessons_in_order, except: [:rate, :index, :show]
-  before_filter :parameter_objects, except: [:rate, :index, :show]
-  authorize_resource except: [:index, :show]
+  before_filter :authenticate_user!, except: [:rate_redirect, :rate, :index, :show]
+  before_filter :lessons_in_order, except: [:rate_redirect, :rate, :index, :show]
+  before_filter :parameter_objects, except: [:rate_redirect, :rate, :index, :show]
+  authorize_resource except: [:index, :show, :rate_redirect, :rate]
 
   def show
     @course_tag = params[:tag]
@@ -64,6 +64,11 @@ class LessonsController < ApplicationController
     else
        render json: @lesson_rating, status: 500
     end
+  end
+
+  def rate_redirect
+    session[:return_to] = request.referer
+    redirect_to new_user_session_path
   end
 
   private

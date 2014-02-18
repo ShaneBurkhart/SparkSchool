@@ -8,6 +8,16 @@ class ApplicationController < ActionController::Base
     redirect_to root_path
   end
 
+  def after_sign_in_path_for resource
+    if session[:return_to]
+      url = session[:return_to]
+      session[:return_to] = nil
+      url
+    else
+      super
+    end
+  end
+
   def not_found
     raise ActionController::RoutingError.new('Course not found')
   end

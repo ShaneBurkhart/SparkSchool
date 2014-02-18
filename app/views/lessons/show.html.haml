@@ -28,7 +28,7 @@
                 %span.glyphicon.glyphicon-thumbs-down.rate-button
           - else
             .col-xs-12
-              = link_to "Sign in to rate this lesson", new_user_session_path
+              = link_to "Sign in to rate this lesson", lesson_rate_redirect_path
     .col-md-9
       %h1= @lesson.name
       %p.muted
