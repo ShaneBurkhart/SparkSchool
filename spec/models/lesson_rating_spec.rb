@@ -21,7 +21,6 @@ describe LessonRating do
 
     context "when missing attributes" do
       it { should validate_presence_of(:lesson_id) }
-      it { should validate_presence_of(:liked) }
       it { should validate_presence_of(:user_id) }
     end
 

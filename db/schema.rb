@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140212164053) do
+ActiveRecord::Schema.define(version: 20140218025941) do
 
   create_table "beta_users", force: true do |t|
     t.string   "email"
@@ -27,6 +27,13 @@ ActiveRecord::Schema.define(version: 20140212164053) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "published"
+  end
+
+  create_table "completed_lessons", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "lesson_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "courses", force: true do |t|

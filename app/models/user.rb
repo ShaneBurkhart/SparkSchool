@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   validate :role_type
 
+  has_many :completed_lessons
+
   def admin?
     return self.role == "Admin"
   end
