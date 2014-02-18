@@ -28,7 +28,7 @@
                 %span.glyphicon.glyphicon-thumbs-down.rate-button
           - else
             .col-xs-12
-              = link_to "Sign in to rate lesson", "#"
+              = link_to "Sign in to rate this lesson", new_user_session_path
     .col-md-9
       %h1= @lesson.name
       %p.muted
@@ -60,10 +60,10 @@
           liked = container.attr("data-liked");
 
       if(ele.hasClass("glyphicon-thumbs-up")){
-        if(liked == true || liked == "true") return;
+        if(liked === true || liked == "true") return;
         liked = true;
       }else{
-        if(liked == false || liked == "false") return;
+        if(liked === false || liked == "false") return;
         liked = false;
       }
 
