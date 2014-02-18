@@ -46,6 +46,8 @@
                   .grey-circuit
                 .col-md-9
                   %h3
+                    - if current_user && current_user.completed_lesson?(lesson.id)
+                      %i.glyphicon.glyphicon-ok.green
                     = link_to lesson.name, course_tag_lesson_path(@course.tag, @counter)
                     - @counter += 1
                     - if can?(:manage, Lesson)
