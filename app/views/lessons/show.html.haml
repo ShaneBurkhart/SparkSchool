@@ -1,6 +1,14 @@
 - content_for :title, "#{@lesson.name} | #{@course.name}"
 .container
   .row
+    .col-md-12
+      %p.breadcrumb.muted
+        = link_to "Courses", courses_path
+        = " / "
+        = link_to @course.name, course_tag_path(@course.tag)
+        = " / "
+        = link_to @lesson.name, course_tag_lesson_path(@course.tag, @lesson_number), class: "active"
+  .row
     .col-md-3
       %h3.table-of-contents-header Table of Contents
       .well-no-padding.course-table-of-contents
@@ -29,10 +37,8 @@
           - else
             .col-xs-12
               = link_to "Sign in to rate this lesson", lesson_rate_redirect_path
-    .col-md-9
+    .col-md-9.lesson
       %h1= @lesson.name
-      %p.muted
-        = link_to "Back to Course: #{@course.name}", course_tag_path(@course.tag)
       .lesson-body
         = markdown(@lesson.body)
         %br

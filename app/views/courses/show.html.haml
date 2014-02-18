@@ -1,5 +1,11 @@
 - content_for :title, @course.name
 .container
+  .row
+    .col-md-12
+      %p.breadcrumb
+        = link_to "Courses", courses_path
+        = " / "
+        = link_to @course.name, course_tag_path(@course.tag), class: "active"
   .course-container.large
     .row
       .col-md-3
