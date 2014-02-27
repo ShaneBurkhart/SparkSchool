@@ -61,6 +61,22 @@ html, body{
 }
 
 
+.page-header{
+  margin: 0px 0px 60px;
+  padding: 60px 0px 110px;
+  background-color: #f3f3f3;
+  color: #ffffff;
+
+  h1{
+    font-size: 36px;
+  }
+
+  p{
+    font-size: 21px;
+  }
+}
+
+
 main{
 
   &.full-screen{
