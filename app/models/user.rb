@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  # :confirmable, :lockable, :timeoutable and :omniauthable :recoverable,
+  # :registerable, :rememberable, :trackable,
+  devise :database_authenticatable, :validatable
 
   validate :role_type
 
@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   private
 
     def valid_roles
-      return ["Admin", "User"]
+      return ["Admin"]
     end
 
     def role_type
