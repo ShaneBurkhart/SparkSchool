@@ -1,11 +1,8 @@
-//%li= link_to 'Course', courses_path
-- if user_signed_in?
-  %li= link_to 'Logout', destroy_user_session_path, :method=>'delete'
-//- else
-//  %li= link_to 'Login', new_user_session_path
-//- if user_signed_in?
-//  %li= link_to 'Edit account', edit_user_registration_path
-//- else
-//  %li= link_to 'Create Account', new_user_registration_path
+- if current_user
+  %li= link_to 'Mail', incoming_mail_index_path
+
+
+%li= link_to 'Course', courses_path
+%li= link_to 'Preorder', preorders_path
 
 
