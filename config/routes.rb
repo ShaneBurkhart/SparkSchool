@@ -3,7 +3,7 @@ SparkAcademy::Application.routes.draw do
   get "preorders/create"
   root :to => "home#index"
 
-  get "/preorders", to: "preorders#show"
+  resource :preorder, only: [:show, :create]
 
   #blog routes
   resources :blogs, path: "/blog"
