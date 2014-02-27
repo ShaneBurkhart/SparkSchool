@@ -4,15 +4,17 @@
 
 .mega-header{
   height: 100%;
-  min-height: 600px;
+  min-height: 400px;
   color: white;
-  padding: 100px 0px;
+  padding: 70px 0px 100px;
   position: relative;
-  background-image: image-url("blue-circuit.png");
+  background-image: image-url("intro-bg.jpg");
   background-color:#0060ea;
+  max-height: 1267px;
 
   .banner-position{
-    height: 500px;
+    height: 400px;
+    padding-top: 40px;
     width: 100%;
     position: absolute;
     top: 0;
@@ -43,58 +45,47 @@
     }
 
 
-    p.lead{
-      font-size: 3em;
+    h2.lead{
+      font-size: 28px;
       margin-bottom: 0px;
+      font-weight: bold;
     }
 
-    p.promo{
-      font-size: 1.4em;
-    }
-
-    form{
-      text-align: center;
-
-      .form-group{
-        display: inline-block;
-        width: 400px;
-      }
-    }
-  }
-
-  .learn-more{
-    position: absolute;
-    bottom: 0;
-    margin: 0 auto;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 10px;
-
-    .btn{
-      border-radius: 17px;
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-  }
-}
-
-.sign-up-form{
-  .form-group{
-    max-width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
   }
 }
 
 #more{
-  padding: 70px 0px;
+
+  .section{
+    padding-bottom: 100px;
+
+    h3{
+      font-size: 21px;
+      margin-bottom: 30px;
+    }
+
+    p{
+      color: #4d4d4d;
+      font-size: 16px;
+    }
+
+    .placeholder{
+      border-radius: 50%;
+      background-color: #000000;
+      height: 350px;
+      margin: 0px 50px;
+    }
+  }
+
+  p.quote{
+    font-size: 28px;
+    text-align: center;
+    color: #969696;
+    padding-top: 20px;
+  }
 
   span.glyphicon{
     font-size: 100px;
-  }
-
-  h3{
-    margin-top: 10px;
   }
 
   form{

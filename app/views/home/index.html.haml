@@ -1,23 +1,32 @@
-#more
+#more.navbar-offset
+  .section
+    .container
+      .row
+        .col-md-10.col-md-offset-1
+          %p.quote "It is nearly impossible to find good resources to learn about making embedded devices"
+
+  .section
+    .container
+      .row
+        .col-md-7
+          %h3 Kits have everything you need to start learning.
+          %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac tellus cursus, rhoncus lectus et, cursus felis. Phasellus non vulputate velit, et pretium lectus. Et netus et malesuada fames ac turpis egestas.
+        .col-md-5
+          .placeholder
+
+  .section
+    .container
+      .row
+        .col-md-5
+          .placeholder
+        .col-md-7
+          %h3 Kits have everything you need to start learning.
+          %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac tellus cursus, rhoncus lectus et, cursus felis. Phasellus non vulputate velit, et pretium lectus. Et netus et malesuada fames ac turpis egestas.
+
   .container
     .row
-      .col-md-4.text-center
-        %span.glyphicon.glyphicon-flash
-        %h3 No more barrier to entry
-        %p It's hard to get started with electrical devices.  Our lessons eliminate that barrier by providing you with easy to understand tutorials.  You will be creating your own devices in no time.
-      .col-md-4.text-center
-        %span.glyphicon.glyphicon-home
-        %h3 Everything you need
-        %p Whether it's basic circuit theory, or you want to make an electric device, we have what you need.  Best of all, it's all right from your home.
-      .col-md-4.text-center
-        %span.glyphicon.glyphicon-cog
-        %h3 Better kits
-        %p With hardware, not everything can be done online, so we provide kits that will enhance your learning.  You aren't just putting these things together.  Every aspect, from design to part selection, is explained.
-    %br
-    .row.text-center
-      .col-md-12
-        //= link_to "Let's get started!", new_user_registration_path,  class: "btn btn-warning btn-lg"
-        = render "sign_up_form", name: "Home Bottom", header: true
+      .col-md-12.text-center
+        = link_to "Preorder Your Kit", "#", class: "btn btn-primary btn-lg btn-wide"
 
 :javascript
   $('a').click(function(){
