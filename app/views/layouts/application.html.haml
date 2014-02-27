@@ -16,8 +16,6 @@
     - else
       = render 'layouts/mega_header'
     %main{:role => "main", class: current_page?(root_path) ? "" : "full-screen navbar-offset"}
-      - unless current_page? root_path
-        = render 'layouts/messages'
       = yield
       #push
     %footer
