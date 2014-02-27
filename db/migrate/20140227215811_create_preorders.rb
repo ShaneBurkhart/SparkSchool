@@ -13,7 +13,7 @@ class CreatePreorders < ActiveRecord::Migration
       t.string :zipcode
 
       # Credit info
-      t.string :strip_customer_id
+      t.string :stripe_customer_id
 
       t.timestamps
     end

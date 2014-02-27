@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(version: 20140227215811) do
     t.string   "city"
     t.string   "state"
     t.string   "zipcode"
-    t.string   "strip_customer_id"
+    t.string   "stripe_customer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
