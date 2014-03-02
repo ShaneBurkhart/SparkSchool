@@ -14,6 +14,7 @@ gem 'haml-rails'
 gem 'simple_form'
 gem 'redcarpet'
 gem 'cancan'
+gem 'stripe'
 group :development do
   gem 'sqlite3'
   gem 'better_errors'
