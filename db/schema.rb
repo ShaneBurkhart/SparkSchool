@@ -29,13 +29,6 @@ ActiveRecord::Schema.define(version: 20140227215811) do
     t.boolean  "published"
   end
 
-  create_table "completed_lessons", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "lesson_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "courses", force: true do |t|
     t.string   "name"
     t.text     "description"
@@ -50,14 +43,6 @@ ActiveRecord::Schema.define(version: 20140227215811) do
     t.string   "to"
     t.string   "subject"
     t.text     "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "lesson_ratings", force: true do |t|
-    t.integer  "lesson_id"
-    t.integer  "user_id"
-    t.boolean  "liked"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
