@@ -4,20 +4,20 @@ class PreordersController < ApplicationController
   end
 
   def create
-
-    @preorder = Preorder.new preorder_params
-    unless @preorder.save
-      flash[:error] = "Something went wrong."
-      render "show"
-    end
-
     # in cents
     @amount = 12900
 
     customer = Stripe::Customer.create(
       email: params[:email],
-      card: 'thisisabadtoken' # params[:stripeToken]
+      card: params[:stripeToken]
     )
+
+    @preorder = Preorder.new preorder_params
+    @preorder.stripe_customer_id = customer.id
+    unless @preorder.save
+      flash[:error] = "Something went wrong."
+      render "show" and return
+    end
 
     charge = Stripe::Charge.create(
       customer: customer.id,
@@ -45,8 +45,7 @@ class PreordersController < ApplicationController
         :address,
         :city,
         :state,
-        :zipcode,
-        :strip_customer_id #Not right but this is for you Ryan.
+        :zipcode
       )
     end
 end

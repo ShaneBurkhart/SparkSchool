@@ -68,14 +68,22 @@
           %i.glyphicon.glyphicon-credit-card
           Credit Card Information
         .row.form-group
-          .col-md-12
-            = f.input :address, input_html: { class: "form-control", placeholder: "First" }
+          .col-md-8
+            = label_tag :card_number, 'Card Number'
+            = text_field_tag :card_number, nil, name: nil, class: 'form-control', 'data-stripe' => 'number', placeholder: '4242-4242-4242-4242', size: 20
+          .col-md-4
+            = label_tag :CVC, 'CVC'
+            = text_field_tag :cvc, nil, name: nil, class: 'form-control', 'data-stripe' => 'cvc', placeholder: '123', size: 4
         .row.form-group
-          .col-md-6
-            = f.input :city, input_html: { class: "form-control", placeholder: "First" }
-          .col-md-6
-            = f.input :state, input_html: { class: "form-control", placeholder: "First" }
-        %br
+          .col-md-12
+            = label_tag :expiration, 'Card Expiration'
+            .row
+              .col-md-6
+                = select_month nil, {add_month_numbers: true}, {name: nil, class: 'form-control', 'data-stripe' => 'exp-month'}
+              .col-md-6
+                = select_year nil, {start_year: Date.today.year, end_year: Date.today.year+10}, {name: nil, class: 'form-control', 'data-stripe' => 'exp-year'}
+        = render 'stripejavascript'
+
         = button_tag type: :submit, class: "btn btn-info btn-lg btn-block" do
           %i.glyphicon.glyphicon-shopping-cart
           Preorder Your Kit
