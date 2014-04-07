@@ -1,0 +1,8 @@
+.container
+  %h2 Sign in
+  = simple_form_for(resource, :as => resource_name, :url => user_session_path, :html => {:class => 'form-vertical' }) do |f|
+    = f.input :email, :autofocus => true
+    = f.input :password
+    %br
+    = f.button :submit, "Sign in", :class => 'btn-primary'
+

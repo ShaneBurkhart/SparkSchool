@@ -1,0 +1,37 @@
+#more.navbar-offset
+  .section
+    .container
+      .row
+        .col-md-10.col-md-offset-1
+          %p.quote "It is nearly impossible to find good resources to learn about making embedded devices"
+
+  .section
+    .container
+      .row
+        .col-md-6
+          %h3 We don't give you an Arduino, we teach you how to make one.
+          %p Most kits are based around an Arduino, which is great, but doesn't provide the level of learning need to make production devices.  A higher level of circuit and microcontroller knowledge is needed to be able to design functional circuit boards.  With our kits, you will learn to design your own microcontroller circuits and printed circuit boards.
+        .col-md-5
+          .placeholder
+
+  .section
+    .container
+      .row
+        .col-md-5
+          .placeholder
+        .col-md-7
+          %h3 Kits have everything you need to start learning.
+          %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac tellus cursus, rhoncus lectus et, cursus felis. Phasellus non vulputate velit, et pretium lectus. Et netus et malesuada fames ac turpis egestas.
+
+  .container
+    .row
+      .col-md-12.text-center
+        = link_to "Preorder Your Kit", preorder_path, class: "btn btn-primary btn-lg btn-wide"
+
+:javascript
+  $('a').click(function(){
+    $('html, body').animate({
+      scrollTop: $( $(this).attr('href') ).offset().top
+    }, 500);
+    return false;
+  });

@@ -1,0 +1,45 @@
+.container
+  .course-container.large
+    .row
+      .col-md-3
+        .blue-circuit.text-center
+          /= image_tag "blue-circuit.png", class: "glyph"
+      .col-md-9
+        %h1
+          = @course.name
+          - if can?(:manage, Course) and can?(:create, Unit)
+            = link_to "Edit", edit_course_path(@course), class: "btn btn-default"
+            = link_to "Delete", course_path(@course), class: "btn btn-danger", confirm: "Are you sure you want to delete this course?", method: :delete
+            = link_to "New Unit", new_course_unit_path(@course), class: "btn btn-success"
+        %p= @course.description
+  .row
+    .col-md-4
+      /= link_to "Back to courses", courses_path, class: "btn btn-default btn-block btn-lg"
+      .well
+        %h3 Your progress
+        .progress
+          .progress-bar{role: "progressbar", style: "width: 60%;" }
+            %span.sr-only 60% Complete
+        = link_to "Start the course", course_tag_lesson_path(@course.tag, 1), class: "btn btn-success"
+    .col-md-8
+      .lessons
+        - @course.ordered_units.each do |unit|
+          %h2
+            = unit.name
+            - if can?(:manage, Unit) and can?(:create, Lesson)
+              = link_to "Edit", edit_course_unit_path(@course, unit), class: "btn btn-default"
+              = link_to "Delete", course_unit_path(@course, unit), class: "btn btn-danger", confirm: "Are you sure you want to delete this Unit?", method: :delete
+              = link_to "New Lesson", new_course_unit_lesson_path(@course, unit), class: "btn btn-success"
+          - unit.ordered_lessons.each do |lesson|
+            .lesson-container
+              .row
+                .col-md-3
+                  .grey-circuit
+                .col-md-9
+                  %h3
+                    = link_to lesson.name, course_tag_lesson_path(@course.tag, @counter)
+                    - @counter += 1
+                    - if can?(:manage, Lesson)
+                      = link_to "Edit", edit_course_unit_lesson_path(@course, unit, lesson), class: "btn btn-default"
+                      = link_to "Delete", course_unit_lesson_path(@course, unit, lesson), class: "btn btn-danger", confirm: "Are you sure you want to delete this Unit?", method: :delete
+                  %p.description= lesson.description

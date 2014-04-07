@@ -1,0 +1,25 @@
+.courses-header
+  .container
+    %h1 Learn to make hardware.
+    %p.lead Start with the first course and work your way down the list.
+
+.container
+  %h2
+    Courses
+    - if can?(:create, Course)
+      = link_to "New Course", new_course_path, class: "btn btn-success"
+  - @courses.each do |course|
+    .course-container
+      .row
+        .col-md-3
+          .blue-circuit.text-center
+            /= image_tag "blue-circuit.png", class: "glyph"
+        .col-md-9
+          %h2= link_to course.name, course_tag_path(course.tag)
+          %p= course.description
+  .new-course-container
+    .row
+      .col-md-3
+        .grey-circuit.text-center
+      .col-md-9
+        %p.lead More courses coming soon!

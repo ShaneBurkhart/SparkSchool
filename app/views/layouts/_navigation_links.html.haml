@@ -2,7 +2,7 @@
   %li= link_to 'Mail', incoming_mail_index_path
 
 
-%li= link_to 'Course', courses_path
-%li= link_to 'Preorder', preorder_path
+%li{ class: current_page?(courses_path) ? "active" : "" }= link_to 'Courses', courses_path
+%li{ class: current_page?(preorder_path) ? "active" : "" }= link_to 'Preorder Your Kit', preorder_path
 
 

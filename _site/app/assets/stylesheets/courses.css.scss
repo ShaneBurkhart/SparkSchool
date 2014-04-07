@@ -1,0 +1,80 @@
+// Place all the styles related to the courses controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.courses-header{
+  background-color:#0060ea;
+  background-image: image-url("spot-texture.png");
+  padding: 25px 0px 35px;
+  margin-bottom: 15px;
+  color: #ffffff;
+  border-bottom: 4px solid #002e72;
+}
+
+.course-container{
+  border-radius: 6px;
+  background-color: #fbfbfb;
+  border: 1px solid #dcdcdc;
+  margin-bottom: 20px;
+
+  h1, h2, h3, h4, p{
+    color: #333333;
+
+    &:hover{
+      text-decoration: none;
+    }
+  }
+
+  .blue-circuit{
+    border-radius: 6px 0px 0px 6px;
+    background-color:#0060ea;
+    background-image: image-url("blue-circuit-small.png");
+    height: 110px;
+
+    .glyph{
+      background-color: #fbfbfb;
+      border-radius: 50%;
+      height: 90px;
+      width: 90px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+  }
+
+  &.large{
+    margin-top: 21px;
+
+    h1{
+      margin-top: 30px;
+    }
+
+    .blue-circuit{
+      height: 150px;
+
+      .glyph{
+        margin-top: 30px;
+      }
+    }
+  }
+
+}
+
+.new-course-container{
+  border-radius: 6px;
+  background-color: #fbfbfb;
+  border: 1px dashed #dcdcdc;
+  margin-bottom: 20px;
+
+  .grey-circuit{
+    border-radius: 6px 0px 0px 6px;
+    background-color:#e0e0e0;
+    background-image: image-url("grey-circuit.png");
+    height: 110px;
+  }
+
+  p.lead{
+    font-size: 2em;
+    color: #aaaaaa;
+    margin-top: 35px;
+  }
+}
