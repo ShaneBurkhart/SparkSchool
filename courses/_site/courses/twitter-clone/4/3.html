@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>4.3 Rendering Tweets On Our Page | </title>
+<meta name="viewport" content="width=device-width">
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:700,700italic,400,400italic,300,300italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet" type="text/css">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/assets/css/application.css">
+
+        <!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '327777587588900'); // Insert your pixel ID here.
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=327777587588900&ev=PageView&noscript=1"
+/></noscript>
+<!-- DO NOT MODIFY -->
+<!-- End Facebook Pixel Code -->
+
+    </head>
+    <body>
+        <header>
+    <div class="container">
+        <nav class="pull-left">
+            <a href="/" id="site-logo">Spark School</a>
+        </nav>
+        
+            <h3 id="section-name" class="pull-right">Day 4: Showing Tweets</h3>
+        
+    </div>
+</header>
+
+        <main class="container">
+            <article>
+                <h1>4.3 Rendering Tweets On Our Page</h1>
+                <p>####Table Of Contents</p>
+
+<ul>
+  <li><a href="/courses/twitter-clone/4/1">4.1 Creating A Tweet In HTML/CSS</a></li>
+  <li><a href="/courses/twitter-clone/4/2">4.2 Reading The Tweet From The Database</a></li>
+  <li><strong>4.3 Rendering Tweets On Our Page</strong></li>
+</ul>
+
+<p>In the last lesson, we got our tweets from the database and saw how we can loop through them to get each tweet.  Now, let’s pass these to our template.</p>
+
+<p>The “render” method we call at the end of our query callback only specifies the template we want to render.  There is a second optional parameter that takes an object that is passed to our template file.  We can define whatever values we want to pass to our template.  Let’s add that now and assign our “results” parameter to the “tweets” key on our data object.</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// app.js</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">query</span> <span class="o">=</span> <span class="s1">'SELECT * FROM Tweets ORDER BY created_at DESC'</span><span class="p">;</span>
+
+  <span class="nx">connection</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">query</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">results</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">results</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+
+    <span class="nx">res</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s1">'tweets'</span><span class="p">,</span> <span class="p">{</span> <span class="na">tweets</span><span class="p">:</span> <span class="nx">results</span> <span class="p">});</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<p>Now inside our “tweets.ejs” template, we can reference the variable “tweets” to get our results array.  Let’s go into our “tweets.ejs” template and loop through our results much like we did in our homepage route.</p>
+
+<p>EJS is a template engine that allows us to run javascript code in HTML files.  So an EJS file is really just an HTML file that has a special syntax that lets us run javascript code in our template. I’m going to write a for loop in EJS below and explain it after.</p>
+
+<pre><code class="language-ejs">&lt;!-- EJS Example --&gt;
+&lt;% for(var i = 0; i &lt; tweets.length; i++) { %&gt;
+  &lt;p&gt;&lt;%= tweets[i].body %&gt;&lt;/p&gt;
+&lt;% } %&gt;
+</code></pre>
+
+<p>The above code has a lot of symbols, but it’s pretty easy to break down.  To run javascript code in EJS files, we put our javascript between “&lt;%” and “%&gt;”.  The first line shows an example of how this works.  We define the start of our “for” loop block in EJS brackets.  We also close the “for” loop code block on the third line with the same brackets and a curly brace.  This looks just like our homepage route’s loop, but we wrap the lines with EJS brackets.</p>
+
+<p>Now every time this runs, the code and elements inside the for loop will be executed.  If we have 3 tweets, then you will see three paragraph tags appear.  Inside our paragraph element, we are outputting the tweet body.  Notice how this EJS tag starts with a “&lt;%=” instead of just “&lt;%”.  The equals sign tells EJS to output whatever was returned inside the tags.  So in our case, we are getting the tweet with the index “i” and getting its body.  The body will be put in each of the paragraph elements.</p>
+
+<p>These are really the two main EJS tags you will use.  There are a few others but they are used far less frequently so we won’t go over them.  If you want to know more, check out the EJS site.</p>
+
+<p>Now we know how to run javascript in EJS files, so let’s run through our tweets and output the tweets HTML for each tweet filled in with correct values.  The code will look a bit different since I formatted the first paragraph element (the one containing the handle) to be on multiple lines.  This doesn’t change any behavior of our file, it just makes it easier to read.</p>
+
+<pre><code class="language-ejs">&lt;!-- views/tweets.ejs --&gt;
+&lt;main&gt;
+  &lt;form id="tweet-form" action="/tweets/create" method="POST"&gt;
+    &lt;input id="tweet-form-handle" type="text" name="handle" placeholder="DonkkaShane"&gt;
+    &lt;textarea id="tweet-form-body" name="body" placeholder="What's happening?"&gt;&lt;/textarea&gt;
+    &lt;button id="tweet-form-button"&gt;Tweet&lt;/button&gt;
+  &lt;/form&gt;
+  &lt;% for(var i = 0; i &lt; tweets.length; i++) { %&gt;
+    &lt;% var tweet = tweets[i]; %&gt;
+    &lt;article class="tweet"&gt;
+      &lt;p&gt;
+        &lt;a href="http://twitter.com/&lt;%= tweet.handle %&gt;"&gt;@&lt;%= tweet.handle %&gt;&lt;/a&gt;
+        &lt;span class="light-grey"&gt; - &lt;%= tweet.created_at %&gt;&lt;/span&gt;
+      &lt;/p&gt;
+      &lt;p&gt;&lt;%= tweet.body %&gt;&lt;/p&gt;
+    &lt;/article&gt;
+  &lt;% } %&gt;
+&lt;/main&gt;
+</code></pre>
+
+<p>All I did here was substitute the hardcoded handle, body and created_at values with EJS brackets outputting the appropriate values.  Since we would be getting “tweets[i]” a bunch, I saved this value to a variable called “tweets” at the beginning of each iteration.  We use the “tweet” variable to get each tweet’s data.</p>
+
+<p>Restart your server since we added the data object to our “render” method in “app.js”.  Load the homepage <a href="http://127.0.0.1:8080">http://127.0.0.1:8080</a> and you should see your tweets rendered with their values.</p>
+
+<p><img src="https://s3.amazonaws.com/spark-school/courses/twitter-clone/4/rendered-tweets.png" alt="" /></p>
+
+<p>Our tweets feed is finally coming to life, but that date is plain nasty.  We want to put it into a much easier to digest format such as “18 minutes ago”.  To do this, we are going to use a library called <a href="http://momentjs.com/">Moment.js</a>.
+Moment.js is an extremely useful library that makes working with dates really easy.  As we have with other libraries we need to install it for our project. Don’t forget “–no-bin-links” for Windows.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># Terminal logged into VM</span>
+npm install moment --save
+</code></pre>
+</div>
+
+<p>With that library installed, let’s require it in our “app.js” file.  Put this under the rest of our “require” calls to keep things organized.</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// app.js</span>
+<span class="kd">var</span> <span class="nx">mysql</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'mysql'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'express'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">bodyParser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'body-parser'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">moment</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'moment'</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>Moment.js is imported, so let’s loop through our tweets and calculate the time from now for each tweet’s “created_at” value.  We’ll add this time from now value to each tweet object as “time_from_now”.  Our “for” loop in app.js will now look like the following.</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// app.js</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">results</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">tweet</span> <span class="o">=</span> <span class="nx">results</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+  <span class="nx">tweet</span><span class="p">.</span><span class="nx">time_from_now</span> <span class="o">=</span> <span class="nx">moment</span><span class="p">(</span><span class="nx">tweet</span><span class="p">.</span><span class="nx">created_at</span><span class="p">).</span><span class="nx">fromNow</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>The first thing we are doing is getting the tweet and saving it to a variable called “tweet”.</p>
+
+<p>Up until now, we have only used the dot notation to get values for keys on objects.  In javascript, you can also assign values to keys the same way you would a variable.  The second line in the for loop is setting the “time_from_now” key to the right side of the equals sign.</p>
+
+<p>On the right side of the equals, we have our Moment.js code.  When importing Moment.js, we get a function that takes a date and returns a Moment.js date object.  The new Moment.js date has a lot of helper methods we can use to format and manipulate our date.  The method that will give us the time from now is the “fromNow” method.  This returns the date in a human friendly format like “18 minutes ago”</p>
+
+<p>With our new value on each tweet, let’s go back to our template and update our date to “time_from_now” instead of “created_at”.</p>
+
+<pre><code class="language-ejs">&lt;!-- views/tweets.ejs --&gt;
+&lt;p&gt;
+  &lt;a href="http://twitter.com/&lt;%= tweet.handle %&gt;"&gt;@&lt;%= tweet.handle %&gt;&lt;/a&gt;
+  &lt;span class="light-grey"&gt; - &lt;%= tweet.time_from_now %&gt;&lt;/span&gt;
+&lt;/p&gt;
+</code></pre>
+
+<p>Restart your server and refresh the homepage <a href="http://127.0.0.1:8080">http://127.0.0.1:8080</a>.  You should now see an easy to read date.</p>
+
+<p><img src="https://s3.amazonaws.com/spark-school/courses/twitter-clone/4/human-readable-time-from-now.png" alt="" /></p>
+
+<p>We can now create tweets and see them get added to the page.  Try adding a tweet with our form and you should see it get added to the top of our tweets feed.</p>
+
+<p>Today, we went over the “R” (Read) part of CRUD.  So far we can create tweets with our form and render tweets on our homepage.  This is really exciting, because our app is becoming interactive.  In day 5, we will go over the “U” (Update) and how we can edit these tweets after they are created.</p>
+
+<h3 id="final-code">Final Code</h3>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// app.js</span>
+<span class="s1">'use strict'</span>
+
+<span class="kd">var</span> <span class="nx">mysql</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'mysql'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'express'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">bodyParser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'body-parser'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">moment</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'moment'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">connection</span> <span class="o">=</span> <span class="nx">mysql</span><span class="p">.</span><span class="nx">createConnection</span><span class="p">({</span>
+  <span class="na">host</span><span class="p">:</span> <span class="s1">'127.0.0.1'</span><span class="p">,</span>
+  <span class="na">user</span><span class="p">:</span> <span class="s1">'vagrant'</span><span class="p">,</span>
+  <span class="na">password</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
+  <span class="na">database</span><span class="p">:</span> <span class="s1">'twitter'</span>
+<span class="p">});</span>
+
+<span class="nx">connection</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+    <span class="k">return</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Connected to the database.'</span><span class="p">);</span>
+
+  <span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">8080</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Web server listening on port 8080!'</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'views'</span><span class="p">,</span> <span class="s1">'./views'</span><span class="p">);</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'view engine'</span><span class="p">,</span> <span class="s1">'ejs'</span><span class="p">);</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="kr">static</span><span class="p">(</span><span class="s1">'./public'</span><span class="p">));</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">bodyParser</span><span class="p">.</span><span class="nx">urlencoded</span><span class="p">({</span> <span class="na">extended</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}));</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">query</span> <span class="o">=</span> <span class="s1">'SELECT * FROM Tweets ORDER BY created_at DESC'</span><span class="p">;</span>
+
+  <span class="nx">connection</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">query</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">results</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">tweet</span> <span class="o">=</span> <span class="nx">results</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+      <span class="nx">tweet</span><span class="p">.</span><span class="nx">time_from_now</span> <span class="o">=</span> <span class="nx">moment</span><span class="p">(</span><span class="nx">tweet</span><span class="p">.</span><span class="nx">created_at</span><span class="p">).</span><span class="nx">fromNow</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="nx">res</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s1">'tweets'</span><span class="p">,</span> <span class="p">{</span> <span class="na">tweets</span><span class="p">:</span> <span class="nx">results</span> <span class="p">});</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">'/tweets/create'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">query</span> <span class="o">=</span> <span class="s1">'INSERT INTO Tweets(handle, body) VALUES(?, ?)'</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">handle</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">handle</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">body</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">body</span><span class="p">;</span>
+
+  <span class="nx">connection</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">query</span><span class="p">,</span> <span class="p">[</span><span class="nx">handle</span><span class="p">,</span> <span class="nx">body</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="s1">'/'</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<pre><code class="language-ejs">&lt;!-- views/tweets.ejs --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;link rel="stylesheet" type="text/css" href="/css/site.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;header&gt;&lt;/header&gt;
+    &lt;main&gt;
+      &lt;form id="tweet-form" action="/tweets/create" method="POST"&gt;
+        &lt;input id="tweet-form-handle" type="text" name="handle" placeholder="DonkkaShane"&gt;
+        &lt;textarea id="tweet-form-body" name="body" placeholder="What's happening?"&gt;&lt;/textarea&gt;
+        &lt;button id="tweet-form-button"&gt;Tweet&lt;/button&gt;
+      &lt;/form&gt;
+      &lt;% for(var i = 0; i &lt; tweets.length; i++) { %&gt;
+        &lt;% var tweet = tweets[i]; %&gt;
+        &lt;article class="tweet"&gt;
+          &lt;p&gt;
+            &lt;a href="http://twitter.com/&lt;%= tweet.handle %&gt;"&gt;@&lt;%= tweet.handle %&gt;&lt;/a&gt;
+            &lt;span class="light-grey"&gt; - &lt;%= tweet.time_from_now %&gt;&lt;/span&gt;
+          &lt;/p&gt;
+          &lt;p&gt;&lt;%= tweet.body %&gt;&lt;/p&gt;
+        &lt;/article&gt;
+      &lt;% } %&gt;
+    &lt;/main&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+                
+                
+                    <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//spark-school.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+                
+            </article>
+        </main>
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85659117-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        <script type="text/javascript">
+	var trackcmp_email = '';
+	var trackcmp = document.createElement("script");
+	trackcmp.async = true;
+	trackcmp.type = 'text/javascript';
+	trackcmp.src = '//trackcmp.net/visit?actid=649064395&e='+encodeURIComponent(trackcmp_email)+'&r='+encodeURIComponent(document.referrer)+'&u='+encodeURIComponent(window.location.href);
+	var trackcmp_s = document.getElementsByTagName("script");
+	if (trackcmp_s.length) {
+		trackcmp_s[0].parentNode.appendChild(trackcmp);
+	} else {
+		var trackcmp_h = document.getElementsByTagName("head");
+		trackcmp_h.length && trackcmp_h[0].appendChild(trackcmp);
+	}
+</script>
+
+    </body>
+</html>
