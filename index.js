@@ -27,7 +27,7 @@ app.use(function(err, req, res, next) {
     case 'PageNotFoundError':
       return res.status(404).send(err.message);
     default:
-      res.status(500).send('There was an internal error.');
+      return res.status(500).send('There was an internal error.');
   }
 });
 
