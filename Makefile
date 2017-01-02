@@ -15,3 +15,12 @@ logs:
 
 ps:
 	docker-compose -f docker-compose.dev.yml ps
+
+stop:
+	docker-compose -f docker-compose.dev.yml down
+
+restart:
+	docker-compose -f docker-compose.dev.yml restart
+
+migrate:
+	docker-compose -f docker-compose.dev.yml exec db psql -U sparkschool sparkschool -c "$(cat db/migration.sql | tr '\n' ' ')"
