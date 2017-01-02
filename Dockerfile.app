@@ -4,6 +4,7 @@ MAINTAINER Shane Burkhart <shane@trysparkschool.com>
 ADD . /app
 WORKDIR /app
 
+RUN npm install -g nodemon
 RUN npm install
 
 EXPOSE 80

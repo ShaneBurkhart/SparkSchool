@@ -8,6 +8,7 @@ services:
             - db
         volumes:
             - .:/app
+        command: nodemon index.js
 
     db:
         image: postgres:9.6
