@@ -1,5 +1,5 @@
 FROM nginx
-MAINTAINER Shane Burkhart <shaneburkhart@gmail.com>
+MAINTAINER Shane Burkhart <shane@trysparkschool.com>
 
 ADD ./nginx.conf /etc/nginx/nginx.conf
 ADD ./public /public

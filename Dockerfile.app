@@ -1,5 +1,5 @@
 FROM node:7.3.0
-MAINTAINER Shane Burkhart <shaneburkhart@gmail.com>
+MAINTAINER Shane Burkhart <shane@trysparkschool.com>
 
 ADD . /app
 WORKDIR /app
