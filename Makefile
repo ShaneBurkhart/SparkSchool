@@ -12,5 +12,5 @@ jekyll:
 logs:
 	docker-compose -f docker-compose.dev.yml logs -f
 
-status:
+ps:
 	docker-compose -f docker-compose.dev.yml ps
