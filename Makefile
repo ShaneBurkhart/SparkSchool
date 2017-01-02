@@ -7,6 +7,7 @@ dev:
 	docker-compose -f docker-compose.dev.yml up -d
 
 jekyll:
+	bundle install
 	jekyll build --source ./courses --destination ./courses/_site
 
 logs:
