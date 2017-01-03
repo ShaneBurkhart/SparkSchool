@@ -3,6 +3,9 @@ all: dev
 build:
 	docker-compose -f docker-compose.dev.yml build
 
+npm:
+	docker-compose -f docker-compose.dev.yml run app npm install
+
 dev:
 	docker-compose -f docker-compose.dev.yml up -d
 
