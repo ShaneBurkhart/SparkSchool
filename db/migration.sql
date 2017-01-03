@@ -1,5 +1,7 @@
 CREATE TABLE Users (
     id BIGSERIAL PRIMARY KEY,
+    first_name VARCHAR(35) NOT NULL,
+    last_name VARCHAR(35) NOT NULL,
     email VARCHAR(254) NOT NULL,
     password_digest VARCHAR(60) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL

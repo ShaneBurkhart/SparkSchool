@@ -10,9 +10,9 @@ var pool = new pg.Pool({
   idleTimeoutMillis: 1000, // close & remove clients which have been idle > 1 second
 });
 
-pool.on('error', function(e, client) {
+pool.on('error', function (e, client) {
   console.log('POSTGRES ERROR: ' + e.message);
   console.log(e);
 });
 
-module.export = pool;
+module.exports = pool;
