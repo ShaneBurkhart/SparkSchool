@@ -7,6 +7,8 @@ var db = require('./db/db');
 var addControllers = require('./controllers/index');
 
 app.engine('html', require('pug').renderFile);
+app.set('views', './views');
+app.set('view engine', 'pug');
 
 addControllers(app);
 
