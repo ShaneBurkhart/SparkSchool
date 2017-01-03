@@ -4,25 +4,11 @@ var express = require('express');
 var app = express();
 
 var db = require('./db/db');
-
-function PageNotFoundError(path) {
-  this.name = 'PageNotFoundError';
-  this.message = 'Couldn\'t find page: ' + path;
-}
+var addControllers = require('./controllers/index');
 
 app.engine('html', require('pug').renderFile);
 
-app.get('/', function(req, res) {
-  res.send('Hello world!');
-});
-
-app.get('/courses/*', function(req, res, next) {
-  var filePath = __dirname + '/courses/_site' + req.path + '.html';
-
-  res.sendFile(filePath, function(err) {
-    if (err) next(new PageNotFoundError(req.path));
-  });
-});
+addControllers(app);
 
 app.use(function(err, req, res, next) {
   console.log(err.message);
