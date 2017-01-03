@@ -1,6 +1,7 @@
 'use strict'
 
 var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
 var express = require('express');
 var app = express();
 
@@ -11,7 +12,8 @@ app.engine('html', require('pug').renderFile);
 app.set('views', './views');
 app.set('view engine', 'pug');
 
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 addControllers(app);
 
