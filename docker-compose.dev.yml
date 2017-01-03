@@ -9,6 +9,9 @@ services:
         volumes:
             - .:/app
         command: nodemon index.js
+        environment:
+            STRIPE_SECRET_KEY: sk_test_y0agyth77qhFgBt6OjFWwKRm
+            STRIPE_PUBLIC_KEY: pk_test_1F1BAFZH0ChBDlVXGa39i3J9
 
     db:
         image: postgres:9.6

@@ -11,15 +11,14 @@ var FIND_BY_EMAIL_QUERY= 'SELECT * FROM Users WHERE email = $1';
 
 var INSERT_QUERY = [
   'INSERT INTO Users(',
-    'first_name, last_name, email, password_digest',
-  ') VALUES ($1, $2, $3, $4) RETURNING id',
+    'full_name, email, password_digest',
+  ') VALUES ($1, $2, $3) RETURNING id',
 ].join(' ');
 
 module.exports = {
   // Don't do password validation in here.
   validate: function (user, callback) {
-    if (!user.first_name) return callback('You must enter a first name.');
-    if (!user.last_name) return callback('You must enter a last name.');
+    if (!user.full_name) return callback('You must enter a name.');
     if (!user.email) return callback('You must enter an email address.');
 
     if (!/\S+@\S+.\S+/.test(user.email)) {
@@ -43,7 +42,7 @@ module.exports = {
       bcrypt.hash(user.password, SALT_ROUNDS, function (err, hash) {
         if (err) return callback('Sorry, there was an error. Try again later.');
 
-        var params = [user.first_name, user.last_name, user.email, hash];
+        var params = [user.full_name, user.email, hash];
 
         db.query(INSERT_QUERY, params, function (err, results) {
           if (err) return callback('Sorry, there was an error. Try again later.');
@@ -63,6 +62,19 @@ module.exports = {
         if (err || !res) return callback('Invalid email email and password combination.');
         callback(undefined, user);
       });
+    });
+  },
+
+  makePaid: function (user, callback) {
+    var query = 'UPDATE Users SET status = \'paid\' WHERE id = $1';
+
+    db.query(query, [user.id], function (err, results) {
+      if (err) {
+        console.log(err);
+        return callback('Sorry, there was an error. Try again later.');
+      }
+
+      callback();
     });
   },
 

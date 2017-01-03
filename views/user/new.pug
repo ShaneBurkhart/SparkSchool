@@ -10,6 +10,14 @@ block content
 
     - user = user || {}
     form(id='signup-form' action='/user/create' method='POST')
+        .input-group.full-name-group
+            label(for='full-name') Full Name
+            input(
+                type='text'
+                id='full-name'
+                name='full_name'
+                placeholder='Ex. John Doe'
+            )
         .input-group.email-group
             label(for='email') Email
             input(type='text' id="email" name='email' placeholder='user@domain.com' value=user.email)

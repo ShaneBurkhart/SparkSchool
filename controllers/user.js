@@ -1,7 +1,10 @@
 'use strict'
 
+var stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+
 var User = require('../models/user');
 var authUser = require('../middleware/auth-user');
+
 
 function login(res, userId) {
   res.cookie('ssuid', userId, { httpOnly: true });
@@ -34,8 +37,7 @@ module.exports = function (app) {
 
   app.post('/user/create', function (req, res) {
     var user = {
-      first_name: req.body.first_name,
-      last_name: req.body.last_name,
+      full_name: req.body.full_name,
       email: req.body.email,
       password: req.body.password,
     };
@@ -54,6 +56,28 @@ module.exports = function (app) {
   });
 
   app.post('/beta/purchase', authUser(), function (req, res) {
-    res.render('user/beta-purchase');
+    var stripeToken = req.body.stripeToken;
+
+    var charge = stripe.charges.create({
+      amount: 1000,
+      currency: "usd",
+      source: stripeToken,
+      description: "Spark School Beta Access"
+    }, function(err, charge) {
+      if (err && err.type === 'StripeCardError') {
+        console.log(err);
+        // TODO add error to query.
+        return res.redirect('/beta/purchase');
+      }
+
+      User.makePaid(req.user, function (err) {
+        if (err) {
+          // TODO add error to query.
+          return res.redirect('/beta/purchase');
+        }
+
+        res.redirect('/courses');
+      });
+    });
   });
 };

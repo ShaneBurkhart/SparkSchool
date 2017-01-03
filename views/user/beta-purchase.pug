@@ -13,14 +13,7 @@ block head
 block content
     h1 One last step...
     p You're almost finished signing up!  Put in your credit card below to get beta access.
-    form(id='payment-form' action='/your-server-side-code' method='POST')
-        .input-group.full-name-group
-            label(for='full-name') Full Name
-            input(
-                type='text'
-                id='full-name'
-                placeholder='Ex. John Doe'
-            )
+    form(id='payment-form' action='/beta/purchase' method='POST')
         .input-group.cc-group
             label(for='cc-number') Credit Card
             input(
@@ -62,17 +55,38 @@ block content
 
     script(type='text/javascript').
       var $form = $('#payment-form');
+      var $submitButton = $form.find('button');
+      var $errorEl = $form.find('#payment-errors');
 
       $form.submit(function(event) {
         // Disable the submit button to prevent repeated clicks:
-        $form.find('.submit').prop('disabled', true);
+        $submitButton.prop('disabled', true);
 
-        console.log(Stripe.card);
-        Stripe.card.createToken($form, function (status, result) {
+        var card = {
+            number: $form.find('#cc-number').val(),
+            exp_month: $form.find('#exp-month').val(),
+            exp_year: $form.find('#exp-year').val(),
+            cvc: $form.find('#cvc').val(),
+        };
 
+        Stripe.card.createToken(card, function (status, result) {
+            var token = result.id;
+            var error = result.error;
+
+            if (error) {
+                $errorEl.text(error);
+                $submitButton.prop('disabled', false);
+                return;
+            }
+
+            var $stripeTokenEl = $('<input type="hidden" name="stripeToken" />')
+            $stripeTokenEl.val(token);
+
+            $form.append($stripeTokenEl);
+            $form.get(0).submit();
         });
 
-        // Prevent the form from being submitted:
+        // Prevent the form from being submitted
         return false;
       });
 
