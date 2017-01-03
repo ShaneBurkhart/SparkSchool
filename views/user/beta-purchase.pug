@@ -1,0 +1,78 @@
+extends ../layouts/focus-modal
+
+block head
+    script(
+        src='https://code.jquery.com/jquery-2.2.4.min.js'
+        integrity='sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44='
+        crossorigin='anonymous'
+    )
+    script(type='text/javascript' src='https://js.stripe.com/v2/')
+    script(type='text/javascript').
+      Stripe.setPublishableKey('pk_test_1F1BAFZH0ChBDlVXGa39i3J9');
+
+block content
+    h1 One last step...
+    p You're almost finished signing up!  Put in your credit card below to get beta access.
+    form(id='payment-form' action='/your-server-side-code' method='POST')
+        .full-name-group
+            label(for='full-name') Full Name
+            input(
+                type='text'
+                id='full-name'
+                placeholder='Ex. John Doe'
+            )
+        .cc-group
+            label(for='cc-number') Credit Card
+            input(
+                type='text'
+                id='cc-number'
+                placeholder='4242'
+            )
+        div
+            .exp-month-group
+                label(for='exp-month') Month
+                select(id='exp-month')
+                    option(value='01') January (01)
+                    option(value='02') February (02)
+                    option(value='03') March (03)
+                    option(value='04') April (04)
+                    option(value='05') May (05)
+                    option(value='06') June (06)
+                    option(value='07') July (07)
+                    option(value='08') August (08)
+                    option(value='09') September (09)
+                    option(value='10') October (10)
+                    option(value='11') November (11)
+                    option(value='12') December (12)
+            .exp-year-group
+                label(for='exp-year') Year
+                select(id='exp-year')
+                    option(value='17') 2017
+                    option(value='18') 2018
+                    option(value='19') 2019
+                    option(value='20') 2020
+                    option(value='21') 2021
+                    option(value='22') 2022
+                    option(value='23') 2023
+            .cvc-group
+                label(for='cvc') CVC
+                input(type='password' id='cvc' placeholder="***")
+        button Purchase Beta Access
+
+
+    script(type='text/javascript').
+      var $form = $('#payment-form');
+
+      $form.submit(function(event) {
+        // Disable the submit button to prevent repeated clicks:
+        $form.find('.submit').prop('disabled', true);
+
+        console.log(Stripe.card);
+        Stripe.card.createToken($form, function (status, result) {
+
+        });
+
+        // Prevent the form from being submitted:
+        return false;
+      });
+

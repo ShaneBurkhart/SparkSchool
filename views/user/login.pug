@@ -1,7 +1,7 @@
-extends ../layouts/application
+extends ../layouts/focus-modal
 
 block content
-    p Login page
+    h1 Spark School
     form(action='/user/session/create' method='POST')
         input(type='text' name='email' placeholder='user@domain.com' value=email)
         input(type='password' name='password' placeholder='********')

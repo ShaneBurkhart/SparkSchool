@@ -1,6 +1,7 @@
 'use strict'
 
 var User = require('../models/user');
+var authUser = require('../middleware/auth-user');
 
 function login(res, userId) {
   res.cookie('ssuid', userId, { httpOnly: true });
@@ -44,7 +45,15 @@ module.exports = function (app) {
 
       login(res, id);
 
-      res.redirect('/courses');
+      res.redirect('/beta/purchase');
     });
+  });
+
+  app.get('/beta/purchase', authUser(), function (req, res) {
+    res.render('user/beta-purchase');
+  });
+
+  app.post('/beta/purchase', authUser(), function (req, res) {
+    res.render('user/beta-purchase');
   });
 };

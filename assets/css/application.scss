@@ -1,10 +1,12 @@
 @import "font-awesome/css/font-awesome.min";
 @import "syntax";
+@import "focus-modal";
 
 body, html{
     margin: 0;
     background-color: #ffffff;
     color: #292929;
+    font-family: "Roboto";
 }
 
 body {
@@ -22,13 +24,18 @@ header {
     z-index: 1000;
 }
 
-main, .container {
+.container {
     margin: 0px auto;
     width: 700px;
 }
 
+.small-container {
+    margin: 0px auto;
+    width: 500px;
+}
+
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Open Sans";
+    font-family: "Lato";
     line-height: 1.4;
     margin-top: 0;
     margin-bottom: 25px;
@@ -36,6 +43,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
+    font-weight: 900;
     font-size: 38px;
 }
 
@@ -125,7 +133,7 @@ article img {
 
 @media only screen and (max-width : 1024px) {
 
-  .container{
+  .small-container .container{
     width: 95%;
   }
 
