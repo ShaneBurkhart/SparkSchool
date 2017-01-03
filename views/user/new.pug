@@ -1,0 +1,16 @@
+extends ../layouts/application
+
+
+block content
+    p Login page
+
+    if error
+        p= error
+
+    - user = user || {}
+    form(action='/user/create' method='POST')
+        input(type='text' name='first_name' placeholder='John' value=user.first_name)
+        input(type='text' name='last_name' placeholder='Doe' value=user.last_name)
+        input(type='text' name='email' placeholder='user@domain.com' value=user.email)
+        input(type='password' name='password' placeholder='********')
+        button Login
