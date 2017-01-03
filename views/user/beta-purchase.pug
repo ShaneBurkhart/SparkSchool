@@ -14,14 +14,14 @@ block content
     h1 One last step...
     p You're almost finished signing up!  Put in your credit card below to get beta access.
     form(id='payment-form' action='/your-server-side-code' method='POST')
-        .full-name-group
+        .input-group.full-name-group
             label(for='full-name') Full Name
             input(
                 type='text'
                 id='full-name'
                 placeholder='Ex. John Doe'
             )
-        .cc-group
+        .input-group.cc-group
             label(for='cc-number') Credit Card
             input(
                 type='text'
@@ -29,7 +29,7 @@ block content
                 placeholder='4242'
             )
         div
-            .exp-month-group
+            .input-group.exp-month-group
                 label(for='exp-month') Month
                 select(id='exp-month')
                     option(value='01') January (01)
@@ -44,7 +44,7 @@ block content
                     option(value='10') October (10)
                     option(value='11') November (11)
                     option(value='12') December (12)
-            .exp-year-group
+            .input-group.exp-year-group
                 label(for='exp-year') Year
                 select(id='exp-year')
                     option(value='17') 2017
@@ -54,7 +54,7 @@ block content
                     option(value='21') 2021
                     option(value='22') 2022
                     option(value='23') 2023
-            .cvc-group
+            .input-group.cvc-group
                 label(for='cvc') CVC
                 input(type='password' id='cvc' placeholder="***")
         button Purchase Beta Access

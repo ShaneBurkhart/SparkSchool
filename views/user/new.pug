@@ -1,16 +1,19 @@
-extends ../layouts/application
+extends ../layouts/focus-modal
 
 
 block content
-    p Login page
+    h1 Sign up for beta access
+    p For a flat fee of $10 you can join our beta program to get access to new courses before anyone else.
 
     if error
         p= error
 
     - user = user || {}
-    form(action='/user/create' method='POST')
-        input(type='text' name='first_name' placeholder='John' value=user.first_name)
-        input(type='text' name='last_name' placeholder='Doe' value=user.last_name)
-        input(type='text' name='email' placeholder='user@domain.com' value=user.email)
-        input(type='password' name='password' placeholder='********')
-        button Login
+    form(id='signup-form' action='/user/create' method='POST')
+        .input-group.email-group
+            label(for='email') Email
+            input(type='text' id="email" name='email' placeholder='user@domain.com' value=user.email)
+        .input-group.password-group
+            label(for='password') Password
+            input(type='password' id="password" name='password' placeholder='********')
+        button Get Beta Access
