@@ -1,3 +1,5 @@
+.PHONY: assets
+
 all: dev
 
 build:
@@ -27,3 +29,9 @@ restart:
 
 migrate:
 	docker-compose -f docker-compose.dev.yml exec db psql -U sparkschool sparkschool -c "$$(cat ./db/migration.sql | tr '\n' ' ')"
+
+assets:
+	docker-compose -f docker-compose.dev.yml run app gulp build
+
+watch-css:
+	docker-compose -f docker-compose.dev.yml run app gulp sass:watch
