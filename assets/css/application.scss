@@ -1,162 +1,53 @@
 @import "font-awesome/css/font-awesome.min";
 @import "syntax";
+@import "generic";
 @import "focus-modal";
 
-body, html{
-    margin: 0;
-    background-color: #ffffff;
-    color: #292929;
-    font-family: "Roboto";
-}
+#application {
+    .hero {
+        background-color: #f7f7f7;
+        padding: 35px 0px 25px;
+        border-bottom: 1px solid #eeeeee;
 
-body {
-    padding: 65px 0px;
-}
+        h1 {
+            margin-bottom: 0px;
+            font-weight: 700;
+        }
 
-header {
-    background-color: #ffffff;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 50px;
-    border-bottom: 1px solid #d9d9d9;
-    z-index: 1000;
-}
-
-.container {
-    margin: 0px auto;
-    width: 700px;
-}
-
-.small-container {
-    margin: 0px auto;
-    width: 500px;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: "Lato";
-    line-height: 1.4;
-    margin-top: 0;
-    margin-bottom: 25px;
-    font-weight: normal;
-}
-
-h1 {
-    font-weight: 900;
-    font-size: 38px;
-}
-
-h2 {
-    font-size: 32px;
-}
-
-h3 {
-    font-size: 22px;
-}
-
-h4 {
-    font-size: 20px;
-}
-
-p {
-    margin-top: 0;
-    margin-bottom: 25px;
-    font-size: 18px;
-    font-weight: 300;
-    line-height: 1.8;
-}
-
-a, a:hover {
-    text-decoration: none;
-}
-
-ul {
-    margin-top: 0px;
-    margin-bottom: 25px;
-
-    li {
-        margin-bottom: 15px;
+        p {
+            color: #555555;
+            font-size: 14px;
+        }
     }
-}
 
-button {
-    color: #ffffff;
-    background-color: #014f69;
-    display: inline-block;
-    margin-bottom: 10px;
-    padding: 15px;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    -webkit-appearance:none;
+    .course-listing {
+        padding: 20px 0px;
+        border-bottom: 1px solid #eeeeee;
 
-    &:hover {
-        background-color: #013b50;
+        h2 {
+            margin-bottom: 5px;
+        }
+
+        p {
+            color: #222222;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        p.technologies {
+            color: #aaaaaa;
+            margin-bottom: 5px;
+        }
+
+        ul {
+            margin-bottom: 0px;
+            padding-left: 0px;
+            list-style: none;
+            font-size: 14px;
+
+            li {
+                margin-bottom: 10px;
+            }
+        }
     }
-}
-
-.text-center {
-    text-align: center;
-}
-
-.highlight {
-    border: 1px solid #303f45;
-    border-radius: 3px;
-    margin-bottom: 25px;
-
-    pre {
-        padding: 14px;
-        margin: 0;
-        overflow-x: auto;
-    }
-}
-
-.anchor{
-  display: block;
-  height: 25px;
-  margin-top: -50px;
-  visibility: hidden;
-}
-
-#site-logo {
-    color: #004056;
-    display: block;
-    margin-top: 11px;
-    font-size: 20px;
-    font-family: 'Open Sans';
-    font-weight: 700;
-}
-
-#section-name {
-    color: #c3ccd0;
-    font-size: 16px;
-    margin: 16px 0px;
-}
-
-article img {
-    max-width: 100%;
-}
-
-.next-lesson-button {
-    color: #ffffff;
-    background-color: #004056;
-    margin-top: 40px;
-    padding: 14px;
-    font-family: "Open Sans";
-    display: block;
-}
-
-@media only screen and (max-width : 1024px) {
-
-  .small-container .container{
-    width: 95%;
-  }
-
-  #section-name {
-      width: 50%;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-  }
 }

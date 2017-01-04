@@ -1,0 +1,34 @@
+extends ../layouts/application
+
+block hero
+    h1 Courses
+    p Here is our current course list.  We are still in beta so some courses might not yet be complete.
+
+block content
+    article.course-listing
+        h2 Twitter Clone
+        p.technologies  Node.js, MySQL, Express.js, EJS, Vagrant
+        p Go from zero coding skill to building a small Twitter clone in 7 days. You'll build a web app that will create, read, update and delete tweets.
+        ul
+            li
+                a(href='/courses/twitter-clone/1/1') Day 1: Getting Your Development Environment Setup
+            li
+                a(href='/courses/twitter-clone/2/1') Day 2: Creating The Tweets Form In HTML/CSS
+            li
+                a(href='/courses/twitter-clone/3/1') Day 3: Creating And Saving Tweets
+            li
+                a(href='/courses/twitter-clone/4/1') Day 4: Showing Tweets
+            li
+                a(href='/courses/twitter-clone/5/1') Day 5: Editing Tweets
+            li
+                a(href='/courses/twitter-clone/6/1') Day 6: Deleting A Tweets
+            li
+                a(href='/courses/twitter-clone/7/1') Day 7: Restrict Updating And Deleting Tweets
+
+    article.course-listing
+        h2 Ebay Web Scraper
+        p.technologies Ruby
+        p Build a web scraper that scrapes an auction listing from eBay.
+        ul
+            li
+                a(href='/courses/ebay-web-scraper/1/1') Click Here To Take The Course
