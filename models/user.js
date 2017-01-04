@@ -2,6 +2,7 @@
 
 var bcrypt = require('bcrypt');
 var db = require('../db/db');
+var stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 // Bcrypt stuff
 var SALT_ROUNDS = 10;
@@ -15,7 +16,7 @@ var INSERT_QUERY = [
   ') VALUES ($1, $2, $3) RETURNING id',
 ].join(' ');
 
-module.exports = {
+var User = {
   // Don't do password validation in here.
   validate: function (user, callback) {
     if (!user.full_name) return callback('You must enter a name.');
@@ -65,6 +66,57 @@ module.exports = {
     });
   },
 
+  addCustomerAndCharge: function (user, stripeToken, price, callback) {
+    console.log('addCustomerAndCharge');
+    this.addCustomer(user, stripeToken, function (err, user) {
+      if (err) return callback(err);
+
+      console.log('Added customer');
+      User.chargeCustomer(user, price, function (err) {
+        if (err) return callback(err);
+
+        console.log('Charged customer');
+        User.makePaid(user, function (err) {
+          if (err) return callback(err);
+          console.log('Made paid');
+          callback();
+        });
+      });
+    });
+  },
+
+  addCustomer: function (user, stripeToken, callback) {
+    var query = 'UPDATE Users SET stripe_customer_id = $1 WHERE id = $2';
+
+    var customer = stripe.customers.create({
+      card: stripeToken,
+      email: user.email,
+    }, function (err, customer) {
+      if (err) return callback(err);
+
+      user.stripe_customer_id = customer.id;
+
+      var params = [user.stripe_customer_id, user.id];
+
+      db.query(query, params, function (err, results) {
+        if (err) return callback(err);
+        callback(undefined, user);
+      });
+    });
+  },
+
+  chargeCustomer: function (user, price, callback) {
+    var charge = stripe.charges.create({
+      amount: price,
+      currency: "usd",
+      customer: user.stripe_customer_id,
+      description: "Spark School Beta Access"
+    }, function(err, charge) {
+      if (err) callback(err);
+      callback();
+    });
+  },
+
   makePaid: function (user, callback) {
     var query = 'UPDATE Users SET status = \'paid\' WHERE id = $1';
 
@@ -90,3 +142,5 @@ module.exports = {
     });
   },
 };
+
+module.exports = User;
