@@ -10,7 +10,8 @@ module.exports = function (app) {
     res.render('courses/index');
   });
 
-  app.get('/courses/:course([\-a-z]+)/:section([0-9]+)/:lesson([0-9]+)', authUser('paid'), function (req, res, next) {
+  // TODO add authUser('paid') middleware and whitelist twitter clone and ebay scraper.
+  app.get('/courses/:course([\-a-z]+)/:section([0-9]+)/:lesson([0-9]+)', function (req, res, next) {
     var courseName = req.params.course;
     var sectionNumber = req.params.section;
     var lessonNumber = req.params.lesson;
