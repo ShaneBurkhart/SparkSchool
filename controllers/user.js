@@ -10,6 +10,10 @@ function login(res, userId) {
   res.cookie('ssuid', userId, { httpOnly: true });
 }
 
+function logout(res) {
+  res.clearCookie('ssuid');
+}
+
 module.exports = function (app) {
   app.get('/login', function (req, res) {
     var email = req.query.email || '';
@@ -29,6 +33,11 @@ module.exports = function (app) {
 
       return res.redirect('/courses');
     });
+  });
+
+  app.post('/user/session/destroy', function (req, res) {
+    logout(res);
+    res.redirect('/login');
   });
 
   app.get('/signup', function (req, res) {

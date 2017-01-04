@@ -5,6 +5,48 @@
 @import "course";
 
 #application {
+    #main-nav {
+        margin-top: 13px;
+        float: right;
+
+        form {
+            display: inline;
+
+            button {
+                color: #013b50;
+                background-color: transparent;
+                margin-left: 20px;
+                padding: 0px;
+                line-height: 24px;
+                vertical-align: top;
+
+                &:hover {
+                    color: #0295ca;
+                }
+            }
+        }
+
+        a {
+            color: #013b50;
+            margin-left: 20px;
+            line-height: 24px;
+            vertical-align: top;
+
+            &:hover {
+                color: #0295ca;
+            }
+        }
+
+        .icon {
+            color: #013b50;
+            font-size: 24px;
+
+            &:hover {
+                color: #0295ca;
+            }
+        }
+    }
+
     .hero {
         background-color: #f7f7f7;
         padding: 35px 0px 25px;
