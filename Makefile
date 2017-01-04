@@ -35,3 +35,8 @@ assets:
 
 watch-css:
 	docker-compose -f docker-compose.dev.yml run app gulp sass:watch
+
+production:
+	bundle install
+	jekyll build --source ./courses --destination ./courses/_site
+	docker-compose -f docker-compose.prod.yml run app gulp build
