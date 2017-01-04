@@ -20,6 +20,15 @@ header {
     z-index: 1000;
 }
 
+#site-logo {
+    color: #004056;
+    display: block;
+    margin-top: 13px;
+    font-size: 20px;
+    font-family: 'Lato';
+    font-weight: 700;
+}
+
 .container {
     margin: 0px auto;
     width: 700px;
@@ -101,18 +110,6 @@ button {
     text-align: center;
 }
 
-.highlight {
-    border: 1px solid #303f45;
-    border-radius: 3px;
-    margin-bottom: 25px;
-
-    pre {
-        padding: 14px;
-        margin: 0;
-        overflow-x: auto;
-    }
-}
-
 .anchor{
   display: block;
   height: 25px;
@@ -120,68 +117,9 @@ button {
   visibility: hidden;
 }
 
-#site-logo {
-    color: #004056;
-    display: block;
-    margin-top: 13px;
-    font-size: 20px;
-    font-family: 'Lato';
-    font-weight: 700;
-}
-
-#main-nav {
-    display: inline-block;
-    height: 22px;
-    margin: 15px 0px 0px;
-    overflow: hidden;
-    white-space: nowrap;
-    float: left;
-}
-
-#all-courses {
-    color: #555555;
-    display: block;
-    width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-    i {
-        margin-right: 7px;
-    }
-}
-
-#section-name {
-    color: #c3ccd0;
-    font-size: 16px;
-    display: inline-block;
-    width: 50%;
-    margin: 14px 0px 0px;
-    text-align: right;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    float: right;
-}
-
-article img {
-    max-width: 100%;
-}
-
-.next-lesson-button {
-    color: #ffffff;
-    background-color: #004056;
-    margin-top: 40px;
-    padding: 14px;
-    display: block;
-}
-
 @media only screen and (max-width : 750px) {
 
   .small-container, .container{
     width: 95%;
-  }
-
-  #main-nav {
-    width: 50%;
   }
 }
