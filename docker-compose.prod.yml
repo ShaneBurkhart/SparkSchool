@@ -7,7 +7,7 @@ services:
         links:
             - db
         command: node index.js
-        env_file::
+        env_file:
             - ./secrets.env
 
     db:
