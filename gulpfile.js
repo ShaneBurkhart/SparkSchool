@@ -3,7 +3,12 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 
-gulp.task('build', ['sass', 'images']);
+gulp.task('build', ['sass', 'images', 'fonts']);
+
+gulp.task('fonts', function () {
+  gulp.src(['assets/fonts/**/*'])
+    .pipe(gulp.dest('public/assets/fonts'));
+});
 
 gulp.task('images', function () {
   gulp.src(['assets/images/**/*'])
