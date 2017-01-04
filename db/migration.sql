@@ -9,3 +9,12 @@ CREATE TABLE Users (
     stripe_customer_id VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
+
+CREATE TABLE Charges (
+    id BIGSERIAL PRIMARY KEY,
+    user_id BIGSERIAL NOT NULL,
+    amount INTEGER NOT NULL,
+    description VARCHAR(255) NOT NULL,
+    stripe_charge_id VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
+);

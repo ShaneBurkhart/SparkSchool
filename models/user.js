@@ -2,6 +2,7 @@
 
 var bcrypt = require('bcrypt');
 var db = require('../db/db');
+var Charge = require('./charge');
 var stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 // Bcrypt stuff
@@ -67,18 +68,14 @@ var User = {
   },
 
   addCustomerAndCharge: function (user, stripeToken, price, callback) {
-    console.log('addCustomerAndCharge');
     this.addCustomer(user, stripeToken, function (err, user) {
       if (err) return callback(err);
 
-      console.log('Added customer');
-      User.chargeCustomer(user, price, function (err) {
+      Charge.chargeUser(user, price, function (err) {
         if (err) return callback(err);
 
-        console.log('Charged customer');
         User.makePaid(user, function (err) {
           if (err) return callback(err);
-          console.log('Made paid');
           callback();
         });
       });
@@ -102,18 +99,6 @@ var User = {
         if (err) return callback(err);
         callback(undefined, user);
       });
-    });
-  },
-
-  chargeCustomer: function (user, price, callback) {
-    var charge = stripe.charges.create({
-      amount: price,
-      currency: "usd",
-      customer: user.stripe_customer_id,
-      description: "Spark School Beta Access"
-    }, function(err, charge) {
-      if (err) callback(err);
-      callback();
     });
   },
 
