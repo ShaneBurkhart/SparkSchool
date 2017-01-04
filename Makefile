@@ -38,4 +38,6 @@ watch-css:
 
 production:
 	docker run --rm -v `pwd`:/app ruby bash -c "bundle install --gemfile=/app/Gemfile && jekyll build --source /app/courses --destination /app/courses/_site"
-	docker-compose -f docker-compose.prod.yml run app gulp build
+	docker-compose -f docker-compose.prod.yml build app
+	docker-compose -f docker-compose.dev.yml run app gulp build
+	docker-compose -f docker-compose.prod.yml build
