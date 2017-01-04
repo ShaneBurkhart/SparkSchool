@@ -13,6 +13,7 @@ block head
 block content
     h1 One last step...
     p You're almost finished signing up!  Put in your credit card below to get beta access.
+    p= price
     form(id='payment-form' action='/beta/purchase' method='POST')
         .input-group.cc-group
             label(for='cc-number') Credit Card
