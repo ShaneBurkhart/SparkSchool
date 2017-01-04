@@ -88,7 +88,10 @@ module.exports = function (app) {
     var gidCookie = req.cookies.ssgid || DEFAULT_PRICE_ID;
     var priceInCents = PRICES[gidCookie] || PRICES[DEFAULT_PRICE_ID];
 
-    res.render('user/beta-purchase', { price: Math.floor(priceInCents / 100) });
+    res.render('user/beta-purchase', {
+      stripePublicKey: process.env.STRIPE_PUBLIC_KEY,
+      price: Math.floor(priceInCents / 100),
+    });
   });
 
   app.post('/beta/purchase', authUser(), function (req, res) {
