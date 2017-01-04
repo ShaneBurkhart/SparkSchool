@@ -1,0 +1,29 @@
+version: '2.1'
+services:
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile.app
+        links:
+            - db
+        command: node index.js
+        env_file::
+            - ./secrets.env
+
+    db:
+        image: postgres:9.6
+        environment:
+            POSTGRES_PASSWORD: password
+            POSTGRES_USER: sparkschool
+            POSTGRES_DB: sparkschool
+        volumes:
+            - ./tmp/db:/var/lib/postgresql/data
+
+    nginx:
+        build:
+            context: .
+            dockerfile: Dockerfile.nginx
+        ports:
+            - 80:80
+        links:
+            - app
