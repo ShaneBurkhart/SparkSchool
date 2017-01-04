@@ -1,8 +1,16 @@
 extends ../layouts/focus-modal
 
 block content
-    h1 Spark School
-    form(action='/user/session/create' method='POST')
-        input(type='text' name='email' placeholder='user@domain.com' value=email)
-        input(type='password' name='password' placeholder='********')
+    h1.text-center Spark School
+    form#login-form(action='/user/session/create' method='POST')
+        .input-group
+            label(for='email') Email
+            input(type='text' name='email' placeholder='user@domain.com' value=email)
+        .input-group.password-group
+            label(for='password') Password
+            input#password(type='password' name='password' placeholder='********')
         button Login
+
+    #alternative-signup
+        p or
+        a(href='/signup')  Sign Up
