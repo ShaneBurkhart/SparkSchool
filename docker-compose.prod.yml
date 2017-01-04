@@ -27,3 +27,6 @@ services:
             - 80:80
         links:
             - app
+        volumes:
+            - /etc/nginx/ssl/trysparkschool_com-ssl-bundle.crt:/etc/nginx/ssl/trysparkschool_com-ssl-bundle.crt
+            - /etc/nginx/ssl/trysparkschool_com.key:/etc/nginx/ssl/trysparkschool_com.key
