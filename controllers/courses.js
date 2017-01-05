@@ -26,4 +26,13 @@ module.exports = function (app) {
       if (err) next(new errorUtil.PageNotFoundError(req.path));
     });
   });
+
+  app.get('/guides/*', function (req, res, next) {
+    var relativePath = [__dirname, '..', 'courses', '_site', req.path].join('/') + '.html';
+    var absolutePath = path.resolve(relativePath);
+
+    res.sendFile(absolutePath, function (err) {
+      if (err) next(new errorUtil.PageNotFoundError(req.path));
+    });
+  });
 };
