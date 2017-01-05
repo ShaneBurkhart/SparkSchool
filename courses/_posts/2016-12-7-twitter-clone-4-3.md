@@ -4,6 +4,7 @@ permalink: /courses/twitter-clone/4/3
 title: 4.3 Rendering Tweets On Our Page
 course: Twitter Clone
 section: 'Day 4: Showing Tweets'
+next-lesson-link: /courses/twitter-clone/5/1
 ---
 
 ####Table Of Contents

@@ -4,6 +4,7 @@ permalink: /courses/twitter-clone/5/4
 title: 5.4 Updating The Tweet In The Database
 course: Twitter Clone
 section: 'Day 5: Editing Tweets'
+next-lesson-link: /courses/twitter-clone/6/1
 ---
 
 ####Table Of Contents

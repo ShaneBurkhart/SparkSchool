@@ -4,6 +4,7 @@ permalink: /courses/twitter-clone/6/2
 title: 6.2 Removing The Tweet From The Database
 course: Twitter Clone
 section: 'Day 6: Deleting A Tweets'
+next-lesson-link: /courses/twitter-clone/7/1
 ---
 
 ####Table Of Contents

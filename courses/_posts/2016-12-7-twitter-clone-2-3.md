@@ -4,6 +4,7 @@ permalink: /courses/twitter-clone/2/3
 title: 2.3 Adding The Tweet Form
 course: Twitter Clone
 section: 'Day 2: Creating The Tweets Form In HTML/CSS'
+next-lesson-link: /courses/twitter-clone/3/1
 ---
 
 ####Table Of Contents

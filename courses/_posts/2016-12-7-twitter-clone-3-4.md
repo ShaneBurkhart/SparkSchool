@@ -4,6 +4,7 @@ permalink: /courses/twitter-clone/3/4
 title: 3.4 Connecting The Tweet Form To Our Web Server
 course: Twitter Clone
 section: 'Day 3: Creating And Saving Tweets'
+next-lesson-link: /courses/twitter-clone/4/1
 ---
 
 ####Table Of Contents
