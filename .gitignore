@@ -4,4 +4,5 @@ npm-debug.log
 tmp/
 public/
 courses/_site/
-secrets.env
+secrets.dev.env
+secrets.prod.env
