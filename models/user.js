@@ -55,26 +55,12 @@ var User = {
           if (err) return callback('Sorry, there was an error. Try again later.');
           var userId = results.rows[0].id;
 
-          User.addToActiveCampaign(user, function () {
+          User.addToActiveCampaign(user, function (err) {
             callback(undefined, userId);
           });
         });
       });
     });
-  },
-
-  addToActiveCampaign(user, callback) {
-    // For right now, we don't care if it handles error or not. We can add them later.
-    var acCallback = function (result) { callback(); };
-    // Beta list has list id of 5
-    var contact = {
-      'email': user.email,
-      'p[5]': 5,
-    };
-
-    if (process.env.APP_ENV === 'development') contact.tags = 'development';
-
-    activeCampaign.api('contact/add', contact).then(acCallback, acCallback);
   },
 
   checkPassword: function (user, password, callback) {
@@ -132,8 +118,35 @@ var User = {
         return callback('Sorry, there was an error. Try again later.');
       }
 
-      callback();
+      User.addTagInActiveCampaign(user, 'paid', function (err) {
+        callback();
+      });
     });
+  },
+
+  addToActiveCampaign(user, callback) {
+    // For right now, we don't care if it handles error or not. We can add them later.
+    var acCallback = function (result) { callback(); };
+    // Beta list has list id of 5
+    var contact = {
+      'email': user.email,
+      'p[5]': 5,
+    };
+
+    if (process.env.APP_ENV === 'development') contact.tags = 'development';
+
+    activeCampaign.api('contact/add', contact).then(acCallback, acCallback);
+  },
+
+  addTagInActiveCampaign: function (user, tag, callback) {
+    // For right now, we don't care if it handles error or not. We can add tags later.
+    var acCallback = function (result) { callback(); };
+    var contact = {
+      'email': user.email,
+      'tags': tag,
+    };
+
+    activeCampaign.api('contact/tag_add', contact).then(acCallback, acCallback);
   },
 
   findById: function (id, callback) {
