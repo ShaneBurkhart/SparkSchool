@@ -7,6 +7,7 @@ var app = express();
 
 var db = require('./db/db');
 var addControllers = require('./controllers/index');
+var errorUtil = require('./util/error');
 
 app.engine('html', require('pug').renderFile);
 app.set('views', './views');
@@ -18,6 +19,11 @@ app.use(cookieParser());
 app.use(require('./middleware/user'));
 
 addControllers(app);
+
+// Catch 404
+app.use(function (req, res, next) {
+  next(new errorUtil.PageNotFoundError(req.path));
+});
 
 app.use(function (err, req, res, next) {
   if (!err) return next();
