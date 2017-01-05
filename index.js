@@ -24,11 +24,9 @@ app.use(function (err, req, res, next) {
 
   switch(err.name) {
     case 'PageNotFoundError':
-      res.status(404).send(err.message);
-      break;
+      return res.status(404).render('404');
     default:
-      res.status(500).send('There was an internal error.');
-      break;
+      return res.status(500).send('There was an internal error.');
   }
 
   next();

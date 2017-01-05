@@ -77,6 +77,12 @@
         }
     }
 
+    #page-not-found-options {
+        & > * {
+            margin-right: 20px;
+        }
+    }
+
     #alternative-signup {
         text-align: center;
 
