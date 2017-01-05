@@ -54,7 +54,7 @@ module.exports = function (app) {
     var priceInCents = PRICES[gidCookie] || PRICES[DEFAULT_PRICE_ID];
 
     if (!gidCookie) {
-      res.cookie('ssgid', gidParam, { httpOnly: true });
+      res.cookie('ssgid', gidParam, { httpOnly: true, maxAge: 2147483647 });
       priceInCents = PRICES[gidParam];
     }
 
