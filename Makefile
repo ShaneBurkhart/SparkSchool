@@ -37,5 +37,5 @@ watch-css:
 	docker-compose -f docker-compose.dev.yml run app gulp sass:watch
 
 deploy:
-	ssh -A ubuntu@54.201.14.162 'cd ~/SparkSchool; git pull origin master; ./deploy/prod.sh'
+	ssh -A ubuntu@35.167.77.85 'cd ~/SparkSchool; git pull origin master; ./deploy/prod.sh'
 
