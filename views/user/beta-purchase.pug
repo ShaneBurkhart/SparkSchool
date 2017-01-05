@@ -14,6 +14,7 @@ block content
     h1 One last step...
     p You're almost finished signing up!  Put in your credit card below to get beta access.
     p= price
+    p.error(style="display: none;")
     form(id='payment-form' action='/beta/purchase' method='POST')
         .input-group.cc-group
             label(for='cc-number') Credit Card
@@ -57,11 +58,14 @@ block content
     script(type='text/javascript').
       var $form = $('#payment-form');
       var $submitButton = $form.find('button');
-      var $errorEl = $form.find('#payment-errors');
+      var $errorEl = $('p.error');
+      var $iconEl = $('<i class="fa fa-warning"></i>');
 
       $form.submit(function(event) {
         // Disable the submit button to prevent repeated clicks:
         $submitButton.prop('disabled', true);
+
+        $errorEl.hide();
 
         var card = {
             number: $form.find('#cc-number').val(),
@@ -75,7 +79,10 @@ block content
             var error = result.error;
 
             if (error) {
-                $errorEl.text(error);
+                $errorEl.html('');
+                $errorEl.append($iconEl);
+                $errorEl.append(error.message);
+                $errorEl.show();
                 $submitButton.prop('disabled', false);
                 return;
             }
