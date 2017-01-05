@@ -23,6 +23,17 @@
         font-size: 16px;
     }
 
+    p.error {
+        color: #ffffff;
+        background-color: #d24747;
+        padding: 8px 15px;
+        font-size: 14px;
+
+        i {
+            margin-right: 15px;
+        }
+    }
+
     .input-group {
         margin-bottom: 10px;
 

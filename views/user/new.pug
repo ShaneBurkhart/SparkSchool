@@ -5,7 +5,9 @@ block content
     p For a flat fee of $#{price} you can join our beta program to get access to new courses before anyone else.
 
     if error
-        p= error
+        p.error
+            i.fa.fa-warning
+            =error
 
     - user = user || {}
     form#signup-form(action='/user/create' method='POST')
