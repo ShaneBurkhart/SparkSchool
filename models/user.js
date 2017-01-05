@@ -42,9 +42,23 @@ var User = {
     });
   },
 
+  validatePassword: function (password) {
+    var MIN_PASSWORD_LENGTH = 8;
+    var LENGTH_ERROR = 'Your password must be at least 8 characters.';
+    var CONTENT_ERROR = 'Your password must contain at least one letter and number.';
+
+    if (!password || password.length < MIN_PASSWORD_LENGTH) return LENGTH_ERROR;
+    if (!/[a-zA-Z]/.test(password)) return CONTENT_ERROR;
+    if (!/[0-9]/.test(password)) return CONTENT_ERROR;
+    // Symbol list: ~`!@#$%^&*()+=_-{}[]\|:;”’?/<>,.
+  },
+
   create: function (user, callback) {
     this.validate(user, function (err) {
       if (err) return callback(err);
+
+      var passwordError = User.validatePassword(user.password);
+      if (passwordError) return callback(passwordError);
 
       bcrypt.hash(user.password, SALT_ROUNDS, function (err, hash) {
         if (err) return callback('Sorry, there was an error. Try again later.');
