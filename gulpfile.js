@@ -16,7 +16,7 @@ gulp.task('images', function () {
 });
 
 gulp.task('sass', function () {
-  return gulp.src('./assets/css/**/*.scss')
+  gulp.src('./assets/css/**/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./public/assets/css'));
 });

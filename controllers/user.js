@@ -11,7 +11,7 @@ var PRICES = {
   '9cd6fc90-78f8-425f-9f58-dbbaef819a44': 4000,
   '9b0e60c6-2408-4fb3-a6c2-b7fd3c33a13f': 5000,
 };
-var DEFAULT_PRICE_ID = '632f0aa6-5bc9-4fa3-a0f4-d6b08e24638d';
+var DEFAULT_PRICE_ID = '9b0e60c6-2408-4fb3-a6c2-b7fd3c33a13f';
 
 function login(res, userId) {
   res.cookie('ssuid', userId, { httpOnly: true });
