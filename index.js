@@ -15,6 +15,8 @@ app.set('view engine', 'pug');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
+app.use(require('./middleware/user'));
+
 addControllers(app);
 
 app.use(function (err, req, res, next) {

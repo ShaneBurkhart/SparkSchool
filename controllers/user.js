@@ -2,6 +2,7 @@
 
 var User = require('../models/user');
 var authUser = require('../middleware/auth-user');
+var restrictUser = require('../middleware/restrict-user');
 
 var PRICES = {
   '632f0aa6-5bc9-4fa3-a0f4-d6b08e24638d': 1000,
@@ -21,14 +22,14 @@ function logout(res) {
 }
 
 module.exports = function (app) {
-  app.get('/login', function (req, res) {
+  app.get('/login', restrictUser(), function (req, res) {
     var email = req.query.email || '';
     var error = req.query.error || '';
 
     res.render('user/login', { email: email, error: error });
   });
 
-  app.post('/user/session/create', function (req, res) {
+  app.post('/user/session/create', restrictUser(), function (req, res) {
     var user = { email: req.body.email };
     var password = req.body.password;
 
@@ -46,7 +47,7 @@ module.exports = function (app) {
     res.redirect('/login');
   });
 
-  app.get('/signup', function (req, res) {
+  app.get('/signup', restrictUser(), function (req, res) {
     // We are using gid to map to price uuids.
     var gidCookie = req.cookies.ssgid;
     var gidParam = req.query.gid || DEFAULT_PRICE_ID;
@@ -60,7 +61,7 @@ module.exports = function (app) {
     res.render('user/new', { price: Math.floor(priceInCents / 100) });
   });
 
-  app.post('/user/create', function (req, res) {
+  app.post('/user/create', restrictUser(), function (req, res) {
     var gidCookie = req.cookies.ssgid || DEFAULT_PRICE_ID;
     var priceInCents = PRICES[gidCookie] || PRICES[DEFAULT_PRICE_ID];
     var user = {
@@ -84,7 +85,7 @@ module.exports = function (app) {
     });
   });
 
-  app.get('/beta/purchase', authUser(), function (req, res) {
+  app.get('/beta/purchase', authUser(), restrictUser('paid'), function (req, res) {
     var gidCookie = req.cookies.ssgid || DEFAULT_PRICE_ID;
     var priceInCents = PRICES[gidCookie] || PRICES[DEFAULT_PRICE_ID];
 
@@ -94,7 +95,7 @@ module.exports = function (app) {
     });
   });
 
-  app.post('/beta/purchase', authUser(), function (req, res) {
+  app.post('/beta/purchase', authUser(), restrictUser('paid'), function (req, res) {
     var stripeToken = req.body.stripeToken;
     var gidCookie = req.cookies.ssgid || DEFAULT_PRICE_ID;
     var priceInCents = PRICES[gidCookie] || PRICES[DEFAULT_PRICE_ID];
