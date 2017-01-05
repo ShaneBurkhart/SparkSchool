@@ -7,8 +7,10 @@ services:
         links:
             - db
         command: node index.js
+        environment:
+            APP_ENV: production
         env_file:
-            - ./secrets.env
+            - ./secrets.prod.env
 
     db:
         image: postgres:9.6

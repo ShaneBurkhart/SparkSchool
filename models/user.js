@@ -1,9 +1,14 @@
 'use strict'
 
+var ActiveCampaign = require('activecampaign');
 var bcrypt = require('bcrypt');
 var db = require('../db/db');
 var Charge = require('./charge');
 var stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+var activeCampaign = new ActiveCampaign(
+  "https://sparkschool.api-us1.com",
+  process.env.ACTIVE_CAMPAIGN_KEY
+);
 
 // Bcrypt stuff
 var SALT_ROUNDS = 10;
@@ -50,10 +55,26 @@ var User = {
           if (err) return callback('Sorry, there was an error. Try again later.');
           var userId = results.rows[0].id;
 
-          callback(undefined, userId);
+          User.addToActiveCampaign(user, function () {
+            callback(undefined, userId);
+          });
         });
       });
     });
+  },
+
+  addToActiveCampaign(user, callback) {
+    // For right now, we don't care if it handles error or not. We can add them later.
+    var acCallback = function (result) { callback(); };
+    // Beta list has list id of 5
+    var contact = {
+      'email': user.email,
+      'p[5]': 5,
+    };
+
+    if (process.env.APP_ENV === 'development') contact.tags = 'development';
+
+    activeCampaign.api('contact/add', contact).then(acCallback, acCallback);
   },
 
   checkPassword: function (user, password, callback) {
