@@ -21,6 +21,7 @@
     p {
         color: #555555;
         font-size: 16px;
+        margin-bottom: 20px;
     }
 
     p.error {
@@ -58,6 +59,21 @@
 
         select {
             -webkit-appearance:none;
+        }
+    }
+
+    #purchase-price {
+        color: #292929;
+        margin-bottom: 25px;
+        font-size: 38px;
+        font-weight: 700;
+        font-family: "Lato";
+        text-align: center;
+        line-height: 1;
+
+        span {
+            font-size: 20px;
+            margin-left: 10px;
         }
     }
 
