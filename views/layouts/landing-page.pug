@@ -1,0 +1,61 @@
+html
+    head
+        include ../includes/head
+        block head
+
+    body#landing-page
+        header
+            .container
+                nav.pull-left
+                    a#site-logo(href="/") Spark School
+                nav#main-nav
+                    a.button(href="/signup") Sign Up
+                    a(href="/login") Login
+
+        main
+            .hero
+                block bg
+                .overlay
+                .content
+                    .container
+                        block hero
+            .section.product-section
+                .container
+                    .description
+                        block overview
+                    .graphic.bullet-points
+                        block list
+
+            block content
+
+            .section.light-gray.beta-section
+                .container
+                    .graphic
+                        form#signup-form(action='/user/create' method='POST')
+                            h3 Sign up for beta
+                            .input-group.full-name-group
+                                label(for='full-name') Full Name
+                                input#full-name(type='text' name='full_name' placeholder='Ex. John Doe')
+                            .input-group.email-group
+                                label(for='email') Email
+                                input#email(type='text' name='email' placeholder='user@domain.com')
+                            .input-group.password-group
+                                label(for='password') Password
+                                input#password(type='password' name='password' placeholder='********')
+                            button Get Beta Access
+                    .description
+                        h2 Get Exclusive Beta Access
+                        p My first course for the platform is going to be a six-week course to build a Software as a Service (SaaS) web app with subscription payments. We will dive deeper into the concepts we learned building the Twitter clone course, while also incorporating professional level development tools and techniques. It won’t be officially released until March, but with Beta access you’ll get the first week’s lesson two weeks from now.
+                        p You’ll have beta access until we launch in March. During that time, you’ll have the opportunity to give feedback and guide the course. Help me make this course great.
+            .section
+                .container
+                    .description
+                        h2 Meet The Instructor
+                        p Hey, I'm Shane the creator of the Twitter clone course and I'm back to teach you how to build a SaaS web app.
+                        p I've been a web developer for about 5 years and have worked at Yelp, Carfax and a startup called SumoMe. The crazy part is, I'm completely self taught.
+                        p When I started teaching myself, I had no idea what I was doing and no one to point me in the right direction. Because of this, it took me longer than it should have to learn.
+                        p I made mistakes when starting, but that doesn't mean you have to. This is the course I wish I had when I was starting!
+                    .graphic
+                        img.circle(src="https://s3.amazonaws.com/spark-school/me_and_yogi.png" alt="Shane Burkhart with his dog, Yogi.")
+
+        include ../includes/ga

@@ -35,33 +35,6 @@
         }
     }
 
-    .input-group {
-        margin-bottom: 10px;
-
-        * {
-            display: block;
-            width: 100%;
-        }
-
-        label {
-            color: #606060;
-            padding-bottom: 3px;
-            font-size: 14px;
-        }
-
-        input, select {
-            background-color: #ffffff;
-            padding: 7px;
-            font-size: 16px;
-            border: 1px solid #cccccc;
-            border-radius: 3px;
-        }
-
-        select {
-            -webkit-appearance:none;
-        }
-    }
-
     #purchase-price {
         color: #292929;
         margin-bottom: 25px;
