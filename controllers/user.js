@@ -11,7 +11,7 @@ var PRICES = {
   '9cd6fc90-78f8-425f-9f58-dbbaef819a44': 4000,
   '9b0e60c6-2408-4fb3-a6c2-b7fd3c33a13f': 5000,
 };
-var DEFAULT_PRICE_ID = '9b0e60c6-2408-4fb3-a6c2-b7fd3c33a13f';
+var DEFAULT_PRICE_ID = '8079f7a9-0bac-47d9-90df-775fc4c0c9c7';
 
 function login(res, userId) {
   res.cookie('ssuid', userId, { httpOnly: true });
@@ -48,22 +48,10 @@ module.exports = function (app) {
   });
 
   app.get('/signup', restrictUser(), function (req, res) {
-    // We are using gid to map to price uuids.
-    var gidCookie = req.cookies.ssgid;
-    var gidParam = req.query.gid || DEFAULT_PRICE_ID;
-    var priceInCents = PRICES[gidCookie] || PRICES[DEFAULT_PRICE_ID];
-
-    if (!gidCookie) {
-      res.cookie('ssgid', gidParam, { httpOnly: true, maxAge: 2147483647 });
-      priceInCents = PRICES[gidParam];
-    }
-
-    res.render('user/new', { price: Math.floor(priceInCents / 100) });
+    res.render('user/new');
   });
 
   app.post('/user/create', restrictUser(), function (req, res) {
-    var gidCookie = req.cookies.ssgid || DEFAULT_PRICE_ID;
-    var priceInCents = PRICES[gidCookie] || PRICES[DEFAULT_PRICE_ID];
     var user = {
       full_name: req.body.full_name,
       email: req.body.email,
@@ -72,22 +60,24 @@ module.exports = function (app) {
 
     User.create(user, function (err, id) {
       if (err) {
-        return res.render('user/new', {
-          user: user,
-          error: err,
-          price: Math.floor(priceInCents / 100),
-        });
+        return res.render('user/new', { user: user, error: err });
       }
 
       login(res, id);
 
-      res.redirect('/beta/purchase');
+      res.redirect('/courses');
     });
   });
 
   app.get('/beta/purchase', restrictUser('paid'), function (req, res) {
-    var gidCookie = req.cookies.ssgid || DEFAULT_PRICE_ID;
+    var gidCookie = req.cookies.ssgid;
     var priceInCents = PRICES[gidCookie] || PRICES[DEFAULT_PRICE_ID];
+    var gidParam = req.query.gid || DEFAULT_PRICE_ID;
+
+    if (!gidCookie) {
+      res.cookie('ssgid', gidParam, { httpOnly: true, maxAge: 2147483647 });
+      priceInCents = PRICES[gidParam];
+    }
 
     res.render('user/beta-purchase', {
       stripePublicKey: process.env.STRIPE_PUBLIC_KEY,
