@@ -85,7 +85,7 @@ module.exports = function (app) {
     });
   });
 
-  app.get('/beta/purchase', authUser(), restrictUser('paid'), function (req, res) {
+  app.get('/beta/purchase', restrictUser('paid'), function (req, res) {
     var gidCookie = req.cookies.ssgid || DEFAULT_PRICE_ID;
     var priceInCents = PRICES[gidCookie] || PRICES[DEFAULT_PRICE_ID];
 
@@ -95,20 +95,42 @@ module.exports = function (app) {
     });
   });
 
-  app.post('/beta/purchase', authUser(), restrictUser('paid'), function (req, res) {
+  app.post('/beta/purchase', restrictUser('paid'), function (req, res) {
     var stripeToken = req.body.stripeToken;
     var gidCookie = req.cookies.ssgid || DEFAULT_PRICE_ID;
     var priceInCents = PRICES[gidCookie] || PRICES[DEFAULT_PRICE_ID];
-    var user = req.user;
+    var user = {
+      full_name: req.body.full_name,
+      email: req.body.email,
+      password: req.body.password,
+    };
 
-    User.addCustomerAndCharge(user, stripeToken, priceInCents, function (err) {
+    User.create(user, function (err, id) {
       if (err) {
-        console.log(err);
-        // TODO add error to query.
-        return res.redirect('/beta/purchase');
+        if (err) {
+          console.log(err);
+          // TODO add error and user to query.
+          return res.redirect('/beta/purchase');
+        }
+        //return res.render('user/beta-purchase', {
+          //user: user,
+          //error: err,
+          //price: Math.floor(priceInCents / 100),
+        //});
       }
 
-      res.redirect('/courses');
+      user.id = id;
+      login(res, id);
+
+      User.addCustomerAndCharge(user, stripeToken, priceInCents, function (err) {
+        if (err) {
+          console.log(err);
+          // TODO add error to query.
+          return res.redirect('/beta/purchase');
+        }
+
+        res.redirect('/courses');
+      });
     });
   });
 };

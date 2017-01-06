@@ -37,7 +37,8 @@
 
     #purchase-price {
         color: #292929;
-        margin-bottom: 25px;
+        padding: 25px 0px 0px;
+        margin-bottom: 10px;
         font-size: 38px;
         font-weight: 700;
         font-family: "Lato";
@@ -71,10 +72,6 @@
     #signup-form, #login-form {
         width: 300px;
         margin: 0px auto;
-
-        .password-group {
-            margin-bottom: 20px;
-        }
 
         button {
             width: 100%;

@@ -11,13 +11,26 @@ block head
         Stripe.setPublishableKey('#{stripePublicKey}');
 
 block content
-    h1 One last step...
-    p You're almost finished signing up!  Put in your credit card below to get beta access.
-    p#purchase-price $#{price}
-        span One-time fee
+    h1 Get beta access
+    p Join our beta program to take our new subscription based SaaS web app course before we launch for a flat fee of $#{price}.
+
     p.error(style="display: none;")
 
+    - user = user || {}
     form(id='payment-form' action='/beta/purchase' method='POST')
+        .input-group.full-name-group
+            label(for='full-name') Full Name
+            input#full-name(type='text' name='full_name' placeholder='Ex. John Doe' value=user.full_name)
+        .input-group.email-group
+            label(for='email') Email
+            input#email(type='text' name='email' placeholder='user@domain.com' value=user.email)
+        .input-group.password-group
+            label(for='password') Password
+            input#password(type='password' name='password' placeholder='********')
+
+        p#purchase-price $#{price}
+            span One-time fee
+
         .input-group.cc-group
             label(for='cc-number') Credit Card
             input(
