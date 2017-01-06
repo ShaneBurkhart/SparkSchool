@@ -34,7 +34,7 @@
             right: 0;
             bottom: 0;
             background-color: #000000;
-            opacity: .75;
+            opacity: .8;
             z-index: -1;
         }
 
@@ -51,6 +51,16 @@
         p {
             color: #cccccc;
             font-weight: 300;
+
+            &.shout {
+                margin-bottom: 5px;
+                font-family: "Handlee";
+                font-size: 20px;
+
+                .underline {
+                    text-decoration: underline;
+                }
+            }
         }
     }
 
