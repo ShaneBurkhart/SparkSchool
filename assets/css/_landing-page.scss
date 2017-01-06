@@ -76,6 +76,15 @@
             }
         }
 
+        &.dark-blue {
+            color: #ffffff;
+            background-color: #014f69;
+
+            .bullet-points {
+                background-color: #ffffff;
+            }
+        }
+
         h2 {
             margin-bottom: 10px;
         }
@@ -83,6 +92,10 @@
         p {
             margin-bottom: 15px;
             font-size: 16px;
+
+            &.light {
+                font-weight: 300;
+            }
         }
 
         .container {
@@ -143,6 +156,15 @@
                 }
             }
         }
+
+        &.cta {
+            padding: 30px 0px;
+            text-align: center;
+
+            .button {
+                width: 40%;
+            }
+        }
     }
 
     .product-section {
@@ -150,8 +172,9 @@
 
     }
 
-    .beta-section {
+    .signup-section {
         #signup-form {
+            color: #292929;
             background-color: #ffffff;
             border: 1px solid #eaeaea;
             padding: 30px;

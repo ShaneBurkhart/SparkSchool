@@ -10,6 +10,11 @@ body, html{
 
 body {
     padding: 50px 0px 0px;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 header {
@@ -81,7 +86,6 @@ p {
     margin-top: 0;
     margin-bottom: 25px;
     font-size: 18px;
-    font-weight: 300;
     line-height: 1.8;
 }
 
