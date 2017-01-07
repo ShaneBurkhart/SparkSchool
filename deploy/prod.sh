@@ -10,7 +10,6 @@ docker-compose -f docker-compose.prod.yml build app
 
 sudo rm -rf public/*
 docker run -v $(pwd)/public:/app/public sparkschool_app gulp build
-docker-compose -f docker-compose.dev.yml run app gulp build
 docker-compose -f docker-compose.prod.yml build nginx
 
 docker-compose -f docker-compose.prod.yml down
