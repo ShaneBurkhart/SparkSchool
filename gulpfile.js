@@ -7,7 +7,12 @@ var sass = require('gulp-sass');
 var sitemapGenerator = require('sitemap');
 var yaml = require('js-yaml');
 
-gulp.task('build', ['sass', 'images', 'favicons', 'fonts', 'sitemap']);
+gulp.task('build', ['misc', 'sass', 'images', 'favicons', 'fonts', 'sitemap']);
+
+gulp.task('misc', function () {
+  gulp.src(['assets/misc/**/*'])
+    .pipe(gulp.dest('public'));
+});
 
 gulp.task('fonts', function () {
   gulp.src(['assets/fonts/**/*'])
