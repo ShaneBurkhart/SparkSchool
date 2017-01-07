@@ -1,6 +1,27 @@
-extends ../layouts/signup-landing-page
+extends ../layouts/landing-page
+include ../landing-pages/mixins
+
+block main_nav
+block no_hero
 
 block content
+    .section.light-gray.product-section
+        .container
+            .description
+                h2 Build A SaaS Web App
+                p This 6 week course walks you step-by-step through building a Software as a Service (SaaS) web app with subscription payments. Whether you want to start your own software business or get a job as a web developer, this course will get you there.
+
+                p.bold In this course, you will:
+                ul
+                    li Code a subscription based web app with Node.js and MySQL
+                    li Deploy your web app to Heroku and set up a domain name
+                    li Set up subscription based payments using Stripe
+                    li Send transactional email with Mailgun
+                    li Use Git and Github for code version control
+                    li Set up Vagrant to manage our development environment
+            .graphic
+                +beta_signup_form()
+
     .section
         .container
             .graphic
@@ -9,6 +30,7 @@ block content
                 h2 Start Your Own Software Business
                 p When starting a software business, hiring a developer to build your app can be extremely expensive. You will more than likely pay thousands of dollars before you even have a product you can sell.
                 p Instead of spending a lot of money to hire a developer, you can cut developer costs out completely by learning to build your own SaaS web app. This course will take you step-by-step through building a ready-to-sell subscription based web app that you can modify for your business's needs.
+
     .section.light-gray
         .container
             .description
@@ -17,3 +39,14 @@ block content
                 p To fill these jobs, software companies are looking to hire developers that know how to build SaaS products. My course will teach you everything you need to know about SaaS web apps and put you in a perfect spot to get hired as a web developer at one of these companies.
             .graphic
                 img(src='/assets/images/start-here-mac-window.png' alt='Mac window with button saying "Start Here".')
+
+    .section.dark-blue.signup-section
+        .container
+            .description
+                h2 Sign up for beta access
+                p.light The course won't be officially released for a couple of months, but if you sign up for beta access, you can take it while it's being developed.  The first week of lessons will be released on January 16th.
+                p.light By the end of the course you will have a ready-to-sell subscription based SaaS web app. Sign up now to get the course before it's released.
+            .graphic
+                +beta_signup_form()
+
+    +beta_meet_the_instructor()

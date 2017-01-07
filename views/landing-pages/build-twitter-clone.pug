@@ -1,4 +1,4 @@
-extends ../layouts/hero-landing-page
+extends ../layouts/landing-page
 include ../landing-pages/mixins
 
 block hero
@@ -50,7 +50,7 @@ block content
     .section.dark-blue.signup-section
         .container
             .graphic
-                +signup_form('twitter-clone')
+                +twitter_signup_form()
             .description
                 h2 Sign up for the free course
                 p.light In this course, you will learn how to:
@@ -61,4 +61,5 @@ block content
                     li Run commands in the terminal
                     li Deploy your app to the web with Heroku
                     li And a lot more...
-    +meet_the_instructor()
+
+    +twitter_meet_the_instructor()
