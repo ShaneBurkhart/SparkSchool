@@ -87,6 +87,14 @@ p {
     margin-bottom: 25px;
     font-size: 18px;
     line-height: 1.8;
+
+    &.underline, .underline {
+        text-decoration: underline;
+    }
+
+    &.bold, .bold {
+        font-weight: 700;
+    }
 }
 
 a, a:hover {

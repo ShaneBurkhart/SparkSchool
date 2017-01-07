@@ -5,6 +5,6 @@ var errorUtil = require('../util/error');
 
 module.exports = function (app) {
   app.get('/', function (req, res, next) {
-    res.render('landing-pages/build-twitter-clone');
+    res.render('landing-pages/saas-course');
   });
 };
