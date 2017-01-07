@@ -1,16 +1,22 @@
 extends ../layouts/focus-modal
 
+
 block content
-    h1 Twitter Clone Course
-    p Sign up to go from zero coding knowledge to building a Twitter clone from scratch in 7 days.
+    - user = user || {}
+    - type = type || 'twitter-clone'
+
+    if type === 'beta'
+        h1 Get beta access
+        p Sign up now to get early access to the course that teaches you how to build a subscription based SaaS web app.
+    else
+        h1 Twitter Clone Course
+        p Sign up to go from zero coding knowledge to building a Twitter clone from scratch in 7 days.
 
     if error
         p.error
             i.fa.fa-warning
             =error
 
-    - user = user || {}
-    - type = type || 'twitter-clone'
     form#signup-form(action='/user/' + type + '/create' method='POST')
         .input-group.full-name-group
             label(for='full-name') Full Name
@@ -21,7 +27,10 @@ block content
         .input-group.password-group
             label(for='password') Password
             input#password(type='password' name='password' placeholder='********')
-        button Get Beta Access
+        if type === 'beta'
+            button Get Early Access
+        else
+            button Get The FREE Course
 
     #alternative-signup
         p or
