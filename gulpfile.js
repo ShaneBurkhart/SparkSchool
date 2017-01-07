@@ -3,7 +3,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 
-gulp.task('build', ['sass', 'images', 'fonts']);
+gulp.task('build', ['sass', 'images', 'favicons', 'fonts']);
 
 gulp.task('fonts', function () {
   gulp.src(['assets/fonts/**/*'])
@@ -13,6 +13,11 @@ gulp.task('fonts', function () {
 gulp.task('images', function () {
   gulp.src(['assets/images/**/*'])
     .pipe(gulp.dest('public/assets/images'));
+});
+
+gulp.task('favicons', function () {
+  gulp.src(['assets/favicons/**/*'])
+    .pipe(gulp.dest('public/assets/favicons'));
 });
 
 gulp.task('sass', function () {
