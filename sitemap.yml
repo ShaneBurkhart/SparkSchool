@@ -1,0 +1,16 @@
+-
+    changeFreq: 'weekly'
+    priority: .8
+    urls:
+        '/':
+            images:
+                '/assets/images/monitor-on-desk.png': 'Illustration of monitor on desk with code.'
+                '/assets/images/start-here-mac-window.png': 'Mac window with button saying "Start Here".'
+                '/assets/images/hello-world-code-snippet.png': 'Hello world program in Express.js.'
+
+-
+    changeFreq: 'monthly'
+    priority: .3
+    urls:
+        '/login':
+        '/signup':

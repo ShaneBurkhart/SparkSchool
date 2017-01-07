@@ -34,6 +34,9 @@ public:
 	rm -rf public
 	docker-compose -f docker-compose.dev.yml run app gulp build
 
+sitemap:
+	docker-compose -f docker-compose.dev.yml run app gulp sitemap
+
 watch-css:
 	docker-compose -f docker-compose.dev.yml run app gulp sass:watch
 

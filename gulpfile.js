@@ -1,7 +1,11 @@
 'use strict';
 
+var _ = require('underscore');
+var fs = require('fs');
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var sitemapGenerator = require('sitemap');
+var yaml = require('js-yaml');
 
 gulp.task('build', ['sass', 'images', 'favicons', 'fonts']);
 
@@ -30,3 +34,44 @@ gulp.task('sass', function () {
 gulp.task('sass:watch', function () {
   gulp.watch('./assets/css/**/*.scss', ['sass']);
 });
+
+gulp.task('sitemap', function (done) {
+  var sitemapPath = __dirname + '/sitemap.yml';
+  var sitemapDest = __dirname + '/public/sitemap.xml';
+  var doc = yaml.load(fs.readFileSync(sitemapPath, 'utf8'));
+  var urls = [];
+
+
+  for (var i = 0; i < doc.length; i++) {
+    var group = doc[i];
+    var groupUrls = group.urls;
+    var settings = _.omit(group, 'urls');
+
+    for (var groupKey in groupUrls) {
+      var url = groupUrls[groupKey];
+      var imageEntries = undefined;
+
+      if (url && url.images) {
+        imageEntries = _.map(url.images, function (value, key) {
+          return { url: key, caption: value };
+        });
+      }
+
+      var entry = _.extend({}, settings, {
+        url: groupKey,
+        img: imageEntries,
+      });
+
+      urls.push(entry);
+    }
+  }
+
+  var sitemap = sitemapGenerator.createSitemap({
+    hostname: 'https://trysparkschool.com',
+    urls: urls,
+  });
+
+  fs.writeFileSync(sitemapDest, sitemap.toString());
+  done();
+});
+
