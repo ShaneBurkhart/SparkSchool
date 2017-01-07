@@ -7,7 +7,7 @@ var sass = require('gulp-sass');
 var sitemapGenerator = require('sitemap');
 var yaml = require('js-yaml');
 
-gulp.task('build', ['sass', 'images', 'favicons', 'fonts']);
+gulp.task('build', ['sass', 'images', 'favicons', 'fonts', 'sitemap']);
 
 gulp.task('fonts', function () {
   gulp.src(['assets/fonts/**/*'])
@@ -71,7 +71,6 @@ gulp.task('sitemap', function (done) {
     urls: urls,
   });
 
-  fs.writeFileSync(sitemapDest, sitemap.toString());
-  done();
+  fs.writeFile(sitemapDest, sitemap.toString(), done);
 });
 

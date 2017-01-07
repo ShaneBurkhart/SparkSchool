@@ -31,7 +31,7 @@ migrate:
 	docker-compose -f docker-compose.dev.yml exec db psql -U sparkschool sparkschool -c "$$(cat ./db/migration.sql | tr '\n' ' ')"
 
 public:
-	rm -rf public
+	rm -rf public/*
 	docker-compose -f docker-compose.dev.yml run app gulp build
 
 sitemap:
