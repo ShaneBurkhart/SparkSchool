@@ -44,7 +44,8 @@ module.exports = function (app) {
     res.render('user/new');
   });
 
-  app.post(['/user/create', '/user/beta/create'], restrictUser(), function (req, res) {
+  app.post(['/user/create', '/user/:type[a-zA-Z\-]/create'], restrictUser(), function (req, res) {
+    var type = req.params.type;
     var user = {
       full_name: req.body.full_name,
       email: req.body.email,
@@ -58,9 +59,11 @@ module.exports = function (app) {
 
       login(res, id);
 
-      if (req.path === '/user/beta/create') return res.redirect('/beta/purchase');
-
-      res.redirect('/courses');
+      switch (type) {
+        case 'beta': return res.redirect('/beta/purchase');
+        case 'twitter-clone': return res.redirect('/courses/twitter-clone/1/1');
+        default: return res.redirect('/courses');
+      }
     });
   });
 

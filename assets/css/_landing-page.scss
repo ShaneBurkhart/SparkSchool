@@ -158,23 +158,8 @@
             padding: 25px 20px;
 
             ul {
-                padding: 0px;
-                margin: 0px;
-                list-style: none;
-
                 li {
                     font-size: 18px;
-
-                    &:before {
-                        color: #3aa549;
-                        content: '\f00c';
-                        font-family: 'FontAwesome';
-                        margin-right: 16px;
-                    }
-
-                    &:last-child {
-                        margin-bottom: 0px;
-                    }
                 }
             }
         }
