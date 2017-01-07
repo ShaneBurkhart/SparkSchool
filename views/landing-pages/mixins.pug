@@ -1,5 +1,5 @@
 mixin twitter_signup_form
-    form#signup-form(action='/user/twitter-clone/create' method='POST')
+    form.signup-form(action='/user/twitter-clone/create' method='POST')
         h3 Sign up for the the course
         .input-group.full-name-group
             label(for='full-name') Full Name
@@ -13,7 +13,7 @@ mixin twitter_signup_form
         button.yellow Get The FREE Course
 
 mixin beta_signup_form
-    form#signup-form(action='/user/beta/create' method='POST')
+    form.signup-form(action='/user/beta/create' method='POST')
         h3 Sign up for early access
         .input-group.full-name-group
             label(for='full-name') Full Name
@@ -51,12 +51,12 @@ mixin beta_meet_the_instructor()
         .container
             .description
                 h2 Meet The Instructor
-                    p Hey, I'm Shane the creator of the Twitter clone course and I'm back to teach you how to build a SaaS web app.
+                p Hey, I'm Shane the creator of the Twitter clone course and I'm back to teach you how to build a SaaS web app.
 
-                    p I've been a web developer for about 5 years and have worked at Yelp, Carfax and a startup called SumoMe. The crazy part is, I'm completely self taught.
+                p I've been a web developer for about 5 years and have worked at Yelp, Carfax and a startup called SumoMe. The crazy part is, I'm completely self taught.
 
-                    p When I started teaching myself, I had no idea what I was doing and no one to point me in the right direction. Because of this, it took me longer than it should have to learn.
+                p When I started teaching myself, I had no idea what I was doing and no one to point me in the right direction. Because of this, it took me longer than it should have to learn.
 
-                    p I made mistakes when starting, but that doesn't mean you have to. This is the course I wish I had when I was starting!
+                p I made mistakes when starting, but that doesn't mean you have to. This is the course I wish I had when I was starting!
             .graphic
                 img.circle(src="https://s3.amazonaws.com/spark-school/me_and_yogi.png" alt="Shane Burkhart with his dog, Yogi.")

@@ -81,6 +81,10 @@
             }
         }
 
+        &.small {
+            padding: 60px 0px;
+        }
+
         h2 {
             margin-bottom: 10px;
         }
@@ -174,15 +178,7 @@
         }
     }
 
-    .product-section {
-        padding: 60px 0px;
-
-        #signup-form {
-            background-color: #ffffff;
-        }
-    }
-
-    #signup-form {
+    .signup-form {
         color: #292929;
         background-color: #ffffff;
         border: 1px solid #eaeaea;
