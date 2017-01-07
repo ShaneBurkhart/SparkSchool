@@ -1,0 +1,26 @@
+html
+    head
+        include ../includes/head
+        block head
+
+    body#landing-page
+        header
+            .container
+                nav.pull-left
+                    a#site-logo(href="/") Spark School
+                nav#main-nav
+                    block main_nav
+                        a.button(href="/signup") Sign Up
+                        a(href="/login") Login
+
+        main
+            .hero
+                block bg
+                .overlay
+                .content
+                    .container
+                        block hero
+
+            block content
+
+        include ../includes/ga

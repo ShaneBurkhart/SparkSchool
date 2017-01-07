@@ -1,4 +1,5 @@
-extends ../layouts/landing-page
+extends ../layouts/hero-landing-page
+include ../landing-pages/mixins
 
 block bg
     .bg(style="background-image: url('/assets/images/bg.png')")
@@ -12,17 +13,18 @@ block hero
     p Go from zero coding skills to building a Twitter clone from scratch in 7 days.
     a.button.yellow(href='/signup') Get The Free Course
 
-block overview
-    h2 Build A Twitter Clone
-    p This course walks you step-by-step through building a full-stack web app using Node.js and MySQL. In 7 days, you'll have a website that can create, read, update and delete Tweets.
-
-block list
-    ul
-        li No coding skills required
-        li Build a web app in 7 days
-        li It's absolutely FREE!
-
 block content
+    .section
+        .container
+            .description
+                h2 Build A Twitter Clone
+                p This course walks you step-by-step through building a full-stack web app using Node.js and MySQL. In 7 days, you'll have a website that can create, read, update and delete Tweets.
+            .graphic.bullet-points
+                ul
+                    li No coding skills required
+                    li Build a web app in 7 days
+                    li It's absolutely FREE!
+
     .section.light-gray
         .container
             .graphic
@@ -30,15 +32,16 @@ block content
             .description
                 h2 Develop on your computer
                 p A lot of coding courses teach you how to code, but don't leave you with anything practical. This course teaches you how to build a real use case web app.  We'll cover everything you need to know from writing code on your computer to deploying your Twitter clone to the web.
+
     .section
         .container
             .description
                 h2 Start at the basics
                 p If you've tried or thought about building a web app, you've probably asked yourself these questions: "How do I get started?", "What do I learn first?", "Am I making mistakes?" This course starts with the basics and assumes you have no programming experience.
-
             .graphic
                 a(href='/signup')
                     img(src='/assets/images/start-here-mac-window.png' alt='Mac window with button saying "Start Here".')
+
     .section.light-gray
         .container
             .graphic
@@ -46,3 +49,19 @@ block content
             .description
                 h2 Learn efficiently
                 p Learning how to build an entire web app is a lot to cover so the course makes sure to teach you only what you need to build your own web apps.  It isn't useful to dive into learning something that you aren't going to use.
+
+    .section.dark-blue.signup-section
+        .container
+            .graphic
+                +signup_form()
+            .description
+                h2 Sign up for the free course
+                p.light In this course, you will learn how to:
+                ul
+                    li Code a web server in JavaScript using Node.js
+                    li Build and style web pages with HTML and CSS
+                    li Read and write to a database using SQL
+                    li Run commands in the terminal
+                    li Deploy your app to the web with Heroku
+                    li And a lot more...
+    +meet_the_instructor()

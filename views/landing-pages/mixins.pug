@@ -1,0 +1,33 @@
+mixin signup_form()
+    form#signup-form(action='/user/twitter-clone/create' method='POST')
+        h3 Sign up for the the course
+        .input-group.full-name-group
+            label(for='full-name') Full Name
+            input#full-name(type='text' name='full_name' placeholder='Ex. John Doe')
+        .input-group.email-group
+            label(for='email') Email
+            input#email(type='text' name='email' placeholder='user@domain.com')
+        .input-group.password-group
+            label(for='password') Password
+            input#password(type='password' name='password' placeholder='********')
+        button.yellow Get The FREE Course
+
+mixin cta_section(button_text)
+    .section.cta.light-gray
+        .container
+            a.button(href='/signup')= button_text
+
+mixin meet_the_instructor()
+    .section
+        .container
+            .description
+                h2 Meet The Instructor
+                p Hey, I'm Shane! I’ve been a software developer for a little over 5 years now, and have worked at Yelp, Carfax, and a startup called SumoMe.
+
+                p The crazy part is I didn’t go to school to be a software developer. In fact, I am completely self taught.
+
+                p Probably not unlike some of you, when I first started learning to code, I didn't know what I was doing so it took me much longer than it should have to learn. My goal is to fix that. This course is designed so you don't ever have to go through the same unnecessarily long process I did.
+
+                p I've spent the last 5 years teaching myself software development and over time, I have learned what works and what doesn't. Now, I want to use my course to help you learn as efficiently as possible.
+            .graphic
+                img.circle(src="https://s3.amazonaws.com/spark-school/me_and_yogi.png" alt="Shane Burkhart with his dog, Yogi.")
