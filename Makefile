@@ -43,3 +43,6 @@ watch-css:
 deploy:
 	ssh -A ubuntu@35.167.77.85 'cd ~/SparkSchool; git pull origin master; ./deploy/prod.sh'
 
+# Ping google with new sitemap
+ping_google:
+	curl www.google.com/webmasters/tools/ping?sitemap=https%3A%2F%2Ftrysparkschool.com%2Fsitemap.xml
