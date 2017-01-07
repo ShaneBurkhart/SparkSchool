@@ -15,14 +15,14 @@ function logout(res) {
 }
 
 module.exports = function (app) {
-  app.get('/login', restrictUser(), function (req, res) {
+  app.get('/login', function (req, res) {
     var email = req.query.email || '';
     var error = req.query.error || '';
 
     res.render('user/login', { email: email, error: error });
   });
 
-  app.post('/user/session/create', restrictUser(), function (req, res) {
+  app.post('/user/session/create', function (req, res) {
     var user = { email: req.body.email };
     var password = req.body.password;
 
@@ -40,11 +40,11 @@ module.exports = function (app) {
     res.redirect('/login');
   });
 
-  app.get('/signup', restrictUser(), function (req, res) {
+  app.get('/signup', function (req, res) {
     res.render('user/new');
   });
 
-  app.post(['/user/create', '/user/:type[a-zA-Z\-]/create'], restrictUser(), function (req, res) {
+  app.post(['/user/create', '/user/:type[a-zA-Z\-]/create'], function (req, res) {
     var type = req.params.type;
     var user = {
       full_name: req.body.full_name,
