@@ -5,12 +5,6 @@
         width: 900px;
     }
 
-    @media only screen and (max-width : 850px) {
-      .container {
-        width: 95%;
-      }
-    }
-
     .hero {
         position: relative;
         height: 350px;
@@ -192,6 +186,32 @@
             width: 100%;
             display: block;
             margin-bottom: 0px;
+        }
+    }
+
+    @media only screen and (max-width : 850px) {
+        .hero {
+            height: 400px;
+        }
+
+        .container {
+            width: 95%;
+        }
+
+        .section {
+            padding: 60px 0px;
+
+            & .container > * {
+                display: block !important;
+                width: 100% !important;
+                margin-bottom: 25px;
+            }
+        }
+    }
+
+    @media only screen and (max-width : 350px) {
+        .hero {
+            height: 450px;
         }
     }
 }
