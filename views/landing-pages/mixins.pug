@@ -1,5 +1,5 @@
-mixin signup_form()
-    form#signup-form(action='/user/twitter-clone/create' method='POST')
+mixin signup_form(type)
+    form#signup-form(action='/user/' + type + '/create' method='POST')
         h3 Sign up for the the course
         .input-group.full-name-group
             label(for='full-name') Full Name
