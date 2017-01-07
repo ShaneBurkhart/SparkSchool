@@ -5,7 +5,7 @@ ADD . /app
 WORKDIR /app
 
 RUN npm install -g nodemon
-RUN npm install -g gulp
+RUN npm install gulp
 RUN npm install
 
 EXPOSE 80
