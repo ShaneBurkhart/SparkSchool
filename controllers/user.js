@@ -44,7 +44,7 @@ module.exports = function (app) {
     res.render('user/new');
   });
 
-  app.post(['/user/create', '/user/:type[a-zA-Z\-]/create'], function (req, res) {
+  app.post(['/user/create', '/user/:type/create'], function (req, res) {
     var type = req.params.type;
     var user = {
       full_name: req.body.full_name,
@@ -54,7 +54,7 @@ module.exports = function (app) {
 
     User.create(user, function (err, id) {
       if (err) {
-        return res.render('user/new', { user: user, error: err });
+        return res.render('user/new', { user: user, type: type, error: err });
       }
 
       login(res, id);

@@ -10,7 +10,8 @@ block content
             =error
 
     - user = user || {}
-    form#signup-form(action='/user/create' method='POST')
+    - type = type || 'twitter-clone'
+    form#signup-form(action='/user/' + type + '/create' method='POST')
         .input-group.full-name-group
             label(for='full-name') Full Name
             input#full-name(type='text' name='full_name' placeholder='Ex. John Doe' value=user.full_name)
