@@ -1,4 +1,4 @@
-.PHONY: assets deploy
+.PHONY: assets deploy public
 
 all: dev
 
@@ -30,7 +30,8 @@ restart:
 migrate:
 	docker-compose -f docker-compose.dev.yml exec db psql -U sparkschool sparkschool -c "$$(cat ./db/migration.sql | tr '\n' ' ')"
 
-assets:
+public:
+	rm -rf public
 	docker-compose -f docker-compose.dev.yml run app gulp build
 
 watch-css:

@@ -17,7 +17,8 @@ gulp.task('images', function () {
 
 gulp.task('favicons', function () {
   gulp.src(['assets/favicons/**/*'])
-    .pipe(gulp.dest('public/assets/favicons'));
+    // Favicons are supposed to be accessible from the root.
+    .pipe(gulp.dest('public'));
 });
 
 gulp.task('sass', function () {
