@@ -4,13 +4,7 @@ html
         block head
 
     body#application
-        header
-            .container
-                nav.pull-left
-                    a#site-logo(href="/courses") Spark School
-                nav#main-nav
-                    form(action="/user/session/destroy" method="POST")
-                        button Logout
+        include ../includes/site-header
 
         main
             .hero
