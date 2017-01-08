@@ -13,17 +13,19 @@ block variables
 
 - var pageTitle = (title || 'Learn How To Code') + ' - Spark School';
 - var pageURL = 'https://trysparkschool.com' + currentPath;
+- var googleDesc = googleDesc || description;
+- var fbDesc = fbDesc || description;
 
 meta(name="og:url" content=pageURL)
 meta(name="og:title" content=pageTitle)
-meta(name="og:description" content=description)
+meta(name="og:description" content=fbDesc)
 meta(name="og:image" content=fbImage)
 meta(name="og:type" content=fbType)
 
 link(rel="canonical" href=pageURL)
 
 title= pageTitle
-meta(name="description" content=description)
+meta(name="description" content=googleDesc)
 
 link(href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Roboto:300,400|Handlee" rel="stylesheet")
 
