@@ -18,6 +18,10 @@ module.exports = function (app) {
     var gidCookie = req.cookies.ssgid;
     var priceInCents = gidUtil.PRICES[gidCookie] || gidUtil.PRICES[DEFAULT_PRICE_ID];
 
+    // Check if path has extension and 404 if does.  Landing pages don't have
+    // extensions.
+    if (/\/[^\/]+\.[^\/]+$/.test(path)) return next(new errorUtil.PageNotFoundError(path));
+
     res.render('landing-pages' + path, {
       price: Math.floor(priceInCents / 100),
     }, function (err, html) {
