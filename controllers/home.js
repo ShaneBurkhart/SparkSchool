@@ -8,7 +8,7 @@ var ensureGid = require('../middleware/ensure-gid');
 module.exports = function (app) {
   app.get('/', function (req, res, next) {
     res.render('landing-pages/build-twitter-clone', {
-      current_path: '/build-twitter-clone',
+      currentPath: '/build-twitter-clone',
     });
   });
 
