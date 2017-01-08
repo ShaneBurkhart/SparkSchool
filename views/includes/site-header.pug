@@ -4,7 +4,7 @@ header
             a#site-logo(href="/") Spark School
         nav#main-nav
             block main_nav
-                if current_user
+                if currentUser
                     a.button(href="/courses") Courses
                     form(action="/user/session/destroy" method="POST")
                         button Logout

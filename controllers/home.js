@@ -7,7 +7,9 @@ var ensureGid = require('../middleware/ensure-gid');
 
 module.exports = function (app) {
   app.get('/', function (req, res, next) {
-    res.render('landing-pages/build-twitter-clone');
+    res.render('landing-pages/build-twitter-clone', {
+      currentPath: '/build-twitter-clone',
+    });
   });
 
   // Catch all check for existing landing pages.
