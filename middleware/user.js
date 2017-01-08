@@ -12,8 +12,6 @@ module.exports = function (req, res, next) {
 
     // Add to request so we can access in controllers.
     req.user = user;
-    // Add to res.locals so it's accessible from our views.
-    res.locals.current_user = user;
 
     next();
   });

@@ -9,7 +9,13 @@ module.exports = function (app) {
     res.render('landing-pages/build-twitter-clone');
   });
 
-  app.get('/saas-course-beta', ensureGid, function (req, res, next) {
-    res.render('landing-pages/saas-course');
+  // Catch all check for existing landing pages.
+  app.get('/*', ensureGid, function (req, res, next) {
+    var path = req.path;
+
+    res.render('landing-pages' + path, function (err, html) {
+      if (err) return next(new errorUtil.PageNotFoundError(path));
+      res.send(html);
+    });
   });
 };

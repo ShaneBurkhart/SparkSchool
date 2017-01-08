@@ -1,5 +1,8 @@
 extends ../layouts/focus-modal
 
+block title
+   | Login
+
 block content
     h1.text-center Spark School
     form#login-form(action='/user/session/create' method='POST')

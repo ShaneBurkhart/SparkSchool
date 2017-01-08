@@ -46,3 +46,15 @@ deploy:
 # Ping google with new sitemap
 ping_google:
 	curl www.google.com/webmasters/tools/ping?sitemap=https%3A%2F%2Ftrysparkschool.com%2Fsitemap.xml
+
+# Make it easy for Grayson to pull the new code
+grayson:
+	git pull origin master
+	docker run --rm -v `pwd`:/app ruby bash -c "bundle install --gemfile=/app/Gemfile && jekyll build --source /app/courses --destination /app/courses/_site"
+	docker-compose -f docker-compose.dev.yml build app
+	docker-compose -f docker-compose.dev.yml run app npm install
+	rm -rf public/*
+	docker-compose -f docker-compose.dev.yml run app gulp build
+	docker-compose -f docker-compose.dev.yml build nginx
+	docker-compose -f docker-compose.dev.yml down
+	docker-compose -f docker-compose.dev.yml up -d

@@ -17,6 +17,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.use(require('./middleware/user'));
+// This needs to be last to make sure variables are set.
+app.use(require('./middleware/template-vars'));
 
 addControllers(app);
 
