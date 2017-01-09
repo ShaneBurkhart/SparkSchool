@@ -13,6 +13,8 @@ dev:
 
 jekyll:
 	jekyll build --source ./courses --destination ./courses/_site
+	find ./courses/_site -name '*.html' | xargs perl -pi -e 's/<span class="bopen">.*?<\/span>/<span class="bold">/g'
+	find ./courses/_site -name '*.html' | xargs perl -pi -e 's/<span class="bclose">.*?<\/span>/<\/span>/g'
 
 jekyll-watch:
 	docker run --rm -ti -v `pwd`:/app ruby bash -c "bundle install --gemfile=/app/Gemfile && jekyll build --watch --source /app/courses --destination /app/courses/_site"

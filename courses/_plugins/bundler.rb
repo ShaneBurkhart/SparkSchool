@@ -4,43 +4,51 @@ require "bundler/setup"
 Bundler.require(:default)
 
 module Rouge
+    module Tokens
+        def self.token(name, shortname, &b)
+            tok = Token.make_token(name, shortname, &b)
+            const_set(name, tok)
+        end
+
+        token :BoldOpen, 'bopen'
+        token :BoldClose, 'bclose'
+    end
+
     module Lexers
         class EJS < HTML
             tag 'ejs'
 
-            state :root do
-                rule /[^<&]+/m, Text
-                rule /&\S*?;/, Name::Entity
-                rule /<!DOCTYPE .*?>/im, Comment::Preproc
-                rule /<!\[CDATA\[.*?\]\]>/m, Comment::Preproc
-                rule /<!--/, Comment, :comment
-                rule /<\?.*?\?>/m, Comment::Preproc # php? really?
+            is_open = false
 
-                rule /<\s*script\s*/m do
-                    token Name::Tag
-                    push :script_content
-                    push :tag
-                end
-
+            append :root do
                 rule /<%(=|-)?\s*/m do
                     token Keyword
                     push :ejs
                 end
-
-                rule /<\s*style\s*/m do
-                    token Name::Tag
-                    push :style_content
-                    push :tag
-                end
-
-                rule %r(<\s*[a-zA-Z0-9:-]+), Name::Tag, :tag # opening tags
-                rule %r(<\s*/\s*[a-zA-Z0-9:-]+\s*>), Name::Tag # closing tags
             end
 
             state :ejs do
                 rule /\s*%>/, Keyword, :pop!
                 rule /.*?(?=\s*%>)/ do
                     delegate Javascript
+                end
+            end
+
+            state_definitions.each do |name|
+                prepend name do
+                    rule /(\s*)~~~(\s*)/ do |m|
+                        if is_open then
+                            token Generic::Output, m[1]
+                            token Tokens::BoldClose, '&nbsp;'
+                            token Generic::Output, m[2]
+                        else
+                            token Generic::Output, m[1]
+                            token Tokens::BoldOpen, '&nbsp;'
+                            token Generic::Output, m[2]
+                        end
+
+                        is_open = !is_open
+                    end
                 end
             end
         end
