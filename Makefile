@@ -12,7 +12,7 @@ dev:
 	docker-compose -f docker-compose.dev.yml up -d
 
 jekyll:
-	docker run --rm -ti -v `pwd`:/app ruby bash -c "bundle install --gemfile=/app/Gemfile && jekyll build --source /app/courses --destination /app/courses/_site"
+	jekyll build --source ./courses --destination ./courses/_site
 
 jekyll-watch:
 	docker run --rm -ti -v `pwd`:/app ruby bash -c "bundle install --gemfile=/app/Gemfile && jekyll build --watch --source /app/courses --destination /app/courses/_site"
