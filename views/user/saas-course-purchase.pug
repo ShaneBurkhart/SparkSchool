@@ -1,7 +1,7 @@
 extends ../layouts/focus-modal
 
 block variables
-   - var title = 'Purchase Beta';
+   - var title = 'Purchase The Course';
 
 block head
     script(
@@ -20,7 +20,7 @@ block content
     p.error(style="display: none;")
 
     - user = user || {}
-    form(id='payment-form' action='/beta/purchase' method='POST')
+    form(id='payment-form' action='/saas-course/purchase' method='POST')
         p#purchase-price $#{price}
             span One-time fee
 

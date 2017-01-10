@@ -10,7 +10,7 @@ module.exports = function (role) {
     if (role) {
       switch (role) {
         case 'paid':
-          if (user.status !== 'paid') return res.redirect('/beta/purchase');
+          if (user.status !== 'paid') return res.redirect('/saas-course/purchase');
       }
     }
 

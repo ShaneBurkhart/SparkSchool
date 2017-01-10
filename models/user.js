@@ -141,7 +141,7 @@ var User = {
   addToActiveCampaign(user, callback) {
     // For right now, we don't care if it handles error or not. We can add them later.
     var acCallback = function (result) { callback(); };
-    // Beta list has list id of 5
+    // SaaS course list has list id of 5
     var contact = {
       'email': user.email,
       'p[5]': 5,

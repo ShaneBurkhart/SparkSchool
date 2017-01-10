@@ -11,7 +11,7 @@ var INSERT_QUERY = [
 
 var Charge = {
   chargeUser: function (user, price, callback) {
-    var description = "Spark School Beta Access";
+    var description = "Spark School SaaS Web App Course";
 
     var charge = stripe.charges.create({
       amount: price,

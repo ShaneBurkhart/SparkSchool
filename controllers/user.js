@@ -60,24 +60,24 @@ module.exports = function (app) {
       login(res, id);
 
       switch (type) {
-        case 'beta': return res.redirect('/beta/purchase');
+        case 'saas-course': return res.redirect('/saas-course/purchase');
         case 'twitter-clone': return res.redirect('/courses/twitter-clone/1/1');
         default: return res.redirect('/courses');
       }
     });
   });
 
-  app.get('/beta/purchase', authUser(), restrictUser('paid'), ensureGid, function (req, res) {
+  app.get('/saas-course/purchase', authUser(), restrictUser('paid'), ensureGid, function (req, res) {
     var gidCookie = req.cookies.ssgid;
     var priceInCents = gidUtil.PRICES[gidCookie] || gidUtil.PRICES[DEFAULT_PRICE_ID];
 
-    res.render('user/beta-purchase', {
+    res.render('user/saas-course-purchase', {
       stripePublicKey: process.env.STRIPE_PUBLIC_KEY,
       price: Math.floor(priceInCents / 100),
     });
   });
 
-  app.post('/beta/purchase', authUser(), restrictUser('paid'), ensureGid, function (req, res) {
+  app.post('/saas-course/purchase', authUser(), restrictUser('paid'), ensureGid, function (req, res) {
     var stripeToken = req.body.stripeToken;
     var gidCookie = req.cookies.ssgid;
     var priceInCents = gidUtil.PRICES[gidCookie] || gidUtil.PRICES[DEFAULT_PRICE_ID];
@@ -87,7 +87,7 @@ module.exports = function (app) {
       if (err) {
         console.log(err);
         // TODO add error to query.
-        return res.redirect('/beta/purchase');
+        return res.redirect('/saas-course/purchase');
       }
 
       res.redirect('/courses');
