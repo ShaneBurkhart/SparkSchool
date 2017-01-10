@@ -4,7 +4,6 @@ permalink: /courses/twitter-clone/7/3
 title: 7.3 Hiding Tweet Edit Link
 course: Twitter Clone
 section: 'Day 7: Restrict Updating And Deleting Tweets'
-next-lesson-link: /courses/twitter-clone/8/1
 ---
 
 ####Table Of Contents
