@@ -14,7 +14,7 @@ mixin twitter_signup_form
 
 mixin beta_signup_form
     form.signup-form(action='/user/beta/create' method='POST')
-        h3 Sign up for early access
+        h3 Sign Up For The 6 Week Course
         .input-group.full-name-group
             label(for='full-name') Full Name
             input#full-name(type='text' name='full_name' placeholder='Ex. John Doe')
@@ -24,7 +24,7 @@ mixin beta_signup_form
         .input-group.password-group
             label(for='password') Password
             input#password(type='password' name='password' placeholder='********')
-        button Get Early Access
+        button Get The Course
 
 mixin cta_section(button_text)
     .section.cta.light-gray
