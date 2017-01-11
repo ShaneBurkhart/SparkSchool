@@ -52,7 +52,7 @@ module.exports = function (app) {
       password: req.body.password,
     };
 
-    User.create(user, function (err, id) {
+    User.create(user, type, function (err, id) {
       if (err) {
         return res.render('user/new', { user: user, type: type, error: err });
       }

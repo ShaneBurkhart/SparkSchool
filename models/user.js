@@ -10,6 +10,13 @@ var activeCampaign = new ActiveCampaign(
   process.env.ACTIVE_CAMPAIGN_KEY
 );
 
+var DEFAULT_LIST_ID = 1;
+var ACTIVE_CAMPAIGN_LISTS = {
+  'saas-course': 5,
+  'twitter-clone': 1,
+}
+
+
 // Bcrypt stuff
 var SALT_ROUNDS = 10;
 
@@ -53,7 +60,7 @@ var User = {
     // Symbol list: ~`!@#$%^&*()+=_-{}[]\|:;”’?/<>,.
   },
 
-  create: function (user, callback) {
+  create: function (user, type, callback) {
     this.validate(user, function (err) {
       if (err) return callback(err);
 
@@ -68,8 +75,9 @@ var User = {
         db.query(INSERT_QUERY, params, function (err, results) {
           if (err) return callback('Sorry, there was an error. Try again later.');
           var userId = results.rows[0].id;
+          var listId = ACTIVE_CAMPAIGN_LISTS[type] || DEFAULT_LIST_ID;
 
-          User.addToActiveCampaign(user, function (err) {
+          User.addToActiveCampaign(user, listId, function (err) {
             callback(undefined, userId);
           });
         });
@@ -138,13 +146,12 @@ var User = {
     });
   },
 
-  addToActiveCampaign(user, callback) {
+  addToActiveCampaign(user, listId, callback) {
     // For right now, we don't care if it handles error or not. We can add them later.
     var acCallback = function (result) { callback(); };
-    // SaaS course list has list id of 5
     var contact = {
       'email': user.email,
-      'p[5]': 5,
+      ['p[' + listId + ']']: listId,
     };
 
     if (process.env.APP_ENV === 'development') contact.tags = 'development';
