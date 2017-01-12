@@ -75,9 +75,13 @@ We are adding an "if" statement in EJS tags that checks the "isEditable" value o
 
 That concludes the Twitter clone course.  At the start of this course, you started with minimal to no knowledge and in 7 days, you learned the basics of building a web app.  With the knowledge from this course, you can now start building your own CRUD apps.
 
-There is still a lot of learning to be done, but now you have a solid understanding of the basic concepts that go into building a web app.  Everything else you'll learn is simply adding complexity to what we have and figuring out how to solve the problems you come across.
+I'm really excited that you made it all the way through the course and would love to know what you think!  Leave a comment below or email me at shane@trysparkschool.com to let me know what you thought of the course.
 
-I'm really excited that you made it all the way through the course and would love to know what you think.  Email me at shane@trysparkschool.com to let me know what you thought of the course.  I would appreciate any feedback and if you are interested, I can help point you in the right direction to continue your education.
+This course taught you the basics of how to build a web app, but there is still a lot of learning to be done.  If you enjoyed the course and want to continue learning, I have another course that teaches you how to build a ready-to-sell web app with subscription payments.
+
+The course is 6 weeks long and will walk you step-by-step through building a web app with subscription payments, user authentication, and transactional email.  Whether you want to start your own software business or get a job as a web developer, this course will get you there.
+
+[Click here to view the course.](https://trysparkschool.com/saas-course?utm_source=twitter_clone_list&utm_campaign=saas_course_clicks&utm_medium=course&utm_content=day_7_3)
 
 Thanks for taking the course and I hope to hear from you soon!
 
