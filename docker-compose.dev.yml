@@ -6,6 +6,7 @@ services:
             dockerfile: Dockerfile.app
         links:
             - db
+            - redis
         volumes:
             - .:/app
         command: nodemon index.js
@@ -36,3 +37,6 @@ services:
         volumes:
             - ./nginx.dev.conf:/etc/nginx/nginx.conf
             - ./public:/public
+
+    redis:
+        image: redis:3.2
