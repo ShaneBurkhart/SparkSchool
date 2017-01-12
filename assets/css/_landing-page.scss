@@ -18,7 +18,7 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            z-index: -2;
+            z-index: 1;
         }
 
         .overlay {
@@ -29,13 +29,18 @@
             bottom: 0;
             background-color: #000000;
             opacity: .8;
-            z-index: -1;
+            z-index: 2;
         }
 
         .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
             color: #ffffff;
             padding-top: 60px;
             text-align: center;
+            z-index: 3;
         }
 
         h1 {
