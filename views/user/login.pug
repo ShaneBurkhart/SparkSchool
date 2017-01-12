@@ -4,6 +4,7 @@ block variables
    - var title = 'Login';
 
 block content
+    - user = user || {}
     h1.text-center Spark School
 
     if error
@@ -14,7 +15,7 @@ block content
     form#login-form(action='/user/session/create' method='POST')
         .input-group
             label(for='email') Email
-            input(type='text' name='email' placeholder='user@domain.com' value=email)
+            input(type='text' name='email' placeholder='user@domain.com' value=user.email)
         .input-group.password-group
             label(for='password') Password
             input#password(type='password' name='password' placeholder='********')
