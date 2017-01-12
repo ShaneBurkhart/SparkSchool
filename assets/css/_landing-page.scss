@@ -88,12 +88,20 @@
             margin-bottom: 10px;
         }
 
+        h4 {
+            margin-bottom: 10px;
+        }
+
         p {
             margin-bottom: 15px;
             font-size: 16px;
 
             &.light {
                 font-weight: 300;
+            }
+
+            &.space {
+                margin-bottom: 25px;
             }
         }
 
