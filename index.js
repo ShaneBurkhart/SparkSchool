@@ -22,8 +22,11 @@ app.set('view engine', 'pug');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(session({
+  name: 'sssid',
   store: redisStore,
   secret: process.env.EXPRESS_SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false,
 }));
 
 app.use(require('./middleware/user'));
