@@ -25,13 +25,17 @@ module.exports = function (app) {
   app.post('/user/session/create', function (req, res) {
     var user = { email: req.body.email };
     var password = req.body.password;
+    var redirectUrl = req.session.redirectAfterLoginPath;
+
+    // Delete after we are done with redirect url
+    delete req.session.redirectAfterLoginPath;
 
     User.checkPassword(user, password, function (err, user) {
       if (err) return res.render('user/login', { user: user, error: err });
 
       login(res, user.id);
 
-      return res.redirect('/courses');
+      return res.redirect(redirectUrl || '/courses');
     });
   });
 

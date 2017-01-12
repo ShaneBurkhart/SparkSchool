@@ -5,7 +5,10 @@ var User = require('../models/user');
 module.exports = function (role) {
   return function (req, res, next) {
     var user = req.user;
-    if (!user) return res.redirect('/login');
+    if (!user) {
+      req.session.redirectAfterLoginPath = req.path;
+      return res.redirect('/login');
+    }
 
     if (role) {
       switch (role) {
