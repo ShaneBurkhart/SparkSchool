@@ -26,7 +26,12 @@ mixin saas_course_signup_form
             input#password(type='password' name='password' placeholder='********')
         button Get The Course
 
-mixin cta_section(button_text)
+mixin saas_signup_anchor_cta_section(button_text)
+    .section.cta.light-gray
+        .container
+            a.button(href='#sign-up')= button_text
+
+mixin twitter_clone_signup_cta_section(button_text)
     .section.cta.light-gray
         .container
             a.button(href='/signup')= button_text

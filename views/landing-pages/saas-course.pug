@@ -43,7 +43,7 @@ block content
             .graphic
                 img(src='/assets/images/start-here-mac-window.png' alt='Mac window with button saying "Start Here".')
 
-    .section.dark-blue.signup-section
+    .section.dark-blue.signup-section#sign-up
         .container
             .description
                 h2 Sign Up Today
@@ -53,3 +53,5 @@ block content
                 +saas_course_signup_form()
 
     +saas_course_meet_the_instructor()
+
+    +saas_signup_anchor_cta_section("Get The Course!")
