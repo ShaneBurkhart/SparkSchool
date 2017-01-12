@@ -11,6 +11,10 @@ block content
         h2 SaaS Web App w/ Subscription Payments (Jan 20)
         p.technologies  Node.js, MySQL, Express.js, Vagrant, Pug, Stripe, Git
         p Learn how to make a subscription based SaaS app in 6 weeks. You'll build a personal budgetting web app that will have a freemium and paid tier.  This course is currently being worked on and the first week's lessons will be released January 20th.
+        if currentUser.status !== 'paid'
+            p
+                | You currently aren't signed up to receive the course.
+                a(href='/saas-course/purchase')  Click here to sign up for the course for only $10.
 
     article.course-listing
         h2 Twitter Clone
