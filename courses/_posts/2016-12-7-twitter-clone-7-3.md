@@ -81,7 +81,7 @@ This course taught you the basics of how to build a web app, but there is still 
 
 The course is 6 weeks long and will walk you step-by-step through building a web app with subscription payments, user authentication, and transactional email.  Whether you want to start your own software business or get a job as a web developer, this course will get you there.
 
-[Click here to view the course.](https://trysparkschool.com/saas-course?utm_source=twitter_clone_list&utm_campaign=saas_course_clicks&utm_medium=course&utm_content=day_7_3)
+[Click here to view the course.](https://trysparkschool.com/saas-course?utm_source=twitter_clone_course&utm_campaign=saas_course_clicks&utm_medium=link)
 
 Thanks for taking the course and I hope to hear from you soon!
 
