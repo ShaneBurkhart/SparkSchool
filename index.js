@@ -2,8 +2,14 @@
 
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
+var session = require('express-session');
+var RedisStore = require('connect-redis')(session);
 var express = require('express');
 var app = express();
+var redisStore = new RedisStore({
+  host: 'redis',
+  port: 6379,
+});
 
 var db = require('./db/db');
 var addControllers = require('./controllers/index');
@@ -15,6 +21,10 @@ app.set('view engine', 'pug');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(session({
+  store: redisStore,
+  secret: process.env.EXPRESS_SESSION_SECRET,
+}));
 
 app.use(require('./middleware/user'));
 // This needs to be last to make sure variables are set.
