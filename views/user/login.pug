@@ -5,6 +5,12 @@ block variables
 
 block content
     h1.text-center Spark School
+
+    if error
+        p.error
+            i.fa.fa-warning
+            =error
+
     form#login-form(action='/user/session/create' method='POST')
         .input-group
             label(for='email') Email

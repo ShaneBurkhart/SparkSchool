@@ -87,10 +87,10 @@ var User = {
 
   checkPassword: function (user, password, callback) {
     this.findByEmail(user.email, function (err, user) {
-      if (err || !user) return callback('Invalid email email and password combination.');
+      if (err || !user) return callback('Invalid email and password combination.');
 
       bcrypt.compare(password, user.password_digest, function (err, res) {
-        if (err || !res) return callback('Invalid email email and password combination.');
+        if (err || !res) return callback('Invalid email and password combination.');
         callback(undefined, user);
       });
     });
