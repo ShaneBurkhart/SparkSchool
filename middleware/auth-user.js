@@ -6,8 +6,9 @@ module.exports = function (role) {
   return function (req, res, next) {
     var user = req.user;
     if (!user) {
+      var message = 'You need to login to visit that page.'
       req.session.redirectAfterLoginPath = req.path;
-      return res.redirect('/login');
+      return res.redirect('/login?error=' + encodeURIComponent(message));
     }
 
     if (role) {
