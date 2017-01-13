@@ -4,6 +4,7 @@
 var COURSES = {
   'twitter-clone': 1,
   'ebay-web-scraper': 2,
+  'budget-app': 3,
 };
 
 module.exports = {
