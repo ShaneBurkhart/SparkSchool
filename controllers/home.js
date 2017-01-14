@@ -7,8 +7,8 @@ var ensureGid = require('../middleware/ensure-gid');
 
 module.exports = function (app) {
   app.get('/', function (req, res, next) {
-    res.render('landing-pages/saas-course', {
-      currentPath: '/saas-course',
+    res.render('landing-pages/homepage-saas-course', {
+      currentPath: '/homepage-saas-course',
     });
   });
 
