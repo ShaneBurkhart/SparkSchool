@@ -8,25 +8,21 @@ block variables
    - var description = 'Go from zero coding skills to building a Twitter clone from scratch in 7 days.';
 
 block hero
-    p.shout
-        | Get the&nbsp;
-        span.underline FREE
-        |  course!
     h1 Build Your First Full-Stack Web App
-    p Go from zero coding skills to building a Twitter clone from scratch in 7 days.
-    a.button.yellow(href='/signup') Get The Free Course
+    p Go from zero coding skills to building a Twitter clone from scratch in 7 days for just $10.
+    a.button.yellow(href='/signup') Get The Course
 
 block content
     .section
         .container
             .description
                 h2 Build A Twitter Clone
-                p This course walks you step-by-step through building a full-stack web app using Node.js and MySQL. In 7 days, you'll have a website that can create, read, update and delete Tweets.
+                p This course walks you step-by-step through building a full-stack web app using Node.js and MySQL. In 7 days, you'll have a website that can create, read, update and delete Tweets.  
             .graphic.bullet-points
-                ul
+                ul 
                     li No coding skills required
                     li Build a web app in 7 days
-                    li It's absolutely FREE!
+                    li Deploy your app to the web
 
     .section.light-gray
         .container
@@ -58,7 +54,7 @@ block content
             .graphic
                 +twitter_signup_form()
             .description
-                h2 Sign up for the free course
+                h2 Build your first web app for $10!
                 p.light In this course, you will learn how to:
                 ul
                     li Code a web server in JavaScript using Node.js
@@ -70,4 +66,4 @@ block content
 
     +twitter_meet_the_instructor()
 
-    +twitter_clone_signup_cta_section('Sign Up For The FREE Course')
+    +twitter_clone_signup_cta_section('Get The Course')
