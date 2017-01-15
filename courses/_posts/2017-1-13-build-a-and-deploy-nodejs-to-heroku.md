@@ -4,7 +4,7 @@ permalink: /tutorials/build-and-deploy-nodejs-app-to-heroku
 title: Build A Node.js App From Scratch And Deploy It To Heroku
 ---
 
-If you've ever though about building a web app or learning to code, this tutorial is the perfect place to get started.  This tutorial takes a different approach than most and assumes you have no programming experience.  
+If you've ever thought about building a web app or learning to code, this tutorial is the perfect place to get started.  This tutorial takes a different approach than most and assumes you have no programming experience.  
 
 I find that most tutorials don't do a very good job of explaining concepts and instead have you copying code.  This isn't very useful for beginners because you aren't actually learning anything.  
 
@@ -30,7 +30,7 @@ I am running this tutorial on OS X.  If you are on Windows or Linux, a few thing
 - [Running our server](#running-our-server)
 - [Add HTML files](#add-html)
 - [Getting our project ready for deploy](#getting-ready-for-deploy)
-- [Commiting your files](#committing-your-files)
+- [Committing your files](#committing-your-files)
 - [Deploying your app to Heroku](#deploying-your-app-to-heroku)
 - [Get the source code](#get-the-source-code)
 
@@ -111,7 +111,7 @@ Npm creates a directory called "node_modules" in the root of our project that ho
 
 ## How web servers work
 
-What happens when we type a url into the browser and press enter?  
+What happens when we type an url into the browser and press enter?  
 
 The browser will take the requested url and get the domain name from it.  It then uses the domain name to lookup the IP address of the web server.  IP addresses uniquely identify computers on the internet, so no two computers can have the same IP address.
 
@@ -162,13 +162,13 @@ var num = 3;
 
 Now that we understand variables a bit, let's go over how to import libraries.  To import libraries into our file, we use the "require" function.
 
-Functions are simply a section of code that can be executed over and over by name.  We use functions so we don't have to write the same code over and over. Instead we can write the function once and call it multiple times, thus removing duplicate code.
+Functions are simply a section of code that can be executed over and over by name.  We use functions so we don't have to write the same code over and over. Instead, we can write the function once and call it multiple times, thus removing duplicate code.
 
 To call functions, we type the name of the function followed by parenthesis.  The parenthesis means we are calling it.
 
 Inside the parenthesis, we can pass values and variables.  These are called arguments and functions can take any number of arguments.  Arguments let us specify options and data that the function can use on that function call.
 
-Functions can also return values, but aren't required to.  This is useful when a function creates something or fetches a value.
+Functions can also return values but are not required to.  This is useful when a function creates something or fetches a value.
 
 A simple example of a function that takes arguments and returns a value would be an "add" function that takes two numbers and returns the sum.  In the code snippet below, we are calling the "add" function and assigning the return value to a variable called "sum".  The variable "sum" would now equal the number 7.
 
@@ -193,7 +193,7 @@ var app = express();
 
 We now have an "app" variable that we can use to configure our server.  Right now, it doesn't do anything, but we are about to change that.
 
-In HTTP, each request has an HTTP method that helps define the intent of the web request.  The GET method is used to read data and is one of the most common request methods. Your browser uses this method when when requesting a web page.
+In HTTP, each request has an HTTP method that helps define the intent of the web request.  The GET method is used to read data and is one of the most common request methods. Your browser uses this method when requesting a web page.
 
 For our first page, we are going to define a route that listens for a GET request to the homepage.  As we mentioned earlier, the homepage is to the bare domain which is defined as the "/" path.
 
@@ -201,7 +201,7 @@ For our first page, we are going to define a route that listens for a GET reques
 When a server is listening for a specific URL and HTTP method, we call that a route.
 </p>
 
-Luckily with Express, creating a GET route can easily be created by calling the "get" function on our "app" variable.  The first argument to the "get" function is the path our route is listening for and the second is a function that get's executed when a request matches this route.  Let's define a GET request to the homepage ("/").
+Luckily with Express, creating a GET route can easily be created by calling the "get" function on our "app" variable.  The first argument to the "get" function is the path our route is listening for and the second is a function that gets executed when a request matches this route.  Let's define a GET request to the homepage ("/").
 
 ##### index.js
 ```javascript
@@ -212,13 +212,13 @@ app.get('/', function(req, res) {
 
 There are a few new things we haven't covered in the above code. First, we are passing an anonymous function as the second argument to the "get" method.
 
-Anonymous functions act the same as regular function but don't have a name.  To define an anonymous function, we use the "function" keyword, followed by parenthesis.  In the parenthesis we have function parameters, separated by commas, which are names given to the arguments passed in.
+Anonymous functions act the same as a regular function but don't have a name.  To define an anonymous function, we use the "function" keyword, followed by parenthesis.  In the parenthesis, we have function parameters separated by commas, which are names given to the arguments passed in.
 
 Following the parentheses, curly braces define the body of the function.  This is where we put the code that the function will execute. To give us space to write code, we put curly braces on different lines.
 
 Notice that the anonymous function has two parameters that Express passes in as arguments on each request.  The first is the parameter "req" (short for "request") and contains data about the request the server received.  The second is "res" (short for "response") which provides functions for sending data back to the server. Express adds functions to these variables to make things easier.
 
-Our route doesn't do anything yet, but let's fix that.  Our goal here is send an HTML file back to the browsers.  Luckily, the "res" variable has a "sendFile" method that lets us specify a file to send to the server.  It takes a single argument and attempts to render that file.  In our case, we are going to pass it the path to "index.html".
+Our route doesn't do anything yet, but let's fix that.  Our goal here is to send an HTML file back to the browsers.  Luckily, the "res" variable has a "sendFile" method that lets us specify a file to send to the server.  It takes a single argument and attempts to render that file.  In our case, we are going to pass it the path to "index.html".
 
 ##### index.js
 ```javascript
@@ -242,9 +242,9 @@ app.get('/contact', function (req, res) {
 });
 ```
 
-We have three routes now, but what if the user's web request doesn't match one of these routes?  We can define a catch all route as the last route that will return the HTTP status code of 404 (page not found) and sends the "404.html" file.
+We have three routes now, but what if the user's web request doesn't match one of these routes?  We can define a catch-all route as the last route that will return the HTTP status code of 404 (page not found) and sends the "404.html" file.
 
-To create a catch all route, we call the "use" function on the "app" variable.  The only argument "use()" takes is an anonymous function that handles a request.
+To create a catch-all route, we call the "use" function on the "app" variable.  The only argument "use()" takes is an anonymous function that handles a request.
 
 ##### index.js
 ```javascript
@@ -253,7 +253,7 @@ app.use(function (req, res) {
 });
 ```
 
-We have our app created and a routes defined, but we haven't written any code to start our server yet.  Before we do that, let's talk a little about ports.
+We have our app created and routes defined, but we haven't written any code to start our server yet.  Before we do that, let's talk a little about ports.
 
 IPs uniquely identify computers on the internet, and ports identify a specific channel on the computer.  Ports make it possible to run multiple servers on the same IP address since different ports won't cause them to conflict.
 
@@ -331,7 +331,7 @@ Localhost is a special domain that points to the local computer.  It is the same
 The server blocks terminal input and listens continuously for web requests.  To stop the server and run commands in the terminal, hold control and press the "c" key.
 </p>
 
-Unfortunately if you visit [http://localhost:8080](http://localhost:8080) in the browser, you'll get an error because we haven't created the HTML files we are trying to render.  Let's do that now.
+Unfortunately, if you visit [http://localhost:8080](http://localhost:8080) in the browser, you'll get an error because we haven't created the HTML files we are trying to render.  Let's do that now.
 
 ![](https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/no-homepage-html-error.png)
 
@@ -554,7 +554,7 @@ My node version is "6.9.4".  Let's add this to the bottom of our package.json fi
 }
 ```
 
-Next let's specify a start script in package.json.  We are adding this part to the "scripts" section.  Your package.json will look like the following.
+Next, let's specify a start script in package.json.  We are adding this part to the "scripts" section.  Your package.json will look like the following.
 
 ##### package.json
 ```json
@@ -620,7 +620,7 @@ app.listen(port, function () {
 });
 ```
 
-All we did was add a "port" variable to the top of the file that checks for the "PORT" environment variable and if it doesn't exist, sets port to 8080 for development.  Then we changed our "app.listen()" call to take the "port" variable and added the "port" variable to our "console.log" output.
+All we did was add a "port" variable to the top of the file that checks for the "PORT" environment variable and if it doesn't exist, sets the port to 8080 for development.  Then we changed our "app.listen()" call to take the "port" variable and added the "port" variable to our "console.log" output.
 
 We can make sure everything is working correctly by running our app locally with Heroku Toolbelt.  Run the following in your terminal.
 
@@ -639,7 +639,7 @@ If everything is working correctly, you're ready to deploy your app to the web.
 
 <span id="committing-your-files" class="anchor"/>
 
-## Commiting your files
+## Committing your files
 
 Heroku uses Git to deploy so we need to make our project a git repository.  We only need to do this once for our project.
 
@@ -665,7 +665,7 @@ git commit -m "Initial commit.  Deploying to Heroku."
 Your files are now committed, let's deploy them to Heroku.
 
 <p class="info">
-Anytime you make changes to your project, you need to commit your files before pushing.  You can refer back here to see how.  There's no need need to run "git init" again.
+Anytime you make changes to your project, you need to commit your files before pushing.  You can refer back here to see how.  There's no need to run "git init" again.
 </p>
 
 <span id="deploying-your-app-to-heroku" class="anchor"/>
@@ -707,7 +707,7 @@ If you want to create a custom domain name, you can read this [guide on adding a
 
 ## Get the source code
 
-Without the full source code, it can be hard to fix errors and know what the final code should look like.  I want to make sure that's not a problem for you, so I've added link for you to download the source code.
+Without the full source code, it can be hard to fix errors and know what the final code should look like.  I want to make sure that's not a problem for you, so I've added a link for you to download the source code.
 
 <p class="content-upgrade">
 	<a class="button" data-sumome-listbuilder-id="5859efd3-b1aa-480e-9e27-04a0ace84935">Click here to get the source code!</a>
@@ -724,7 +724,7 @@ I would love to see what you guys build with this tutorial!  When you deploy you
 	<div class="description">
 		<h3>Meet The Instructor</h3>
 		<p>Hey, I'm Shane! I’ve been a software developer for a little over 5 years now, and have worked at Yelp, Carfax, and a startup called SumoMe.
-		<p>The crazy part is I didn’t go to school to be a software developer. In fact, I am completely self taught.</p>
+		<p>The crazy part is I didn’t go to school to be a software developer. In fact, I am completely self-taught.</p>
 		<p>I've spent the last 5 years teaching myself software development and over time, I have learned what works and what doesn't. Now, I want to use my knowledge to help you learn as efficiently as possible.</p>
 	</div>
 </div>
