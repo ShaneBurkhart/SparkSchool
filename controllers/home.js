@@ -27,7 +27,9 @@ module.exports = function (app) {
     if (/\/[^\/]+\.[^\/]+$/.test(path)) return next(new errorUtil.PageNotFoundError(path));
 
     res.render('landing-pages' + path, {
+      query: req.query || {},
       price: Math.floor(priceInCents / 100),
+      stripePublicKey: process.env.STRIPE_PUBLIC_KEY,
     }, function (err, html) {
       if (err) return next(new errorUtil.PageNotFoundError(path));
       res.send(html);

@@ -81,37 +81,4 @@
             display: block;
         }
     }
-
-    #payment-form {
-        width: 300px;
-        margin: 0px auto;
-
-        .exp-month-group, .exp-year-group, .cvc-group {
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-
-        .exp-month-group {
-            width: 50%;
-            margin-right: 3%;
-        }
-
-        .exp-year-group {
-            width: 23%;
-            margin-right: 3%;
-        }
-
-        .cvc-group {
-            width: 21%;
-        }
-
-        button {
-            width: 100%;
-            display: block;
-        }
-    }
-
-    #paypal-form {
-        text-align: center;
-    }
 }
