@@ -13,7 +13,7 @@ In this tutorial, I'm going to walk you step-by-step through building a Node.js 
 To make learning even easier, I'm offering the final source code for our web app.  This is useful when fixing errors or checking if your code is correct.  You can download the source code with the link below.
 
 <p class="content-upgrade">
-	<a data-sumome-listbuilder-id="5859efd3-b1aa-480e-9e27-04a0ace84935">Click here to get the final source code!	</a>
+	<a class="button" data-sumome-listbuilder-id="5859efd3-b1aa-480e-9e27-04a0ace84935">Click here to get the final source code!</a>
 </p>
 
 Let's get started!
