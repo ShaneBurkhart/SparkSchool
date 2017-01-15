@@ -41,8 +41,8 @@ public:
 sitemap:
 	docker-compose -f docker-compose.dev.yml run app gulp sitemap
 
-watch-css:
-	docker-compose -f docker-compose.dev.yml run app gulp sass:watch
+watch-assets:
+	docker-compose -f docker-compose.dev.yml run app gulp watch
 
 deploy:
 	ssh -A ubuntu@35.167.77.85 'cd ~/SparkSchool; git pull origin master; ./deploy/prod.sh'

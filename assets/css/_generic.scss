@@ -97,6 +97,14 @@ p {
     &.bold, .bold {
         font-weight: 700;
     }
+
+    &.info {
+        color: #002A3D;
+        background: #b3e4ff;
+        padding: 14px;
+        border-radius: 3px;
+        line-height: 1.6;
+    }
 }
 
 a, a:hover {
