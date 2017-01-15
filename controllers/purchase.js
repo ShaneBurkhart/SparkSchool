@@ -29,8 +29,7 @@ module.exports = function (app) {
         ].join(''));
       }
 
-      // TODO redirect to thank you page
-      res.redirect('/');
+      res.redirect('/twitter-clone-thank-you');
     });
   });
 }
