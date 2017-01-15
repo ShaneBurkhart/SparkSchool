@@ -45,7 +45,7 @@ module.exports = function (app) {
   });
 
   app.get('/signup', function (req, res) {
-    res.render('user/new');
+    res.render('user/new', { type: 'saas-course' });
   });
 
   app.post(['/user/create', '/user/:type/create'], function (req, res) {
