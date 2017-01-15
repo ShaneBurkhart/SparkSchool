@@ -23,6 +23,7 @@
         border: 1px solid #303f45;
         border-radius: 3px;
         margin-bottom: 25px;
+        -webkit-print-color-adjust: exact;
 
         pre {
             padding: 14px;
