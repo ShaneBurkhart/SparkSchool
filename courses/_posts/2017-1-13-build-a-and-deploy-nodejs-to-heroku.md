@@ -40,11 +40,11 @@ If you're on Linux, [here's a guide to installing Node.js on Ubuntu](https://www
 
 ### Install Git
 
-Git a version control tool that Heroku uses to deploy web apps.  Visit [https://git-scm.com/downloads](https://git-scm.com/downloads) and download the installer for your operating system.  Run it with default settings.
+Git is a version control tool that Heroku uses to deploy web apps.  Visit [https://git-scm.com/downloads](https://git-scm.com/downloads) and download the installer for your operating system.  Run it with the default settings.
 
 ### Install a text editor
 
-When coding, it's important to have a good text editor.  You can use any you want, but I recommend [Sublime Text 3](https://www.sublimetext.com).  Visit [https://www.sublimetext.com/3](https://www.sublimetext.com/3) and download the installer for you operating system.  Run it with default settings.
+When coding, it's important to have a good text editor.  You can use whichever you want, but I recommend [Sublime Text 3](https://www.sublimetext.com).  Visit [https://www.sublimetext.com/3](https://www.sublimetext.com/3) and download the installer for you operating system.  Run it with the default settings.
 
 ### Create a Heroku account
 
@@ -52,35 +52,31 @@ Creating a Heroku account is free and easy.  Visit [https://signup.heroku.com/](
 
 ### Install Heroku toolbelt
 
-We need to also install the Heroku toolbelt so we can interface with Heroku from our command line.  [Here's a guide to install Heroku toolbelt](https://devcenter.heroku.com/articles/heroku-cli).
+We need to also install the Heroku toolbelt so we can interface with Heroku from our project.  [Here's a guide to install Heroku toolbelt](https://devcenter.heroku.com/articles/heroku-cli).
 
 <span id="creating-the-project" class="anchor"/>
 
 ## Creating the project
 
-We need a place to store our project files, so create let's create a directory to store them in.  In this tutorial, I'm going to call my directory "NodeApp" and put it on my Desktop.  Go ahead and do that now. 
+We need a place to store our project files, so let's create a directory (folder) to store them in.  In this tutorial, I'm going to call my directory "NodeApp" and put it on my Desktop.  Go ahead and do that now. 
 
-Now that we have a project directory, let's visit navigate to it from the command line.  On OS X and Linux, we can open the command line with an application called "Terminal" and on Windows, it's called "Git Bash".  For the rest of the tutorial, I'll refer to this program as the command line or terminal interchangeably.  Open this program now.
+Now that we have a project directory, let's navigate to it from the command line.  On OS X and Linux, we can open the command line with an application called "Terminal" and on Windows, it's called "Git Bash".  For the rest of the tutorial, I'll refer to this program as the command line or terminal interchangeably.  Open this program now.
 
-When you terminal opens, navigate to our project directory.
+When your terminal opens, navigate to our project directory with the following.
 
+##### Terminal
 ```bash
-# Terminal
 cd ~/Desktop/NodeApp
 ```
-
-<p class="info">
-The first line of every code snippet is the file where the code belongs or where it should be executed.  You can ignore that line.
-</p>
 
 Before we can write our web server, we need to create a "package.json" file in the root of our project directory.  This file stores information about the project as well as keeps track of the Node.js libraries we want to install.
 
 Libraries are also sometimes called packages and generally, are software projects that help you do a specific task.  We are going to use the Express.js library since it makes creating web servers much easier.
 
-"npm" stands for Node Package Manager and is used to manage node libraries. To create a package.json file, run the following command in the terminal in the root of our project directory.
+"npm" stands for Node Package Manager and is used to manage node libraries. To create a package.json file, run the following command in the terminal after navigating to our project directory.
 
+##### Terminal
 ```bash
-# Terminal
 npm init
 ```
 
@@ -90,8 +86,8 @@ With npm initialized, we can install libraries for our project.  The first libra
 
 To install libraries, we use the "npm" command followed by the word "install" followed by the name of the library we want to install.  To tell npm we want to save this library in our package.json file, we add the "--save" option at the end.  Below is what this looks like for Express.js:
 
+##### Terminal
 ```bash
-# Terminal logged into VM
 npm install express --save
 ```
 
@@ -99,7 +95,9 @@ If you open the package.json file, you should see "express" listed under "depend
 
 ![](https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/package-json-after-init.png)
 
+<p class="info">
 Npm creates a directory called "node_modules" in the root of our project that holds all of the installed packages for the project.  We won't ever have to do anything with this.
+</p>
 
 <span id="how-web-servers-work" class="anchor"/>
 
@@ -121,12 +119,12 @@ If you look at the diagram above, you can see there are two distinct computers t
 
 ## Writing our web server
 
-With a basic understanding of how a web server works, let's create one. First, we need to create a file for our server code.  Open your text editor (Sublime Text 3) and select File > New File.  Now select File > Save As and save the file as index.js in our NodeApp directory. 
+With a basic understanding of how a web server works, let's create one. First, we need to create a file for our server code.  Open your text editor (Sublime Text 3) and select File > New File.  Now select File > Save As and save the file as "index.js" in our NodeApp directory. 
 
 Like most programming languages, javascript executes code line-by-line starting at the top.  The first line of all of our javascript files needs to say "use strict" wrapped in single quotes.
 
+##### index.js
 ```javascript
-// index.js
 'use strict'
 ```
 
@@ -138,8 +136,8 @@ One of the most common programming concepts is using variables.  Variables are s
 
 To define variables in javascript, we use the "var" keyword followed by the name we want to give to our variable. Below we are defining a variable called num:
 
+##### Javascript Example
 ```javascript
-// Javascript Example
 var num;
 ```
 
@@ -147,10 +145,10 @@ var num;
 Most lines in Javascript end in a semicolon.  There are a few exceptions that we'll go over later, but for the most part, know that a line of Javascript code ends in a semicolon.
 </p>
 
-That only defines a variable, but right now it has a value of undefined since we haven't given it a value. We do that with the assignment operator (equals sign) followed by the value we want to assign to the variable.  In the code snippet below, we are assigning the value 3 to the variable "num":
+That only defines a variable, but right now it has a value of "undefined" since we haven't given it a value. We do that with the assignment operator (equals sign) followed by the value we want to assign to the variable.  In the code snippet below, we are assigning the value 3 to the variable "num":
 
+##### Javascript Example
 ```javascript
-// Javascript Example
 var num = 3;
 ```
 
@@ -166,22 +164,22 @@ Functions can also return values, but aren't required to.  This is useful when a
 
 A simple example of a function that takes arguments and returns a value would be an "add" function that takes two numbers and returns the sum.  In the code snippet below, we are calling the "add" function and assigning the return value to a variable called "sum".  The variable "sum" would now equal the number 7.
 
+##### Javascript Example
 ```javascript
-// Javascript Example
 var sum = add(2, 5);
 ```
 
 Now that we understand how variables and functions work, let's use the "require" function to import the express library.
 
+##### index.js
 ```javascript
-// app.js
 var express = require('express');
 ```
 
 The Express library returns a function that doesn't take arguments and is used to create an Express app. Let's do that now under our express import.
 
+##### index.js
 ```javascript
-// app.js
 var app = express();
 ```
 
@@ -197,8 +195,8 @@ When a server is listening for a specific URL and HTTP method, we call that a ro
 
 Luckily with Express, creating a GET route can easily be created by calling the "get" function on our "app" variable.  The first argument to the "get" function is the path our route is listening for and the second is a function that get's executed when a request matches this route.  Let's define a GET request to the homepage ("/").
 
+##### index.js
 ```javascript
-// app.js
 app.get('/', function(req, res) {
   // Our code will go here
 });
@@ -210,12 +208,12 @@ Anonymous functions act the same as regular function but don't have a name.  To 
 
 Following the parentheses, curly braces define the body of the function.  This is where we put the code that the function will execute. To give us space to write code, we put curly braces on different lines.
 
-Notice that the anonymous function has two parameters that Express passes in as arguments on each request.  The first is the parameter "req" (short for "request") and contains data about the request the server received.  The second is "res" (short for "response") which provides methods for sending data back to the server. Express adds methods to these variables to make things easier.
+Notice that the anonymous function has two parameters that Express passes in as arguments on each request.  The first is the parameter "req" (short for "request") and contains data about the request the server received.  The second is "res" (short for "response") which provides functions for sending data back to the server. Express adds functions to these variables to make things easier.
 
 Our route doesn't do anything yet, but let's fix that.  Our goal here is send an HTML file back to the browsers.  Luckily, the "res" variable has a "sendFile" method that lets us specify a file to send to the server.  It takes a single argument and attempts to render that file.  In our case, we are going to pass it the path to "index.html".
 
+##### index.js
 ```javascript
-// index.js
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/index.html');
 });
@@ -225,14 +223,25 @@ The "__dirname" variable holds the path to our project directory.   We are appen
 
 Now that we have one route created, let's make two more for "/about" and "/contact".  Add this to index.js.
 
+##### index.js
 ```javascript
-// index.js
 app.get('/about', function (req, res) {
   res.sendFile(__dirname + '/about.html');
 });
 
 app.get('/contact', function (req, res) {
   res.sendFile(__dirname + '/contact.html');
+});
+```
+
+We have three routes now, but what if the user's web request doesn't match one of these routes?  We can define a catch all route as the last route that will return the HTTP status code of 404 (page not found) and sends the "404.html" file.
+
+To create a catch all route, we call the "use" function on the "app" variable.  The only argument "use()" takes is an anonymous function that handles a request.
+
+##### index.js
+```javascript
+app.use(function (req, res) {
+  res.status(404).sendFile(__dirname + '/404.html');
 });
 ```
 
@@ -248,10 +257,10 @@ By default, HTTP is done on port 80 and your browser hides this from you.  Try r
 
 Typically when developing and running our server locally, we don't listen on port 80.  This is a good idea for many reasons but primarily allows us to run multiple web servers on the same computer.
 
-Now that we know a little about ports, let's write some code to have our server listen on port 8080. The "app" variable has a method called "listen" that tells the server to start listening for web requests.
+Now that we know a little about ports, let's write some code to have our server listen on port 8080. The "app" variable has a function called "listen" that tells the server to start listening for web requests.
 
+##### index.js
 ```javascript
-// index.js
 app.listen(8080, function() {
   console.log('Web server listening on port 8080!');
 });
@@ -263,8 +272,8 @@ We want to know when our server starts, so the body of our callback function cal
 
 Your final code for "index.js" should look like this:
 
+##### index.js
 ```javascript
-// index.js
 'use strict'
 
 var express = require('express');
@@ -282,6 +291,10 @@ app.get('/contact', function (req, res) {
   res.sendFile(__dirname + '/contact.html');
 });
 
+app.use(function (req, res) {
+  res.status(404).sendFile(__dirname + '/404.html');
+});
+
 app.listen(8080, function() {
   console.log('Web server listening on port 8080!');
 });
@@ -295,8 +308,8 @@ Now we have our server written, let's run it. Save "index.js" and go to your ter
 
 To run javascript files, we use the "node" command.  [Node.js](https://nodejs.org/en/) is a Javascript environment that runs Javascript code for us. The first option passed to the node command is the name of the file we want to run.  Let's run our "index.js" file.
 
+##### Terminal
 ```bash
-# Terminal
 node index.js
 ```
 
@@ -320,10 +333,10 @@ Unfortunately if you visit [http://localhost:8080](http://localhost:8080) in the
 
 HTML and CSS are out of the scope of this tutorial since we are focusing on building and deploying a Node.js server.  If you want to learn about these, Codecademy has a good [HTML/CSS course](https://www.codecademy.com/learn/web).
 
-Add "index.html", "about.html" and "contact.html" files to the root of our project.
+Add "index.html", "about.html", "contact.html" and "404.html" files to the root of our project.
 
+##### index.html
 ```html
-<!-- index.html -->
 <!DOCTYPE html>
 <html>
     <head>
@@ -367,9 +380,8 @@ Add "index.html", "about.html" and "contact.html" files to the root of our proje
     </body>
 </html>
 ```
-
+##### about.html
 ```html
-<!-- about.html -->
 <!DOCTYPE html>
 <html>
     <head>
@@ -410,8 +422,8 @@ Add "index.html", "about.html" and "contact.html" files to the root of our proje
 </html>
 ```
 
+##### contact.html
 ```html
-<!-- contact.html -->
 <!DOCTYPE html>
 <html>
     <head>
@@ -458,8 +470,38 @@ Add "index.html", "about.html" and "contact.html" files to the root of our proje
 </html>
 ```
 
+##### 404.html
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body style="padding-top: 70px;">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="/">Node App</a>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="jumbotron">
+        <div class="container">
+          <h1>Oooopps...</h1>
+          <p>This page couldn't be found.  Click the link below to go to the homepage.</p>
+          <p><a class="btn btn-primary btn-lg" href="/" role="button">Homepage</a></p>
+        </div>
+      </div>
+    </body>
+</html>
+```
+
 <p class="info">
-I'm using a common CSS library called Bootstrap to style the page.  If you want to add to these pages, you can read the [Bootstrap docs here](http://getbootstrap.com/getting-started/).
+I'm using a common CSS library called Bootstrap to style the page.  If you want to add to these pages, you can read the <a href="http://getbootstrap.com/getting-started/">Bootstrap docs here</a>.
 </p>
 
 Save those files and visit [http://localhost:8080](http://localhost:8080) in your browser. You should see the following.
@@ -474,8 +516,8 @@ Now that our server is working, let's deploy it to Heroku.
 
 To deploy to Heroku, we need to add a few things to our package.json.  The first is the Node.js version we are using.  You can check this by running the following.
 
+##### Terminal
 ```bash
-# Terminal
 node --version
 ```
 
@@ -483,8 +525,8 @@ node --version
 
 My node version is "6.9.4".  Let's add this to the bottom of our package.json file. Your package.json file will now look like the following.
 
+##### package.json
 ```json
-// package.json
 {
   "name": "NodeApp",
   "version": "1.0.0",
@@ -506,8 +548,8 @@ My node version is "6.9.4".  Let's add this to the bottom of our package.json fi
 
 Next let's specify a start script in package.json.  We are adding this part to the "scripts" section.  Your package.json will look like the following.
 
+##### package.json
 ```json
-// package.json
 {
   "name": "NodeApp",
   "version": "1.0.0",
@@ -530,6 +572,7 @@ Next let's specify a start script in package.json.  We are adding this part to t
 
 Now that we've specified the start script, let's add a ".gitignore" file to our project.  This file tells git to ignore the files listed in it.  Create the ".gitignore" file in the root of your project and add the following.
 
+##### .gitignore
 ```
 /node_modules
 npm-debug.log
@@ -539,6 +582,7 @@ npm-debug.log
 
 Next, we need to have our server listen for the "PORT" environment variable.  Heroku requires us to listen on the port it specifies with that variable.   Your "index.js" file will now look like the following.
 
+##### index.js
 ```javascript
 'use strict'
 
@@ -559,6 +603,10 @@ app.get('/contact', function (req, res) {
   res.sendFile(__dirname + '/contact.html');
 });
 
+app.use(function (req, res) {
+  res.status(404).sendFile(__dirname + '/404.html');
+});
+
 app.listen(port, function () {
   console.log('Web server listening on port ' + port + '!');
 });
@@ -568,14 +616,14 @@ All we did was add a "port" variable to the top of the file that checks for the 
 
 We can make sure everything is working correctly by running our app locally with Heroku Toolbelt.  Run the following in your terminal.
 
+##### Terminal
 ```bash
-# Terminal
 heroku local web
 ```
 
 You'll see the following.
 
-![](https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/package-json-after-init.png)
+![](https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/heroku-running-nodejs-locally.png)
 
 Visit [http://localhost:5000](http://localhost:5000) in your browser and make sure you can see your web site. 
 
@@ -585,43 +633,50 @@ If everything is working correctly, you're ready to deploy your app to the web.
 
 ## Commiting your files
 
-Heroku uses Git to deploy so we need to add our files to our git repo.  To commit files, we first add them to staging.  This command will add all changed files to staging.
+Heroku uses Git to deploy so we need to make our project a git repository.  We only need to do this once for our project.
 
+##### Terminal
 ```bash
-# Terminal
+git init
+```
+
+Now we need to add our project files to our git repository.  To commit files, we first add them to staging.  This command will add all changed files to staging.
+
+##### Terminal
+```bash
 git add .
 ```
 
-Now we need to commit the files in staging with a message.  
+Now we need to commit the files in staging and add a message.  
 
+##### Terminal
 ```bash
-# Terminal
 git commit -m "Initial commit.  Deploying to Heroku."
 ```
 
 Your files are now committed, let's deploy them to Heroku.
 
 <p class="info">
-Anytime you make changes to your project, you need to commit your files before pushing.  You can refer back here to see how.
+Anytime you make changes to your project, you need to commit your files before pushing.  You can refer back here to see how.  There's no need need to run "git init" again.
 </p>
 
 <span id="deploying-your-app-to-heroku" class="anchor"/>
 
 ## Deploying your app to Heroku
 
-Let's first login to Heroku. 
+Let's first login to Heroku in our Terminal. 
 
+##### Terminal
 ```bash
-# Termainl
 heroku login
 ```
 
-Enter your Heroku login credentials.  When it asks for your password, you'll type but you won't see any characters appear.  They are still being inputted.  Just type your password and press enter. 
+Enter your Heroku login credentials.  When it asks for your password, you'll type but you won't see any characters appear.  They are still being entered, just type your password and press enter. 
 
-Now let's create a server for our app.
+Let's create a Heroku server for our app.
 
+##### Terminal
 ```bash
-# Terminal
 heroku create
 ```
 
@@ -631,21 +686,23 @@ This will print a URL where you can view your website.
 
 Let's push our code to our new server.  
 
+##### Terminal
 ```bash
-# Terminal
 git push heroku master
 ```
 
-This will take a minute to run, but when it's finished, you should be able to visit the URL you got above to see your website.
+This will take a minute to run, but when it's finished, you should be able to visit the URL printed above to see your website.
 
-If you want to create a custom domain name, you can read this guide on adding a custom domain to your Heroku app.
+If you want to create a custom domain name, you can read this [guide on adding a custom domain to your Heroku app](https://devcenter.heroku.com/articles/custom-domains).
 
 <span id="get-the-source-code" class="anchor"/>
 
 ## Get the source code
 
-I understand it's hard to follow the tutorial at times.  You can click here to download the source code.
+Without the full source code, it can be hard to fix errors and know what the final code should look like.  I want to make sure that's not a problem for you, so I've added link for you to download the source code.
 
-[Get the source code!]()
+[Click here to get the source code!]()
 
-Congrats on creating your first server!  We are done for today's tutorial.  You just built and deployed your first web server from scratch.  
+Congratulations!  You just built your first Node.js web server from scratch and deployed it to the web with Heroku.  From here, you can modify the app to fit your needs.  
+
+I would love to see what you guys build with this tutorial!  When you deploy your site, show it off by commenting below with a link to your websites.  
