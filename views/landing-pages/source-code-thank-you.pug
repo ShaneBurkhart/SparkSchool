@@ -6,20 +6,22 @@ block variables
 
 block main_nav
 block no_hero
-   
+
 block content
-    .section
+    .section.tiny
         .container
             .full
-                h1 Awesome! Here's the free source code 
-                p Your download should start in just a moment. If it doesn't start, click here to download it.
+                h1 Awesome! Here's the free source code
+                p
+                    | Your download should start in just a moment. If it doesn't start,
+                    a(href="") click here to download it.
 
     .section.dark-blue.signup-section#sign-up
         .container
             .description
-                h2.bold Continue Your Learning! 
-                p We just touch on the basics of building a Node.js app. To continue learning, I have a course that will take you from zero coding skills to building a Twitter clone from scratch in 7 days. 
-                p This course that walks you step-by-step through building a full-stack web app using Node.js and MySQL. In 7 days, you'll have a website that can create, read, update and delete Tweets.  
+                h2.bold Continue Your Learning!
+                p We just touch on the basics of building a Node.js app. To continue learning, I have a course that will take you from zero coding skills to building a Twitter clone from scratch in 7 days.
+                p This course that walks you step-by-step through building a full-stack web app using Node.js and MySQL. In 7 days, you'll have a website that can create, read, update and delete Tweets.
                 p In this course, you will learn how to:
                 ul
                     li Code a web server in JavaScript using Node.js
@@ -59,3 +61,5 @@ block content
     +saas_signup_anchor_cta_section('Get The Course')
 
     +twitter_meet_the_instructor()
+
+    iframe.hidden(src="https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/twitter-clone-course.pdf")

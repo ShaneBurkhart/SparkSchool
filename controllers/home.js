@@ -7,8 +7,12 @@ var ensureGid = require('../middleware/ensure-gid');
 
 module.exports = function (app) {
   app.get('/', function (req, res, next) {
+    var gidCookie = req.cookies.ssgid;
+    var priceInCents = gidUtil.PRICES[gidCookie] || gidUtil.PRICES[DEFAULT_PRICE_ID];
+
     res.render('landing-pages/homepage-saas-course', {
       currentPath: '/homepage-saas-course',
+      price: Math.floor(priceInCents / 100),
     });
   });
 
