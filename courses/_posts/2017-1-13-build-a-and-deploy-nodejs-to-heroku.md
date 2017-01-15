@@ -4,6 +4,24 @@ permalink: /tutorials/build-and-deploy-nodejs-app-to-heroku
 title: Build A Node.js App From Scratch And Deploy It To Heroku
 ---
 
+If you've ever though about building a web app or learning to code, this tutorial is the perfect place to get started.  This tutorial takes a different approach than most and assumes you have no programming experience.  
+
+I find that most tutorials don't do a very good job of explaining concepts and instead have you copying code.  This isn't very useful for beginners because you aren't actually learning anything.  
+
+In this tutorial, I'm going to walk you step-by-step through building a Node.js app from scratch.  When we are done creating our web app, I'll show you how to deploy it to the web using Heroku.  If you want to actually learn how to build a Node.js web app and deploy it to the web, this is the tutorial for you. 
+
+To make learning even easier, I'm offering the final source code for our web app.  This is useful when fixing errors or checking if your code is correct.  You can download the source code with the link below.
+
+<p class="content-upgrade">
+	<a data-sumome-listbuilder-id="5859efd3-b1aa-480e-9e27-04a0ace84935">Click here to get the final source code!	</a>
+</p>
+
+Let's get started!
+
+<p class="info">
+I am running this tutorial on OS X.  If you are on Windows or Linux, a few things will be slightly different.  I do my best to make a note of these things, but if you have issues, leave a comment and I'll check it out.
+</p>
+
 ### Table of Contents
 - [Prerequisites](#prerequisites)
 - [Creating the project](#creating-the-project)
@@ -15,16 +33,6 @@ title: Build A Node.js App From Scratch And Deploy It To Heroku
 - [Commiting your files](#committing-your-files)
 - [Deploying your app to Heroku](#deploying-your-app-to-heroku)
 - [Get the source code](#get-the-source-code)
-
-I am running this on OS X running X.  If you are on Windows, this will be slightly different.
-
-Javascript is a popular language these days.  With the creation of Node.js, Javascript is now used in both the browser and on the server.
-
-Creating you first app can be intimidating, but this guide will show you how to build a Node.js app from scratch and deploy it to the web using Heroku.
-
-Heroku is a company that provides easy-to-use web app hosting.  They make is dead simple to deploy your apps to the web.  What's even better is they have a free tier so it won't cost you a thing.
-
-By the end of this tutorial, you will have a web app that is published to the web with Heroku.
 
 <span id="prerequisites" class="anchor"/>
 
@@ -701,8 +709,22 @@ If you want to create a custom domain name, you can read this [guide on adding a
 
 Without the full source code, it can be hard to fix errors and know what the final code should look like.  I want to make sure that's not a problem for you, so I've added link for you to download the source code.
 
-[Click here to get the source code!]()
+<p class="content-upgrade">
+	<a class="button" data-sumome-listbuilder-id="5859efd3-b1aa-480e-9e27-04a0ace84935">Click here to get the source code!</a>
+</p>
 
 Congratulations!  You just built your first Node.js web server from scratch and deployed it to the web with Heroku.  From here, you can modify the app to fit your needs.  
 
 I would love to see what you guys build with this tutorial!  When you deploy your site, show it off by commenting below with a link to your websites.  
+
+<div class="meet-the-author">
+	<div class="graphic">
+		<img class="circle" src="https://s3.amazonaws.com/spark-school/me_and_yogi.png" alt="Shane Burkhart with his dog, Yogi." />
+	</div>
+	<div class="description">
+		<h3>Meet The Instructor</h3>
+		<p>Hey, I'm Shane! I’ve been a software developer for a little over 5 years now, and have worked at Yelp, Carfax, and a startup called SumoMe.
+		<p>The crazy part is I didn’t go to school to be a software developer. In fact, I am completely self taught.</p>
+		<p>I've spent the last 5 years teaching myself software development and over time, I have learned what works and what doesn't. Now, I want to use my knowledge to help you learn as efficiently as possible.</p>
+	</div>
+</div>

@@ -31,6 +31,52 @@
         }
     }
 
+    .content-upgrade {
+        text-align: center;
+    }
+
+    .meet-the-author {
+        background-color: #f6f6f6;
+        margin-bottom: 25px;
+        padding: 25px;
+        border: 1px solid #eaeaea;
+        border-radius: 3px;
+        white-space: nowrap;
+        overflow: hidden;
+
+        & > * {
+            vertical-align: top;
+            display: inline-block;
+            white-space: normal;
+        }
+
+        .graphic {
+            width: 31%;
+            margin-right: 4%;
+
+            & .circle {
+                border: 1px solid #eaeaea;
+                border-radius: 50%;
+            }
+        }
+
+        .description {
+            width: 65%;
+
+            & > * {
+                margin-bottom: 10px;
+            }
+
+            h3 {
+                padding: 0px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+
     .next-lesson-button {
         color: #ffffff;
         background-color: #004056;
