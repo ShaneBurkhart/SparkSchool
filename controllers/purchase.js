@@ -14,17 +14,26 @@ module.exports = function (app) {
     var email = req.body.email;
     var stripeToken = req.body.stripeToken;
 
+    if (!/\S+@\S+.\S+/.test(email)) {
+      return res.redirect([
+        '/source-code-thank-you',
+        '?email=' + email,
+        '&error=' + encodeURIComponent('That email is invalid.'),
+      ].join(''));
+    }
+
     var charge = stripe.charges.create({
       amount: 1000,
       currency: "usd",
       source: stripeToken,
       description: TWITTER_CLONE_DESC,
+      receipt_email: email,
     }, function(err, charge) {
       if (err) {
         return res.redirect([
           '/source-code-thank-you',
           '?email=' + email,
-          '&error=' + err.message,
+          '&error=' + encodeURIComponent(err.message),
         ].join(''));
       }
 
