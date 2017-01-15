@@ -112,6 +112,17 @@ p {
         border-radius: 3px;
         line-height: 1.6;
     }
+
+    &.error {
+        color: #ffffff;
+        background-color: #d24747;
+        padding: 8px 15px;
+        font-size: 14px !important;
+
+        i {
+            margin-right: 15px;
+        }
+    }
 }
 
 a, a:hover {
@@ -125,6 +136,38 @@ ul {
     li {
         margin-bottom: 15px;
     }
+}
+
+#payment-form {
+    margin: 0px auto;
+
+    .exp-month-group, .exp-year-group, .cvc-group {
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+
+    .exp-month-group {
+        width: 50%;
+        margin-right: 3%;
+    }
+
+    .exp-year-group {
+        width: 23%;
+        margin-right: 3%;
+    }
+
+    .cvc-group {
+        width: 21%;
+    }
+
+    button {
+        width: 100%;
+        display: block;
+    }
+}
+
+#paypal-form {
+    text-align: center;
 }
 
 .input-group {
