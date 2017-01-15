@@ -13,7 +13,6 @@ module.exports = function (app) {
   app.post('/twitter-clone/purchase', function (req, res) {
     var email = req.body.email;
     var stripeToken = req.body.stripeToken;
-    // TODO Add email with paid tag
 
     var charge = stripe.charges.create({
       amount: 1000,
@@ -29,7 +28,14 @@ module.exports = function (app) {
         ].join(''));
       }
 
-      res.redirect('/twitter-clone-thank-you');
+      var acCallback = function () { res.redirect('/twitter-clone-thank-you'); };
+      var contact = {
+        'email': email,
+        // Twitter clone list
+        'p[1]': '1',
+      };
+
+      activeCampaign.api('contact/add', contact).then(acCallback, acCallback);
     });
   });
 }
