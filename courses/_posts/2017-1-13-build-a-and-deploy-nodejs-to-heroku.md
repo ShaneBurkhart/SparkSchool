@@ -2,15 +2,13 @@
 layout: default
 permalink: /tutorials/build-and-deploy-nodejs-app-to-heroku
 title: Build A Web App From Scratch And Deploy It To The Web
-description: Go from no programming experience to building your own Node.js web app from scratch and deploying it to Heroku.
+description: Go from no programming experience to building your own Node.js web app from scratch and deploying it to the web with Heroku.
 image: https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/coding-on-a-laptop.jpg
 ---
 
-If you've ever thought about building a web app or learning to code, this tutorial is the perfect place to get started.  This tutorial takes a different approach than most and assumes you have no programming experience.
+If you've ever thought about building a web app but don't have any programming experience, this tutorial is the perfect place to get started.
 
-I find that most tutorials don't do a very good job of explaining concepts and instead have you copying code.  This isn't very useful for beginners because you aren't actually learning anything.
-
-In this tutorial, I'm going to walk you step-by-step through building a Node.js app from scratch.  When we are done creating our web app, I'll show you how to deploy it to the web using Heroku.  If you want to actually learn how to build a Node.js web app and deploy it to the web, this is the tutorial for you.
+In this tutorial, I'm going to walk you step-by-step through building a Node.js web app from scratch.  When we are done creating our web app, I'll show you how to deploy it to the web using Heroku.  By the end of this tutorial, you'll have a Node.js web app that is running on the web.
 
 Let's get started!
 
