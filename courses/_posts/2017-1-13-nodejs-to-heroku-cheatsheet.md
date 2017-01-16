@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /cheatsheets/nodejs-and-heroku
+permalink: /cheat-sheets/nodejs-and-heroku
 title: Node.js And Heroku Cheatsheet
 disable-comments: true
 disable-header: true
