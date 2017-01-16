@@ -10,12 +10,12 @@ I find that most tutorials don't do a very good job of explaining concepts and i
 
 In this tutorial, I'm going to walk you step-by-step through building a Node.js app from scratch.  When we are done creating our web app, I'll show you how to deploy it to the web using Heroku.  If you want to actually learn how to build a Node.js web app and deploy it to the web, this is the tutorial for you.
 
-## Get the cheatsheet
+## Get the cheat sheet
 
-In addition to the tutorial, I'm offering a free cheatsheet that contains all of the code snippets and commands we use in this tutorial. This will help you learn more efficiently since you can quickly see everything from the tutorial in one place. If you want to learn as efficiently as possible, I highly recommand you get the cheatsheet. Click the button below to get the cheatsheet.
+In addition to the tutorial, I'm offering a free cheat sheet that contains all of the code snippets and commands we use in this tutorial. This will help you learn more efficiently since you can quickly see everything from the tutorial in one place. If you want to learn as efficiently as possible, I highly recommand you get the cheat sheet. Click the button below to get the cheat sheet.
 
 <p class="content-upgrade">
-	<a class="button" data-sumome-listbuilder-id="5859efd3-b1aa-480e-9e27-04a0ace84935">Click here to get the FREE cheatsheet!</a>
+	<a class="button" data-sumome-listbuilder-id="5859efd3-b1aa-480e-9e27-04a0ace84935">Click here to get the FREE cheat sheet!</a>
 </p>
 
 Let's get started!
@@ -34,7 +34,7 @@ I am running this tutorial on OS X.  If you are on Windows or Linux, a few thing
 - [Getting our project ready for deploy](#getting-ready-for-deploy)
 - [Committing your files](#committing-your-files)
 - [Deploying your app to Heroku](#deploying-your-app-to-heroku)
-- [Get the cheatsheet!](#get-the-cheatsheet)
+- [Get the cheat sheet!](#get-the-cheat-sheet)
 
 <span id="prerequisites" class="anchor"/>
 
@@ -705,16 +705,16 @@ This will take a minute to run, but when it's finished, you should be able to vi
 
 If you want to create a custom domain name, you can read this [guide on adding a custom domain to your Heroku app](https://devcenter.heroku.com/articles/custom-domains).
 
-<span id="get-the-cheatsheet" class="anchor"/>
+<span id="get-the-cheat-sheet" class="anchor"/>
 
-## Get the cheatsheet!
+## Get the cheat sheet!
 
-We covered a lot in this tutorial and it's hard to remember it all.  That's why I created a cheatsheet that contains all of the code snippets and commands we used in this tutorial. This is extremely useful to have so you can quickly reference things we learned in this tutorial on your future projects.
+We covered a lot in this tutorial and it's hard to remember it all.  That's why I created a cheat sheet that contains all of the code snippets and commands we used in this tutorial. This is extremely useful to have so you can quickly reference things we learned in this tutorial on your future projects.
 
-If you plan on building your own web apps, I highly recommend you get the cheatsheet.  Click the button below to get the cheatsheet.
+If you plan on building your own web apps, I highly recommend you get the cheat sheet.  Click the button below to get the cheat sheet.
 
 <p class="content-upgrade">
-	<a class="button" data-sumome-listbuilder-id="5859efd3-b1aa-480e-9e27-04a0ace84935">Click here to get the FREE cheatsheet!</a>
+	<a class="button" data-sumome-listbuilder-id="5859efd3-b1aa-480e-9e27-04a0ace84935">Click here to get the FREE cheat sheet!</a>
 </p>
 
 Congratulations!  You just built your first Node.js web server from scratch and deployed it to the web with Heroku.  From here, you can modify the app to fit your needs.
