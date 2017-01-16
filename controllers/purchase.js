@@ -16,7 +16,7 @@ module.exports = function (app) {
 
     if (!/\S+@\S+.\S+/.test(email)) {
       return res.redirect([
-        '/source-code-thank-you',
+        '/cheat-sheet-thank-you',
         '?email=' + email,
         '&error=' + encodeURIComponent('That email is invalid.'),
       ].join(''));
@@ -31,7 +31,7 @@ module.exports = function (app) {
     }, function(err, charge) {
       if (err) {
         return res.redirect([
-          '/source-code-thank-you',
+          '/cheat-sheet-thank-you',
           '?email=' + email,
           '&error=' + encodeURIComponent(err.message),
         ].join(''));
