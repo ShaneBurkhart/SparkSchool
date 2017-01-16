@@ -1,7 +1,8 @@
 ---
 layout: default
 permalink: /tutorials/build-and-deploy-nodejs-app-to-heroku
-title: Build A Web App From Scratch And Deploy It To The Web
+title: Build A Node.js Web App From Scratch And Deploy It To The Web Using Heroku
+fb-title: Build A Web App From Scratch And Deploy It To The Web
 description: Go from no programming experience to building your own Node.js web app from scratch and deploying it to the web with Heroku.
 image: https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/coding-on-a-laptop.jpg
 ---
