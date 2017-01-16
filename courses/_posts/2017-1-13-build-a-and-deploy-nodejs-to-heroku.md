@@ -12,14 +12,6 @@ I find that most tutorials don't do a very good job of explaining concepts and i
 
 In this tutorial, I'm going to walk you step-by-step through building a Node.js app from scratch.  When we are done creating our web app, I'll show you how to deploy it to the web using Heroku.  If you want to actually learn how to build a Node.js web app and deploy it to the web, this is the tutorial for you.
 
-## Get the cheat sheet
-
-In addition to the tutorial, I'm offering a free cheat sheet that contains all of the code snippets and commands we use in this tutorial. This will help you learn more efficiently since you can quickly see everything from the tutorial in one place. If you want to learn as efficiently as possible, I highly recommend you get the cheat sheet. Click the button below to get the cheat sheet.
-
-<p class="content-upgrade">
-	<a class="button" data-sumome-listbuilder-id="5859efd3-b1aa-480e-9e27-04a0ace84935">Click here to get the FREE cheat sheet!</a>
-</p>
-
 Let's get started!
 
 <p class="info">
