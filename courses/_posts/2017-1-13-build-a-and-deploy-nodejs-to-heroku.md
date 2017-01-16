@@ -9,7 +9,7 @@ image: https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/coding-o
 
 If you've ever thought about building a web app but don't have any programming experience, this tutorial is the perfect place to get started.
 
-In this tutorial, I'm going to walk you step-by-step through building a Node.js web app from scratch.  When we are done creating our web app, I'll show you how to deploy it to the web using Heroku.  By the end of this tutorial, you'll have a Node.js web app that is running on the web.
+In this tutorial, I'm going to walk you step-by-step through building a Node.js web app from scratch.  When we are done creating our web app, I'll show you how to deploy it to the web using Heroku.  By the end of this tutorial, you'll have a Node.js web app that is running on the web!
 
 Let's get started!
 
