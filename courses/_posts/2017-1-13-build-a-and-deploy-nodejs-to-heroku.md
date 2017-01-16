@@ -12,7 +12,7 @@ In this tutorial, I'm going to walk you step-by-step through building a Node.js 
 
 ## Get the cheat sheet
 
-In addition to the tutorial, I'm offering a free cheat sheet that contains all of the code snippets and commands we use in this tutorial. This will help you learn more efficiently since you can quickly see everything from the tutorial in one place. If you want to learn as efficiently as possible, I highly recommand you get the cheat sheet. Click the button below to get the cheat sheet.
+In addition to the tutorial, I'm offering a free cheat sheet that contains all of the code snippets and commands we use in this tutorial. This will help you learn more efficiently since you can quickly see everything from the tutorial in one place. If you want to learn as efficiently as possible, I highly recommend you get the cheat sheet. Click the button below to get the cheat sheet.
 
 <p class="content-upgrade">
 	<a class="button" data-sumome-listbuilder-id="5859efd3-b1aa-480e-9e27-04a0ace84935">Click here to get the FREE cheat sheet!</a>
@@ -54,7 +54,7 @@ Git is a version control tool that Heroku uses to deploy web apps.  Visit [https
 
 ### Install a text editor
 
-When coding, it's important to have a good text editor.  You can use whichever you want, but I recommend [Sublime Text 3](https://www.sublimetext.com).  Visit [https://www.sublimetext.com/3](https://www.sublimetext.com/3) and download the installer for you operating system.  Run it with the default settings.
+When coding, it's important to have a good text editor.  You can use whichever you want, but I recommend [Sublime Text 3](https://www.sublimetext.com).  Visit [https://www.sublimetext.com/3](https://www.sublimetext.com/3) and download the installer for your operating system.  Run it with the default settings.
 
 ### Create a Heroku account
 
@@ -113,9 +113,9 @@ Npm creates a directory called "node_modules" in the root of our project that ho
 
 ## How web servers work
 
-What happens when we type an url into the browser and press enter?
+What happens when we type an URL into the browser and press enter?
 
-The browser will take the requested url and get the domain name from it.  It then uses the domain name to lookup the IP address of the web server.  IP addresses uniquely identify computers on the internet, so no two computers can have the same IP address.
+The browser will take the requested URL and get the domain name from it.  It then uses the domain name to lookup the IP address of the web server.  IP addresses uniquely identify computers on the internet, so no two computers can have the same IP address.
 
 After finding the IP, it sends an HTTP request to the IP it found.  The server receives the request, fetches data it needs and creates a web page to return.  When it's done, it serves the HTML web page (big text file) back to the browser.  The browser then takes the returned HTML and renders it to the user.
 
@@ -197,13 +197,13 @@ We now have an "app" variable that we can use to configure our server.  Right no
 
 In HTTP, each request has an HTTP method that helps define the intent of the web request.  The GET method is used to read data and is one of the most common request methods. Your browser uses this method when requesting a web page.
 
-For our first page, we are going to define a route that listens for a GET request to the homepage.  As we mentioned earlier, the homepage is to the bare domain which is defined as the "/" path.
+For our first page, we are going to define a route that listens for a GET request to the home page.  As we mentioned earlier, the home page is to the bare domain which is defined as the "/" path.
 
 <p class="info">
 When a server is listening for a specific URL and HTTP method, we call that a route.
 </p>
 
-Luckily with Express, creating a GET route can easily be created by calling the "get" function on our "app" variable.  The first argument to the "get" function is the path our route is listening for and the second is a function that gets executed when a request matches this route.  Let's define a GET request to the homepage ("/").
+Luckily with Express, creating a GET route can easily be created by calling the "get" function on our "app" variable.  The first argument to the "get" function is the path our route is listening for and the second is a function that gets executed when a request matches this route.  Let's define a GET request to the home page ("/").
 
 ##### index.js
 ```javascript
@@ -335,7 +335,7 @@ The server blocks terminal input and listens continuously for web requests.  To 
 
 Unfortunately, if you visit [http://localhost:8080](http://localhost:8080) in the browser, you'll get an error because we haven't created the HTML files we are trying to render.  Let's do that now.
 
-![](https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/no-homepage-html-error.png)
+![](https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/no-home-page-html-error.png)
 
 <span id="add-html" class="anchor"/>
 
@@ -502,7 +502,7 @@ Add "index.html", "about.html", "contact.html" and "404.html" files to the root 
       <div class="jumbotron">
         <div class="container">
           <h1>Oooopps...</h1>
-          <p>This page couldn't be found.  Click the link below to go to the homepage.</p>
+          <p>This page couldn't be found.  Click the link below to go to the home page.</p>
           <p><a class="btn btn-primary btn-lg" href="/" role="button">Homepage</a></p>
         </div>
       </div>
@@ -516,7 +516,7 @@ I'm using a common CSS library called Bootstrap to style the page.  If you want 
 
 Save those files and visit [http://localhost:8080](http://localhost:8080) in your browser. You should see the following.
 
-![](https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/final-homepage.png)
+![](https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/final-home-page.png)
 
 Now that our server is working, let's deploy it to Heroku.
 
@@ -635,7 +635,7 @@ You'll see the following.
 
 ![](https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/heroku-running-nodejs-locally.png)
 
-Visit [http://localhost:5000](http://localhost:5000) in your browser and make sure you can see your web site.
+Visit [http://localhost:5000](http://localhost:5000) in your browser and make sure you can see your website.
 
 If everything is working correctly, you're ready to deploy your app to the web.
 
