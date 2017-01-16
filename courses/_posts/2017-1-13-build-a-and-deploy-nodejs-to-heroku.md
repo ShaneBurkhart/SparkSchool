@@ -4,16 +4,18 @@ permalink: /tutorials/build-and-deploy-nodejs-app-to-heroku
 title: Build A Node.js App From Scratch And Deploy It To Heroku
 ---
 
-If you've ever thought about building a web app or learning to code, this tutorial is the perfect place to get started.  This tutorial takes a different approach than most and assumes you have no programming experience.  
+If you've ever thought about building a web app or learning to code, this tutorial is the perfect place to get started.  This tutorial takes a different approach than most and assumes you have no programming experience.
 
-I find that most tutorials don't do a very good job of explaining concepts and instead have you copying code.  This isn't very useful for beginners because you aren't actually learning anything.  
+I find that most tutorials don't do a very good job of explaining concepts and instead have you copying code.  This isn't very useful for beginners because you aren't actually learning anything.
 
-In this tutorial, I'm going to walk you step-by-step through building a Node.js app from scratch.  When we are done creating our web app, I'll show you how to deploy it to the web using Heroku.  If you want to actually learn how to build a Node.js web app and deploy it to the web, this is the tutorial for you. 
+In this tutorial, I'm going to walk you step-by-step through building a Node.js app from scratch.  When we are done creating our web app, I'll show you how to deploy it to the web using Heroku.  If you want to actually learn how to build a Node.js web app and deploy it to the web, this is the tutorial for you.
 
-To make learning even easier, I'm offering the final source code for our web app.  This is useful when fixing errors or checking if your code is correct.  You can download the source code with the link below.
+## Get the cheatsheet
+
+In addition to the tutorial, I'm offering a free cheatsheet that contains all of the code snippets and commands we use in this tutorial. This will help you learn more efficiently since you can quickly see everything from the tutorial in one place. If you want to learn as efficiently as possible, I highly recommand you get the cheatsheet. Click the button below to get the cheatsheet.
 
 <p class="content-upgrade">
-	<a class="button" data-sumome-listbuilder-id="5859efd3-b1aa-480e-9e27-04a0ace84935">Click here to get the final source code!</a>
+	<a class="button" data-sumome-listbuilder-id="5859efd3-b1aa-480e-9e27-04a0ace84935">Click here to get the FREE cheatsheet!</a>
 </p>
 
 Let's get started!
@@ -32,7 +34,7 @@ I am running this tutorial on OS X.  If you are on Windows or Linux, a few thing
 - [Getting our project ready for deploy](#getting-ready-for-deploy)
 - [Committing your files](#committing-your-files)
 - [Deploying your app to Heroku](#deploying-your-app-to-heroku)
-- [Get the source code](#get-the-source-code)
+- [Get the cheatsheet!](#get-the-cheatsheet)
 
 <span id="prerequisites" class="anchor"/>
 
@@ -66,7 +68,7 @@ We need to also install the Heroku toolbelt so we can interface with Heroku from
 
 ## Creating the project
 
-We need a place to store our project files, so let's create a directory (folder) to store them in.  In this tutorial, I'm going to call my directory "NodeApp" and put it on my Desktop.  Go ahead and do that now. 
+We need a place to store our project files, so let's create a directory (folder) to store them in.  In this tutorial, I'm going to call my directory "NodeApp" and put it on my Desktop.  Go ahead and do that now.
 
 Now that we have a project directory, let's navigate to it from the command line.  On OS X and Linux, we can open the command line with an application called "Terminal" and on Windows, it's called "Git Bash".  For the rest of the tutorial, I'll refer to this program as the command line or terminal interchangeably.  Open this program now.
 
@@ -111,7 +113,7 @@ Npm creates a directory called "node_modules" in the root of our project that ho
 
 ## How web servers work
 
-What happens when we type an url into the browser and press enter?  
+What happens when we type an url into the browser and press enter?
 
 The browser will take the requested url and get the domain name from it.  It then uses the domain name to lookup the IP address of the web server.  IP addresses uniquely identify computers on the internet, so no two computers can have the same IP address.
 
@@ -127,7 +129,7 @@ If you look at the diagram above, you can see there are two distinct computers t
 
 ## Writing our web server
 
-With a basic understanding of how a web server works, let's create one. First, we need to create a file for our server code.  Open your text editor (Sublime Text 3) and select File > New File.  Now select File > Save As and save the file as "index.js" in our NodeApp directory. 
+With a basic understanding of how a web server works, let's create one. First, we need to create a file for our server code.  Open your text editor (Sublime Text 3) and select File > New File.  Now select File > Save As and save the file as "index.js" in our NodeApp directory.
 
 Like most programming languages, javascript executes code line-by-line starting at the top.  The first line of all of our javascript files needs to say "use strict" wrapped in single quotes.
 
@@ -276,7 +278,7 @@ app.listen(8080, function() {
 
 The first argument is the port we want to run our web server on and the second argument is an anonymous function that gets run when the server starts listening for requests.  This is only called once when the server starts up.
 
-We want to know when our server starts, so the body of our callback function calls the "console.log()" which simply prints the text "Web server listening on port 8080!" to the terminal. 
+We want to know when our server starts, so the body of our callback function calls the "console.log()" which simply prints the text "Web server listening on port 8080!" to the terminal.
 
 Your final code for "index.js" should look like this:
 
@@ -376,7 +378,7 @@ Add "index.html", "about.html", "contact.html" and "404.html" files to the root 
             <p>You can add sub information about your website here.  Check the bootstrap docs to add to this page.</p>
           </div>
           <div class="col-md-4">
-            <h3>Section 2</h3> 
+            <h3>Section 2</h3>
             <p>You can add sub information about your website here.  Check the bootstrap docs to add to this page.</p>
           </div>
           <div class="col-md-4">
@@ -417,11 +419,11 @@ Add "index.html", "about.html", "contact.html" and "404.html" files to the root 
         </div>
         <div class="row">
           <div class="col-md-6">
-            <h3>Section 1</h3> 
+            <h3>Section 1</h3>
             <p>You can add sub information about your website here.  Check the bootstrap docs to add to this page.</p>
           </div>
           <div class="col-md-6">
-            <h3>Section 2</h3> 
+            <h3>Section 2</h3>
             <p>You can add sub information about your website here.  Check the bootstrap docs to add to this page.</p>
           </div>
         </div>
@@ -633,9 +635,9 @@ You'll see the following.
 
 ![](https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/heroku-running-nodejs-locally.png)
 
-Visit [http://localhost:5000](http://localhost:5000) in your browser and make sure you can see your web site. 
+Visit [http://localhost:5000](http://localhost:5000) in your browser and make sure you can see your web site.
 
-If everything is working correctly, you're ready to deploy your app to the web. 
+If everything is working correctly, you're ready to deploy your app to the web.
 
 <span id="committing-your-files" class="anchor"/>
 
@@ -655,7 +657,7 @@ Now we need to add our project files to our git repository.  To commit files, we
 git add .
 ```
 
-Now we need to commit the files in staging and add a message.  
+Now we need to commit the files in staging and add a message.
 
 ##### Terminal
 ```bash
@@ -672,14 +674,14 @@ Anytime you make changes to your project, you need to commit your files before p
 
 ## Deploying your app to Heroku
 
-Let's first login to Heroku in our Terminal. 
+Let's first login to Heroku in our Terminal.
 
 ##### Terminal
 ```bash
 heroku login
 ```
 
-Enter your Heroku login credentials.  When it asks for your password, you'll type but you won't see any characters appear.  They are still being entered, just type your password and press enter. 
+Enter your Heroku login credentials.  When it asks for your password, you'll type but you won't see any characters appear.  They are still being entered, just type your password and press enter.
 
 Let's create a Heroku server for our app.
 
@@ -688,11 +690,11 @@ Let's create a Heroku server for our app.
 heroku create
 ```
 
-This will print a URL where you can view your website.  
+This will print a URL where you can view your website.
 
 ![](https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/heroku-create-url.png)
 
-Let's push our code to our new server.  
+Let's push our code to our new server.
 
 ##### Terminal
 ```bash
@@ -703,19 +705,21 @@ This will take a minute to run, but when it's finished, you should be able to vi
 
 If you want to create a custom domain name, you can read this [guide on adding a custom domain to your Heroku app](https://devcenter.heroku.com/articles/custom-domains).
 
-<span id="get-the-source-code" class="anchor"/>
+<span id="get-the-cheatsheet" class="anchor"/>
 
-## Get the source code
+## Get the cheatsheet!
 
-Without the full source code, it can be hard to fix errors and know what the final code should look like.  I want to make sure that's not a problem for you, so I've added a link for you to download the source code.
+We covered a lot in this tutorial and it's hard to remember it all.  That's why I created a cheatsheet that contains all of the code snippets and commands we used in this tutorial. This is extremely useful to have so you can quickly reference things we learned in this tutorial on your future projects.
+
+If you plan on building your own web apps, I highly recommend you get the cheatsheet.  Click the button below to get the cheatsheet.
 
 <p class="content-upgrade">
-	<a class="button" data-sumome-listbuilder-id="5859efd3-b1aa-480e-9e27-04a0ace84935">Click here to get the source code!</a>
+	<a class="button" data-sumome-listbuilder-id="5859efd3-b1aa-480e-9e27-04a0ace84935">Click here to get the FREE cheatsheet!</a>
 </p>
 
-Congratulations!  You just built your first Node.js web server from scratch and deployed it to the web with Heroku.  From here, you can modify the app to fit your needs.  
+Congratulations!  You just built your first Node.js web server from scratch and deployed it to the web with Heroku.  From here, you can modify the app to fit your needs.
 
-I would love to see what you guys build with this tutorial!  When you deploy your site, show it off by commenting below with a link to your websites.  
+I would love to see what you guys build with this tutorial!  When you deploy your site, show it off by commenting below with a link to your websites.
 
 <div class="meet-the-author">
 	<div class="graphic">
