@@ -7,6 +7,15 @@
                 '/assets/images/monitor-on-desk.png': 'Illustration of monitor on desk with code.'
                 '/assets/images/start-here-mac-window.png': 'Mac window with button saying "Start Here".'
                 '/assets/images/hello-world-code-snippet.png': 'Hello world program in Express.js.'
+        '/tutorials/build-and-deploy-nodejs-app-to-heroku':
+            images:
+                'https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/package-json-after-init.png': 'Initialize package.json with npm init command'
+                'https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/server-client-http-request-diagram.jpg': 'Diagram of HTTP web request'
+                'https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/no-home-page-html-error.png': 'Node.js failed to send home page HTML file'
+                'https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/final-home-page.png': 'Home page for our Node.js web app'
+                'https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/terminal-nodejs-version.png': 'Get Node.js version on the command line'
+                'https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/heroku-running-nodejs-locally.png': 'Run our Node.js web app as Heroku on your local computer'
+                'https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/heroku-create-url.png': 'Create Heroku server for our Node.js web app.'
 
 -
     changeFreq: 'monthly'
