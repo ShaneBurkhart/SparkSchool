@@ -78,10 +78,20 @@
             .bullet-points {
                 background-color: #ffffff;
             }
+
+            a {
+                color: #ffffff;
+                font-weight: 700;
+                text-decoration: underline;
+            }
         }
 
         &.small {
             padding: 60px 0px;
+        }
+
+        &.tiny {
+            padding: 40px 0px;
         }
 
         h2 {
@@ -160,6 +170,10 @@
                 & .circle {
                     border-radius: 50%;
                 }
+
+                & .rounded {
+                    border-radius: 3px;
+                }
             }
         }
 
@@ -190,6 +204,11 @@
         background-color: #ffffff;
         border: 1px solid #eaeaea;
         padding: 30px;
+        margin-bottom: 25px;
+
+        &:last-child {
+            margin-bottom: 0px;
+        }
 
         h3 {
             margin-bottom: 20px;

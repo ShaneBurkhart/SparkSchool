@@ -30,6 +30,13 @@ header {
     z-index: 1000;
 }
 
+iframe.hidden {
+    width: 0;
+    height: 0;
+    border: 0;
+    border: none;
+}
+
 #site-logo {
     color: #013b50;
     display: block;
@@ -97,6 +104,27 @@ p {
     &.bold, .bold {
         font-weight: 700;
     }
+
+    &.info {
+        color: #002A3D;
+        background: #b3e4ff;
+        padding: 14px;
+        border-radius: 3px;
+        line-height: 1.6;
+        -webkit-print-color-adjust: exact;
+    }
+
+    &.error {
+        color: #ffffff;
+        background-color: #d24747;
+        padding: 8px 15px;
+        font-size: 14px !important;
+        -webkit-print-color-adjust: exact;
+
+        i {
+            margin-right: 15px;
+        }
+    }
 }
 
 a, a:hover {
@@ -110,6 +138,38 @@ ul {
     li {
         margin-bottom: 15px;
     }
+}
+
+#payment-form {
+    margin: 0px auto;
+
+    .exp-month-group, .exp-year-group, .cvc-group {
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+
+    .exp-month-group {
+        width: 50%;
+        margin-right: 3%;
+    }
+
+    .exp-year-group {
+        width: 23%;
+        margin-right: 3%;
+    }
+
+    .cvc-group {
+        width: 21%;
+    }
+
+    button {
+        width: 100%;
+        display: block;
+    }
+}
+
+#paypal-form {
+    text-align: center;
 }
 
 .input-group {

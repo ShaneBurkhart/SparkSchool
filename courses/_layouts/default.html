@@ -5,7 +5,9 @@
         {% include facebook_pixel.html %}
     </head>
     <body id="course">
-        {% include header.html %}
+        {% unless page.disable-header %}
+            {% include header.html %}
+        {% endunless %}
         <main class="container">
             <article>
                 <h1>{{ page.title }}</h1>

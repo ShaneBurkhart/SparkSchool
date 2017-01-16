@@ -36,8 +36,8 @@ gulp.task('sass', function () {
     .pipe(gulp.dest('./public/assets/css'));
 });
 
-gulp.task('sass:watch', function () {
-  gulp.watch('./assets/css/**/*.scss', ['sass']);
+gulp.task('watch', function () {
+  gulp.watch('./assets/**/*', ['build']);
 });
 
 gulp.task('sitemap', function (done) {
