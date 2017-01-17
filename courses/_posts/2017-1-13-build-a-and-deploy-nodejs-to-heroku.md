@@ -13,7 +13,9 @@ Being a completely self-taught developer, I know all too well how hard it is for
 
 You heard me right! You'll have your first web app running and deployed to the web **within the next couple of hours!**
 
-**Why Node.js and Heroku?**  Node.js is currently being used by big-name companies like Netflix, LinkedIn, and PayPal right now and is quickly becoming one of the best languages for building a web app. After building our app, we need a way to deploy it to the web. Hands down the easiest way to deploy an app to the web is with Heroku! Heroku does all the heavy lifting of setting up a server so you can focus on only writing code.
+**Why Node.js and Heroku?**  Node.js is currently being used by big-name companies like Netflix, LinkedIn, and PayPal right now and is quickly becoming one of the best languages for building a web app.
+
+After building our app, we need a way to deploy it to the web. Hands down the easiest way to deploy an app to the web is with Heroku! Heroku does all the heavy lifting of setting up a server so you can focus on only writing code.
 
 In this tutorial, I'll show you how you can not only get started with Node.js but also launch your very own web application from start to finish. Let's get started!
 
