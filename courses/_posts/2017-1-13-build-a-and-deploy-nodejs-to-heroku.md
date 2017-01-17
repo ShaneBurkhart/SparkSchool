@@ -7,15 +7,28 @@ description: Go from no programming experience to building your own Node.js web 
 image: https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/coding-on-a-laptop.jpg
 ---
 
-If you've ever thought about building a web app but don't have any programming experience, this tutorial is the perfect place to get started.
+If you've thought about building a web app, you've probably asked yourself these questions: "How do I get started?", "What do I learn first?", "Am I making mistakes?"
 
-In this tutorial, I'm going to walk you step-by-step through building a Node.js web app from scratch.  When we are done creating our web app, I'll show you how to deploy it to the web using Heroku.  By the end of this tutorial, you'll have a Node.js web app that is running on the web!
+Being a completely self-taught developer, I know all too well how hard it is for people with no programming experience to get started. To fix this problem, I designed this tutorial to teach absolute beginners how to build and deploy their first web app with only an hour or two of learning.
 
-Let's get started!
+You heard me right! You'll have your first web app running and deployed to the web **within the next couple of hours!**
+
+**Why Node.js and Heroku?**  Node.js is currently being used by big-name companies like Netflix, LinkedIn, and PayPal right now and is quickly becoming one of the best languages for building a web app. After building our app, we need a way to deploy it to the web. Hands down the easiest way to deploy an app to the web is with Heroku! Heroku does all the heavy lifting of setting up a server so you can focus on only writing code.
+
+In this tutorial, I'll show you how you can not only get started with Node.js but also launch your very own web application from start to finish. Let's get started!
 
 <p class="info">
-I am running this tutorial on OS X.  If you are on Windows or Linux, a few things will be slightly different.  I do my best to make a note of these things, but if you have issues, leave a comment and I'll check it out.
+I am running this tutorial on a Mac.  If you are on Windows or Linux, a few things will be slightly different.  I make a note of these things, but if you have issues, leave a comment and I'll check it out.
 </p>
+
+## Get the cheat sheet!
+
+In addition to the tutorial, I'm offering a free cheat sheet that contains all of the code snippets and commands we use in this tutorial. As a beginner, this is an extremely useful resource so you can quickly reference previous code and commands. If you want to learn as efficiently as possible, I highly recommend you get the cheat sheet. Click the button below to get the cheat sheet.
+
+<p class="content-upgrade">
+    <a class="button" data-sumome-listbuilder-id="5859efd3-b1aa-480e-9e27-04a0ace84935">Click here to get the FREE cheat sheet!</a>
+</p>
+
 
 ### Table of Contents
 - [Prerequisites](#prerequisites)
@@ -33,7 +46,7 @@ I am running this tutorial on OS X.  If you are on Windows or Linux, a few thing
 
 ## Prerequisites
 
-You need to do these things before getting started.  Don't worry, all of the tools and services we use in this tutorial are free.
+You need to do these things before getting started.  Don't worry, all of the tools and services we use in this tutorial are free!
 
 ### Install Node.js
 
