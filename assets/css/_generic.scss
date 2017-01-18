@@ -216,6 +216,11 @@ ul {
         background-color: #013b50;
     }
 
+    &.block {
+        display: block;
+        width: 100%;
+    }
+
     &.yellow {
         background-color: #a29910;
 
