@@ -73,7 +73,7 @@ module.exports = function (app) {
 
   app.get('/saas-course/purchase', authUser(), restrictUser('paid'), ensureGid, function (req, res) {
     var gidCookie = req.cookies.ssgid;
-    var priceInCents = gidUtil.PRICES[gidCookie] || gidUtil.PRICES[DEFAULT_PRICE_ID];
+    var priceInCents = gidUtil.PRICES[gidCookie] || gidUtil.PRICES[gidUtil.DEFAULT_PRICE_ID];
 
     res.render('user/saas-course-purchase', {
       stripePublicKey: process.env.STRIPE_PUBLIC_KEY,
@@ -84,7 +84,7 @@ module.exports = function (app) {
   app.post('/saas-course/purchase', authUser(), restrictUser('paid'), ensureGid, function (req, res) {
     var stripeToken = req.body.stripeToken;
     var gidCookie = req.cookies.ssgid;
-    var priceInCents = gidUtil.PRICES[gidCookie] || gidUtil.PRICES[DEFAULT_PRICE_ID];
+    var priceInCents = gidUtil.PRICES[gidCookie] || gidUtil.PRICES[gidUtil.DEFAULT_PRICE_ID];
     var user = req.user;
 
     User.addCustomerAndCharge(user, stripeToken, priceInCents, function (err) {

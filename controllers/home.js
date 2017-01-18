@@ -8,7 +8,7 @@ var ensureGid = require('../middleware/ensure-gid');
 module.exports = function (app) {
   app.get('/', function (req, res, next) {
     var gidCookie = req.cookies.ssgid;
-    var priceInCents = gidUtil.PRICES[gidCookie] || gidUtil.PRICES[DEFAULT_PRICE_ID];
+    var priceInCents = gidUtil.PRICES[gidCookie] || gidUtil.PRICES[gidUtil.DEFAULT_PRICE_ID];
 
     res.render('landing-pages/homepage-saas-course', {
       currentPath: '/homepage-saas-course',
@@ -20,7 +20,7 @@ module.exports = function (app) {
   app.get('/*', ensureGid, function (req, res, next) {
     var path = req.path;
     var gidCookie = req.cookies.ssgid;
-    var priceInCents = gidUtil.PRICES[gidCookie] || gidUtil.PRICES[DEFAULT_PRICE_ID];
+    var priceInCents = gidUtil.PRICES[gidCookie] || gidUtil.PRICES[gidUtil.DEFAULT_PRICE_ID];
     var query = req.query || {};
 
     // SumoMe isn't URI encoding emails when sending them as GET vars.
