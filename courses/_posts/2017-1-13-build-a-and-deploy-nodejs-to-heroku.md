@@ -1,23 +1,27 @@
 ---
 layout: default
 permalink: /tutorials/build-and-deploy-nodejs-app-to-heroku
-title: Build A Node.js Web App From Scratch And Deploy It To The Web Using Heroku
-fb-title: Build A Web App From Scratch And Deploy It To The Web
+title: Complete Beginner's Guide To Building And Deploying A Web App
+fb-title: Complete Beginner's Guide To Building And Deploying A Web App
 description: Go from no programming experience to building your own Node.js web app from scratch and deploying it to the web with Heroku.
 image: https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/coding-on-a-laptop.jpg
 ---
 
-If you've thought about building a web app, you've probably asked yourself these questions: "How do I get started?", "What do I learn first?", "Am I making mistakes?"
+If you've thought about building a web app, you've probably asked yourself these questions: **"How do I get started?", "What do I learn first?", "Am I making mistakes?"**
 
-Being a completely self-taught developer, I know all too well how hard it is for people with no programming experience to get started. To fix this problem, I designed this tutorial to teach absolute beginners how to build and deploy their first web app with only an hour or two of learning.
+When I started teaching myself how to code, I asked myself those same questions. I had no idea where to start and no one to point me in the right direction.  Needless to say, I made plenty of mistakes, and it took me much longer to learn than it probably should have.
 
-You heard me right! You'll have your first web app running and deployed to the web **within the next couple of hours!**
+**It doesn't have to be that way for you!**
 
-**Why Node.js and Heroku?**  Node.js is currently being used by big-name companies like Netflix, LinkedIn, and PayPal right now and is quickly becoming one of the best languages for building a web app.
+Because I know how hard it is to get started, I created this tutorial as a starting point for learning web development.  Since we're starting at the beginning, let's define what a web app is.
 
-After building our app, we need a way to deploy it to the web. Hands down the easiest way to deploy an app to the web is with Heroku! Heroku does all the heavy lifting of setting up a server so you can focus on only writing code.
+**What's a web app?** Web app is short for web application and is a broad term referring to just about any website that interacts with a user. This can range from something as complex as Facebook to something as simple as a web page with a form. For this tutorial, we are going to build a web app using Node.js that has a home, contact, and about page. From there, you can modify your web app to your own website's needs.
 
-In this tutorial, I'll show you how you can not only get started with Node.js but also launch your very own web application from start to finish. Let's get started!
+**Why Node.js?**  Node.js is used to write web servers in the Javascript programming language and is quickly becoming one of the best options for building web apps.  Paypal, LinkedIn, and Netflix are just a few companies that are built on Node.js.
+
+**What about deploying to the web?** To deploy your app to the web, you need a server to run your code. For this guide, we are going to use Heroku. Usually setting up a server is a tedious process, but Heroku does all the heavy lifting so you can focus on only writing code. Heroku is hands down the easiest server provider I've found and the best part is it's free!
+
+In this beginner's guide, I'll show you how you can not only get started with Node.js but also launch your very own web application from start to finish. Let's get started!
 
 <p class="info">
 I am running this tutorial on a Mac.  If you are on Windows or Linux, a few things will be slightly different.  I make a note of these things, but if you have issues, leave a comment and I'll check it out.
