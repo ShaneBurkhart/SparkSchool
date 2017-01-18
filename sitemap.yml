@@ -7,6 +7,7 @@
                 '/assets/images/monitor-on-desk.png': 'Illustration of monitor on desk with code.'
                 '/assets/images/start-here-mac-window.png': 'Mac window with button saying "Start Here".'
                 '/assets/images/hello-world-code-snippet.png': 'Hello world program in Express.js.'
+        '/tutorials/build-and-deploy-nodejs-app-to-heroku/intro':
         '/tutorials/build-and-deploy-nodejs-app-to-heroku':
             images:
                 'https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/package-json-after-init.png': 'Initialize package.json with npm init command'
