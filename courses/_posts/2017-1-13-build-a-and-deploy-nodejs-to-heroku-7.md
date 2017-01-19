@@ -12,14 +12,15 @@ I am running this tutorial on a Mac.  If you are on Windows or Linux, a few thin
 </p>
 
 ### Table of Contents
-- [Lesson 1: Setup](/tutorials/build-and-deploy-nodejs-app-to-heroku/1)
-- [Lesson 2: Creating Your Project](/tutorials/build-and-deploy-nodejs-app-to-heroku/2)
-- [Lesson 3: Writing Your Web App](/tutorials/build-and-deploy-nodejs-app-to-heroku/3)
-- [Lesson 4: Running Your Web App Locally](/tutorials/build-and-deploy-nodejs-app-to-heroku/4)
-- [Lesson 5: Add HTML For Home, Contact And About Page](/tutorials/build-and-deploy-nodejs-app-to-heroku/5)
-- [Lesson 6: Getting Your Project Ready For Deploy](/tutorials/build-and-deploy-nodejs-app-to-heroku/6)
-- [Lesson 7: Commiting Your Files With Git](/tutorials/build-and-deploy-nodejs-app-to-heroku/7)
-- [Lesson 8: Deploying Your Web App To Heroku](/tutorials/build-and-deploy-nodejs-app-to-heroku/8)
+- [Introduction](/tutorials/build-and-deploy-nodejs-app-to-heroku/intro)
+- [Step 1: Setup and installation](/tutorials/build-and-deploy-nodejs-app-to-heroku/1)
+- [Step 2: Creating your project and installing Express.js](/tutorials/build-and-deploy-nodejs-app-to-heroku/2)
+- [Step 3: Writing your first web app with Node.js and Express.js](/tutorials/build-and-deploy-nodejs-app-to-heroku/3)
+- [Step 4: Running your Node.js web app locally](/tutorials/build-and-deploy-nodejs-app-to-heroku/4)
+- [Step 5: Add HTML for home, contact, and about pages](/tutorials/build-and-deploy-nodejs-app-to-heroku/5)
+- [Step 6: Getting your Node.js app ready for deploy to Heroku](/tutorials/build-and-deploy-nodejs-app-to-heroku/6)
+- **Step 7: Commiting your files with Git**
+- [Step 8: Deploying your web app to Heroku](/tutorials/build-and-deploy-nodejs-app-to-heroku/8)
 
 ## Initializing your project as a Git repository
 

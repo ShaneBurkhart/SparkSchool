@@ -1,8 +1,8 @@
 ---
 layout: default
 permalink: /tutorials/build-and-deploy-nodejs-app-to-heroku/2
-title: 'Lesson 2: Creating Your Project And Installing Express.js'
-fb-title: 'Lesson 2: Creating Your Project And Installing Express.js'
+title: 'Step 2: Creating Your Project and Installing Express.js'
+fb-title: 'Step 2: Creating Your Project and Installing Express.js'
 description: Go from no programming experience to building your own Node.js web app from scratch and deploying it to the web with Heroku.
 image: https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/coding-on-a-laptop.jpg
 ---
@@ -12,14 +12,15 @@ I am running this tutorial on a Mac.  If you are on Windows or Linux, a few thin
 </p>
 
 ### Table of Contents
-- [Lesson 1: Setup](/tutorials/build-and-deploy-nodejs-app-to-heroku/1)
-- **Lesson 2: Creating Your Project**
-- [Lesson 3: Writing Your First Web App](/tutorials/build-and-deploy-nodejs-app-to-heroku/3)
-- [Lesson 4: Running Your Web App Locally](/tutorials/build-and-deploy-nodejs-app-to-heroku/4)
-- [Lesson 5: Add HTML For Home, Contact And About Page](/tutorials/build-and-deploy-nodejs-app-to-heroku/5)
-- [Lesson 6: Getting Your Project Ready For Deploy](/tutorials/build-and-deploy-nodejs-app-to-heroku/6)
-- [Lesson 7: Commiting Your Files With Git](/tutorials/build-and-deploy-nodejs-app-to-heroku/7)
-- [Lesson 8: Deploying Your Web App To Heroku](/tutorials/build-and-deploy-nodejs-app-to-heroku/8)
+- [Introduction](/tutorials/build-and-deploy-nodejs-app-to-heroku/intro)
+- [Step 1: Setup and installation](/tutorials/build-and-deploy-nodejs-app-to-heroku/1)
+- **Step 2: Creating your project and installing Express.js**
+- [Step 3: Writing your first web app with Node.js and Express.js](/tutorials/build-and-deploy-nodejs-app-to-heroku/3)
+- [Step 4: Running your Node.js web app locally](/tutorials/build-and-deploy-nodejs-app-to-heroku/4)
+- [Step 5: Add HTML for home, contact, and about pages](/tutorials/build-and-deploy-nodejs-app-to-heroku/5)
+- [Step 6: Getting your Node.js app ready for deploy to Heroku](/tutorials/build-and-deploy-nodejs-app-to-heroku/6)
+- [Step 7: Commiting your files with Git](/tutorials/build-and-deploy-nodejs-app-to-heroku/7)
+- [Step 8: Deploying your web app to Heroku](/tutorials/build-and-deploy-nodejs-app-to-heroku/8)
 
 
 ## Creating your project folder
@@ -37,7 +38,7 @@ cd ~/Desktop/NodeApp
 
 Now that we've navigated to our project directory, we need to initialize our project.
 
-<span data-sumome-listbuilder-embed-id="0b93adfbc532f959fce02f7126a909cc07424bbe42a7f6750cee50b624a205ad"></span>
+<span data-sumome-listbuilder-embed-id="1778570efe1607df29fa777878e6f0f764db48b346ef4959d0256a69511ce6a5"></span>
 
 ## Creating package.json for your project
 

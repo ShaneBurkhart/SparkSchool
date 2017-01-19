@@ -1,8 +1,8 @@
 ---
 layout: default
 permalink: /tutorials/build-and-deploy-nodejs-app-to-heroku/1
-title: 'Lesson 1: Setup and Installation'
-fb-title: 'Lesson 1: Setup and Installation'
+title: 'Step 1: Setup and Installation'
+fb-title: 'Step 1: Setup and Installation'
 description: Go from no programming experience to building your own Node.js web app from scratch and deploying it to the web with Heroku.
 image: https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/coding-on-a-laptop.jpg
 ---
@@ -13,16 +13,16 @@ I am running this tutorial on a Mac.  If you are on Windows or Linux, a few thin
 
 ### Table of Contents
 - [Introduction](/tutorials/build-and-deploy-nodejs-app-to-heroku/intro)
-- **Lesson 1: Setup**
-- [Lesson 2: Creating Your Project](/tutorials/build-and-deploy-nodejs-app-to-heroku/2)
-- [Lesson 3: Writing Your First Web App](/tutorials/build-and-deploy-nodejs-app-to-heroku/3)
-- [Lesson 4: Running Your Web App Locally](/tutorials/build-and-deploy-nodejs-app-to-heroku/4)
-- [Lesson 5: Add HTML For Home, Contact And About Page](/tutorials/build-and-deploy-nodejs-app-to-heroku/5)
-- [Lesson 6: Getting Your Project Ready For Deploy](/tutorials/build-and-deploy-nodejs-app-to-heroku/6)
-- [Lesson 7: Commiting Your Files With Git](/tutorials/build-and-deploy-nodejs-app-to-heroku/7)
-- [Lesson 8: Deploying Your Web App To Heroku](/tutorials/build-and-deploy-nodejs-app-to-heroku/8)
+- **Step 1: Setup and installation**
+- [Step 2: Creating your project and installing Express.js](/tutorials/build-and-deploy-nodejs-app-to-heroku/2)
+- [Step 3: Writing your first web app with Node.js and Express.js](/tutorials/build-and-deploy-nodejs-app-to-heroku/3)
+- [Step 4: Running your Node.js web app locally](/tutorials/build-and-deploy-nodejs-app-to-heroku/4)
+- [Step 5: Add HTML for home, contact, and about pages](/tutorials/build-and-deploy-nodejs-app-to-heroku/5)
+- [Step 6: Getting your Node.js app ready for deploy to Heroku](/tutorials/build-and-deploy-nodejs-app-to-heroku/6)
+- [Step 7: Commiting your files with Git](/tutorials/build-and-deploy-nodejs-app-to-heroku/7)
+- [Step 8: Deploying your web app to Heroku](/tutorials/build-and-deploy-nodejs-app-to-heroku/8)
 
-You need to do these things before getting started.  Don't worry, all of the tools and services we use in this tutorial are free!
+Before we get started, you need to do the following things.  Don't worry, all of the tools and services we use in this tutorial are free!
 
 ### Install Node.js
 
@@ -32,7 +32,7 @@ If you're on Linux, [here's a guide to installing Node.js on Ubuntu](https://www
 
 ### Install Git
 
-Git is a version control tool that Heroku uses to deploy web apps.  Visit [https://git-scm.com/downloads](https://git-scm.com/downloads) and download the installer for your operating system.  Run it with the default settings.
+Git is a version control tool that Heroku uses to deploy web apps.  We'll talk a little more about Git later.  For now, visit [https://git-scm.com/downloads](https://git-scm.com/downloads) and download the installer for your operating system.  Run it with the default settings.
 
 ### Install a text editor
 
@@ -45,6 +45,8 @@ Creating a Heroku account is free and easy.  Visit [https://signup.heroku.com/](
 ### Install Heroku toolbelt
 
 We need to also install the Heroku toolbelt so we can interface with Heroku from our project.  [Here's a guide to install Heroku toolbelt](https://devcenter.heroku.com/articles/heroku-cli).
+
+With everything set up, you're ready to create your project!
 
 <p class="next-lesson">
     <a class="button block" href="/tutorials/build-and-deploy-nodejs-app-to-heroku/2">Start Lesson 2: Creating Your Project!</a>
