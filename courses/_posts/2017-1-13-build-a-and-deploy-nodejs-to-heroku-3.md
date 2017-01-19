@@ -24,7 +24,9 @@ I am running this tutorial on a Mac.  If you are on Windows or Linux, a few thin
 
 ## How web servers work
 
-What happens when we type an URL into the browser and press enter?
+**What is a web server?** A web server is a computer server that is connected to the internet and takes web requests. You can run just about anything on a web server, but we are going to be running our Node.js app on our web server.
+
+**What happens when we type an URL into the browser and press enter?**
 
 The browser will take the requested URL and get the domain name from it.  It then uses the domain name to lookup the IP address of the web server.  IP addresses uniquely identify computers on the internet, so no two computers can have the same IP address.
 
@@ -35,8 +37,6 @@ Below is a diagram showing the client and server and how they make requests.
 ![](https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/server-client-http-request-diagram.jpg)
 
 If you look at the diagram above, you can see there are two distinct computers to a web request: a web server and the client computer.  Some people will call the client computer the "frontend" and the web server the "backend".
-
-<span id="writing-our-web-server" class="anchor"/>
 
 ## Writing our web server
 
@@ -171,6 +171,8 @@ app.use(function (req, res) {
   res.status(404).sendFile(__dirname + '/404.html');
 });
 ```
+
+## Starting your server
 
 We have our app created and routes defined, but we haven't written any code to start our server yet.  Before we do that, let's talk a little about ports.
 

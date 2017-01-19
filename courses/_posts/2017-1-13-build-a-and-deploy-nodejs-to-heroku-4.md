@@ -26,7 +26,7 @@ I am running this tutorial on a Mac.  If you are on Windows or Linux, a few thin
 
 Now we have our server written, let's run it. Save "index.js" and go to your terminal.
 
-To run javascript files, we use the "node" command.  [Node.js](https://nodejs.org/en/) is a Javascript environment that runs Javascript code for us. The first option passed to the node command is the name of the file we want to run.  Let's run our "index.js" file.
+Early, we talked about how Node.js is used to run Javascript files, so let's use it to run our "index.js" file. To run javascript files, we use the "node" command. The first option passed to the node command is the name of the file we want to run.  Let's run our "index.js" file.
 
 ##### Terminal
 ```bash
