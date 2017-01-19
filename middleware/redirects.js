@@ -7,7 +7,8 @@ var REDIRECTS = {
 };
 
 module.exports = function (req, res, next) {
-  var redirect = REDIRECTS[req.path];
+  var path = req.path.replace(/\/$/, '');
+  var redirect = REDIRECTS[path];
 
   if (redirect) return res.redirect(redirect);
 
