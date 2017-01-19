@@ -139,9 +139,16 @@
     }
 
     @media only screen and (max-width : 750px) {
+        .meet-the-author {
+            * {
+                display: block !important;
+                width: 100% !important;
+                margin-bottom: 25px;
+            }
+        }
 
-      #main-nav {
-        width: 30%;
-      }
+        #main-nav {
+            width: 30%;
+        }
     }
 }

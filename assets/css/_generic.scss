@@ -101,8 +101,8 @@ p {
         text-decoration: underline;
     }
 
-    &.bold, .bold {
-        font-weight: 700;
+    &.bold, .bold, b {
+        font-weight: 700 !important;
     }
 
     &.info {
