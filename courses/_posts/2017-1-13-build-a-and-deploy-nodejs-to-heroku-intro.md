@@ -26,14 +26,6 @@ In this beginner's guide, I'll show you how you can not only get started with No
 
 Let's get started!
 
-<span data-sumome-listbuilder-embed-id="ee5732f014fbacba31f7b920c2ff075b7e7e148cdc4ab9c6e467ca1c9f9f8613"></span>
-
-<noscript>
-    <div class="content-upgrade">
-        <a class="button block" href="/tutorials/build-and-deploy-nodejs-app-to-heroku/1">Start The Tutorial Now!</a>
-    </div>
-</noscript>
-
 <div class="meet-the-author">
 	<div class="graphic">
 		<img class="circle" src="https://s3.amazonaws.com/spark-school/me_and_yogi.png" alt="Shane Burkhart with his dog, Yogi." />
@@ -45,3 +37,11 @@ Let's get started!
 		<p>I've spent the last 5 years teaching myself software development and over time, I have learned what works and what doesn't. Now, I want to use my knowledge to help you learn as efficiently as possible.</p>
 	</div>
 </div>
+
+<span data-sumome-listbuilder-embed-id="ee5732f014fbacba31f7b920c2ff075b7e7e148cdc4ab9c6e467ca1c9f9f8613"></span>
+
+<div class="content-upgrade">
+    <h2>Or Start It Now!</h2>
+    <a class="button block" href="/tutorials/build-and-deploy-nodejs-app-to-heroku/1">Start The Tutorial Now!</a>
+</div>
+
