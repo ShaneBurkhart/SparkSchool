@@ -1,0 +1,62 @@
+---
+layout: default
+permalink: /tutorials/build-and-deploy-nodejs-app-to-heroku/8
+title: 'Lesson 8: Deploying Your Node.js Web App To Heroku'
+fb-title: 'Lesson 8: Deploying Your Node.js Web App To Heroku'
+description: Go from no programming experience to building your own Node.js web app from scratch and deploying it to the web with Heroku.
+image: https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/coding-on-a-laptop.jpg
+---
+
+<p class="info">
+I am running this tutorial on a Mac.  If you are on Windows or Linux, a few things will be slightly different.  I make a note of these things, but if you have issues, leave a comment and I'll check it out.
+</p>
+
+### Table of Contents
+- [Lesson 1: Setup](/tutorials/build-and-deploy-nodejs-app-to-heroku/1)
+- [Lesson 2: Creating Your Project](/tutorials/build-and-deploy-nodejs-app-to-heroku/2)
+- [Lesson 3: Writing Your Web App](/tutorials/build-and-deploy-nodejs-app-to-heroku/3)
+- [Lesson 4: Running Your Web App Locally](/tutorials/build-and-deploy-nodejs-app-to-heroku/4)
+- [Lesson 5: Add HTML For Home, Contact And About Page](/tutorials/build-and-deploy-nodejs-app-to-heroku/5)
+- [Lesson 6: Getting Your Project Ready For Deploy](/tutorials/build-and-deploy-nodejs-app-to-heroku/6)
+- [Lesson 7: Commiting Your Files With Git](/tutorials/build-and-deploy-nodejs-app-to-heroku/7)
+- [Lesson 8: Deploying Your Web App To Heroku](/tutorials/build-and-deploy-nodejs-app-to-heroku/8)
+
+## Deploying your app to Heroku
+
+Let's first login to Heroku in our Terminal.
+
+##### Terminal
+```bash
+heroku login
+```
+
+Enter your Heroku login credentials.  When it asks for your password, you'll type but you won't see any characters appear.  They are still being entered, just type your password and press enter.
+
+Let's create a Heroku server for our app.
+
+##### Terminal
+```bash
+heroku create
+```
+
+This will print a URL where you can view your website.
+
+![](https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/heroku-create-url.png)
+
+Let's push our code to our new server.
+
+##### Terminal
+```bash
+git push heroku master
+```
+
+This will take a minute to run, but when it's finished, you should be able to visit the URL printed above to see your website.
+
+If you want to create a custom domain name, you can read this [guide on adding a custom domain to your Heroku app](https://devcenter.heroku.com/articles/custom-domains).
+
+<span data-sumome-listbuilder-embed-id="0b93adfbc532f959fce02f7126a909cc07424bbe42a7f6750cee50b624a205ad"></span>
+
+Congratulations!  You just built your first Node.js web server from scratch and deployed it to the web with Heroku.  From here, you can modify the app to fit your needs.
+
+I would love to see what you guys build with this tutorial!  When you deploy your site, show it off by commenting below with a link to your websites.
+

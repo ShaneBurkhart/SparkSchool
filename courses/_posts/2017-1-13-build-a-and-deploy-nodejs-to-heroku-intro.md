@@ -26,6 +26,18 @@ In this beginner's guide, I'll show you how you can not only get started with No
 
 Let's get started!
 
-<p class="content-upgrade" style="margin-left: auto; margin-right: auto; width: 60%;">
-    <a class="button block" href="/tutorials/build-and-deploy-nodejs-app-to-heroku">Start The Tutorial Now!</a>
+<p class="next-lesson">
+    <a class="button block" href="/tutorials/build-and-deploy-nodejs-app-to-heroku/1">Start The Tutorial Now!</a>
 </p>
+
+<div class="meet-the-author">
+	<div class="graphic">
+		<img class="circle" src="https://s3.amazonaws.com/spark-school/me_and_yogi.png" alt="Shane Burkhart with his dog, Yogi." />
+	</div>
+	<div class="description">
+		<h3>Meet The Instructor</h3>
+		<p>Hey, I'm Shane! I’ve been a software developer for a little over 5 years now, and have worked at Yelp, Carfax, and a startup called SumoMe.
+		<p>The crazy part is I didn’t go to school to be a software developer. In fact, I am completely self-taught.</p>
+		<p>I've spent the last 5 years teaching myself software development and over time, I have learned what works and what doesn't. Now, I want to use my knowledge to help you learn as efficiently as possible.</p>
+	</div>
+</div>
