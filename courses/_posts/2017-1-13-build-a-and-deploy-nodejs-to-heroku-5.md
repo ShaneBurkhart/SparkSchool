@@ -3,7 +3,7 @@ layout: default
 permalink: /tutorials/build-and-deploy-nodejs-app-to-heroku/5
 title: 'Step 5: Add HTML For Home, Contact, and About Page'
 fb-title: 'Step 5: Add HTML For Home, Contact, and About Page'
-description: Go from no programming experience to building your own Node.js web app from scratch and deploying it to the web with Heroku.
+description: In this step, we are adding HTML for our home, contact and about pages.
 image: https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/coding-on-a-laptop.jpg
 ---
 
@@ -204,5 +204,5 @@ Save those files and visit [http://localhost:8080](http://localhost:8080) in you
 Now that our server is working, let's deploy it to Heroku.
 
 <p class="next-lesson">
-    <a class="button block" href="/tutorials/build-and-deploy-nodejs-app-to-heroku/6">Start Lesson 6: Creating Your Project!</a>
+    <a class="button block" href="/tutorials/build-and-deploy-nodejs-app-to-heroku/6">Start Step 6: Getting Your Web App Ready For Deploy!</a>
 </p>

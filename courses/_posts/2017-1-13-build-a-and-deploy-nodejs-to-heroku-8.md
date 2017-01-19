@@ -1,9 +1,9 @@
 ---
 layout: default
 permalink: /tutorials/build-and-deploy-nodejs-app-to-heroku/8
-title: 'Lesson 8: Deploying Your Node.js Web App To Heroku'
-fb-title: 'Lesson 8: Deploying Your Node.js Web App To Heroku'
-description: Go from no programming experience to building your own Node.js web app from scratch and deploying it to the web with Heroku.
+title: 'Step 8: Deploying Your Node.js Web App To Heroku'
+fb-title: 'Step 8: Deploying Your Node.js Web App To Heroku'
+description: In this step, we are creating a Heroku web server and deploying our Node.js web app to Heroku.
 image: https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/coding-on-a-laptop.jpg
 ---
 

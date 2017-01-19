@@ -1,9 +1,9 @@
 ---
 layout: default
 permalink: /tutorials/build-and-deploy-nodejs-app-to-heroku/7
-title: 'Lesson 7: Committing Your Node.js Web App To Git'
-fb-title: 'Lesson 7: Committing Your Node.js Web App To Git'
-description: Go from no programming experience to building your own Node.js web app from scratch and deploying it to the web with Heroku.
+title: 'Step 7: Committing Your Node.js Web App To Git'
+fb-title: 'Step 7: Committing Your Node.js Web App To Git'
+description: In this step, we are creating a Git repository and committing our project files so we can deploy to Heroku.
 image: https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/coding-on-a-laptop.jpg
 ---
 
@@ -60,5 +60,5 @@ Anytime you make changes to your project, you need to commit your files before p
 </p>
 
 <p class="next-lesson">
-    <a class="button block" href="/tutorials/build-and-deploy-nodejs-app-to-heroku/8">Start Lesson 8: Deploying Your Web App To Heroku!</a>
+    <a class="button block" href="/tutorials/build-and-deploy-nodejs-app-to-heroku/8">Start Step 8: Deploying Your Web App To Heroku!</a>
 </p>

@@ -3,7 +3,7 @@ layout: default
 permalink: /tutorials/build-and-deploy-nodejs-app-to-heroku/2
 title: 'Step 2: Creating Your Project and Installing Express.js'
 fb-title: 'Step 2: Creating Your Project and Installing Express.js'
-description: Go from no programming experience to building your own Node.js web app from scratch and deploying it to the web with Heroku.
+description: In this step, we are creating a directory for our Node.js app, initializing package.json and installing Express.js.
 image: https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/coding-on-a-laptop.jpg
 ---
 
@@ -73,5 +73,5 @@ Npm creates a directory called "node_modules" in the root of our project that ho
 </p>
 
 <p class="next-lesson">
-    <a class="button block" href="/tutorials/build-and-deploy-nodejs-app-to-heroku/3">Start Lesson 3: Writing Your First Web App!</a>
+    <a class="button block" href="/tutorials/build-and-deploy-nodejs-app-to-heroku/3">Start Step 3: Writing Your First Web App!</a>
 </p>

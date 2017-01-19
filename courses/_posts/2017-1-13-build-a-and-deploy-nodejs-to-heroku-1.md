@@ -3,7 +3,7 @@ layout: default
 permalink: /tutorials/build-and-deploy-nodejs-app-to-heroku/1
 title: 'Step 1: Setup and Installation'
 fb-title: 'Step 1: Setup and Installation'
-description: Go from no programming experience to building your own Node.js web app from scratch and deploying it to the web with Heroku.
+description: In this step, we are installing Node.js, Git, and Heroku dependencies for our web app.
 image: https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/coding-on-a-laptop.jpg
 ---
 
@@ -49,5 +49,5 @@ We need to also install the Heroku toolbelt so we can interface with Heroku from
 With everything set up, you're ready to create your project!
 
 <p class="next-lesson">
-    <a class="button block" href="/tutorials/build-and-deploy-nodejs-app-to-heroku/2">Start Lesson 2: Creating Your Project!</a>
+    <a class="button block" href="/tutorials/build-and-deploy-nodejs-app-to-heroku/2">Start Step 2: Creating Your Project!</a>
 </p>

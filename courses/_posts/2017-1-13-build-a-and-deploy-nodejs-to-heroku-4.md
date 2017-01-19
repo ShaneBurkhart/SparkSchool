@@ -3,7 +3,7 @@ layout: default
 permalink: /tutorials/build-and-deploy-nodejs-app-to-heroku/4
 title: 'Step 4: Running Your Node.js Web App Locally'
 fb-title: 'Step 4: Running Your Node.js Web App Locally'
-description: Go from no programming experience to building your own Node.js web app from scratch and deploying it to the web with Heroku.
+description: In this step, we learn how to run our Node.js web app on our local computer.
 image: https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/coding-on-a-laptop.jpg
 ---
 
@@ -48,5 +48,5 @@ Unfortunately, if you visit [http://localhost:8080](http://localhost:8080) in th
 ![](https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/no-home-page-html-error.png)
 
 <p class="next-lesson">
-    <a class="button block" href="/tutorials/build-and-deploy-nodejs-app-to-heroku/5">Start Lesson 5: Add HTML For Home, Contact And About Page!</a>
+    <a class="button block" href="/tutorials/build-and-deploy-nodejs-app-to-heroku/5">Start Step 5: Add HTML For Home, Contact And About Page!</a>
 </p>
