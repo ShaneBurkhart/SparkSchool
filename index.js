@@ -19,6 +19,7 @@ app.engine('html', require('pug').renderFile);
 app.set('views', './views');
 app.set('view engine', 'pug');
 
+app.use(require('./middleware/redirects'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(session({
