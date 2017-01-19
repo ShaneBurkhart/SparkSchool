@@ -31,6 +31,12 @@ Heroku uses Git to deploy so we need to make our project a git repository.  We o
 git init
 ```
 
+<p class="info">
+When deploying new changes, you don't need to run this command again.  Instead, skip to the "Committing your files" section below.
+</p>
+
+<span data-sumome-listbuilder-embed-id="1778570efe1607df29fa777878e6f0f764db48b346ef4959d0256a69511ce6a5"></span>
+
 ## Committing your files
 
 Now we need to add our project files to our git repository.  To commit files, we first add them to staging.  This command will add all changed files to staging.

@@ -83,12 +83,18 @@ Inside the parenthesis, we can pass values and variables.  These are called argu
 
 Functions can also return values but are not required to.  This is useful when a function creates something or fetches a value.
 
-A simple example of a function that takes arguments and returns a value would be an "add" function that takes two numbers and returns the sum.  In the code snippet below, we are calling the "add" function and assigning the return value to a variable called "sum".  The variable "sum" would now equal the number 7.
+A simple example of a function that takes arguments and returns a value would be an "add" function that takes two numbers and returns the sum.  In the code snippet below, we are calling the "add" function and assigning the return value to a variable called "sum".
 
 ##### Javascript Example
 ```javascript
 var sum = add(2, 5);
 ```
+
+The variable "sum" would now equal the number 7.
+
+<span data-sumome-listbuilder-embed-id="1778570efe1607df29fa777878e6f0f764db48b346ef4959d0256a69511ce6a5"></span>
+
+## Creating our app
 
 Now that we understand how variables and functions work, let's use the "require" function to import the express library.
 
