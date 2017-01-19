@@ -9,10 +9,17 @@ module.exports = function (app) {
   app.get('/', function (req, res, next) {
     var gidCookie = req.cookies.ssgid;
     var priceInCents = gidUtil.PRICES[gidCookie] || gidUtil.PRICES[gidUtil.DEFAULT_PRICE_ID];
+    var query = req.query || {};
 
-    res.render('landing-pages/homepage-saas-course', {
-      currentPath: '/homepage-saas-course',
+    // SumoMe isn't URI encoding emails when sending them as GET vars.
+    // We need to replace spaces with plus signs.
+    if (query.email) query.email = query.email.replace(/ /g, '+');
+
+    res.render('landing-pages/twitter-clone', {
+      query: query,
+      currentPath: '/twitter-clone',
       price: Math.floor(priceInCents / 100),
+      stripePublicKey: process.env.STRIPE_PUBLIC_KEY,
     });
   });
 

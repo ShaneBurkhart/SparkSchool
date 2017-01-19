@@ -6,10 +6,9 @@ var errorUtil = require('../util/error');
 var authUser = require('../middleware/auth-user');
 
 module.exports = function (app) {
-  app.get('/courses', authUser(), function (req, res) {
-    // TODO send user to template to render variants and ctas
-    res.render('courses/index');
-  });
+  //app.get('/courses', authUser(), function (req, res) {
+    //res.render('courses/index');
+  //});
 
   app.get('/courses/:course([\-a-z]+)/:section([0-9]+)/:lesson([0-9]+)', function (req, res, next) {
     var courseName = req.params.course;
