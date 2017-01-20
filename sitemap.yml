@@ -9,8 +9,10 @@
             images:
                 'https://s3.amazonaws.com/spark-school/me_and_yogi.png': 'Shane Burkhart and his dog Yogi.'
 
+-
     changeFreq: 'weekly'
     priority: .6
+    urls:
         '/tutorials/build-and-deploy-nodejs-app-to-heroku/intro':
         '/tutorials/build-and-deploy-nodejs-app-to-heroku':
             images:
