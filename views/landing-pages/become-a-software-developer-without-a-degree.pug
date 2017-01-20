@@ -36,17 +36,6 @@ block content
                     | &nbsp;towards becoming a software developer!
 
             .graphic
-                form.signup-form.text-center
-                    h3.bold Take the first step!
-                    a.button.block(href='/tutorials/build-and-deploy-nodejs-app-to-heroku/intro') Click here to start the FREE tutorial!
-
-                    br
-                    br
-
-                    h3.bold Don't have time right now?
-                    p.light Enter your email and we'll send the tutorial to you so you can take it later.
-                    .input-group
-                        input(type='text' name='email' placeholder='Enter your email' value=email)
-                    button.yellow Take the tutorial later
+                +take_tutorial_form('/become-a-software-developer-without-a-degree')
 
     +short_twitter_meet_the_instructor()

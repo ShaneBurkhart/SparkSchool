@@ -10,6 +10,30 @@ var activeCampaign = new ActiveCampaign(
 var TWITTER_CLONE_DESC = "Twitter Clone Course - Spark School";
 
 module.exports = function (app) {
+  app.post('/nodejs-tutorial/signup', function (req, res) {
+    var email = req.body.email;
+    var origin = req.body.origin || '/';
+
+    if (!/\S+@\S+.\S+/.test(email)) {
+      return res.redirect([
+        origin,
+        '?email=' + email,
+        '&error=' + encodeURIComponent('That email is invalid.'),
+      ].join(''));
+    }
+
+    var acCallback = function () { res.redirect('/take-tutorial-later-thank-you'); };
+    var contact = {
+      'email': email,
+      // Take later list
+      'p[7]': '7',
+    };
+
+    if (process.env.APP_ENV === 'development') contact.tags = 'development';
+
+    activeCampaign.api('contact/add', contact).then(acCallback, acCallback);
+  });
+
   app.post('/twitter-clone/purchase', function (req, res) {
     var email = req.body.email;
     var stripeToken = req.body.stripeToken;
