@@ -19,6 +19,7 @@ module.exports = function (app) {
         origin,
         '?email=' + email,
         '&error=' + encodeURIComponent('That email is invalid.'),
+        '#sign-up',
       ].join(''));
     }
 
@@ -36,13 +37,15 @@ module.exports = function (app) {
 
   app.post('/twitter-clone/purchase', function (req, res) {
     var email = req.body.email;
+    var origin = req.body.origin || '/';
     var stripeToken = req.body.stripeToken;
 
     if (!/\S+@\S+.\S+/.test(email)) {
       return res.redirect([
-        '/cheat-sheet-thank-you',
+        origin,
         '?email=' + email,
         '&error=' + encodeURIComponent('That email is invalid.'),
+        '#sign-up',
       ].join(''));
     }
 
@@ -55,9 +58,10 @@ module.exports = function (app) {
     }, function(err, charge) {
       if (err) {
         return res.redirect([
-          '/cheat-sheet-thank-you',
+          origin,
           '?email=' + email,
           '&error=' + encodeURIComponent(err.message),
+          '#sign-up',
         ].join(''));
       }
 

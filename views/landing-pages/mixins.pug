@@ -18,7 +18,7 @@ mixin take_tutorial_form(origin)
             input(type='text' name='email' placeholder='Enter your email' value=query.email)
         button.yellow Take the tutorial later
 
-mixin twitter_purchase_form(heading)
+mixin twitter_purchase_form(origin, heading)
     script(
         src='https://code.jquery.com/jquery-2.2.4.min.js'
         integrity='sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44='
@@ -38,6 +38,7 @@ mixin twitter_purchase_form(heading)
         else
             p.error(style="display: none;")= error
 
+        input(type='hidden' name='origin' value=origin)
         .input-group.email-group
             label(for='email') Email
             input#email(type='text' name='email' placeholder='user@domain.com' value=query.email)
