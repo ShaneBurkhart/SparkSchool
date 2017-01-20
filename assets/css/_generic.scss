@@ -66,6 +66,7 @@ iframe.hidden {
     width: 500px;
 }
 
+
 h1, h2, h3, h4, h5, h6 {
     font-family: "Lato";
     line-height: 1.4;
@@ -101,8 +102,8 @@ p {
         text-decoration: underline;
     }
 
-    &.bold, .bold, b {
-        font-weight: 700 !important;
+    &.light, .light {
+        font-weight: 300;
     }
 
     &.info {
@@ -130,6 +131,13 @@ p {
 a, a:hover {
     text-decoration: none;
 }
+
+h1, h2, h3, h4, h5, h6, p, span, a {
+    &.bold, .bold, b {
+        font-weight: 700 !important;
+    }
+}
+
 
 ul {
     margin-top: 0px;
