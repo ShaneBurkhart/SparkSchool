@@ -23,7 +23,10 @@ module.exports = function (app) {
       ].join(''));
     }
 
-    var acCallback = function () { res.redirect('/take-tutorial-later-thank-you'); };
+    var acCallback = function () { res.redirect([
+      '/take-tutorial-later-thank-you',
+      '?email=' + email,
+    ].join('')); };
     var contact = {
       'email': email,
       // Take later list
