@@ -1,3 +1,20 @@
+mixin twitter_clone_purchase_tracking
+    script.
+        ga('send', 'event', 'Twitter Clone', 'purchase');
+        fbq('track', 'Purchase', {
+            value: 10.00,
+            currency: 'USD'
+        });
+
+mixin twitter_clone_lead_tracking
+    script.
+        ga('send', 'event', 'Lead', 'subscribe');
+        fbq('track', 'Lead', {
+            value: 10.00,
+            currency: 'USD'
+        });
+
+
 mixin take_tutorial_form(origin)
     - origin = origin || '/'
     form.signup-form.text-center(action='/nodejs-tutorial/signup' method='POST')
