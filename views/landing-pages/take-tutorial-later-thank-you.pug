@@ -1,0 +1,49 @@
+extends ../layouts/landing-page
+include ../landing-pages/mixins
+
+block variables
+   - var title = 'Continue Your Learning With The Twitter Clone Course';
+
+block main_nav
+block no_hero
+
+block content
+    .section.tiny
+        .container
+            .full
+                h1 Your tutorial is on its way!
+                p
+                    | This tutorial is just the first step to becoming a software developer.
+                    b &nbsp;Keep reading if you're interested in step two.
+
+    .section.dark-blue.signup-section#sign-up
+        .container
+            .description
+                h2.bold The Second Step!
+                p The tutorial being sent to you is just the first step to becoming a software developer.  There is still a lot of learning to be done.
+                p.bold If you sign up now, you will get the next step to becoming a software developer for only $#{price}!
+                p When you sign up, you will be sent my 7 day PDF course. In this course, you will learn how to:
+                ul
+                    li Code a web server in JavaScript using Node.js
+                    li Build and style web pages with HTML and CSS
+                    li Read and write to a database using SQL
+                    li Run commands in the terminal
+                    li Deploy your app to the web with Heroku
+                    li And a lot more...
+                br
+                br
+                p
+                    | By the end of this course, you'll have a website that can
+                    b &nbsp;create, read, update and delete Tweets.
+                    | &nbsp;Sign up now to get the next step to becoming a software developer for only $10!
+
+            .graphic
+                +twitter_purchase_form('Get the next step for only $10!')
+
+    +short_twitter_meet_the_instructor()
+
+    script.
+        fbq('track', 'Lead', {
+            value: 10.00,
+            currency: 'USD'
+        });

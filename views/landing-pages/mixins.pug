@@ -18,7 +18,7 @@ mixin take_tutorial_form(origin)
             input(type='text' name='email' placeholder='Enter your email' value=query.email)
         button.yellow Take the tutorial later
 
-mixin twitter_purchase_form(email)
+mixin twitter_purchase_form(heading)
     script(
         src='https://code.jquery.com/jquery-2.2.4.min.js'
         integrity='sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44='
@@ -29,7 +29,7 @@ mixin twitter_purchase_form(email)
         Stripe.setPublishableKey('#{stripePublicKey}');
 
     form.signup-form#payment-form(action='/twitter-clone/purchase' method='POST')
-        h3 Get the course for only $10!
+        h3= heading || 'Get the course for only $10!'
 
         if query.error
             p.error
@@ -40,7 +40,7 @@ mixin twitter_purchase_form(email)
 
         .input-group.email-group
             label(for='email') Email
-            input#email(type='text' name='email' placeholder='user@domain.com' value=email)
+            input#email(type='text' name='email' placeholder='user@domain.com' value=query.email)
         .input-group.cc-group
             label(for='cc-number') Credit Card
             input(
@@ -81,6 +81,7 @@ mixin twitter_purchase_form(email)
 
     form.signup-form#paypal-form(action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top")
         h3.text-center.margin-small Or pay with PayPal!
+        p.light We'll send the course to your PayPal email.
         input(type="hidden" name="cmd" value="_s-xclick")
         input(type="hidden" name="hosted_button_id" value="S7VF865JX84QU")
         input(type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!")
