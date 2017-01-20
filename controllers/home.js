@@ -15,7 +15,7 @@ module.exports = function (app) {
     // We need to replace spaces with plus signs.
     if (query.email) query.email = query.email.replace(/ /g, '+');
 
-    res.render('landing-pages/twitter-clone', {
+    res.render('landing-pages/become-a-software-developer-without-a-college-degree', {
       query: query,
       currentPath: '/twitter-clone',
       price: Math.floor(priceInCents / 100),
