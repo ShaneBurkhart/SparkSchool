@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Save current images as backups so we can quickly revert back
+docker tag sparkschool_app sparkschool_app_backup
+docker tag sparkschool_nginx sparkschool_nginx_backup
+
 git pull origin master
 
 # Build jekyll
