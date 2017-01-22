@@ -8,13 +8,9 @@ image: https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/coding-o
 disable-comments: true
 ---
 
-If you've thought about building a web app, you've probably asked yourself these questions: **"How do I get started?", "What do I learn first?", "Am I making mistakes?"**
+Congratulations on deciding to take your **first step** towards becoming a **software developer!**
 
-When I started teaching myself how to code, I asked myself those same questions. I had no idea where to start and no one to point me in the right direction.  Needless to say, I made plenty of mistakes, and it took me much longer to learn than it probably should have.
-
-**It doesn't have to be that way for you!**
-
-Because I know how hard it is to get started, I created this tutorial as a starting point for learning web development.  Since we're starting at the beginning, let's define what a web app is.
+In this tutorial, I'm going to teach you how to build a web app and deploy it to the web.  Since this is a beginner's guide, let's define what a web app is.
 
 **What's a web app?** Web app is short for web application and is a broad term referring to just about any website that interacts with a user. This can range from something as complex as Facebook to something as simple as a web page with a form. For this tutorial, we are going to build a web app using Node.js that has a home, contact, and about page. From there, you can modify your web app to your own website's needs.
 
