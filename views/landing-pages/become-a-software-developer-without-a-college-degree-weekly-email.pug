@@ -1,0 +1,45 @@
+extends ../layouts/landing-page-no-header
+include ../landing-pages/mixins
+
+block variables
+   - var title = 'Become A Software Developer Without A College Degree';
+   - var fbImage = 'https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/coding-on-a-laptop.jpg'
+   - var fbType = 'product';
+   - var description = 'It is more possible than ever to become a software developer without a college degree.  Take your first step towards getting a job as a software developer.';
+
+block no_hero
+
+block content
+    .section.dark-blue#sign-up
+        .container
+            .description
+                h2.bold Become A Software Developer Without A College Degree!
+
+                p
+                    | If you have ever wanted to become a software developer but thought you needed a college degree,
+                    b &nbsp;think again!
+
+                p
+                    | Most software companies
+                    b &nbsp;no longer require you have a college degree.
+                    | &nbsp;Instead, they care far more about whether or not you know what you're doing. Because of this, there's
+                    b &nbsp;never been a better time
+                    | &nbsp;to teach yourself software development!
+
+                p
+                    | If you are interested in becoming a software developer, I
+                    b &nbsp;highly recommend
+                    | &nbsp;signing up to receive my FREE email series that
+                    b &nbsp;teaches you how to become a software developer.
+                p
+                    | The email series starts by assuming you have
+                    b &nbsp;no programming experience
+                    | &nbsp;and guides you all the way to getting a job as a software developer. Sign up for my email series now and take the
+                    b &nbsp;first step towards becoming a software developer!
+
+            .graphic
+                +weekly_email_form('/become-a-software-developer-without-a-college-degree-weekly-email')
+
+    +weekly_email_meet_the_instructor()
+
+    +light_gray_CTA_anchor_section('Get FREE guides, courses and tutorials!')

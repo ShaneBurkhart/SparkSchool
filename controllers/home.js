@@ -15,9 +15,9 @@ module.exports = function (app) {
     // We need to replace spaces with plus signs.
     if (query.email) query.email = query.email.replace(/ /g, '+');
 
-    res.render('landing-pages/become-a-software-developer-without-a-college-degree', {
+    res.render('landing-pages/become-a-software-developer-without-a-college-degree-weekly-email', {
       query: query,
-      currentPath: '/twitter-clone',
+      currentPath: '/become-a-software-developer-without-a-college-degree-weekly-email',
       price: Math.floor(priceInCents / 100),
       stripePublicKey: process.env.STRIPE_PUBLIC_KEY,
     });

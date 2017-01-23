@@ -14,7 +14,31 @@ mixin twitter_clone_lead_tracking
             currency: 'USD'
         });
 
+mixin get_job_as_developer_map_lead_tracking
+    script.
+        ga('send', 'event', 'Lead', 'subscribe');
+        fbq('track', 'Lead', {
+            value: 10.00,
+            currency: 'USD'
+        });
 
+mixin weekly_email_form(origin)
+    - origin = origin || '/'
+    form.signup-form.text-center(action='/weekly-email/signup' method='POST')
+        h3.bold Take the first step!
+        p.light
+            | Enter your email and to receive my
+            b &nbsp;FREE weekly email series
+            | &nbsp;to teach you how to become a
+            b &nbsp;software developer.
+        if query.error
+            p.error
+                i.fa.fa-warning
+                = query.error
+        input(type='hidden' name='origin' value=origin)
+        .input-group
+            input(type='text' name='email' placeholder='Enter your email' value=query.email)
+        button.yellow Sign up for FREE!
 mixin take_tutorial_form(origin)
     - origin = origin || '/'
     form.signup-form.text-center(action='/nodejs-tutorial/signup' method='POST')
@@ -163,6 +187,16 @@ mixin saas_course_signup_form
             input#password(type='password' name='password' placeholder='********')
         button Get The Course
 
+mixin light_gray_CTA_anchor_section(button_text)
+    .section.cta.light-gray
+        .container
+            a.button(href='#sign-up')= button_text
+
+mixin white_CTA_anchor_section(button_text)
+    .section.cta
+        .container
+            a.button(href='#sign-up')= button_text
+
 mixin saas_signup_anchor_cta_section(button_text)
     .section.cta.light-gray
         .container
@@ -173,6 +207,21 @@ mixin twitter_clone_signup_cta_section(button_text)
         .container
             a.button(href='/signup')= button_text
 
+mixin weekly_email_meet_the_instructor()
+    .section
+        .container
+            .description
+                h2 Hey, I'm Shane!
+                p I'm Shane and I will be teaching you how to become a software developer! I’ve been a software developer for a little over 5 years now, and have worked at Yelp, Carfax, and a startup called SumoMe.
+
+                p The crazy part is I didn’t go to college to be a software developer. In fact, I am completely self-taught.
+
+                p
+                    | I've spent the last 5 years teaching myself software development and over time, I have learned what works and what doesn't. Now, I want to use my knowledge to help
+                    b &nbsp;get a job as a software developer as quickly as possible.
+            .graphic
+                img.circle(src="https://s3.amazonaws.com/spark-school/me_and_yogi.png" alt="Shane Burkhart with his dog, Yogi.")
+
 mixin short_twitter_meet_the_instructor()
     .section
         .container
@@ -181,8 +230,9 @@ mixin short_twitter_meet_the_instructor()
                 p Hey, I'm Shane! I’ve been a software developer for a little over 5 years now, and have worked at Yelp, Carfax, and a startup called SumoMe.
 
                 p The crazy part is I didn’t go to college to be a software developer. In fact, I am completely self-taught.
-
-                p I've spent the last 5 years teaching myself software development and over time, I have learned what works and what doesn't. Now, I want to use my knowledge to help you learn as efficiently as possible.
+                p
+                    | I've spent the last 5 years teaching myself software development and over time, I have learned what works and what doesn't. Now, I want to use my knowledge to help
+                    b &nbsp;get a job as a software developer as quickly as possible.
 
             .graphic
                 img.circle(src="https://s3.amazonaws.com/spark-school/me_and_yogi.png" alt="Shane Burkhart with his dog, Yogi.")
