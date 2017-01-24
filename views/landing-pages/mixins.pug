@@ -1,3 +1,11 @@
+mixin become_a_developer_guide_purchase_tracking
+    script.
+        ga('send', 'event', 'Become Developer Guide', 'purchase');
+        fbq('track', 'Purchase', {
+            value: 7.00,
+            currency: 'USD'
+        });
+
 mixin twitter_clone_purchase_tracking
     script.
         ga('send', 'event', 'Twitter Clone', 'purchase');

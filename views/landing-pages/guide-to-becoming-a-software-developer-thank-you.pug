@@ -1,0 +1,26 @@
+extends ../layouts/landing-page-no-header
+include ../landing-pages/mixins
+
+block variables
+   - var title = 'Complete Guide To Becoming A Software Developer Download';
+
+block no_hero
+
+block content
+    .section.tiny
+        .container
+            .full
+                h1 Thanks for purchasing the complete guide!
+                p Thanks! You'll be receiving an email with your guide to becoming a software developer shortly.
+
+    .section.dark-blue.signup-section#sign-up
+        .container
+            .description
+                h2.bold Join the community!
+                p Congratulations, you now have the full guide to becoming a software developer. While learning, it's important that you surround yourself with others that are also learning.
+                p That's why I made this Facebook Group to help:&nbsp;
+                    a(href="http://bit.ly/2jxqfNp") Click here to join the group and learn with others!
+            .graphic
+               img.rounded(src='/assets/images/girls-working-at-computer.jpg' alt='Two girls working at computer together')
+
+    +become_a_developer_guide_purchase_tracking()
