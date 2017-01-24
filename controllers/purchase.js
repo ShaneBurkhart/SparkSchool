@@ -27,8 +27,6 @@ module.exports = function (app) {
 
     var contact = {
       'email': email,
-      // Take later list
-      'p[7]': '7',
     };
 
     switch (type) {
