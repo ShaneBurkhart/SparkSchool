@@ -14,7 +14,7 @@ mixin twitter_clone_lead_tracking
             currency: 'USD'
         });
 
-mixin get_job_as_developer_map_lead_tracking
+mixin weekly_email_series_lead_tracking
     script.
         ga('send', 'event', 'Lead', 'subscribe');
         fbq('track', 'Lead', {
@@ -24,7 +24,7 @@ mixin get_job_as_developer_map_lead_tracking
 
 mixin weekly_email_form(origin)
     - origin = origin || '/'
-    form.signup-form.text-center(action='/become-a-software-dev-email-series/signup' method='POST')
+    form.signup-form.text-center(action='/become-a-software-developer-email-series/signup' method='POST')
         h3.bold Take the first step!
         p.light
             | Enter your email and to receive my
@@ -173,6 +173,58 @@ mixin twitter_purchase_form(origin, heading)
         return false;
       });
 
+mixin payment_form_scripts()
+    script(
+        src='https://code.jquery.com/jquery-2.2.4.min.js'
+        integrity='sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44='
+        crossorigin='anonymous'
+    )
+    script(type='text/javascript' src='https://js.stripe.com/v2/')
+    script(type='text/javascript').
+        Stripe.setPublishableKey('#{stripePublicKey}');
+
+    script(type='text/javascript').
+      var $form = $('#payment-form');
+      var $submitButton = $form.find('button');
+      var $errorEl = $('p.error');
+      var $iconEl = $('<i class="fa fa-warning"></i>');
+
+      $form.submit(function(event) {
+        // Disable the submit button to prevent repeated clicks:
+        $submitButton.prop('disabled', true);
+
+        $errorEl.hide();
+
+        var card = {
+            number: $form.find('#cc-number').val(),
+            exp_month: $form.find('#exp-month').val(),
+            exp_year: $form.find('#exp-year').val(),
+            cvc: $form.find('#cvc').val(),
+        };
+
+        Stripe.card.createToken(card, function (status, result) {
+            var token = result.id;
+            var error = result.error;
+
+            if (error) {
+                $errorEl.html('');
+                $errorEl.append($iconEl);
+                $errorEl.append(error.message);
+                $errorEl.show();
+                $submitButton.prop('disabled', false);
+                return;
+            }
+
+            var $stripeTokenEl = $('<input type="hidden" name="stripeToken" />')
+            $stripeTokenEl.val(token);
+
+            $form.append($stripeTokenEl);
+            $form.get(0).submit();
+        });
+
+        // Prevent the form from being submitted
+        return false;
+      });
 
 mixin saas_course_signup_form
     form.signup-form(action='/user/saas-course/create' method='POST')

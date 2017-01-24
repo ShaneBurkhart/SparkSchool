@@ -43,7 +43,10 @@ module.exports = function (app) {
       price: Math.floor(priceInCents / 100),
       stripePublicKey: process.env.STRIPE_PUBLIC_KEY,
     }, function (err, html) {
-      if (err) return next(new errorUtil.PageNotFoundError(path));
+      if (err) {
+        console.log(err);
+        return next(new errorUtil.PageNotFoundError(path));
+      }
       res.send(html);
     });
   });

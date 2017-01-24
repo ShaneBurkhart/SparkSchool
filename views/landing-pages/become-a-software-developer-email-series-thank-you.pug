@@ -1,0 +1,47 @@
+extends ../layouts/landing-page-no-header
+include ../landing-pages/mixins
+
+block variables
+   - var title = 'Thanks For Signing Up!';
+
+block no_hero
+
+block content
+    .section.tiny
+        .container
+            .full
+                h1 Congratulation on taking the first step!
+                p
+                    | Thanks for signing up and congrats on taking your first step towards getting a job as a developer!
+                    b &nbsp;Read below if you want to see the whole process now.
+
+    .section.dark-blue.signup-section#sign-up
+        .container
+            .description
+                h2.bold Get The Full Guide To Becoming A Software Developer!
+                p The email series you just signed up for will teach you how to get a job as a software developer, but you'll only receive one email a week.
+                p.bold If you would rather learn at your own pace, I'm offering the full process as a guide for only $7.
+                p
+                    | In this guide, we'll break down exactly what you need to do to go from no programming experience to getting a job as a software developer.
+                    b &nbsp;I taught myself how to be a software developer and I know you can too!
+                p
+                    | Click the button to the right to learn more about the
+                    b &nbsp;full guide to getting a job as a software developer.
+
+            .graphic
+                .signup-form
+                    h3 Get the full guide for only $7!
+                    p.light
+                        | This guide breaks down exactly what you need to do to go from
+                        b &nbsp;no programming experience
+                        | &nbsp;to getting a
+                        b &nbsp;job as a software developer.
+                    a.button.block.yellow(href='/the-full-guide-to-becoming-a-software-developer') Learn More About The Full Guide
+
+    +short_twitter_meet_the_instructor()
+
+    .section.cta.light-gray
+        .container
+            a.button(href='/the-full-guide-to-becoming-a-software-developer') Learn more about the full guide!
+
+    +weekly_email_series_lead_tracking()

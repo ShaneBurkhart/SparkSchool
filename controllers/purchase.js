@@ -8,13 +8,14 @@ var activeCampaign = new ActiveCampaign(
 );
 
 var TWITTER_CLONE_DESC = "Twitter Clone Course - Spark School";
+var BECOME_DEV_GUIDE_DESC = "The Complete Guide to Becoming a Software Developer- Spark School";
 
 module.exports = function (app) {
   app.post('/:type/signup', function (req, res) {
-    var type = req.params.type || 'become-a-software-dev-email-series';
+    var type = req.params.type || 'become-a-software-developer-email-series';
     var email = req.body.email;
     var origin = req.body.origin || '/';
-    var thankYouPage = '/become-a-software-dev-email-series-thank-you';
+    var thankYouPage = '/become-a-software-developer-email-series-thank-you';
 
     if (!/\S+@\S+.\S+/.test(email)) {
       return res.redirect([
@@ -34,10 +35,10 @@ module.exports = function (app) {
         contact['p[7]'] = '7';
         thankYouPage = '/take-tutorial-later-thank-you';
         break;
-      case 'become-a-software-dev-email-series':
+      case 'become-a-software-developer-email-series':
       default:
         contact['p[8]'] = '8';
-        thankYouPage = '/become-a-software-dev-email-series-thank-you';
+        thankYouPage = '/become-a-software-developer-email-series-thank-you';
         break;
     }
 
@@ -51,10 +52,18 @@ module.exports = function (app) {
     activeCampaign.api('contact/add', contact).then(acCallback, acCallback);
   });
 
-  app.post('/twitter-clone/purchase', function (req, res) {
+  app.post('/:product/purchase', function (req, res) {
+    var product = req.params.product;
     var email = req.body.email;
     var origin = req.body.origin || '/';
     var stripeToken = req.body.stripeToken;
+    var successRedirectURL = '/guide-to-becoming-a-software-developer-thank-you'
+    var contact = { 'email': email };
+    var chargeOpts = {
+      currency: 'usd',
+      source: stripeToken,
+      receipt_email: email,
+    };
 
     if (!/\S+@\S+.\S+/.test(email)) {
       return res.redirect([
@@ -65,13 +74,25 @@ module.exports = function (app) {
       ].join(''));
     }
 
-    var charge = stripe.charges.create({
-      amount: 1000,
-      currency: "usd",
-      source: stripeToken,
-      description: TWITTER_CLONE_DESC,
-      receipt_email: email,
-    }, function(err, charge) {
+    switch (product) {
+      case 'twitter-clone':
+        // Twitter clone list id
+        contact['p[1]'] = '1';
+        successRedirectURL = '/twitter-clone-thank-you';
+        chargeOpts.description = TWITTER_CLONE_DESC;
+        chargeOpts.amount = 1000;
+        break;
+      case 'become-a-developer-guide':
+      default:
+        // Become software dev guide list id
+        contact['p[9]'] = '9';
+        successRedirectURL = '/guide-to-becoming-a-software-developer-thank-you';
+        chargeOpts.description = BECOME_DEV_GUIDE_DESC;
+        chargeOpts.amount = 700;
+        break;
+    }
+
+    var charge = stripe.charges.create(chargeOpts, function(err, charge) {
       if (err) {
         return res.redirect([
           origin,
@@ -81,13 +102,7 @@ module.exports = function (app) {
         ].join(''));
       }
 
-      var acCallback = function () { res.redirect('/twitter-clone-thank-you'); };
-      var contact = {
-        'email': email,
-        // Twitter clone list
-        'p[1]': '1',
-      };
-
+      var acCallback = function () { res.redirect(successRedirectURL); };
       activeCampaign.api('contact/add', contact).then(acCallback, acCallback);
     });
   });
