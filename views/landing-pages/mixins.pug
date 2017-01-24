@@ -39,6 +39,7 @@ mixin weekly_email_form(origin)
         .input-group
             input(type='text' name='email' placeholder='Enter your email' value=query.email)
         button.yellow Sign up for FREE!
+
 mixin take_tutorial_form(origin)
     - origin = origin || '/'
     form.signup-form.text-center(action='/nodejs-tutorial/signup' method='POST')
