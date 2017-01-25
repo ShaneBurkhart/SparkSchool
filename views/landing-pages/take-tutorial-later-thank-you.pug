@@ -7,38 +7,43 @@ block variables
 block no_hero
 
 block content
+    - query.email = query.email || '';
+
     .section.tiny
         .container
             .full
                 h1 Your tutorial is on its way!
                 p
                     | This tutorial is just the first step to becoming a software developer.
-                    b &nbsp;Keep reading if you're interested in step two.
+                    b &nbsp;Keep reading if you're interested in the whole process.
 
     .section.dark-blue.signup-section#sign-up
         .container
             .description
-                h2.bold The Second Step!
-                p The tutorial being sent to you is just the first step to becoming a software developer.  There is still a lot of learning to be done.
-                p.bold If you sign up now, you will get the next step to becoming a software developer for only $#{price}!
-                p When you sign up, you will be sent my 7 day PDF course. In this course, you will learn how to:
-                ul
-                    li Code a Twitter clone in JavaScript using Node.js
-                    li Build and style web pages with HTML and CSS
-                    li Read and write to a database using SQL
-                    li Run commands in the terminal
-                    li Deploy your app to the web with Heroku
-                    li And a lot more...
-                br
-                br
+                h2.bold Get The Full Guide To Becoming A Software Developer!
+                p The tutorial being sent to you is just the first step to becoming a software developer.
+                p.bold If you want every step to becoming a software developer, I'm offering the full process as a guide for only $7.
                 p
-                    | By the end of this course, you'll have a website that can
-                    b &nbsp;create, read, update and delete Tweets.
-                    | &nbsp;Sign up now to get the next step to becoming a software developer for only $10!
+                    | In this guide, I'll break down exactly what you need to do to go from no programming experience to getting a job as a software developer.
+                    b &nbsp;I taught myself how to be a software developer and I know you can too!
+                p
+                    | Click the button to the right to learn more about the
+                    b &nbsp;full guide to getting a job as a software developer.
 
             .graphic
-                +twitter_purchase_form('/take-tutorial-later-thank-you', 'Get the next step for only $10!')
+                .signup-form
+                    h3 Get the full guide for only $7!
+                    p.light
+                        | This guide breaks down exactly what you need to do to go from
+                        b &nbsp;no programming experience
+                        | &nbsp;to getting a
+                        b &nbsp;job as a software developer.
+                    a.button.block.yellow(href='/the-full-guide-to-becoming-a-software-developer-nodejs-tutorial?email=' + query.email) Learn More About The Full Guide
 
     +short_twitter_meet_the_instructor()
+
+    .section.cta.light-gray
+        .container
+            a.button(href='/the-full-guide-to-becoming-a-software-developer-nodejs-tutorial?email=' + query.email) Learn more about the full guide!
 
     +twitter_clone_lead_tracking()
