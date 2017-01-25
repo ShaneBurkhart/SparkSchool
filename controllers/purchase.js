@@ -77,7 +77,7 @@ module.exports = function (app) {
     switch (product) {
       case 'twitter-clone':
         // Twitter clone list id
-        contact['p[1]'] = '1';
+        contact['p[11]'] = '11';
         successRedirectURL = '/twitter-clone-thank-you';
         chargeOpts.description = TWITTER_CLONE_DESC;
         chargeOpts.amount = 1000;
