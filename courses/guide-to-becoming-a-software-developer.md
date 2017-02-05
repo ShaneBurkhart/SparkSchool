@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: ebook
 permalink: /ebooks/guide-to-becoming-a-software-developer
 title: Complete Guide To Becoming A Software Developer
 disable-comments: true
@@ -110,7 +110,7 @@ Like HTML and CSS, you don't need to learn the command line intimately.  You wil
 [Here's a guide to learn the command line.](https://www.codecademy.com/learn/learn-the-command-line)
 
 <p class="info">
-The windows command line is lacking a lot of features Mac OS X and Linux have.  There are ways to get around this and my <a href="">Twitter clone course</a> addresses this.  If you are on Windows, I highly recommend taking the Twitter clone course.
+The windows command line is lacking a lot of features Mac OS X and Linux have.  There are ways to get around this and my <a href="/twitter-clone">Twitter clone course</a> addresses this.  If you are on Windows, I highly recommend taking the Twitter clone course.
 </p>
 
 #### My course teaches you all of this
@@ -121,7 +121,7 @@ A more efficient method is to learn as you are building the project.  This metho
 
 In my course, you will build a small version of Twitter. The course teaches you all of the above concepts and walks you step-by-step through building a web app that can manage Tweets.  I highly recommend this course if you want to become a developer as quickly as possible.
 
-[Click here to view the Twitter clone course!]()
+[Click here to view the Twitter clone course!](/twitter-clone)
 
 ### Project 3: Adding complexity to your web app
 
@@ -359,5 +359,5 @@ I can only tell you what to do, I can't do it for you.  Ultimately, becoming a s
 
 This process is what I used to teach myself how to be a software developer and I've worked at Yelp, Carfax and a startup called SumoMe.  I wouldn't offer you this guide if I didn't 100% believe you can use it to get a job as a software developer.  
 
-Happy coding,
+Happy coding,<br>
 Shane
