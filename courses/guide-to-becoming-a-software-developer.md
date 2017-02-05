@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: ebook
 permalink: /ebooks/guide-to-becoming-a-software-developer
 title: Complete Guide To Becoming A Software Developer
 disable-comments: true
@@ -359,5 +359,5 @@ I can only tell you what to do, I can't do it for you.  Ultimately, becoming a s
 
 This process is what I used to teach myself how to be a software developer and I've worked at Yelp, Carfax and a startup called SumoMe.  I wouldn't offer you this guide if I didn't 100% believe you can use it to get a job as a software developer.  
 
-Happy coding,
+Happy coding,<br>
 Shane
