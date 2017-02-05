@@ -23,15 +23,15 @@ I'm going to focus on web development since it's a growing field and nearly ever
 
 Right now, you more than likely have little to no programming experience, but that's okay.  The first step to becoming a software developer is learning how to program.  Since you are learning web development, you need to learn how to build web applications.  But what is a web application?
 
-A web application, or web app for short, is simply a website that interacts with the user to manage data.  You probably use web apps all of the time and didn't even know it.  Facebook and Dropbox are great examples of common web apps.
+A web application, or web app for short, is simply a website that interacts with the user to manage data.  You probably use web apps all the time and didn't even know it.  Facebook and Dropbox are great examples of common web apps.
 
-Learning how to build a complete web app will take around 200 hours. You won't be an expert yet, but after 200 hours, you should know everything you need to build your own projects.
+Learning how to build a complete web app will take around 200 hours. You won't be an expert, but after 200 hours, you should know everything you need to build your own projects.
  
 You would more than likely get overwhelmed if you tried to learn everything about web apps at once.  So instead, I recommend starting with a small, but functional project and building on it from there.  With that in mind, I split the learning portion into 3 projects that gradually build on each other.  Let's get started on your first web app!
 
 ### Project 1: Build and deploy a simple web app
 
-Since you more than likely don't have any programming experience, it's important to learn some fundamentals immediately.  For your first project, I suggest building a web app that only renders a few web pages.  You need to learn the following in this project.
+Since you more than likely don't have any programming experience, it's important to learn some fundamentals immediately.  For your first project, I suggest building a web app that only renders a few web pages.  You need to learn the following in this project:
 
 #### How websites work
 
@@ -41,7 +41,7 @@ Since you are learning web development, you need to understand the basics of the
 
 #### Basics of building a web server
 
-Websites run on web servers which is a fancy name for a computer that is connected to the internet and serves web pages to the user's browser.  There are a lot of programming languages you can use to create web servers, but I recommend Javascript since it is relatively fast, easy-to-use and is used by a lot of big tech companies like Netflix, PayPal, and LinkedIn.  
+Websites run on web servers. Web Server is a fancy name for a computer that is connected to the internet and serves web pages to the user's browser.  There are a lot of programming languages you can use to create web servers, but I recommend Javascript since it is relatively fast, easy-to-use and is used by a lot of big tech companies like Netflix, PayPal, and LinkedIn.  
 
 To write web servers with Javascript, you use Node.js.  Node.js is a program that runs Javascript code on a web server.  You'll hear a lot of people use Node.js and Javascript interchangeably when talking about web servers.  
 
@@ -143,7 +143,7 @@ Nearly every web app has users, so you need to learn how to store passwords, log
 
 Most software companies take credit cards, so you'll need to know how to process them.  Making a web server secure enough to store credit cards is a time-consuming process filled with security checks and audits.  Fortunately, processing credit cards is easier than ever if you use a 3rd party payments service.
 
-Third party providers make it so your server never touches a credit card.  Instead, they do all of the heavy lifting for you.  One of the best online payments providers is Stripe.  They ease the process of taking credit cards and provide a number of guides on how to use their software.  On top of that, they only charge per transaction so you only pay for what you use.
+Third party providers make it so your server never touches a credit card.  Instead, they do all of the heavy-lifting for you.  One of the best online payments providers is Stripe.  They ease the process of taking credit cards and provide a number of guides on how to use their software.  On top of that, they only charge per transaction so you only pay for what you use.
 
 [One time payments with Stripe with Node.js.](https://nairteashop.org/getting-started-with-stripe-part-2/)
 
@@ -161,7 +161,7 @@ As well as keeping history, Git makes it easy for multiple people to collaborate
 
 #### Create portfolio with Github
 
-Github is a company that makes it easy to store Git projects in the cloud.  After a project is uploaded, anyone who visits your account can see the code in your project.  I can't stress how useful this is for building portfolios as a software developer.  Having an active Github account with a few projects will go a long way when applying for jobs. 
+Github is a company that makes it easy to store Git projects in the cloud.  After a project is uploaded, anyone who visits your account can see the code in your project.  I cannot stress how useful this is for building portfolios as a software developer.  Having an active Github account with a few projects will go a long way when applying for jobs. 
 
 [How to upload your project to Github](https://guides.github.com/activities/hello-world/)
 
@@ -173,7 +173,7 @@ API stands for Application Program Interface and means a way for programs to com
 
 Node.js runs Javascript code on a web server, but you can also run Javascript code in the browser.  Since you already know Javascript, it will be easy for you to jump into writing Javascript code for the browser.
 
-I recommend trying basic client-side Javascript with jQuery.  JQuery is a simple library that makes it easy to manipulate HTML and element styles among other things. With the basic Javascript knowledge you already have, it should be pretty easy to pick up.
+I recommend trying basic client-side Javascript with jQuery.  jQuery is a simple library that makes it easy to manipulate HTML and element styles among other things. With the basic Javascript knowledge you already have, it should be pretty easy to pick up.
 
 [Here's a good course on jQuery](https://www.codecademy.com/learn/jquery)
 
@@ -184,7 +184,7 @@ HTML and CSS are verbose and tedious to write.  You can change your templating l
 [Use Pug with Node.js](https://expressjs.com/en/guide/using-template-engines.html)
 [Pug documentation](https://pugjs.org/api/getting-started.html)
 
-There are also languages that compile down to CSS files to make writing CSS more efficient.  These are called CSS preprocessors and I recommend Sass is my favorite.  
+There are also languages that compile down to CSS files to make writing CSS more efficient.  These are called CSS preprocessors and I recommend learning Sass. It is my favorite.  
 
 [Saas documentation](http://sass-lang.com/guide)
 
@@ -233,7 +233,7 @@ This is also a really good project to have in your portfolio since you are doing
 
 #### Open source projects 
 
-Open source projects are projects whose code is public and anyone can contribute to.  Nearly every tool used for software development is free because of contributions to open source projects.  Every software company uses open source projects so it's natural for developers to want to give back to the community.  It's the hacker mentality. [Link to hack mentality]
+Open source projects are projects whose code is public and anyone can contribute to.  Nearly every tool used for software development is free because of contributions to open source projects.  Every software company uses open source projects so it's natural for developers to want to give back to the community. 
 
 Github is full of open source projects to contribute to.  [Here's are some beginner friendly projects.](https://github.com/MunGell/awesome-for-beginners)
 
@@ -249,7 +249,7 @@ This is a little more difficult for beginner software developers since people hi
 
 [Here's a list of 50 places you can find freelance research.](http://www.hongkiat.com/blog/50-freelance-job-sites-for-designers-programmers-best-of/)
 
-Ideally, you want to work on web apps projects, but even helping someone with HTML, CSS and Wordpress can be good experience.
+Ideally, you want to work on web apps projects, but even helping someone with HTML, CSS, and Wordpress can be a good experience.
 
 #### Offer your help on projects friends are doing
 
@@ -265,7 +265,7 @@ You'll also learn how to read other people's code when searching for solutions t
 
 Another useful skill you will pick up is how to read software documentation. Software documentation contains everything you need to know about using a particular piece of software. You will quickly learn how to read software documentation when searching for solutions to your issues.
 
-I can't stress this enough. Start building a Github portfolio right now! Employers go crazy for an active Github account and it shows that you not only know what you are doing, but are also passionate about your work.  All you need is one good project built from scratch without a tutorial that you can talk about technically.  You get bonus points if you worked on it with someone else.
+I cannot stress this enough. Start building a Github portfolio right now! Employers go crazy for an active Github account and it shows that you not only know what you are doing, but are also passionate about your work.  All you need is one good project built from scratch without a tutorial that you can talk about technically.  You get bonus points if you worked on it with someone else.
 
 Once you have some experience and a portfolio to show employers, it's time to start applying to software companies. 
 
@@ -305,7 +305,7 @@ The best plan for applying to companies is to apply regularly.  Like I said abov
 
 The first thing you'll want to do is make a big list of all companies that you are interested in working for.  Add companies you find to a spreadsheet with a link to their application page, a little about what they do and what technologies they use (if you can find it).  I recommend shooting for at least 20 companies, but you should put more down if you can.  The more you list, the higher your chances are of finding a job.
 
-Having trouble finding software companies in your area? Try some of these tips.
+Having trouble finding software companies in your area? Try some of these tips:
 
 [How to find entry level software developer jobs?](https://www.quora.com/How-do-I-search-for-entry-level-software-developer-jobs)
 [List of places to find software developer jobs.](https://www.quora.com/What-are-the-best-job-boards-for-software-engineers)
@@ -328,7 +328,7 @@ I can't stress how important it is to follow up!  Don't be annoying. But if you 
 
 As a new developer, it's going to be hard to work at big tech companies like Google or Microsoft.  They get so many applications that their interview process is designed to specifically avoid making bad hires.  This means they have a higher standard for hiring since they can be picky, which makes it hard to even get an interview.
 
-On the other side of the spectrum, smaller companies are generally going to be easier to get jobs at because their volume of applications is much lower.  Their interview process is optimized to get as many proficient developers as they can.  They are alright with hiring someone that is a beginner as long as you can prove you know what you are doing.  A lot of smaller companies are also primarily focused on product so coding ability is a lesser concern than getting the job done.  This means you have the greatest chance of landing your first job at a smaller tech company.
+On the other side of the spectrum, smaller companies are generally going to be easier to get jobs at because their volume of applications is much lower.  Their interview process is optimized to get as many proficient developers as they can.  They are alright with hiring someone that is a beginner as long as you can prove you know what you are doing.  A lot of smaller companies are also primarily focused on product, so coding ability is a lesser concern than getting the job done.  This means you have the greatest chance of landing your first job at a smaller tech company.
 
 **Don't give up your dreams of working at Google just yet, though!**
 
