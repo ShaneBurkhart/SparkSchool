@@ -110,7 +110,7 @@ Like HTML and CSS, you don't need to learn the command line intimately.  You wil
 [Here's a guide to learn the command line.](https://www.codecademy.com/learn/learn-the-command-line)
 
 <p class="info">
-The windows command line is lacking a lot of features Mac OS X and Linux have.  There are ways to get around this and my <a href="">Twitter clone course</a> addresses this.  If you are on Windows, I highly recommend taking the Twitter clone course.
+The windows command line is lacking a lot of features Mac OS X and Linux have.  There are ways to get around this and my <a href="/twitter-clone">Twitter clone course</a> addresses this.  If you are on Windows, I highly recommend taking the Twitter clone course.
 </p>
 
 #### My course teaches you all of this
@@ -121,7 +121,7 @@ A more efficient method is to learn as you are building the project.  This metho
 
 In my course, you will build a small version of Twitter. The course teaches you all of the above concepts and walks you step-by-step through building a web app that can manage Tweets.  I highly recommend this course if you want to become a developer as quickly as possible.
 
-[Click here to view the Twitter clone course!]()
+[Click here to view the Twitter clone course!](/twitter-clone)
 
 ### Project 3: Adding complexity to your web app
 
