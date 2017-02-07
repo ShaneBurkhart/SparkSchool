@@ -25,7 +25,7 @@ If you would rather learn at your own pace, check out my PDF guide to becoming a
 <br>
 <br>
 
-<a href="">Click here to get the Complete Guide To Becoming A Software Developer!</a>
+<a href="/the-full-guide-to-becoming-a-software-developer">Click here to get the Complete Guide To Becoming A Software Developer!</a>
 </p>
 
 
