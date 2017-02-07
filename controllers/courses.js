@@ -26,7 +26,7 @@ module.exports = function (app) {
     });
   });
 
-  app.get(['/guides/*', '/tutorials/*', '/ebooks/*', '/cheat-sheets/*'], function (req, res, next) {
+  app.get(['/series/*', '/guides/*', '/tutorials/*', '/ebooks/*', '/cheat-sheets/*'], function (req, res, next) {
     var relativePath = [__dirname, '..', 'courses', '_site', req.path].join('/') + '.html';
     var absolutePath = path.resolve(relativePath);
 
