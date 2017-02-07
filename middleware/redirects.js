@@ -4,6 +4,9 @@
 // Generally used for backwards compatibility.
 var REDIRECTS = {
   '/tutorials/build-and-deploy-nodejs-app-to-heroku': '/tutorials/build-and-deploy-nodejs-app-to-heroku/intro',
+  '/become-a-software-developer-without-a-college-degree': 'become-a-software-developer-without-a-college-degree-weekly-email',
+  '/the-full-guide-to-becoming-a-software-developer-cheat-sheet': '/the-full-guide-to-becoming-a-software-developer',
+  '/the-full-guide-to-becoming-a-software-developer-nodejs-tutorial': '/the-full-guide-to-becoming-a-software-developer',
 };
 
 module.exports = function (req, res, next) {

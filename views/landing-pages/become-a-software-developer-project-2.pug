@@ -1,0 +1,72 @@
+extends ../layouts/landing-page
+include ../landing-pages/mixins
+
+block variables
+   - var title = 'Learn How To Build A Twitter Clone In 7 Days';
+   - var fbImage = 'http://trysparkschool.com/assets/images/learn-to-code-in-7-days.png';
+   - var fbType = 'product';
+   - var description = 'Go from zero coding skills to building a Twitter clone from scratch in 7 days.';
+
+block main_nav
+
+block hero
+    h1 The First Step To Becoming A Software Developer
+    p.narrow If you have ever thought about becoming a software developer, but don't have any programming experience, this course will get you started.
+    a.button.yellow(href='#sign-up') Become A Software Developer!
+
+block content
+    block extras
+    .section.dark-blue.signup-section#sign-up
+        .container
+            .description
+                h2.bold
+                    block page-heading
+                        | Become A Software Developer!
+
+                block intro
+                    p
+                        | If you've thought about becoming a software developer, you've probably asked yourself these questions:
+                        b &nbsp;"How do I get started?", "Am I making mistakes?", "Do I need a college degree?"
+
+                    p
+
+                p The course walks you step-by-step through building a full-stack web app using Node.js and MySQL. In 7 days, you'll have a website that can create, read, update and delete Tweets.
+                p In this course, you will learn how to:
+                ul
+                    li Code a web server in JavaScript using Node.js
+                    li Build and style web pages with HTML and CSS
+                    li Read and write to a database using SQL
+                    li Run commands in the terminal
+                    li Deploy your app to the web with Heroku
+                    li And a lot more...
+            .graphic
+                +twitter_purchase_form('/twitter-clone', query.email)
+
+    .section
+        .container
+            .description
+                h2 Start at the basics
+                p If you've thought about becoming a software developer, you've probably asked yourself these questions: "How do I get started?", "What do I learn first?", "Am I making mistakes?" This course starts with the basics and assumes you have no programming experience.
+            .graphic
+                a(href='#sign-up')
+                    img(src='/assets/images/start-here-mac-window.png' alt='Mac window with button saying "Start Here".')
+
+    .section.light-gray
+        .container
+            .graphic
+                img(src='/assets/images/monitor-on-desk.png' alt='Illustration of monitor on desk with code.')
+            .description
+                h2 Develop on your computer
+                p A lot of coding courses teach you how to code, but don't leave you with anything practical. This course teaches you how to build a real use case web app.  We'll cover everything you need to know from writing code on your computer to deploying your Twitter clone to the web.
+
+    .section.light-grey
+        .container
+            .description
+                h2 Learn efficiently
+                p Learning how to build an entire web app is a lot to cover so the course makes sure to teach you only what you need to build your own web apps.  It isn't useful to dive into learning something that you aren't going to use.
+            .graphic
+                img(src='/assets/images/hello-world-code-snippet.png' alt='Hello world program in Express.js.')
+
+    +saas_signup_anchor_cta_section('Get The Course!')
+
+    +twitter_meet_the_instructor()
