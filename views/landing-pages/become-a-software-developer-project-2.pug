@@ -42,8 +42,69 @@ block content
                 p.bold I highly recommend this course if you want to get a job as a software developer as quickly as possible.
 
             .graphic
-                +twitter_purchase_form('/twitter-clone', query.email)
+                form.signup-form#paypal-form(action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top")
+                    h3 Get the course for $29!
+                    p.light We'll send the course to your PayPal email.
+                    input(type="hidden" name="cmd" value="_s-xclick")
+                    input(type="hidden" name="hosted_button_id" value="S7VF865JX84QU")
+                    input(type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!")
+                    img(alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1")
+
+
+                form.signup-form#payment-form(action='/twitter-clone/purchase' method='POST')
+                    h3.text-center.margin-small Or pay with a credit card!
+
+                    if query.error
+                        p.error
+                            i.fa.fa-warning
+                            = query.error
+                    else
+                        p.error(style="display: none;")= error
+
+                    input(type='hidden' name='origin' value='/become-a-software-developer-project-2')
+                    .input-group.email-group
+                        label(for='email') Email
+                        input#email(type='text' name='email' placeholder='user@domain.com' value=query.email)
+                    .input-group.cc-group
+                        label(for='cc-number') Credit Card
+                        input(
+                            type='text'
+                            id='cc-number'
+                            placeholder='4242'
+                        )
+                    div
+                        .input-group.exp-month-group
+                            label(for='exp-month') Month
+                            select(id='exp-month')
+                                option(value='01') January (01)
+                                option(value='02') February (02)
+                                option(value='03') March (03)
+                                option(value='04') April (04)
+                                option(value='05') May (05)
+                                option(value='06') June (06)
+                                option(value='07') July (07)
+                                option(value='08') August (08)
+                                option(value='09') September (09)
+                                option(value='10') October (10)
+                                option(value='11') November (11)
+                                option(value='12') December (12)
+                        .input-group.exp-year-group
+                            label(for='exp-year') Year
+                            select(id='exp-year')
+                                option(value='17') 2017
+                                option(value='18') 2018
+                                option(value='19') 2019
+                                option(value='20') 2020
+                                option(value='21') 2021
+                                option(value='22') 2022
+                                option(value='23') 2023
+                        .input-group.cvc-group
+                            label(for='cvc') CVC
+                            input(type='password' id='cvc' placeholder="***")
+                    button.yellow Get the course for $29!
+
+                +payment_form_scripts()
 
     +twitter_meet_the_instructor()
 
-    +saas_signup_anchor_cta_section('Get The Course!')
+    +light_gray_CTA_anchor_section('Get The Course!')
