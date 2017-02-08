@@ -11,43 +11,13 @@ mixin lead_tracking
         ga('send', 'event', 'Lead', 'subscribe');
         fbq('track', 'Lead');
 
-mixin weekly_email_form(origin)
-    - origin = origin || '/'
-    form.signup-form.text-center(action='/become-a-software-developer-email-series/signup' method='POST')
-        h3.bold Take the first step!
-        p.light
-            | Enter your email to receive my
-            b &nbsp;FREE weekly email series
-            | &nbsp;that teaches you how to become a
-            b &nbsp;software developer.
-        if query.error
-            p.error
-                i.fa.fa-warning
-                = query.error
-        input(type='hidden' name='origin' value=origin)
-        .input-group
-            input(type='text' name='email' placeholder='Enter your email' value=query.email)
-        button.yellow Sign up for FREE!
-
-mixin take_tutorial_form(origin)
-    - origin = origin || '/'
-    form.signup-form.text-center(action='/nodejs-tutorial/signup' method='POST')
-        h3.bold Take the first step!
-        a.button.block(href='/tutorials/build-and-deploy-nodejs-app-to-heroku/intro') Click here to start the FREE tutorial!
-
-        br
-        br
-
-        h3.bold Don't have time right now?
-        p.light Enter your email and we'll send the tutorial to you so you can take it later.
-        if query.error
-            p.error
-                i.fa.fa-warning
-                = query.error
-        input(type='hidden' name='origin' value=origin)
-        .input-group
-            input(type='text' name='email' placeholder='Enter your email' value=query.email)
-        button.yellow Take the tutorial later
+mixin error_notice
+    if query.error
+        p.error
+            i.fa.fa-warning
+            = query.error
+    else
+        p.error(style="display: none;")
 
 mixin payment_form_scripts()
     script(
@@ -112,22 +82,7 @@ mixin white_CTA_anchor_section(button_text)
         .container
             a.button(href='#sign-up')= button_text
 
-mixin weekly_email_meet_the_instructor()
-    .section
-        .container
-            .description
-                h2 Hey, I'm Shane!
-                p I'm Shane and I will be teaching you how to become a software developer! I’ve been a software developer for a little over 5 years now, and have worked at Yelp, Carfax, and a startup called SumoMe.
-
-                p The crazy part is I didn’t go to college to be a software developer. In fact, I am completely self-taught.
-
-                p
-                    | I've spent the last 5 years teaching myself software development and over time, I have learned what works and what doesn't. Now, I want to use my knowledge to help
-                    b &nbsp;get a job as a software developer as quickly as possible.
-            .graphic
-                img.circle(src="https://s3.amazonaws.com/spark-school/me_and_yogi.png" alt="Shane Burkhart with his dog, Yogi.")
-
-mixin short_twitter_meet_the_instructor()
+mixin guide_meet_the_instructor()
     .section
         .container
             .description
@@ -139,20 +94,5 @@ mixin short_twitter_meet_the_instructor()
                     | I've spent the last 5 years teaching myself software development and over time, I have learned what works and what doesn't. Now, I want to use my knowledge to help
                     b &nbsp;get a job as a software developer as quickly as possible.
 
-            .graphic
-                img.circle(src="https://s3.amazonaws.com/spark-school/me_and_yogi.png" alt="Shane Burkhart with his dog, Yogi.")
-
-mixin twitter_meet_the_instructor()
-    .section
-        .container
-            .description
-                h2 Meet The Instructor
-                p Hey, I'm Shane! I’ve been a software developer for a little over 5 years now, and have worked at Yelp, Carfax, and a startup called SumoMe.
-
-                p The crazy part is I didn’t go to school to be a software developer. In fact, I am completely self taught.
-
-                p Probably not unlike some of you, when I first started learning to code, I didn't know what I was doing so it took me much longer than it should have to learn. My goal is to fix that. This course is designed so you don't ever have to go through the same unnecessarily long process I did.
-
-                p I've spent the last 5 years teaching myself software development and over time, I have learned what works and what doesn't. Now, I want to use my course to help you learn as efficiently as possible.
             .graphic
                 img.circle(src="https://s3.amazonaws.com/spark-school/me_and_yogi.png" alt="Shane Burkhart with his dog, Yogi.")

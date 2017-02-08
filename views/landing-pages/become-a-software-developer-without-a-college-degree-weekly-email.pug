@@ -38,8 +38,34 @@ block content
                     b &nbsp;first step towards becoming a software developer!
 
             .graphic
-                +weekly_email_form('/become-a-software-developer-without-a-college-degree-weekly-email')
+                form.signup-form.text-center(action='/become-a-software-developer-email-series/signup' method='POST')
+                    h3.bold Take the first step!
+                    p.light
+                        | Enter your email to receive my
+                        b &nbsp;FREE weekly email series
+                        | &nbsp;that teaches you how to become a
+                        b &nbsp;software developer.
 
-    +weekly_email_meet_the_instructor()
+                    +error_notice()
+
+                    input(type='hidden' name='origin' value='/become-a-software-developer-without-a-college-degree-weekly-email')
+                    .input-group
+                        input(type='text' name='email' placeholder='Enter your email' value=query.email)
+                    button.yellow Sign up for FREE!
+
+    .section
+        .container
+            .description
+                h2 Hey, I'm Shane!
+                p I'm Shane and I will be teaching you how to become a software developer! I’ve been a software developer for a little over 5 years now, and have worked at Yelp, Carfax, and a startup called SumoMe.
+
+                p The crazy part is I didn’t go to college to be a software developer. In fact, I am completely self-taught.
+
+                p
+                    | I've spent the last 5 years teaching myself software development and over time, I have learned what works and what doesn't. Now, I want to use my knowledge to help
+                    b &nbsp;get a job as a software developer as quickly as possible.
+            .graphic
+                img.circle(src="https://s3.amazonaws.com/spark-school/me_and_yogi.png" alt="Shane Burkhart with his dog, Yogi.")
+
 
     +light_gray_CTA_anchor_section('Sign up for the FREE email series!')
