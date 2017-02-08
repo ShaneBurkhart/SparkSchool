@@ -40,53 +40,13 @@ block content
 
                 form.signup-form#payment-form(action='/become-a-developer-guide/purchase' method='POST')
                     h3.text-center.margin-small Or pay with a credit card!
-                    if query.error
-                        p.error
-                            i.fa.fa-warning
-                            = query.error
-                    else
-                        p.error(style="display: none;")= error
+
+                    +error_notice()
 
                     input(type='hidden' name='origin' value='/the-full-guide-to-becoming-a-software-developer')
-                    .input-group.email-group
-                        label(for='email') Email
-                        input#email(type='text' name='email' placeholder='user@domain.com' value=query.email)
-                    .input-group.cc-group
-                        label(for='cc-number') Credit Card
-                        input(
-                            type='text'
-                            id='cc-number'
-                            placeholder='4242'
-                        )
-                    div
-                        .input-group.exp-month-group
-                            label(for='exp-month') Month
-                            select(id='exp-month')
-                                option(value='01') January (01)
-                                option(value='02') February (02)
-                                option(value='03') March (03)
-                                option(value='04') April (04)
-                                option(value='05') May (05)
-                                option(value='06') June (06)
-                                option(value='07') July (07)
-                                option(value='08') August (08)
-                                option(value='09') September (09)
-                                option(value='10') October (10)
-                                option(value='11') November (11)
-                                option(value='12') December (12)
-                        .input-group.exp-year-group
-                            label(for='exp-year') Year
-                            select(id='exp-year')
-                                option(value='17') 2017
-                                option(value='18') 2018
-                                option(value='19') 2019
-                                option(value='20') 2020
-                                option(value='21') 2021
-                                option(value='22') 2022
-                                option(value='23') 2023
-                        .input-group.cvc-group
-                            label(for='cvc') CVC
-                            input(type='password' id='cvc' placeholder="***")
+
+                    +payment_cc_fields()
+
                     button.yellow Get The Guide For Only $7!
 
                 +payment_form_scripts()
