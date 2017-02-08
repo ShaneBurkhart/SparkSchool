@@ -7,8 +7,10 @@ var activeCampaign = new ActiveCampaign(
   process.env.ACTIVE_CAMPAIGN_KEY
 );
 
-var TWITTER_CLONE_DESC = "Twitter Clone Course - Spark School";
-var BECOME_DEV_GUIDE_DESC = "The Complete Guide to Becoming a Software Developer- Spark School";
+var TWITTER_CLONE_DESC = "Project 2: Twitter Clone Course - Spark School";
+var TWITTER_CLONE_PRICE = 2900;
+var BECOME_DEV_GUIDE_DESC = "The Complete Guide to Becoming a Software Developer - Spark School";
+var BECOME_DEV_GUIDE_PRICE= 700;
 
 module.exports = function (app) {
   app.post('/:type/signup', function (req, res) {
@@ -78,9 +80,9 @@ module.exports = function (app) {
       case 'twitter-clone':
         // Twitter clone list id
         contact['p[11]'] = '11';
-        successRedirectURL = '/twitter-clone-thank-you';
+        successRedirectURL = '/project-2-thank-you';
         chargeOpts.description = TWITTER_CLONE_DESC;
-        chargeOpts.amount = 1000;
+        chargeOpts.amount = TWITTER_CLONE_PRICE;
         break;
       case 'become-a-developer-guide':
       default:
@@ -88,7 +90,7 @@ module.exports = function (app) {
         contact['p[9]'] = '9';
         successRedirectURL = '/guide-to-becoming-a-software-developer-thank-you';
         chargeOpts.description = BECOME_DEV_GUIDE_DESC;
-        chargeOpts.amount = 700;
+        chargeOpts.amount = BECOME_DEV_GUIDE_PRICE;
         break;
     }
 
