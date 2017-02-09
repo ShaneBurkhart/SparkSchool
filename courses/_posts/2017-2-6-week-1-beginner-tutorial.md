@@ -1,41 +1,17 @@
 ---
 layout: default
 permalink: /series/week-1-beginner-tutorial
-title: 'Week 1: Beginner Tutorial'
+title: 'Week 1: Build Your First Website!'
 disable-comments: true
 ---
 
-Welcome to week 1 of becoming a software developer!
-
-This is your first email in the series that teaches you how to get a job as a software developer.  Being the first email, I'm going to give you an overview of the entire process.
-
-The entire process to becoming a software developer will take you about 500-700 hours.  That may seem like a lot, but I've split it up into steps to make it easier to follow.
-
-1. **Hour 0-200: Learn how to code** - In this step, we are learning how to write software.  You won't be an expert at the end of the 200 hours, but you will know enough to build your own software.
-2. **Hour 201-500: Practice in a real environment** - Now that we can write code, we need to practice how to do it professionally.  This step consists of working on projects, building a portfolio and getting yourself employable.
-3. **Hour 501-700: Apply for jobs** - Once we are employable, we need to actually apply to companies and start interviewing.  This is where you get your first job as a software developer!
-
 Right now, you more than likely have little to no programming experience, but that's okay.  The first step to becoming a software developer is learning how to program.
 
-I have broken the learning portion into 15 weeks at 15 hours of learning per week. After 15 weeks, you should know everything you need to build your own projects.
-
-<p class="info">
-If you would rather learn at your own pace, check out my PDF guide to becoming a software developer that includes everything from the email series and more!  Click the link below to learn more about the complete guide to becoming a software developer.
-
-<br>
-<br>
-
-<a href="/the-full-guide-to-becoming-a-software-developer">Click here to get the Complete Guide To Becoming A Software Developer!</a>
-</p>
-
-
-For the email series, I'm going to focus on web development since it's a growing field and nearly everything is moving to the web.  Even if you want to pursue a different form of software development, the basic steps still apply.  You will need to Google your own learning resources, though.
-
-Since you are learning web development, you need to learn how to build web applications.  But what is a web application?
+Since you are learning web development, you need to learn how to build web applications.  **But what is a web application?**
 
 A web application, or web app for short, is simply a website that interacts with the user to manage data.  You probably use web apps all the time and didn't even know it.  Facebook and Dropbox are great examples of common web apps.
 
-You would more than likely get overwhelmed if you tried to learn everything about web apps at once.  So instead, I recommend starting with a small, but functional project and building on it from there.  With that in mind, I split the learning portion into 3 projects that gradually build on each other. Let's get started on project 1!
+You would more than likely get overwhelmed if you tried to learn everything about web apps at once.  So instead, I recommend starting with a small, but functional project and building on it from there.  With that in mind, let's get started on project 1!
 
 ### Project 1: Build and deploy a simple web app
 
@@ -73,7 +49,7 @@ Because it's your first project, you will get frustrated at times.  If you run i
 Remember, learning is about consistently working towards your goal.  You are inevitably going to run into issues. Don't get discouraged &mdash; it's part of learning.
 </p>
 
-That concludes week 1 of becoming a software developer.  If you have any questions while taking the tutorial, feel free to leave a comment in project 1 or email me at [shane@trysparkschool.com](mailto:shane@trysparkschool.com).
+If you have any questions while taking the tutorial, feel free to leave a comment in project 1 or email me at [shane@trysparkschool.com](mailto:shane@trysparkschool.com).
 
 Enjoy the tutorial and I'll see you next Monday!
 
