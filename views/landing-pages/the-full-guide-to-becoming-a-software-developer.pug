@@ -10,24 +10,25 @@ block content
     .section.dark-blue.signup-section#sign-up
         .container
             .description
-                h2.bold Learn At Your Own Pace!
-                p The email series you signed up for will teach you how to get a job as a developer, but you'll only receive each step once a week over the next few months.
-                p.bold If you would rather learn at your own pace, I'm offering the full process as a PDF guide for only $7.
-                p In this guide, you'll learn:
+                h2.bold The Full Guide To Becoming A Software Developer
+                p The email series you signed up for will teach you how to get a job as a developer, but it is 40 weeks long.
+                p.bold If you want everything now, I'm offering the entire email series as a guide for only $7.
+                p In this guide, you get everything from the email series including:
                 ul
-                    li The process for getting a job as a software developer!
-                    li Which programming languages you should learn first
-                    li Where you will find the best learning resources
-                    li Which projects to build to impress employers
-                    li How to prepare yourself to apply for jobs
-                    li The ideal type of company to apply for
-                    li And a lot more...
+                    li
+                        | Every learning resource you need and which ones
+                        b &nbsp;teach you efficiently.
+                    li
+                        | How to build a portfolio of projects that
+                        b &nbsp;impress employers.
+                    li
+                        | Techniques to
+                        b &nbsp;crush your interviews
+                        | &nbsp;and land your first job as a software developer!
+                    li
+                        b And a lot more!
                 br
-                br
-                p
-                    | With this full PDF guide, you will have
-                    b &nbsp;everything you need to get a job as a developer.
-                    | &nbsp;Sign up now to change your career and get the full guide to becoming a software developer for only $7!
+                p Sign up now to change your career and get the full guide to becoming a software developer for only $7!
 
             .graphic
                 form.signup-form#paypal-form(action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top")
@@ -52,3 +53,5 @@ block content
                 +payment_form_scripts()
 
     +guide_meet_the_instructor()
+
+    +light_gray_CTA_anchor_section("Get The Guide For Only $7!")
