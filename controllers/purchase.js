@@ -46,10 +46,17 @@ module.exports = function (app) {
 
     if (process.env.APP_ENV === 'development') contact.tags = 'development';
 
-    var acCallback = function () { res.redirect([
-      thankYouPage,
-      '?email=' + email,
-    ].join('')); };
+    var acCallback = function () {
+      // This cookie shows tracking once and should be deleted when used.
+      // This is safe since we always redirect to thank you page after setting
+      // this cookie.
+      res.cookie('sstrack', true, { httpOnly: true });
+
+      res.redirect([
+        thankYouPage,
+        '?email=' + email,
+      ].join(''));
+    };
 
     activeCampaign.api('contact/add', contact).then(acCallback, acCallback);
   });
@@ -104,7 +111,14 @@ module.exports = function (app) {
         ].join(''));
       }
 
-      var acCallback = function () { res.redirect(successRedirectURL); };
+      var acCallback = function () {
+        // This cookie shows tracking once and should be deleted when used.
+        // This is safe since we always redirect to thank you page after setting
+        // this cookie.
+        res.cookie('sstrack', true, { httpOnly: true });
+
+        res.redirect(successRedirectURL);
+      };
       activeCampaign.api('contact/add', contact).then(acCallback, acCallback);
     });
   });

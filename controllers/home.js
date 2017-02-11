@@ -27,6 +27,11 @@ module.exports = function (app) {
     // extensions.
     if (/\/[^\/]+\.[^\/]+$/.test(path)) return next(new errorUtil.PageNotFoundError(path));
 
+    // Ths cookie shows tracking once and should be deleted when used.
+    // This is safe since we always redirect to thank you page after setting
+    // this cookie.
+    res.clearCookie('sstrack');
+
     res.render('landing-pages' + path, {
       price: Math.floor(priceInCents / 100),
       stripePublicKey: process.env.STRIPE_PUBLIC_KEY,

@@ -1,15 +1,17 @@
 mixin purchase_tracking(price, description)
-    script.
-        ga('send', 'event', description, 'purchase');
-        fbq('track', 'Purchase', {
-            value: price,
-            currency: 'USD'
-        });
+    if currentCookies.sstrack
+        script.
+            ga('send', 'event', description, 'purchase');
+            fbq('track', 'Purchase', {
+                value: price,
+                currency: 'USD'
+            });
 
 mixin lead_tracking
-    script.
-        ga('send', 'event', 'Lead', 'subscribe');
-        fbq('track', 'Lead');
+    if currentCookies.sstrack
+        script.
+            ga('send', 'event', 'Lead', 'subscribe');
+            fbq('track', 'Lead');
 
 mixin error_notice
     if currentQuery.error
