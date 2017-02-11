@@ -12,17 +12,17 @@ mixin lead_tracking
         fbq('track', 'Lead');
 
 mixin error_notice
-    if query.error
+    if currentQuery.error
         p.error
             i.fa.fa-warning
-            = query.error
+            = currentQuery.error
     else
         p.error(style="display: none;")
 
 mixin payment_cc_fields()
     .input-group.email-group
         label(for='email') Email
-        input#email(type='text' name='email' placeholder='user@domain.com' value=query.email)
+        input#email(type='text' name='email' placeholder='user@domain.com' value=currentQuery.email)
     .input-group.cc-group
         label(for='cc-number') Credit Card
         input(
