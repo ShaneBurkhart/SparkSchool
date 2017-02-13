@@ -2,7 +2,7 @@ extends ../layouts/landing-page-no-header
 include ../landing-pages/mixins
 
 block variables
-   - var title = 'Get The Complete Guide To Becoming A Software Developer!';
+   - var title = 'Valentine\'s Day Bundle!';
 
 block no_hero
 
@@ -12,28 +12,48 @@ block content
     .section.dark-blue.signup-section#sign-up
         .container
             .description
-                h2.bold Get The Complete Guide To Becoming A Software Developer!
-                p The email series you signed up for will teach you how to get a job as a software developer, but you'll only receive one email a week.
-                p.bold If you would rather learn at your own pace, I'm offering the full process as a guide for only $7.
+                h2.bold Valentine's Day Sale
                 p
-                    | In this guide, we'll break down exactly what you need to do to go from no programming experience to getting a job as a software developer.
-                    b &nbsp;I taught myself how to be a software developer and I know you can too!
+                    | Valentine's Day is all about love. So for today only, I am offering a
+                    b &nbsp;65% discount on our Valentine's Day Bundle!
+
+
+                p.bold When you purchase this bundle, you will receive:
+
+                ul
+                    li
+                        p
+                            b Guide To Becoming A Software Developer
+                            | &nbsp;- the complete guide to getting a job as a software developer.
+                    li
+                        p
+                            b Course for Project 1 of the email series
+                            | &nbsp;- learn how to build and deploy your first website with no programming experience.
+                    li
+                        p
+                            b Course for Project 2 of the email series
+                            | &nbsp;- this course walks you step-by-step through building a small version of Twitter.
+
                 p
-                    | Click the button to the right to learn more about the
-                    b &nbsp;full guide to getting a job as a software developer.
+                    b Normally this bundle sells for $56, but if you purchase today, you can get it for $19!
+                    | &nbsp;Click the link to the right to learn more.
+
 
             .graphic
                 .signup-form
-                    h3 Get the full guide for only $7!
+                    h3
+                        | Get the Valentine's Day Bundle for
+                        b &nbsp;65% off!
+                    img(src="/assets/images/spray-of-hearts.png" style="width: 100%;")
                     p.light
-                        | This guide breaks down exactly what you need to do to go from
-                        b &nbsp;no programming experience
-                        | &nbsp;to getting a
-                        b &nbsp;job as a software developer.
-                    a.button.block.yellow(href='/the-full-guide-to-becoming-a-software-developer?email=' + currentQuery.email) Learn More About The Full Guide
+                        | This bundle normally sells sells for $56, but for
+                        b &nbsp;Valentine's Day only
+                        | , you can get
+                        b &nbsp;the guide and 2 courses for only $19!
+                    a.button.block.pink(href='/valentines-day-bundle?email=' + currentQuery.email) Get The V-Day Bundle For Only $19!
 
     +guide_meet_the_instructor()
 
     .section.cta.light-gray
         .container
-            a.button(href='/the-full-guide-to-becoming-a-software-developer?email=' + currentQuery.email) Learn more about the full guide!
+            a.button.pink(href='/valentines-day-bundle?email=' + currentQuery.email) Learn more about the V-Day Bundle!

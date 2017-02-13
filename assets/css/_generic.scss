@@ -237,6 +237,16 @@ ul {
             background-color: #827a0d;
         }
     }
+
+    &.pink {
+        background-color: #f33660;
+
+        &:hover {
+            background-color: #de4a6a;
+        }
+    }
+
+
 }
 
 .text-center {
