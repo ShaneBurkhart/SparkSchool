@@ -2,7 +2,7 @@ extends ../layouts/landing-page-no-header
 include ../landing-pages/mixins
 
 block variables
-   - var title = 'Complete Guide To Becoming A Software Developer Download';
+   - var title = 'Valentine\'s Day Bundle Download';
 
 block no_hero
 
@@ -10,10 +10,10 @@ block content
     .section.tiny
         .container
             .full
-                h1 Thanks for purchasing the complete guide!
+                h1 Thanks for purchasing the Valentine's Day Bundle!
                 p
-                    a(href="https://s3.amazonaws.com/spark-school/guide-to-becoming-a-software-developer.pdf") Click here if your download doesn't start automatically.
-                    | &nbsp;You'll also receive an email with your guide to becoming a software developer.
+                    a(href="https://s3.amazonaws.com/spark-school/valentines-day-bundle.zip") Click here if your download doesn't start automatically.
+                    | &nbsp;You'll also receive an email with a link to download the bundle.
 
     .section.dark-blue.signup-section#sign-up
         .container
@@ -25,6 +25,6 @@ block content
             .graphic
                img.rounded(src='/assets/images/girls-working-at-computer.jpg' alt='Two girls working at computer together')
 
-    iframe.hidden(src="https://s3.amazonaws.com/spark-school/guide-to-becoming-a-software-developer.pdf")
+    iframe.hidden(src="https://s3.amazonaws.com/spark-school/valentines-day-bundle.zip")
 
-    +purchase_tracking(7.00, 'Guide to Becoming a Software Developer')
+    +purchase_tracking(19.00, 'Valentine\'s Day Bundle')

@@ -2,7 +2,7 @@ extends ../layouts/landing-page-no-header
 include ../landing-pages/mixins
 
 block variables
-   - var title = 'Get The Guide To Landing Your Dream Job!';
+   - var title = 'Get The Valentine\'s Day Bundle!';
 
 block no_hero
 
@@ -16,14 +16,14 @@ block content
                     b &nbsp;$56 dollar bundle for only $19!
                     | &nbsp;When you purchase this bundle, you will receive the following.
 
-                h4.bold Guide To Becoming A Software Developer
-                p This guide takes everything from the 40-week email series and puts it into a single guide. This guide will teach you everything you need to get a job as a software developer.
+                h4.bold Complete Guide To Becoming A Software Developer
+                p I turned the 40-week email series into a single guide that teaches you everything you need to get a job as a software developer.
 
                 h4.bold Project 1 Course: Your First Website
-                p This is your first project to becoming a software developer.  This course will help you build and deploy your first website in only a few hours.
+                p This is your first project to becoming a software developer.  This course helps you build and deploy your first website in only a few hours.
 
                 h4.bold Project 2 Course: Build A Small Version Of Twitter
-                p This is the second project to becoming a software developer.  In this course you will build a small version of Twitter and learn the fundamentals used by professional software developers.
+                p This is the second project to becoming a software developer.  In this 7-day course you will build a small version of Twitter and learn the fundamentals used by professional software developers.
 
                 p.bold This offer is only valid on Valentine's Day, so get the bundle while you still can!
 
@@ -32,11 +32,11 @@ block content
                     h3 Get the bundle for only $19!
                     p.light We'll send the bundle to your PayPal email.
                     input(type="hidden" name="cmd" value="_s-xclick")
-                    input(type="hidden" name="hosted_button_id" value="94LQ789B2B5UE")
+                    input(type="hidden" name="hosted_button_id" value="7AADF2HCUTPAQ")
                     input(type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!")
                     img(alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1")
 
-                form.signup-form#payment-form(action='/become-a-developer-guide/purchase' method='POST')
+                form.signup-form#payment-form(action='/flash-sale-bundle/purchase' method='POST')
                     h3.text-center.margin-small Or pay with a credit card!
 
                     +error_notice()

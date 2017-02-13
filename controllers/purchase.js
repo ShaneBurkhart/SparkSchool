@@ -13,6 +13,9 @@ var TWITTER_CLONE_PRICE = 4900;
 var TWITTER_CLONE_48_HOUR_DESC = "Project 2: Twitter Clone Course - 50% Off - Spark School";
 var TWITTER_CLONE_48_HOUR_PRICE = 2500;
 
+var V_DAY_BUNDLE_DESC = "Valentine's Day Bundle  - Spark School";
+var V_DAY_BUNDLE_PRICE = 1900;
+
 var BECOME_DEV_GUIDE_DESC = "The Complete Guide to Becoming a Software Developer - Spark School";
 var BECOME_DEV_GUIDE_PRICE= 700;
 
@@ -101,6 +104,13 @@ module.exports = function (app) {
         successRedirectURL = '/project-2-thank-you';
         chargeOpts.description = TWITTER_CLONE_48_HOUR_DESC;
         chargeOpts.amount = TWITTER_CLONE_48_HOUR_PRICE;
+        break;
+      case 'flash-sale-bundle':
+        // Flash Sale Bundle list id
+        contact['p[12]'] = '12';
+        successRedirectURL = '/valentines-day-bundle-thank-you';
+        chargeOpts.description = V_DAY_BUNDLE_DESC;
+        chargeOpts.amount = V_DAY_BUNDLE_PRICE;
         break;
       case 'become-a-developer-guide':
       default:
