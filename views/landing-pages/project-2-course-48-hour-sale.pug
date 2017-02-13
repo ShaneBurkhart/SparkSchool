@@ -2,7 +2,7 @@ extends ../layouts/landing-page-no-header
 include ../landing-pages/mixins
 
 block variables
-   - var title = 'Get Project 2 of Becoming a Software Developer!';
+   - var title = 'Get The Course 50% Off For 48 Hours Only!';
 
 block no_hero
 
@@ -11,56 +11,64 @@ block content
     .section.dark-blue.signup-section#sign-up
         .container
             .description
-                h2.bold Get The Second Project!
+                h2.bold 50% Off The Course For Project 2!
 
-                p The guide to becoming a software developer has learning resources to teach you how to build a web application, but it's hard to piece together concepts as a beginner.  Learning like this will take you longer than if you learned everything in a single tutorial.
+                p.bold For the next 48 hours, you can purchase the course at 50% off!
 
                 p
-                    b How much time will this course save?
-                    | &nbsp;It normally takes 3 to 4 weeks to learn everything in project 2, but with this course, you will learn everything in only 7 days!
+                    | As a beginner, it's difficult to piece together concepts for project 2. To fix this, I made a
+                    b &nbsp;7-day course that walks you step-by-step through project 2.
 
-                p.bold If you want to become a software developer as quickly as possible, I'm offering project 2 as a course for $49!
+                p
+                    | In this course, you will build a
+                    b &nbsp;small version of Twitter
+                    | , since building a smaller version of an existing web app is the best way to learn.
+
+                p.bold By the end of the course, you will know how to:
+
+                ul
+                    li Code a complex web server in JavaScript using Node.js
+                    li Read and write Tweets to a database using SQL
+                    li Build and style web pages with HTML and CSS
+                    li Deploy your app to the web with Heroku
+                    li And a lot more!
+
+                br
 
                 p
                     | When you purchase, you will receive the
                     b &nbsp;7-day PDF course
                     | &nbsp;that teaches you
-                    b &nbsp;everything you need to learn from project 2 and more!
+                    b &nbsp;everything for project 2 and more!
 
-                p The course walks you step-by-step through building a small version of Twitter.  In this course, you will learn how to:
+                p.bold If you purchase in the next 48 hours, you can get the course for only $25! (50% off)
 
-                ul
-                    li Code a web server in JavaScript using Node.js
-                    li Build and style web pages with HTML and CSS
-                    li Read and write to a database using SQL
-                    li Run commands in the terminal
-                    li Deploy your app to the web with Heroku
-                    li And a lot more...
-
-                br
-
-                p.bold I highly recommend this course if you want to get a job as a software developer as quickly as possible.
+                p I highly recommend this course if you want to learn efficiently and get a job as a software developer as quickly as possible!
 
             .graphic
                 form.signup-form#paypal-form(action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top")
-                    h3 Get the course for $49!
+                    h3
+                        | Get the course for&nbsp;
+                        span(style="text-decoration: line-through;") $49
+                        b &nbsp;$
+                        b(style="font-size: 36px") 25!
                     p.light We'll send the course to your PayPal email.
                     input(type="hidden" name="cmd" value="_s-xclick")
-                    input(type="hidden" name="hosted_button_id" value="S7VF865JX84QU")
+                    input(type="hidden" name="hosted_button_id" value="7DTRYSP8TH722")
                     input(type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!")
                     img(alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1")
 
 
-                form.signup-form#payment-form(action='/twitter-clone/purchase' method='POST')
+                form.signup-form#payment-form(action='/twitter-clone-48-hour-sale/purchase' method='POST')
                     h3.text-center.margin-small Or pay with a credit card!
 
                     +error_notice()
 
-                    input(type='hidden' name='origin' value='/become-a-software-developer-project-2')
+                    input(type='hidden' name='origin' value='/project-2-course-48-hour-sale')
 
                     +payment_cc_fields()
 
-                    button.yellow Get the course for $49!
+                    button.yellow Get the course for $25! (50% off)
 
                 +payment_form_scripts()
 
