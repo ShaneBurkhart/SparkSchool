@@ -10,30 +10,27 @@ block content
     .section.dark-blue.signup-section#sign-up
         .container
             .description
-                h2.bold The Full Guide To Becoming A Software Developer
-                p The email series you signed up for will teach you how to get a job as a developer, but it is 40 weeks long.
-                p.bold If you want everything now, I'm offering the entire email series as a guide for only $7.
-                p In this guide, you get everything from the email series including:
-                ul
-                    li
-                        | Every learning resource you need and which
-                        b &nbsp;teach you efficiently.
-                    li
-                        | How to build a portfolio of projects to
-                        b &nbsp;impress employers.
-                    li
-                        | Techniques to
-                        b &nbsp;crush your interviews
-                        | &nbsp;and land your first job as a software developer!
-                    li
-                        b And a lot more!
-                br
-                p Sign up now to change your career and get the full guide to becoming a software developer for only $7!
+                h2.bold Valentine's Day Bundle 65% Off!
+                p
+                    | For Valentine's Day only, I'm offering this
+                    b &nbsp;$56 dollar bundle for only $19!
+                    | &nbsp;When you purchase this bundle, you will receive the following.
+
+                h4.bold Guide To Becoming A Software Developer
+                p This guide takes everything from the 40-week email series and puts it into a single guide. This guide will teach you everything you need to get a job as a software developer.
+
+                h4.bold Project 1 Course: Your First Website
+                p This is your first project to becoming a software developer.  This course will help you build and deploy your first website in only a few hours.
+
+                h4.bold Project 2 Course: Build A Small Version Of Twitter
+                p This is the second project to becoming a software developer.  In this course you will build a small version of Twitter and learn the fundamentals used by professional software developers.
+
+                p.bold This offer is only valid on Valentine's Day, so get the bundle while you still can!
 
             .graphic
                 form.signup-form#paypal-form(action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top")
-                    h3 Get the guide for only $7!
-                    p.light We'll send the guide to your PayPal email.
+                    h3 Get the bundle for only $19!
+                    p.light We'll send the bundle to your PayPal email.
                     input(type="hidden" name="cmd" value="_s-xclick")
                     input(type="hidden" name="hosted_button_id" value="94LQ789B2B5UE")
                     input(type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!")
@@ -48,10 +45,10 @@ block content
 
                     +payment_cc_fields()
 
-                    button.yellow Get The Guide For Only $7!
+                    button.pink Get The Guide For Only $19!
 
                 +payment_form_scripts()
 
     +guide_meet_the_instructor()
 
-    +light_gray_CTA_anchor_section("Get The Guide For Only $7!")
+    +light_gray_CTA_anchor_section('Get The V-Day Bundle For Only $19!', 'pink')

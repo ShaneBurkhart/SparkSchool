@@ -115,15 +115,15 @@ mixin payment_form_scripts()
         return false;
       });
 
-mixin light_gray_CTA_anchor_section(button_text)
+mixin light_gray_CTA_anchor_section(button_text, button_class)
     .section.cta.light-gray
         .container
-            a.button(href='#sign-up')= button_text
+            a.button(href='#sign-up' class=button_class)= button_text
 
-mixin white_CTA_anchor_section(button_text)
+mixin white_CTA_anchor_section(button_text, button_class)
     .section.cta
         .container
-            a.button(href='#sign-up')= button_text
+            a.button(href='#sign-up' class=button_class)= button_text
 
 mixin guide_meet_the_instructor()
     .section
