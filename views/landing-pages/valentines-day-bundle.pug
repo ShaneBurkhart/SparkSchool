@@ -1,0 +1,57 @@
+extends ../layouts/landing-page-no-header
+include ../landing-pages/mixins
+
+block variables
+   - var title = 'Get The Guide To Landing Your Dream Job!';
+
+block no_hero
+
+block content
+    .section.dark-blue.signup-section#sign-up
+        .container
+            .description
+                h2.bold The Full Guide To Becoming A Software Developer
+                p The email series you signed up for will teach you how to get a job as a developer, but it is 40 weeks long.
+                p.bold If you want everything now, I'm offering the entire email series as a guide for only $7.
+                p In this guide, you get everything from the email series including:
+                ul
+                    li
+                        | Every learning resource you need and which
+                        b &nbsp;teach you efficiently.
+                    li
+                        | How to build a portfolio of projects to
+                        b &nbsp;impress employers.
+                    li
+                        | Techniques to
+                        b &nbsp;crush your interviews
+                        | &nbsp;and land your first job as a software developer!
+                    li
+                        b And a lot more!
+                br
+                p Sign up now to change your career and get the full guide to becoming a software developer for only $7!
+
+            .graphic
+                form.signup-form#paypal-form(action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top")
+                    h3 Get the guide for only $7!
+                    p.light We'll send the guide to your PayPal email.
+                    input(type="hidden" name="cmd" value="_s-xclick")
+                    input(type="hidden" name="hosted_button_id" value="94LQ789B2B5UE")
+                    input(type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!")
+                    img(alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1")
+
+                form.signup-form#payment-form(action='/become-a-developer-guide/purchase' method='POST')
+                    h3.text-center.margin-small Or pay with a credit card!
+
+                    +error_notice()
+
+                    input(type='hidden' name='origin' value='/the-full-guide-to-becoming-a-software-developer')
+
+                    +payment_cc_fields()
+
+                    button.yellow Get The Guide For Only $7!
+
+                +payment_form_scripts()
+
+    +guide_meet_the_instructor()
+
+    +light_gray_CTA_anchor_section("Get The Guide For Only $7!")
