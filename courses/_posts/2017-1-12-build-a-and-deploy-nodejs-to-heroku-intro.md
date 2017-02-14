@@ -2,6 +2,7 @@
 layout: default
 permalink: /tutorials/build-and-deploy-nodejs-app-to-heroku/intro
 title: Complete Beginner's Guide To Building And Deploying A Web App
+course: Project 1 Course
 fb-title: Complete Beginner's Guide To Building And Deploying A Web App
 description: Go from no programming experience to building your own Node.js web app from scratch and deploying it to the web with Heroku.
 image: https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/coding-on-a-laptop.jpg

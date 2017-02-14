@@ -2,6 +2,7 @@
 layout: default
 permalink: /tutorials/build-and-deploy-nodejs-app-to-heroku/5
 title: 'Step 5: Add HTML For Home, Contact, and About Page'
+course: Project 1 Course
 fb-title: 'Step 5: Add HTML For Home, Contact, and About Page'
 description: In this step, we are adding HTML for our home, contact and about pages.
 image: https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/coding-on-a-laptop.jpg

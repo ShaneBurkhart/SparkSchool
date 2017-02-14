@@ -2,6 +2,7 @@
 layout: default
 permalink: /tutorials/build-and-deploy-nodejs-app-to-heroku/7
 title: 'Step 7: Committing Your Node.js Web App To Git'
+course: Project 1 Course
 fb-title: 'Step 7: Committing Your Node.js Web App To Git'
 description: In this step, we are creating a Git repository and committing our project files so we can deploy to Heroku.
 image: https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/coding-on-a-laptop.jpg

@@ -2,6 +2,7 @@
 layout: default
 permalink: /tutorials/build-and-deploy-nodejs-app-to-heroku/4
 title: 'Step 4: Running Your Node.js Web App Locally'
+course: Project 1 Course
 fb-title: 'Step 4: Running Your Node.js Web App Locally'
 description: In this step, we learn how to run our Node.js web app on our local computer.
 image: https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/coding-on-a-laptop.jpg

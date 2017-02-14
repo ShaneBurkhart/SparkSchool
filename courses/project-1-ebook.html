@@ -1,0 +1,67 @@
+---
+permalink: /ebooks/project-1
+---
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Project 1 Course: Create Your First Website | Spark School</title>
+        <meta name="viewport" content="width=device-width">
+
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Roboto:300,400" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/assets/css/application.css">
+
+        <style>
+            h1 {
+                padding-top: 55px;
+            }
+            h1 + .info + h3 {
+                display: none;
+            }
+            h1 + .info + h3 + ul {
+                display: none;
+            }
+            .next-lesson, .meet-the-author, .content-upgrade {
+                display: none;
+            }
+            img {
+                max-width: 100%;
+            }
+            pre {
+                white-space: pre-wrap;
+            }
+        </style>
+    </head>
+    <body id="course">
+        <main class="container">
+            <h1>Project 1 Course: Create Your First Site</h1>
+            <p>Learn how to build and deploy your first website in just a few hours!</p>
+            <h2>Table of Contents</h2>
+            <ul>
+            {% for post in site.posts reversed %}
+                {% if post.course contains "Project 1 Course" %}
+                    {% if post.title contains "Complete Beginner's Guide To Building And Deploying A Web App" %}
+                        <li><a href="#{{ post.title | downcase | replace:'.', '-' | replace:' ', '-' }}">Introduction</a></li>
+                    {% else %}
+                        <li><a href="#{{ post.title | downcase | replace:'.', '-' | replace:' ', '-' }}">{{ post.title }}</a></li>
+                    {% endif %}
+                {% endif %}
+            {% endfor%}
+            </ul>
+            {% for post in site.posts reversed %}
+                {% if post.course contains "Project 1 Course" %}
+                    {% if post.title contains "Complete Beginner's Guide To Building And Deploying A Web App" %}
+                        <h1 id="{{ post.title | downcase | replace:'.', '-' | replace:' ', '-' }}">Introduction</h1>
+                    {% else %}
+                        <h1 id="{{ post.title | downcase | replace:'.', '-' | replace:' ', '-' }}">{{ post.title }}</h1>
+                    {% endif %}
+                    {{ post.content }}
+                {% endif %}
+            {% endfor%}
+        </main>
+    </body>
+</html>

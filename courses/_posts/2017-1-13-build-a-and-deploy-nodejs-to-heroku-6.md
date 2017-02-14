@@ -2,6 +2,7 @@
 layout: default
 permalink: /tutorials/build-and-deploy-nodejs-app-to-heroku/6
 title: 'Step 6: Getting Your Node.js App Ready For Deploy To Heroku'
+course: Project 1 Course
 fb-title: 'Step 6: Getting Your Node.js App Ready For Deploy To Heroku'
 description: In this step, we are getting our Node.js web app ready to be deployed to our Heroku web server.
 image: https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/coding-on-a-laptop.jpg

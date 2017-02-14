@@ -2,6 +2,7 @@
 layout: default
 permalink: /tutorials/build-and-deploy-nodejs-app-to-heroku/3
 title: 'Step 3: Writing Your First Web App With Node.js And Express.js'
+course: Project 1 Course
 fb-title: 'Step 3: Writing Your First Web App With Node.js And Express.js'
 description: In this step, we explain how web servers work and we create our first Node.js web app with a home, contact and about page.
 image: https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/coding-on-a-laptop.jpg

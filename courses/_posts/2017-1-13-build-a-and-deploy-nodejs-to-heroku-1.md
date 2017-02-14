@@ -2,6 +2,7 @@
 layout: default
 permalink: /tutorials/build-and-deploy-nodejs-app-to-heroku/1
 title: 'Step 1: Setup and Installation'
+course: Project 1 Course
 fb-title: 'Step 1: Setup and Installation'
 description: In this step, we are installing Node.js, Git, and Heroku dependencies for our web app.
 image: https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/coding-on-a-laptop.jpg

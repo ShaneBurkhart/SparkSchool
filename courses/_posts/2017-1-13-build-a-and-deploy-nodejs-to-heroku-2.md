@@ -2,6 +2,7 @@
 layout: default
 permalink: /tutorials/build-and-deploy-nodejs-app-to-heroku/2
 title: 'Step 2: Creating Your Project and Installing Express.js'
+course: Project 1 Course
 fb-title: 'Step 2: Creating Your Project and Installing Express.js'
 description: In this step, we are creating a directory for our Node.js app, initializing package.json and installing Express.js.
 image: https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/coding-on-a-laptop.jpg
