@@ -9,4 +9,4 @@ RUN pip install sixpack
 
 ENV SIXPACK_CONFIG /app/config.yml
 
-CMD ["gunicorn", "-b 0.0.0.0:8000", "--access-logfile -", "--error-logfile -", "-w 8", "--worker-class=gevent", "sixpack.server:start"]
+CMD ["gunicorn sixpack.server:start", "-b 0.0.0.0:8000", "--access-logfile -", "--error-logfile -", "-w 8", "--worker-class=gevent"]
