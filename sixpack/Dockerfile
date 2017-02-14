@@ -1,4 +1,4 @@
-FROM python:2.7
+FROM python:2.7.13
 MAINTAINER Shane Burkhart <shane@trysparkschool.com>
 
 ADD . /app
