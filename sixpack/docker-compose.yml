@@ -18,6 +18,8 @@ services:
             - redis
         ports:
             - 80:5001
+        environment:
+            - SIXPACK_DEBUG=true
         command: "sixpack-web"
 
     redis:
