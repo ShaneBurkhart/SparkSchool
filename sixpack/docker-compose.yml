@@ -21,3 +21,6 @@ services:
 
     redis:
         image: redis:3.2
+        volumes:
+            - ./data:/data
+        command: "redis-server --appendonly yes"
