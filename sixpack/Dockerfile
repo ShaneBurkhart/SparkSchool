@@ -3,8 +3,6 @@ MAINTAINER Shane Burkhart <shane@trysparkschool.com>
 
 ADD . /app
 
-RUN pip install gunicorn
-RUN pip install gevent
 RUN pip install sixpack
 
 ENV SIXPACK_CONFIG /app/config.yml
