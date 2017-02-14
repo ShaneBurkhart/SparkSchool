@@ -1,0 +1,23 @@
+version: '2.1'
+services:
+    sixpack:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        links:
+            - redis
+        ports:
+            - 5000:8000
+
+    sixpack_web:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        links:
+            - redis
+        ports:
+            - 5001:8000
+        command: "gunicorn -b 0.0.0.0:8000 --access-logfile - -w 2 --worker-class=gevent sixpack.web:start"
+
+    redis:
+        image: redis:3.2
