@@ -6,3 +6,4 @@ ADD . /app
 RUN pip install sixpack
 
 ENV SIXPACK_CONFIG /app/config.yml
+ENV URL = sixpack.trysparkschool.com
