@@ -5,6 +5,6 @@ ADD . /app
 
 RUN pip install gunicorn
 RUN pip install gevent
-RUN pip install sixpack==2.1.0
+RUN pip install sixpack
 
 ENV SIXPACK_CONFIG /app/config.yml
