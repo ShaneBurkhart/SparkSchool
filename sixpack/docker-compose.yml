@@ -30,6 +30,7 @@ services:
         image: nginx
         ports:
             - 80:80
+            - 5000:80
         links:
             - sixpack
             - sixpack_web
