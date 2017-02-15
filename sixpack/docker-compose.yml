@@ -8,7 +8,7 @@ services:
             - redis
         ports:
             - 5000:5000
-        command: " gunicorn --access-logfile - --error-logfile - -w 8 --worker-class=gevent /home/sixpack/sixpack/sixpack/web:start"
+        command: " gunicorn --access-logfile - --error-logfile - -w 8 --worker-class=gevent sixpack.server:start"
 
     sixpack_web:
         build:
@@ -18,7 +18,7 @@ services:
             - redis
         ports:
             - 80:5001
-        command: " gunicorn --access-logfile - --error-logfile - -w 2 --worker-class=gevent /home/sixpack/sixpack/sixpack/server:start"
+        command: " gunicorn --access-logfile - --error-logfile - -w 2 --worker-class=gevent sixpack.web:start"
 
     redis:
         image: redis:3.2
