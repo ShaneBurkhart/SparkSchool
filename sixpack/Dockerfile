@@ -10,5 +10,5 @@ RUN pip install -r requirements.txt
 
 ADD ./config.yml /home/sixpack/sixpack/config.yml
 
-ENV SIXPACK_CONFIG /app/config.yml
+ENV SIXPACK_CONFIG /home/sixpack/sixpack/config.yml
 ENV PYTHONPATH /home/sixpack/sixpack
