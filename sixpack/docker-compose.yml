@@ -30,9 +30,9 @@ services:
         build:
             context: .
             dockerfile: Dockerfile.nginx
-        ports:
-            - 80:80
-            - 5000:5000
         links:
             - sixpack
             - sixpack_web
+        ports:
+            - 80:80
+            - 5000:5000
