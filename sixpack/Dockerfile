@@ -1,9 +1,14 @@
 FROM python:2.7.13
 MAINTAINER Shane Burkhart <shane@trysparkschool.com>
 
-ADD . /app
+RUN mkdir -p /home/sixpack
+WORKDIR /home/sixpack
+RUN git clone https://github.com/seatgeek/sixpack
 
-RUN pip install sixpack
+WORKDIR /home/sixpack/sixpack
+RUN pip install -r requirements.txt
 
-ENV SIXPACK_CONFIG /app/config.yml
-ENV URL = sixpack.trysparkschool.com
+ADD ./config.yml /home/sixpack/sixpack/config.yml
+
+ENV SIXPACK_CONFIG /home/sixpack/sixpack/config.yml
+ENV PYTHONPATH /home/sixpack/sixpack

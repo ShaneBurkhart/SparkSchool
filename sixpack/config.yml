@@ -1,6 +1,16 @@
+enabled: True
 redis_port: 6379
 redis_host: redis
 redis_prefix: sixpack
 redis_db: 15
+redis_max_connections: 0
 
+metrics: false                              # send metrics to StatsD (response times, # of calls, etc)?
+statsd_url: 'udp://localhost:8125/sixpack'  # StatsD url to connect to (used only when metrics: true)
+
+# The regex to match for robots
+robot_regex: $^|trivial|facebook|MetaURI|butterfly|google|amazon|goldfire|sleuth|xenu|msnbot|SiteUptime|Slurp|WordPress|ZIBB|ZyBorg|pingdom|bot|yahoo|slurp|java|fetch|spider|url|crawl|oneriot|abby|commentreader|twiceler
+ignored_ip_addresses: []                    # List of IP
+
+asset_path: 'gen'                             # Path for compressed assets to live. This path is RELATIVE to sixpack/static
 secret_key: '6efcce4d-50e8-4973-9f0b-4fdd647bd992'
