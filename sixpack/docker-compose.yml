@@ -23,7 +23,7 @@ services:
         command: "redis-server --appendonly yes"
 
     nginx:
-        image: nginx:
+        image: nginx
         ports:
             - 80:80
         links:
