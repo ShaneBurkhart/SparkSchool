@@ -7,7 +7,7 @@ services:
         links:
             - redis
         ports:
-            - "8000"
+            - 8000
         command: " gunicorn -b 0.0.0.0:8000 --access-logfile - --error-logfile - -w 8 --worker-class=gevent sixpack.server:start"
 
     sixpack_web:
@@ -17,7 +17,7 @@ services:
         links:
             - redis
         ports:
-            - "8000"
+            - 8000
         command: " gunicorn -b 0.0.0.0:8000 --access-logfile - --error-logfile - -w 2 --worker-class=gevent sixpack.web:start"
 
     redis:
@@ -27,7 +27,7 @@ services:
         command: "redis-server --appendonly yes"
 
     nginx:
-        image: nginx:
+        image: nginx
         ports:
             - 80:80
         links:
