@@ -7,7 +7,7 @@ services:
         links:
             - redis
         ports:
-            - 5000:8000
+            - 5000:5000
         command: "/home/sixpack/sixpack/bin/sixpack"
 
     sixpack_web:
