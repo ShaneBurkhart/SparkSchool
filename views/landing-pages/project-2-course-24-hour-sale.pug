@@ -7,32 +7,19 @@ block variables
 block no_hero
 
 block content
-    //-iframe.hidden(src="https://s3.amazonaws.com/spark-school/guide-to-becoming-a-software-developer.pdf")
-    +lead_tracking()
-
-    .section.tiny
-        .container
-            .full
-                h1 Thanks! Keep reading for a special offer!
-                p
-                    a(href="https://s3.amazonaws.com/spark-school/guide-to-becoming-a-software-developer.pdf") Click here if your download doesn't start automatically.
-                    | &nbsp;Read below for a
-                    b &nbsp;limited time offer on project 2 of becoming a software developer.
-
     .section.dark-blue.signup-section#sign-up
         .container
             .description
                 h2.bold Project 2 Course For 35% Off!
-                p.bold As an added bonus, I am also sending you the course for project 1 to becoming a software developer for FREE!
+                p.bold As an added bonus, I also sent you the course for project 1 to becoming a software developer for FREE!
                 p
                     | The course for project 1 will take you from no programming experience to
                     b &nbsp;building and deploying your first website in only a few hours.
                 p
                     | From there, you will start project 2 which dives deeper and
-                    b teaches you the fundamentals of software development.
+                    b &nbsp;teaches you the fundamentals of software development.
                 p The course for project 2 is valued at $29, but since you just signed up, I am giving you a 35% discount for a limited time.
                 p.bold For the next 24 hours, you can purchase the course for project 2 for only $19!
-                a.button.yellow.block(href='/project-2-course-24-hour-sale') Get 35% off the course for project 2!
 
 
             .graphic
@@ -43,7 +30,7 @@ block content
                         | &nbsp;of software development and is where you will make a
                         b &nbsp;noticeable transition towards becoming a software developer.
                         | &nbsp;Don't miss out on this limited time offer!
-                    a.button.block.yellow(href='/project-2-course-24-hour-sale?email=' + currentQuery.email) Get the course for only $19!
+                    a.button.block.yellow(href='/project-2-course-24-hour-sale-checkout?email=' + currentQuery.email) Get the course for only $19!
 
     .section
         .container
@@ -61,4 +48,4 @@ block content
 
     .section.cta.light-gray
         .container
-            a.button.block(href='/project-2-course-24-hour-sale?email=' + currentQuery.email) Get the course for 35% off!
+            a.button.block(href='/project-2-course-24-hour-sale-checkout?email=' + currentQuery.email) Get the course for 35% off!
