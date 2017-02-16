@@ -73,6 +73,9 @@ module.exports = function (req, res, next) {
 
           // Translate "null" value to blank string
           if (alternative === 'null') alternative = '';
+          // Translate "true" and "false" values to booleans
+          if (alternative === 'true') alternative = true;
+          if (alternative === 'false') alternative = false;
 
           res.locals.abTests[test.name] = alternative;
           loadTestCallback();
