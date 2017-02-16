@@ -35,10 +35,3 @@
         '/tutorials/build-and-deploy-nodejs-app-to-heroku/8':
             images:
                 'https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/heroku-create-url.png': 'Create Heroku server for our Node.js web app.'
-
--
-    changeFreq: 'monthly'
-    priority: .3
-    urls:
-        '/login':
-        '/signup':
