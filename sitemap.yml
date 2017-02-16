@@ -5,7 +5,7 @@
         '/':
             images:
                 'https://s3.amazonaws.com/spark-school/me_and_yogi.png': 'Shane Burkhart and his dog Yogi.'
-        '/become-a-software-developer-without-a-college-degree':
+        '/complete-guide-to-becoming-a-software-developer-without-a-college-degree':
             images:
                 'https://s3.amazonaws.com/spark-school/me_and_yogi.png': 'Shane Burkhart and his dog Yogi.'
 
