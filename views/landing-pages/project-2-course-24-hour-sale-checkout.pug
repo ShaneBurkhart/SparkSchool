@@ -2,7 +2,7 @@ extends ../layouts/landing-page-no-header
 include ../landing-pages/mixins
 
 block variables
-   - var title = 'Get The Course 50% Off For 48 Hours Only!';
+   - var title = 'Get The Course 35% Off For 24 Hours Only!';
 
 block no_hero
 
@@ -11,18 +11,15 @@ block content
     .section.dark-blue.signup-section#sign-up
         .container
             .description
-                h2.bold 50% Off The Course For Project 2!
+                h2.bold Get 35% Off The Course!
 
-                p.bold For the next 48 hours, you can purchase the course at 50% off!
 
-                p
-                    | As a beginner, it's difficult to piece together concepts for project 2. To fix this, I made a
-                    b &nbsp;7-day course that walks you step-by-step through project 2.
+                p.bold For the next 24 hours only, you can purchase the course for project 2 for only $19!
 
                 p
-                    | In this course, you will build a
+                    | In this 7-day course, you will build a
                     b &nbsp;small version of Twitter
-                    | , since building a smaller version of an existing web app is the best way to learn.
+                    | &nbsp;from scratch.
 
                 p.bold By the end of the course, you will know how to:
 
@@ -35,31 +32,27 @@ block content
 
                 br
 
+                p.bold If you purchase in the next 24 hours, you get the course for only $19!
+
                 p
-                    | When you purchase, you will receive the
-                    b &nbsp;7-day PDF course
-                    | &nbsp;that teaches you
-                    b &nbsp;everything for project 2 and more!
-
-                p.bold If you purchase in the next 48 hours, you can get the course for only $25! (50% off)
-
-                p I highly recommend this course if you want to learn efficiently and get a job as a software developer as quickly as possible!
+                    | Buy the course now so you
+                    b &nbsp;don't miss out on this limited time offer!
 
             .graphic
                 form.signup-form#paypal-form(action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top")
                     h3
                         | Get the course for&nbsp;
-                        span(style="text-decoration: line-through;") $49
+                        span(style="text-decoration: line-through;") $29
                         b &nbsp;$
-                        b(style="font-size: 36px") 25!
+                        b(style="font-size: 36px") 19!
                     p.light We'll send the course to your PayPal email.
                     input(type="hidden" name="cmd" value="_s-xclick")
-                    input(type="hidden" name="hosted_button_id" value="7DTRYSP8TH722")
+                    input(type="hidden" name="hosted_button_id" value="2L3FM5CM6YJ9C")
                     input(type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!")
                     img(alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1")
 
 
-                form.signup-form#payment-form(action='/twitter-clone-48-hour-sale/purchase' method='POST')
+                form.signup-form#payment-form(action='/project-2-course-24-hour-sale/purchase' method='POST')
                     h3.text-center.margin-small Or pay with a credit card!
 
                     +error_notice()
@@ -68,7 +61,7 @@ block content
 
                     +payment_cc_fields()
 
-                    button.yellow Get the course for $25! (50% off)
+                    button.yellow Buy the course for $19!
 
                 +payment_form_scripts()
 
@@ -86,4 +79,4 @@ block content
             .graphic
                 img.circle(src="https://s3.amazonaws.com/spark-school/me_and_yogi.png" alt="Shane Burkhart with his dog, Yogi.")
 
-    +light_gray_CTA_anchor_section('Get The Course!')
+    +light_gray_CTA_anchor_section('Get the course for 35% off!')

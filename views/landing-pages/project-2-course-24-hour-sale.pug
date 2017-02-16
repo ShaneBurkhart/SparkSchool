@@ -2,68 +2,48 @@ extends ../layouts/landing-page-no-header
 include ../landing-pages/mixins
 
 block variables
-   - var title = 'Get The Course 35% Off For 24 Hours Only!';
+   - var title = 'Complete Guide To Becoming A Software Developer Download';
 
 block no_hero
 
 block content
-    block extras
+    //-iframe.hidden(src="https://s3.amazonaws.com/spark-school/guide-to-becoming-a-software-developer.pdf")
+    +lead_tracking()
+
+    .section.tiny
+        .container
+            .full
+                h1 Thanks! Keep reading for a special offer!
+                p
+                    a(href="https://s3.amazonaws.com/spark-school/guide-to-becoming-a-software-developer.pdf") Click here if your download doesn't start automatically.
+                    | &nbsp;Read below for a
+                    b &nbsp;limited time offer on project 2 of becoming a software developer.
+
     .section.dark-blue.signup-section#sign-up
         .container
             .description
-                h2.bold Get 35% Off The Course!
-
-
-                p.bold For the next 24 hours only, you can purchase the course for project 2 for only $19!
-
+                h2.bold Project 2 Course For 35% Off!
+                p.bold As an added bonus, I am also sending you the course for project 1 to becoming a software developer for FREE!
                 p
-                    | In this 7-day course, you will build a
-                    b &nbsp;small version of Twitter
-                    | &nbsp;from scratch.
-
-                p.bold By the end of the course, you will know how to:
-
-                ul
-                    li Code a complex web server in JavaScript using Node.js
-                    li Read and write Tweets to a database using SQL
-                    li Build and style web pages with HTML and CSS
-                    li Deploy your app to the web with Heroku
-                    li And a lot more!
-
-                br
-
-                p.bold If you purchase in the next 24 hours, you get the course for only $19!
-
+                    | The course for project 1 will take you from no programming experience to
+                    b &nbsp;building and deploying your first website in only a few hours.
                 p
-                    | Buy the course now so you
-                    b &nbsp;don't miss out on this limited time offer!
+                    | From there, you will start project 2 which dives deeper and
+                    b teaches you the fundamentals of software development.
+                p The course for project 2 is valued at $29, but since you just signed up, I am giving you a 35% discount for a limited time.
+                p.bold For the next 24 hours, you can purchase the course for project 2 for only $19!
+                a.button.yellow.block(href='/project-2-course-24-hour-sale') Get 35% off the course for project 2!
+
 
             .graphic
-                form.signup-form#paypal-form(action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top")
-                    h3
-                        | Get the course for&nbsp;
-                        span(style="text-decoration: line-through;") $29
-                        b &nbsp;$
-                        b(style="font-size: 36px") 19!
-                    p.light We'll send the course to your PayPal email.
-                    input(type="hidden" name="cmd" value="_s-xclick")
-                    input(type="hidden" name="hosted_button_id" value="2L3FM5CM6YJ9C")
-                    input(type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!")
-                    img(alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1")
-
-
-                form.signup-form#payment-form(action='/project-2-course-24-hour-sale/purchase' method='POST')
-                    h3.text-center.margin-small Or pay with a credit card!
-
-                    +error_notice()
-
-                    input(type='hidden' name='origin' value='/project-2-course-48-hour-sale')
-
-                    +payment_cc_fields()
-
-                    button.yellow Buy the course for $19!
-
-                +payment_form_scripts()
+                .signup-form
+                    h3 35% off for the next 24 hours!
+                    p.light
+                        | This course teaches you the fundamentals
+                        | &nbsp;of software development and is where you will make a
+                        b &nbsp;noticeable transition towards becoming a software developer.
+                        | &nbsp;Don't miss out on this limited time offer!
+                    a.button.block.yellow(href='/project-2-course-24-hour-sale?email=' + currentQuery.email) Get the course for only $19!
 
     .section
         .container
@@ -79,4 +59,6 @@ block content
             .graphic
                 img.circle(src="https://s3.amazonaws.com/spark-school/me_and_yogi.png" alt="Shane Burkhart with his dog, Yogi.")
 
-    +light_gray_CTA_anchor_section('Get the course for 35% off!')
+    .section.cta.light-gray
+        .container
+            a.button.block(href='/project-2-course-24-hour-sale?email=' + currentQuery.email) Get the course for 35% off!
