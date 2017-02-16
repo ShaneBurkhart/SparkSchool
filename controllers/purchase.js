@@ -24,7 +24,7 @@ module.exports = function (app) {
     var type = req.params.type || 'become-a-software-developer-email-series';
     var email = req.body.email;
     var origin = req.body.origin || '/';
-    var thankYouPage = '/become-a-software-developer-email-series-thank-you';
+    var thankYouPage = '/complete-guide-to-becoming-a-software-developer-thank-you';
 
     if (!/\S+@\S+.\S+/.test(email)) {
       return res.redirect([
@@ -45,9 +45,13 @@ module.exports = function (app) {
         thankYouPage = '/take-tutorial-later-thank-you';
         break;
       case 'become-a-software-developer-email-series':
-      default:
         contact['p[8]'] = '8';
         thankYouPage = '/become-a-software-developer-email-series-thank-you';
+        break;
+      case 'become-a-software-developer-email-series':
+      default:
+        contact['p[13]'] = '13';
+        thankYouPage = '/complete-guide-to-becoming-a-software-developer-thank-you';
         break;
     }
 
