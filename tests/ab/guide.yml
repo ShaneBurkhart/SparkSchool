@@ -7,3 +7,13 @@
     alternatives:
         - '20-page'
         - 'null'
+
+-
+    name: 'guide_ecover'
+    paths:
+        - ''
+        - '/complete-guide-to-becoming-a-software-developer-without-a-college-degree'
+    conversion_path: '/complete-guide-to-becoming-a-software-developer-thank-you'
+    alternatives:
+        - 'true'
+        - 'false'
