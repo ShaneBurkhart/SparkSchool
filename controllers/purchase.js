@@ -98,14 +98,14 @@ module.exports = function (app) {
       case 'twitter-clone':
         // Twitter clone list id
         contact['p[11]'] = '11';
-        successRedirectURL = '/project-2-thank-you';
+        successRedirectURL = '/project-2-course-thank-you';
         chargeOpts.description = TWITTER_CLONE_DESC;
         chargeOpts.amount = TWITTER_CLONE_PRICE;
         break;
       case 'project-2-course-24-hour-sale':
         // Twitter clone list id
         contact['p[11]'] = '11';
-        successRedirectURL = '/project-2-thank-you';
+        successRedirectURL = '/project-2-course-thank-you';
         chargeOpts.description = TWITTER_CLONE_24_HOUR_DESC;
         chargeOpts.amount = TWITTER_CLONE_24_HOUR_PRICE;
         break;
