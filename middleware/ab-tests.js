@@ -1,20 +1,40 @@
 'use strict'
 
+var fs = require('fs');
+var path = require('path');
 var async = require('async');
+var _ = require('underscore');
 var uuidV4 = require('uuid/v4');
 var sixpack = require('sixpack-client');
+var yaml = require('js-yaml');
 
 var AB_CLIENT_ID_COOKIE = 'ssab';
 
-// Array of all A/B tests. Each test specifies the page its "path" and "conversion_path".
-var TESTS = [
-  {
-    name: 'first_test',
-    path: '/become-a-software-developer-guide',
-    conversion_path: 'the-full-guide-to-becoming-a-software-developer',
-    alternatives: ['blue', 'yellow'],
+var AB_TEST_DIRECTORY = path.resolve(__dirname, '../tests/ab');
+var AB_TEST_FILES = fs.readdirSync(AB_TEST_DIRECTORY);
+
+var TESTS = [];
+var TESTS_BY_PATH = {};
+var TESTS_BY_CONVERSION_PATH = {};
+
+// Load test files
+_.each(AB_TEST_FILES, function (file) {
+  var absolutePath = path.join(AB_TEST_DIRECTORY, file);
+  TESTS = TESTS.concat(yaml.load(fs.readFileSync(absolutePath, 'utf8')));
+});
+
+// Index test files accounting for path/paths, etc.
+_.each(TESTS, function (test) {
+  // Index by path or all paths
+  if (test.paths) {
+    _.each(test.paths, function (path) { TESTS_BY_PATH[path] = test; })
+  } else {
+    TESTS_BY_PATH[test.path] = test;
   }
-];
+
+  // Index by conversion path
+  TESTS_BY_CONVERSION_PATH[test.conversion_path] = test;
+});
 
 function getSession(req, res) {
   var clientId = req.cookies[AB_CLIENT_ID_COOKIE] || uuidV4();
@@ -32,33 +52,30 @@ function getSession(req, res) {
 module.exports = function (req, res, next) {
   var path = req.path.replace(/\/$/, '');
   var abSession = getSession(req, res);
+  var currentPathTests = TESTS_BY_PATH[path];
+  var currentPathConversions = TESTS_BY_CONVERSION_PATH[path];
 
   res.locals.abTests = res.locals.abTests || {};
 
-  console.log(path);
-  async.each(TESTS, function (test, testCallback) {
-    console.log(test.name);
-    console.log(test.path);
-    // Async load and convert tests if they match the current path.
-    if (path === test.path) {
-      // Add A/B test to templates if on path
-      abSession.participate(test.name, test.alternatives, function (err, sixpackRes) {
-        var alternative = test.alternatives[0];
-        console.log(err);
-        console.log(sixpackRes);
-        if (!err) alternative = sixpackRes.alternative.name;
+  async.parallel([
+    function loadTests(loadTestsCallback) {
+      async.each(currentPathTests, function loadTest(test, loadTestCallback) {
+        abSession.participate(test.name, test.alternatives, function (err, sixpackRes) {
+          var alternative = test.alternatives[0];
+          if (!err) alternative = sixpackRes.alternative.name;
 
-        res.locals.abTests[test.name] = alternative;
+          res.locals.abTests[test.name] = alternative;
+          loadTestCallback();
+        });
+      }, loadTestsCallback);
+    },
 
-        testCallback();
-      });
-    } else if (path === test.conversion_path) {
-      // Add conversion if on conversion_path
-      abSession.convert(test.name, function (err, res) { testCallback(); });
-    }
-  }, function () {
-    // Runs when all tests are done running.
+    function convertTests(convertTestsCallback) {
+      async.each(currentPathConversions, function convertTest(test, convertTestCallback) {
+        abSession.convert(test.name, function (err, res) { convertTestCallback(); });
+      }, convertTestsCallback);
+    },
+  ], function (err) {
     next();
   });
 };
-
