@@ -11,6 +11,9 @@ block content
 
     .section.dark-blue.signup-section#sign-up
         .container
+            .graphic
+                img(src="/assets/images/guide-ebook-cover.jpg")
+
             .description
                 h2.bold Get The Complete Guide To Becoming A Software Developer!
                 p The email series you signed up for will teach you how to get a job as a software developer, but you'll only receive one email a week.
@@ -18,19 +21,11 @@ block content
                 p
                     | In this guide, we'll break down exactly what you need to do to go from no programming experience to getting a job as a software developer.
                     b &nbsp;I taught myself how to be a software developer and I know you can too!
-                p
-                    | Click the button to the right to learn more about the
-                    b &nbsp;full guide to getting a job as a software developer.
 
-            .graphic
-                .signup-form
-                    h3 Get the full guide for only $7!
-                    p.light
-                        | This guide breaks down exactly what you need to do to go from
-                        b &nbsp;no programming experience
-                        | &nbsp;to getting a
-                        b &nbsp;job as a software developer.
-                    a.button.block.yellow(href='/the-full-guide-to-becoming-a-software-developer?email=' + currentQuery.email) Learn More About The Full Guide
+                a.button.block.bright-yellow(href='/the-full-guide-to-becoming-a-software-developer?email=' + currentQuery.email)
+                    | Get
+                    b &nbsp;The Complete Guide
+                    | &nbsp;For Only $7!
 
     +guide_meet_the_instructor()
 
