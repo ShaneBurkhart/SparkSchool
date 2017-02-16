@@ -1,0 +1,71 @@
+extends ../layouts/landing-page-no-header
+include ../landing-pages/mixins
+
+block variables
+   - var title = 'Become A Software Developer Without A College Degree';
+   - var fbImage = 'https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/coding-on-a-laptop.jpg'
+   - var fbType = 'product';
+   - var description = 'It is more possible than ever to become a software developer without a college degree.  Take your first step towards getting a job as a software developer.';
+
+block no_hero
+
+block content
+    .section.dark-blue#sign-up
+        .container
+            .description
+                h2.bold Become A Software Developer Without A College Degree!
+
+                p
+                    | If you have ever wanted to become a software developer but thought you needed a college degree,
+                    b &nbsp;think again!
+
+                p
+                    | Most software companies
+                    b &nbsp;no longer require you have a college degree.
+                    | &nbsp;Instead, they care far more about whether or not you know what you're doing. Because of this, there's
+                    b &nbsp;never been a better time
+                    | &nbsp;to teach yourself software development!
+
+                p
+                    | If you are interested in becoming a software developer, I
+                    b &nbsp;highly recommend
+                    | &nbsp;signing up to receive my FREE 20-page guide that
+                    b &nbsp;teaches you how to become a software developer.
+                p
+                    | The guide assumes you have
+                    b &nbsp;no programming experience
+                    | &nbsp;and walks you through getting a job as a software developer. Sign up now and take the
+                    b &nbsp;first step towards becoming a software developer!
+
+            .graphic
+                form.signup-form.text-center(action='/guide-to-becoming-a-software-developer/signup' method='POST')
+                    h3.bold Take the first step!
+                    p.light
+                        | Enter your email to receive my
+                        b &nbsp;FREE guide
+                        | &nbsp;that teaches you how to become a
+                        b &nbsp;software developer.
+
+                    +error_notice()
+
+                    input(type='hidden' name='origin' value='/become-a-software-developer-without-a-college-degree-weekly-email')
+                    .input-group
+                        input(type='text' name='email' placeholder='Enter your email' value=currentQuery.email)
+                    button.yellow Get the guide for FREE!
+
+    .section
+        .container
+            .description
+                h2 Hey, I'm Shane!
+                p I'm Shane and I will be teaching you how to become a software developer! I’ve been a software developer for a little over 5 years now, and have worked at Yelp, Carfax, and a startup called SumoMe.
+
+                p The crazy part is I didn’t go to college to be a software developer. In fact, I am completely self-taught.
+
+                p
+                    | I've spent the last 5 years teaching myself software development and over time, I have learned what works and what doesn't. Now, I want to use my knowledge to help
+                    b &nbsp;get a job as a software developer as quickly as possible.
+            .graphic
+                img.circle(src="https://s3.amazonaws.com/spark-school/me_and_yogi.png" alt="Shane Burkhart with his dog, Yogi.")
+
+
+    +light_gray_CTA_anchor_section('Sign up for the FREE guide!')

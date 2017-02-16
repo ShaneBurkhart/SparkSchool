@@ -1,0 +1,62 @@
+extends ../layouts/landing-page-no-header
+include ../landing-pages/mixins
+
+block variables
+   - var title = 'Complete Guide To Becoming A Software Developer Download';
+
+block no_hero
+
+block content
+    iframe.hidden(src="https://s3.amazonaws.com/spark-school/guide-to-becoming-a-software-developer.pdf")
+    +lead_tracking()
+
+    .section.tiny
+        .container
+            .full
+                h1 Thanks! Keep reading for a special offer!
+                p
+                    a(href="https://s3.amazonaws.com/spark-school/guide-to-becoming-a-software-developer.pdf") Click here if your download doesn't start automatically.
+                    | &nbsp;Read below for a
+                    b &nbsp;limited time offer on project 2 of becoming a software developer.
+
+    .section.dark-blue.signup-section#sign-up
+        .container
+            .description
+                h2.bold Project 2 Course For 35% Off!
+                p.bold As an added bonus, I am also sending you the course for project 1 to becoming a software developer for FREE!
+                p
+                    | The course for project 1 will take you from no programming experience to
+                    b &nbsp;building and deploying your first website in only a few hours.
+                p
+                    | From there, you will start project 2 which dives deeper and
+                    b &nbsp;teaches you the fundamentals of software development.
+                p The course for project 2 is valued at $29, but since you just signed up, I am giving you an exclusive 35% discount for a limited time.
+                p.bold For the next 24 hours, you can purchase the course for project 2 for only $19!
+
+            .graphic
+                .signup-form
+                    h3 35% off for the next 24 hours!
+                    p.light
+                        | This course teaches you the fundamentals
+                        | &nbsp;of software development and is where you will make a
+                        b &nbsp;noticeable transition towards becoming a software developer.
+                        | &nbsp;Don't miss out on this limited time offer!
+                    a.button.block.yellow(href='/project-2-course-24-hour-sale-checkout?email=' + currentQuery.email) Get the course for only $19!
+
+    .section
+        .container
+            .description
+                h2 Meet The Instructor
+                p Hey, I'm Shane! I’ve been a software developer for a little over 5 years now, and have worked at Yelp, Carfax, and a startup called SumoMe.
+
+                p The crazy part is I didn’t go to school to be a software developer. In fact, I am completely self-taught.
+
+                p Probably not unlike some of you, when I first started learning to code, I didn't know what I was doing so it took me much longer than it should have to learn. My goal is to fix that. This course is designed so you don't ever have to go through the same unnecessarily long process I did.
+
+                p I've spent the last 5 years teaching myself software development and over time, I have learned what works and what doesn't. Now, I want to use my course to help you learn as efficiently as possible.
+            .graphic
+                img.circle(src="https://s3.amazonaws.com/spark-school/me_and_yogi.png" alt="Shane Burkhart with his dog, Yogi.")
+
+    .section.cta.light-gray
+        .container
+            a.button.block(href='/project-2-course-24-hour-sale-checkout?email=' + currentQuery.email) Get the course for 35% off!
