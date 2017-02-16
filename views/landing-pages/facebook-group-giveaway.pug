@@ -1,0 +1,56 @@
+extends ../layouts/landing-page-no-header
+include ../landing-pages/mixins
+
+block variables
+   - var title = 'FB Group Giveaway!';
+
+block no_hero
+
+block content
+    .section.dark-blue.signup-section#sign-up
+        .container
+            .description
+                h2.bold Learn Coding and Web Development's Bundle Giveaway Raffle!
+                p Just join the Facebook group and you'll be entered to win.&nbsp; 
+                    a(href="https://www.facebook.com/groups/1817502148491309/") Click here to join!
+                p.bold The bundle includes:
+
+                ul
+                    li
+                        p
+                            b Guide To Becoming A Software Developer
+                            | &nbsp;- this guide includes everything you need to know to get a job as a software developer.
+                    li
+                        p
+                            b Course for Project 1: Create Your First Website
+                            | &nbsp;- go from no programming experience to building and deploying your first website in only a few hours.
+                    li
+                        p
+                            b Course for Project 2: Build A Small Version Of Twitter
+                            | &nbsp;- this course builds on project 1 and walks you step-by-step through building a small version of Twitter. This is where you will make a noticeable transition towards becoming a software developer!
+
+                p Normally this bundle sells for $70, but if you join the group by Sunday February 19th, you get the chance to win it for FREE! 
+            .graphic
+                .signup-form
+                    h3 
+                        | Join by February 19th for your chance to win this
+                        b &nbsp;special bundle!
+                    p.light
+                        | This bundle normally sells for $70, but you can
+                        b &nbsp; join the group 
+                        | to get the chance
+                        b &nbsp;to win the guide and 2 courses completely FREE!
+                    a.bold(href="https://www.facebook.com/groups/1817502148491309") Click here to join the group!      
+    .section
+        .container
+            .description
+                h2 Meet The Instructor
+                p Hey, I'm Shane! I’ve been a software developer for a little over 5 years now, and have worked at Yelp, Carfax, and a startup called SumoMe. 
+
+                p The crazy part is I didn’t go to college to be a software developer. In fact, I am completely self-taught. 
+                p
+                    | I've spent the last 5 years teaching myself software development and over time, I have learned what works and what doesn't. Now, I want to use my knowledge to help
+                    b &nbsp;get a job as a software developer as quickly as possible.
+
+            .graphic
+                img.circle(src="https://s3.amazonaws.com/spark-school/me_and_yogi.png" alt="Shane Burkhart with his dog, Yogi.")
