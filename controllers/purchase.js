@@ -10,8 +10,8 @@ var activeCampaign = new ActiveCampaign(
 var TWITTER_CLONE_DESC = "Project 2: Twitter Clone Course - Spark School";
 var TWITTER_CLONE_PRICE = 4900;
 
-var TWITTER_CLONE_48_HOUR_DESC = "Project 2: Twitter Clone Course - 50% Off - Spark School";
-var TWITTER_CLONE_48_HOUR_PRICE = 2500;
+var TWITTER_CLONE_24_HOUR_DESC = "Project 2: Twitter Clone Course - 35% Off - Spark School";
+var TWITTER_CLONE_24_HOUR_PRICE = 1900;
 
 var V_DAY_BUNDLE_DESC = "Valentine's Day Bundle  - Spark School";
 var V_DAY_BUNDLE_PRICE = 1900;
@@ -102,12 +102,12 @@ module.exports = function (app) {
         chargeOpts.description = TWITTER_CLONE_DESC;
         chargeOpts.amount = TWITTER_CLONE_PRICE;
         break;
-      case 'twitter-clone-48-hour-sale':
+      case 'project-2-course-24-hour-sale':
         // Twitter clone list id
         contact['p[11]'] = '11';
         successRedirectURL = '/project-2-thank-you';
-        chargeOpts.description = TWITTER_CLONE_48_HOUR_DESC;
-        chargeOpts.amount = TWITTER_CLONE_48_HOUR_PRICE;
+        chargeOpts.description = TWITTER_CLONE_24_HOUR_DESC;
+        chargeOpts.amount = TWITTER_CLONE_24_HOUR_PRICE;
         break;
       case 'flash-sale-bundle':
         // Flash Sale Bundle list id
