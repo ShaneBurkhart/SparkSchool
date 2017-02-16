@@ -38,7 +38,7 @@ block content
                     b &nbsp;first step towards becoming a software developer!
 
             .graphic
-                form.signup-form.text-center(action='/guide-to-becoming-a-software-developer/signup' method='POST')
+                form.signup-form.text-center(action='/complete-guide-to-becoming-a-software-developer/signup' method='POST')
                     h3.bold Take the first step!
                     p.light
                         | Enter your email to receive my
@@ -48,7 +48,7 @@ block content
 
                     +error_notice()
 
-                    input(type='hidden' name='origin' value='/become-a-software-developer-without-a-college-degree-weekly-email')
+                    input(type='hidden' name='origin' value='/complete-guide-to-becoming-a-software-developer-without-a-college-degree')
                     .input-group
                         input(type='text' name='email' placeholder='Enter your email' value=currentQuery.email)
                     button.yellow Get the guide for FREE!

@@ -21,7 +21,7 @@ var BECOME_DEV_GUIDE_PRICE= 700;
 
 module.exports = function (app) {
   app.post('/:type/signup', function (req, res) {
-    var type = req.params.type || 'become-a-software-developer-email-series';
+    var type = req.params.type || 'complete-guide-to-becoming-a-software-developer';
     var email = req.body.email;
     var origin = req.body.origin || '/';
     var thankYouPage = '/complete-guide-to-becoming-a-software-developer-thank-you';
@@ -48,7 +48,7 @@ module.exports = function (app) {
         contact['p[8]'] = '8';
         thankYouPage = '/become-a-software-developer-email-series-thank-you';
         break;
-      case 'become-a-software-developer-email-series':
+      case 'complete-guide-to-becoming-a-software-developer':
       default:
         contact['p[13]'] = '13';
         thankYouPage = '/complete-guide-to-becoming-a-software-developer-thank-you';
