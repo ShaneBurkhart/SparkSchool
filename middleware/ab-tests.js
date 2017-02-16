@@ -25,15 +25,20 @@ _.each(AB_TEST_FILES, function (file) {
 
 // Index test files accounting for path/paths, etc.
 _.each(TESTS, function (test) {
+  function addPath(testsByPath, path, test) {
+    testsByPath[path] = testsByPath[path] || [];
+    testsByPath[path].push(test);
+  }
+
   // Index by path or all paths
   if (test.paths) {
-    _.each(test.paths, function (path) { TESTS_BY_PATH[path] = test; })
+    _.each(test.paths, function (path) { addPath(TESTS_BY_PATH, path, test); })
   } else {
-    TESTS_BY_PATH[test.path] = test;
+    addPath(TESTS_BY_PATH, test.path, test);
   }
 
   // Index by conversion path
-  TESTS_BY_CONVERSION_PATH[test.conversion_path] = test;
+  addPath(TESTS_BY_CONVERSION_PATH, test.conversion_path, test);
 });
 
 function getSession(req, res) {
@@ -61,8 +66,13 @@ module.exports = function (req, res, next) {
     function loadTests(loadTestsCallback) {
       async.each(currentPathTests, function loadTest(test, loadTestCallback) {
         abSession.participate(test.name, test.alternatives, function (err, sixpackRes) {
+          if (err) console.log(err);
+
           var alternative = test.alternatives[0];
           if (!err) alternative = sixpackRes.alternative.name;
+
+          // Translate "null" value to blank string
+          if (alternative === 'null') alternative = '';
 
           res.locals.abTests[test.name] = alternative;
           loadTestCallback();

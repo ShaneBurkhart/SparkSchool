@@ -1,9 +1,9 @@
 -
     name: '20_page_guide_wording'
     paths:
-        - '/'
+        - ''
         - '/complete-guide-to-becoming-a-software-developer-without-a-college-degree'
     conversion_path: '/complete-guide-to-becoming-a-software-developer-thank-you'
     alternatives:
         - '20-page'
-        - ''
+        - 'null'
