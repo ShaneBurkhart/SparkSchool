@@ -138,6 +138,21 @@ h1, h2, h3, h4, h5, h6, p, span, a {
     }
 }
 
+blockquote {
+    position: relative;
+    padding: 20px 40px 20px 40px;
+    margin: 0px 0px 25px 0px;
+
+    &:before {
+        font-family: 'FontAwesome';
+        position: absolute;
+        top: 20px;
+        left: 0;
+        font-size: 30px;
+        content: '\f10d';
+    }
+}
+
 
 ul {
     margin-top: 0px;

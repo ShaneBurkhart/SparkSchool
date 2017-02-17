@@ -1,0 +1,84 @@
+extends ../layouts/landing-page-no-header
+include ../landing-pages/mixins
+
+block variables
+   - var title = 'Complete Guide To Becoming A Software Developer Download';
+
+block hero
+    h1 Project 2: Build A Small Version Of Twitter
+    p.narrow
+        | This
+        b &nbsp;7-day course
+        | &nbsp;teaches you everything you need to
+        b &nbsp;build your own projects from scratch!
+    a.button.yellow(href='/project-2-course-checkout?email=' + currentQuery.email) Learn more about the course!
+
+block content
+    .section.dark-blue.signup-section#sign-up
+        .container
+            .description
+                h2.bold The Second Project To Becoming A Software Developer
+                p
+                    | Project 1 takes you from no programming experience to
+                    b &nbsp;building and deploying your first website in only a few hours.
+                p Because the course is designed for beginners, project 1 only teaches you how to build a website with a few static pages.
+                p
+                    | Don’t worry though! Project 2 dives deeper and
+                    b &nbsp;teaches you the fundamentals of software development.
+                p.bold By the end of this course, you will know everything you need to build your own projects from scratch!
+
+
+            .graphic
+                .signup-form
+                    h3 Make the transition!
+                    p.light
+                        | This course teaches you the fundamentals
+                        | &nbsp;of software development and is where you will make a
+                        b &nbsp;noticeable transition towards becoming a software developer!
+                    a.button.block.yellow(href='/project-2-course-checkout?email=' + currentQuery.email) Get the course for $29!
+
+    .section.light-gray
+        .container
+            .graphic
+                img(src='/assets/images/monitor-on-desk.png' alt='Illustration of monitor on desk with code.')
+            .description
+                h2 Develop on your computer
+                p A lot of coding courses don't teach you how to build projects on your own computer. Instead, they teach you how to write code in a web browser.  This misses the entire point!
+                p
+                    b Professional developers write code on their own computers so why wouldn't you?
+                p
+                    | This course teaches you how to write and run code on your own computer
+                    b &nbsplike you would at a real software company.
+
+    .section
+        .container
+            .description
+                h2 Learn as efficiently as possible
+                p I am a completely self-taught developer, so I know how slow it can be to teach yourself how to code.
+                p
+                    | Over the years, I have learned what works and what doesn't. Now I'm using this knowledge to
+                    b &nbsp;teach you as efficiently as possible!
+            .graphic
+                img(src='/assets/images/hello-world-code-snippet.png' alt='Hello world program in Express.js.')
+
+    .section.cta.light-gray
+        .container
+            a.button.block(href='/project-2-course-checkout?email=' + currentQuery.email) Get the course for $29!
+
+    .section
+        .container
+            .description
+                h2 Meet The Instructor
+                p Hey, I'm Shane! I’ve been a software developer for a little over 5 years now, and have worked at Yelp, Carfax, and a startup called SumoMe.
+
+                p The crazy part is I didn’t go to school to be a software developer. In fact, I am completely self-taught.
+
+                p Probably not unlike some of you, when I first started learning to code, I didn't know what I was doing so it took me much longer than it should have to learn. My goal is to fix that. This course is designed so you don't ever have to go through the same unnecessarily long process I did.
+
+                p I've spent the last 5 years teaching myself software development and over time, I have learned what works and what doesn't. Now, I want to use my course to help you learn as efficiently as possible.
+            .graphic
+                img.circle(src="https://s3.amazonaws.com/spark-school/me_and_yogi.png" alt="Shane Burkhart with his dog, Yogi.")
+
+    .section.cta.light-gray
+        .container
+            a.button.block(href='/project-2-course-checkout?email=' + currentQuery.email) Get the course for $29!

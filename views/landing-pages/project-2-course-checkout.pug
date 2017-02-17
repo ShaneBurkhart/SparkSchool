@@ -1,0 +1,73 @@
+extends ../layouts/landing-page-no-header
+include ../landing-pages/mixins
+
+block variables
+   - var title = 'Get The Project 2 Course: Build A Small Version Of Twitter!';
+
+block no_hero
+
+block content
+    block extras
+    .section.dark-blue.signup-section#sign-up
+        .container
+            .description
+                h2.bold Project 2 Course: Build A Small Version Of Twitter
+
+                p
+                    | In this 7-day course, you will build a
+                    b &nbsp;small version of Twitter from scratch.
+
+                p.bold By the end of the course, you will know how to:
+
+                ul
+                    li Code a complex web server in JavaScript using Node.js
+                    li Read and write Tweets to a database using SQL
+                    li Build and style web pages with HTML and CSS
+                    li Deploy your app to the web with Heroku
+                    li And a lot more!
+
+                br
+
+                blockquote
+                    p This is my favorite course because it's where I see students make a noticeable transition towards becoming a software developer.
+
+            .graphic
+                form.signup-form#paypal-form(action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top")
+                    h3
+                        | Get the course for
+                        b &nbsp;$29!
+                    p.light We'll send the course to your PayPal email.
+                    input(type="hidden" name="cmd" value="_s-xclick")
+                    input(type="hidden" name="hosted_button_id" value="S7VF865JX84QU")
+                    input(type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!")
+                    img(alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1")
+
+
+                form.signup-form#payment-form(action='/project-2-course/purchase' method='POST')
+                    h3.text-center.margin-small Or pay with a credit card!
+
+                    +error_notice()
+
+                    input(type='hidden' name='origin' value='/project-2-course-checkout')
+
+                    +payment_cc_fields()
+
+                    button.yellow Buy the course for $29!
+
+                +payment_form_scripts()
+
+    .section
+        .container
+            .description
+                h2 Meet The Instructor
+                p Hey, I'm Shane! I’ve been a software developer for a little over 5 years now, and have worked at Yelp, Carfax, and a startup called SumoMe.
+
+                p The crazy part is I didn’t go to school to be a software developer. In fact, I am completely self-taught.
+
+                p Probably not unlike some of you, when I first started learning to code, I didn't know what I was doing so it took me much longer than it should have to learn. My goal is to fix that. This course is designed so you don't ever have to go through the same unnecessarily long process I did.
+
+                p I've spent the last 5 years teaching myself software development and over time, I have learned what works and what doesn't. Now, I want to use my course to help you learn as efficiently as possible.
+            .graphic
+                img.circle(src="https://s3.amazonaws.com/spark-school/me_and_yogi.png" alt="Shane Burkhart with his dog, Yogi.")
+
+    +light_gray_CTA_anchor_section('Get the course for $29!')

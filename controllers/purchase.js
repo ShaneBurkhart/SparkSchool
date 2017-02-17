@@ -8,7 +8,7 @@ var activeCampaign = new ActiveCampaign(
 );
 
 var TWITTER_CLONE_DESC = "Project 2: Twitter Clone Course - Spark School";
-var TWITTER_CLONE_PRICE = 4900;
+var TWITTER_CLONE_PRICE = 2900;
 
 var TWITTER_CLONE_24_HOUR_DESC = "Project 2: Twitter Clone Course - 35% Off - Spark School";
 var TWITTER_CLONE_24_HOUR_PRICE = 1900;
@@ -117,12 +117,19 @@ module.exports = function (app) {
         chargeOpts.amount = V_DAY_BUNDLE_PRICE;
         break;
       case 'become-a-developer-guide':
-      default:
         // Become software dev guide list id
         contact['p[9]'] = '9';
         successRedirectURL = '/guide-to-becoming-a-software-developer-thank-you';
         chargeOpts.description = BECOME_DEV_GUIDE_DESC;
         chargeOpts.amount = BECOME_DEV_GUIDE_PRICE;
+        break;
+      case 'project-2-course':
+      default:
+        // Twitter clone list id
+        contact['p[11]'] = '11';
+        successRedirectURL = '/project-2-course-thank-you';
+        chargeOpts.description = TWITTER_CLONE_DESC;
+        chargeOpts.amount = TWITTER_CLONE_PRICE;
         break;
     }
 
