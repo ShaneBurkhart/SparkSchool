@@ -5,6 +5,8 @@ block variables
    - var title = 'Complete Guide To Becoming A Software Developer Download';
 
 block hero
+    - currentQuery.email = currentQuery.email || '';
+
     h1 Project 2: Build A Small Version Of Twitter
     p.narrow
         | This
@@ -14,6 +16,8 @@ block hero
     a.button.yellow(href='/project-2-course-checkout?email=' + currentQuery.email) Learn more about the course!
 
 block content
+    - currentQuery.email = currentQuery.email || '';
+
     .section.dark-blue.signup-section#sign-up
         .container
             .description
