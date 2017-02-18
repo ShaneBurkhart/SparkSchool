@@ -111,6 +111,8 @@ Like HTML and CSS, you don't need to learn the command line intimately.  You wil
 
 <p class="info">
 The windows command line is lacking a lot of features Mac OS X and Linux have.  There are ways to get around this and my <a href="/become-a-software-developer-project-2">Twitter clone course</a> addresses this.  If you are on Windows, I highly recommend taking the Twitter clone course.
+
+<a herf="">Click here to </a>
 </p>
 
 #### My course teaches you all of this

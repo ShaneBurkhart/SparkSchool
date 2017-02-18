@@ -2,18 +2,18 @@ extends ../layouts/landing-page-no-header
 include ../landing-pages/mixins
 
 block variables
-   - var title = 'Make The Transition To Software Developer!';
+   - var title = 'Make The Transition To A Software Developer!';
 
 block hero
     - currentQuery.email = currentQuery.email || '';
 
-    h1 Make The Transition To Software Developer
+    h1 Make The Transition To A Software Developer
     p.narrow
         | This
         b &nbsp;7-day course
         | &nbsp;teaches you everything you need to
         b &nbsp;build your own projects from scratch!
-    a.button.yellow(href='/project-2-course-checkout?email=' + currentQuery.email) Make the transition to software developer!
+    a.button.yellow(href='/project-2-course-checkout?email=' + currentQuery.email) Make the transition to a software developer!
 
 block content
     - currentQuery.email = currentQuery.email || '';
@@ -24,12 +24,12 @@ block content
                     h2.bold Make the transition to developer!
                     p
                         | This course teaches you the fundamentals of software development and is where
-                        b &nbsp;you will make the transition to software developer!
+                        b &nbsp;you will make the transition to a software developer!
                     p This is my favorite course because, by the end, you will know how to build your own software projects from scratch!
                     p.bold I highly recommend this course if you want to get a job as a developer and build software like you would at a software company!
                     p
                         b Don't waste another second!
-                        | &nbsp;Get this course to make the transition to software developer!
+                        | &nbsp;Get this course to make the transition to a software developer!
 
             .graphic
                 .signup-form
@@ -38,7 +38,7 @@ block content
                         | This course will teach you everything you need to
                         b &nbsp;build your own projects
                         | &nbsp;and is where you will make the
-                        b &nbsp;transition to software developer.
+                        b &nbsp;transition to a software developer.
                     a.button.block.yellow(href='/project-2-course-checkout?email=' + currentQuery.email) Get the course for $29!
 
     .section.light-gray
