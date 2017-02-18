@@ -7,3 +7,11 @@
     alternatives:
         - 'true'
         - 'false'
+-
+    name: 'checkout_meet_the_instructor'
+    paths:
+        - '/project-2-course-checkout'
+    conversion_path: '/project-2-course-thank-you'
+    alternatives:
+        - 'true'
+        - 'false'
