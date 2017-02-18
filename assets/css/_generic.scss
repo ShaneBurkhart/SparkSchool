@@ -163,6 +163,20 @@ ul {
     }
 }
 
+img {
+    max-width: 100%;
+}
+
+.social-buttons {
+    overflow: hidden;
+
+    & > * {
+        float: left;
+        display: inline-block;
+        margin-right: 15px;
+    }
+}
+
 #payment-form {
     margin: 0px auto;
 
@@ -207,6 +221,10 @@ ul {
         color: #606060;
         padding-bottom: 3px;
         font-size: 14px;
+
+        &.bold, b, .bold {
+            font-weight: 700 !important;
+        }
     }
 
     input, select {
@@ -215,10 +233,18 @@ ul {
         font-size: 16px;
         border: 1px solid #cccccc;
         border-radius: 3px;
+
+        &.huge {
+            font-size: 20px;
+        }
     }
 
     select {
         -webkit-appearance:none;
+    }
+
+    input[disabled="true"] {
+        cursor: text;
     }
 }
 
@@ -275,6 +301,14 @@ ul {
 
 .text-center {
     text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
 }
 
 .anchor{

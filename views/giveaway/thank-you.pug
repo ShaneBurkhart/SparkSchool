@@ -1,0 +1,72 @@
+extends ../layouts/landing-page-no-header
+include ../landing-pages/mixins
+
+block variables
+   - var title = 'Complete Guide To Becoming A Software Developer Download';
+
+block no_hero
+
+block content
+    - currentGiveawayEntries = currentGiveawayEntries || 1;
+
+    div#fb-root
+    script.
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=519767914767080";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+    script.
+        window.twttr = (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {};
+          if (d.getElementById(id)) return t;
+          js = d.createElement(s);
+          js.id = id;
+          js.src = "https://platform.twitter.com/widgets.js";
+          fjs.parentNode.insertBefore(js, fjs);
+
+          t._e = [];
+          t.ready = function(f) {
+            t._e.push(f);
+          };
+
+          return t;
+        }(document, "script", "twitter-wjs"));
+
+    .section.tiny
+        .small-container.text-center
+            .description.text-left
+                h1.bold(style="margin-bottom: 10px;") Thanks for signing up!
+                p
+                    | You have #{currentGiveawayEntries} entries in the learn software development giveaway.
+                    b &nbsp;Keep reading to find out how you can increase your odds!
+
+    .section.dark-blue.small
+        .small-container.text-center
+            .description.text-left
+
+                h2.bold Get 3 Extra Entries Per Friend!
+
+                p
+                    | You receive
+                    b &nbsp;3 extra entries for every friend that signs up
+                    | &nbsp;for this giveaway with the link below!
+
+                .input-group
+                    label.bold(style='font-size: 20px; color: #e8e8e8;') Copy this link and send it to a friend!
+                    input.huge(disabled='true' value='https://trysparkschool.com/g/' + giveawayId)
+
+                br
+
+                p.bold(style='margin-bottom: 5px;') Or invite friends via:
+                .social-buttons
+                    div
+                        a.twitter-share-button(href="https://twitter.com/intent/tweet?text=Hello%20world" data-size="large") Tweet
+                    div.fb-share-button(data-href="http://www.trysparkschool.com/learn-software-development-giveaway" data-layout="button_count")
+
+                        div.fb-share-button(data-href="https://trysparkschool.com/learn-software-development-giveaway" data-layout="button" data-size="large" data-mobile-iframe="true")
+                            a.fb-xfbml-parse-ignore(target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftrysparkschool.com%2Flearn-software-development-giveaway&amp;src=sdkpreparse") Share
