@@ -24,6 +24,25 @@ block content
             .graphic
                 .signup-form
                     h3.bold 35% off for the next 24 hours!
+
+                    if abTests.timer_on_landing_page
+                        .text-center
+                            #box-clock
+                                div
+                                    span.days
+                                    .smalltext Days
+                                div
+                                    span.hours
+                                    .smalltext Hours
+                                div
+                                    span.minutes
+                                    .smalltext Minutes
+                                div
+                                    span.seconds
+                                    .smalltext Seconds
+
+                            +countdown_timer_code('box-clock', 24 * 60 * 60 - 1)
+
                     p.light
                         | This course is where you will make the
                         b &nbsp;transition to a software developer.
