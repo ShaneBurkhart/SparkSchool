@@ -248,6 +248,48 @@
         }
     }
 
+    #section-clock {
+        margin-bottom: 0px;
+
+        & > div {
+            color: #ffffff;
+            display: inline-block;
+            width: 85px;
+            padding: 10px 0px;
+            background-color: #014f69;
+            border-radius: 3px;
+            margin: 0px 5px;
+
+            & > * {
+                display: block;
+            }
+
+            span {
+                font-size: 32px;
+            }
+        }
+    }
+
+    #box-clock {
+        margin-bottom: 15px;
+
+        & > div {
+            display: inline-block;
+            width: 65px;
+            padding: 10px 0px;
+            border-radius: 3px;
+            margin: 0px 5px;
+
+            & > * {
+                display: block;
+            }
+
+            span {
+                font-size: 24px;
+            }
+        }
+    }
+
     @media only screen and (max-width : 850px) {
         .hero {
             height: 400px;
