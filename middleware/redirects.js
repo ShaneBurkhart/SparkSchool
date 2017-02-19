@@ -10,6 +10,7 @@ var REDIRECTS = {
 
   // Move project-2 to twitter-clone routes
   '/project-2-course': '/twitter-clone-course',
+  '/project-2-course-checkout': '/twitter-clone-course-checkout',
 };
 
 module.exports = function (req, res, next) {
