@@ -3,7 +3,7 @@
     paths:
         - '/twitter-clone-course-24-hour-sale'
         - '/complete-guide-to-becoming-a-software-developer-thank-you'
-    conversion_path: '/project-2-course-24-hour-sale-checkout'
+    conversion_path: '/twitter-clone-course-24-hour-sale-checkout'
     alternatives:
         - 'true'
         - 'false'
@@ -11,7 +11,7 @@
     name: 'checkout_meet_the_instructor'
     paths:
         - '/twitter-clone-course-checkout'
-        - '/project-2-course-24-hour-sale-checkout'
+        - '/twitter-clone-course-24-hour-sale-checkout'
     conversion_path: '/twitter-clone-course-thank-you'
     alternatives:
         - 'true'
