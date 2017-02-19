@@ -49,11 +49,11 @@ Project 2 will take you around 3 weeks to complete.  Over the next 3 weeks, I wi
 
 You will receive every resource you need to build project 2, but you will have to piece together concepts to build your project.  This is it tough as a beginner!
 
-If you would rather take a step-by-step course, I am also offering a [7-day course that walks you through project 2](/project-2-course-48-hour-sale?utm_source=email_series&utm_campaign=twitter_clone&utm_medium=post&utm_content=week_2).
+If you would rather take a step-by-step course, I am also offering a [7-day course that walks you through project 2](/twitter-clone-course-48-hour-sale?utm_source=email_series&utm_campaign=twitter_clone&utm_medium=post&utm_content=week_2).
 
 I normally sell the course at $49, but if you order in the next 48 hours, you get it for only $25!  Click the link below to get this limited time offer!
 
-[Get the course at 50% off for the next 48 hours!](/project-2-course-48-hour-sale?utm_source=email_series&utm_campaign=twitter_clone&utm_medium=post&utm_content=week_2)
+[Get the course at 50% off for the next 48 hours!](/twitter-clone-course-48-hour-sale?utm_source=email_series&utm_campaign=twitter_clone&utm_medium=post&utm_content=week_2)
 
 I highly recommend this course if you want to get a job as a software developer as quickly as possible!
 

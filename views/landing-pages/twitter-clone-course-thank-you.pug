@@ -2,7 +2,7 @@ extends ../layouts/landing-page
 include ../landing-pages/mixins
 
 block variables
-   - var title = 'Project 2: Twitter Clone Course Download';
+   - var title = 'Twitter Clone Course Download';
 
 block main_nav
 block no_hero
@@ -11,9 +11,9 @@ block content
     .section.tiny
         .container
             .full
-                h1 Thanks for purchasing the course for project 2!
+                h1 Thanks for purchasing the Twitter clone course!
                 p
-                    a(href="https://s3.amazonaws.com/spark-school/project-2-twitter-clone-course.pdf") Click here if your download doesn't start automatically.
+                    a(href="https://s3.amazonaws.com/spark-school/twitter-clone-course.pdf") Click here if your download doesn't start automatically.
                     | &nbsp;You'll also receive an email with a link to download the course.
 
     .section.dark-blue.signup-section#sign-up
@@ -26,6 +26,6 @@ block content
             .graphic
                img.rounded(src='/assets/images/girls-working-at-computer.jpg' alt='Two girls working at computer together')
 
-    iframe.hidden(src="https://s3.amazonaws.com/spark-school/project-2-twitter-clone-course.pdf")
+    iframe.hidden(src="https://s3.amazonaws.com/spark-school/twitter-clone-course.pdf")
 
     +purchase_tracking(19.00, 'Twitter Clone Course')

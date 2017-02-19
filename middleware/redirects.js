@@ -7,6 +7,13 @@ var REDIRECTS = {
   '/become-a-software-developer-without-a-college-degree': 'become-a-software-developer-without-a-college-degree-weekly-email',
   '/the-full-guide-to-becoming-a-software-developer-cheat-sheet': '/the-full-guide-to-becoming-a-software-developer',
   '/the-full-guide-to-becoming-a-software-developer-nodejs-tutorial': '/the-full-guide-to-becoming-a-software-developer',
+
+  // Move project-2 to twitter-clone routes
+  '/project-2-course': '/twitter-clone-course',
+  '/project-2-course-checkout': '/twitter-clone-course-checkout',
+  '/project-2-course-24-hour-sale': '/twitter-clone-course-24-hour-sale',
+  '/project-2-course-24-hour-sale-checkout': '/twitter-clone-course-24-hour-sale-checkout',
+  '/become-a-software-developer-project-2': '/twitter-clone-course',
 };
 
 module.exports = function (req, res, next) {

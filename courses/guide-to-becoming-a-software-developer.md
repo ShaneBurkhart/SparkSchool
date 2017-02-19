@@ -27,11 +27,21 @@ A web application, or web app for short, is simply a website that interacts with
 
 Learning how to build a complete web app will take around 200 hours. You won't be an expert, but after 200 hours, you should know everything you need to build your own projects.
 
-You would more than likely get overwhelmed if you tried to learn everything about web apps at once.  So instead, I recommend starting with a small, but functional project and building on it from there.  With that in mind, I split the learning portion into 3 projects that gradually build on each other.  Let's get started on your first web app!
+You would more than likely get overwhelmed if you tried to learn everything about web apps at once.  So instead, I recommend building a smaller version of an existing web app to get started.  With that in mind, I split the learning portion into 2 projects.
 
-### Project 1: Build and deploy a simple web app
+### Project 1: Build a small version of Twitter
 
-Since you more than likely don't have any programming experience, it's important to learn some fundamentals immediately.  For your first project, I suggest building a web app that only renders a few web pages.  You need to learn the following in this project:
+Since you more than likely don't have any programming experience, it's important to learn some fundamentals immediately.  For your first project, I suggest building a small version of an existing web.
+
+Below, I've added links to learn each concept you need to build a small version of an existing web app. If you would rather learn everything in one place, I have a course that teaches you how to build a small version of Twitter.
+
+This 7 day course will teach you everything from project 1 and is where **you will make the transition to a software developer!**
+
+<div class='content-upgrade'>
+    <a class='button' href='https://trysparkschool.com/twitter-clone-course?utm_source=guide&utm_campaign=twitter_clone&utm_medium=link&utm_content=intro'>Make the transition to a software developer!</a>
+</div>
+
+**You should focus on the following in this project:**
 
 #### How websites work
 
@@ -45,29 +55,17 @@ Websites run on web servers. Web Server is a fancy name for a computer that is c
 
 To write web servers with Javascript, you use Node.js.  Node.js is a program that runs Javascript code on a web server.  You'll hear a lot of people use Node.js and Javascript interchangeably when talking about web servers.
 
+[Here is a Node.js "Hello world!" tutorial with Express.js](https://expressjs.com/en/starter/hello-world.html)
+
+[Here is a tutorial on Node.js routing with Express.js](https://expressjs.com/en/starter/basic-routing.html)
+
 #### How to deploy your app to the web
 
 When learning, I find it's really important to deploy projects to the internet. Seeing the final product will help you stay motivated because you see real results rather than blindly creating something you won't use.  To deploy your web app, I recommend using Heroku.
 
 Heroku makes deploying a Node.js web app simple by providing already configured servers for your app.  All you have to do is send Heroku your code and tell them how to start your web app.  They do the rest!
 
-#### All of this in one tutorial
-
-Piecing together programming concepts as a beginner is difficult and time-consuming. I created a free tutorial that will walk you through all of the above concepts. The tutorial takes you from no programming experience to building and deploying your first web app from scratch.
-
-[Click here to take the tutorial!](https://trysparkschool.com/tutorials/build-and-deploy-nodejs-app-to-heroku/intro)
-
-The tutorial should take around 10-20 hours, so pace yourself.  Because it's your first project, you will get frustrated at times.  If you run into trouble, don't get discouraged. Instead, take a break, come back later with a fresh perspective.
-
-<p class="info">
-Remember, learning is about consistently working towards your goal.  You are inevitably going to run into issues. Don't get discouraged &mdash; it's part of learning.
-</p>
-
-### Project 2: Making your web app interactive
-
-Up until now, you have created only static web pages.  In this project, you will store data and dynamically populate web pages with that data. Creating dynamic web pages and allowing users to manipulate data is what separates a web app from a website. This is the foundation of every web app.
-
-You should focus on the following in this project.
+[Here is a simple tutorial to deploy a Node.js app on Heroku!](https://devcenter.heroku.com/articles/deploying-nodejs)
 
 #### Database/SQL
 
@@ -110,20 +108,28 @@ Like HTML and CSS, you don't need to learn the command line intimately.  You wil
 [Here's a guide to learn the command line.](https://www.codecademy.com/learn/learn-the-command-line)
 
 <p class="info">
-The windows command line is lacking a lot of features Mac OS X and Linux have.  There are ways to get around this and my <a href="/become-a-software-developer-project-2">Twitter clone course</a> addresses this.  If you are on Windows, I highly recommend taking the Twitter clone course.
+The windows command line is lacking a lot of features Mac OS X and Linux have.  There are ways to get around this and my <a href="https://trysparkschool.com/twitter-clone-course?utm_source=guide&utm_campaign=twitter_clone&utm_medium=link&utm_content=windows_upsell">Twitter clone course</a> addresses this.  If you are on Windows, I highly recommend taking the Twitter clone course. <a href="https://trysparkschool.com/twitter-clone-course?utm_source=guide&utm_campaign=twitter_clone&utm_medium=link&utm_content=windows_upsell">Click here to learn more about the course!</a>
 </p>
 
 #### My course teaches you all of this
 
-In the above sections, I listed learning resources for each technology that will teach you everything you need to know to build project 2. Having said that, learning each technology separately isn't the most efficient way to learn.
+Piecing together the above learning resources is difficult as a beginner.  To fix this, I created a course that teaches you everything for project 1 and more!
 
-A more efficient method is to learn as you are building the project.  This method gives you a more hands-on approach and helps you understand why you are learning each piece.  Luckily I have a course that does just that!
+In my course, you will build a small version of Twitter from scratch in 7 days. The course covers all of the above concepts and walks you step-by-step through building a web app that manages Tweets.
 
-In my course, you will build a small version of Twitter. The course teaches you all of the above concepts and walks you step-by-step through building a web app that creates and renders Tweets.  I highly recommend this course if you want to become a developer as quickly as possible.
+**This is my favorite course because it's where you will make the transition to a software developer!**
 
-[Click here to view the Twitter clone course!](/become-a-software-developer-project-2)
 
-### Project 3: Adding complexity to your web app
+<div class='content-upgrade'>
+    <a class='button' href='https://trysparkschool.com/twitter-clone-course?utm_source=guide&utm_campaign=twitter_clone&utm_medium=link&utm_content=project_1'>Click here to make your transition to a developer!</a>
+</div>
+
+
+By the end of this course, you will know **everything you need to build your own projects from scratch!** I highly recommend this course if you want to get a job as a software developer as quickly as possible!
+
+Once you learn the fundamentals from project 1, it's time to add some complexity to your web app.
+
+### Project 2: Adding complexity to your web app
 
 #### Project design
 
@@ -195,7 +201,7 @@ You will need to compile Sass down to CSS, so you need to setup a tool to do tha
 
 #### I'm working on a course
 
-It's especially hard to find tutorials that encompass all of the above concepts.  Because of this, I can't recommend a complete tutorial.  Instead, you'll need to piece things together from the above tutorials.  Because that's not ideal for you, I'm working on a course that will teach you everything from project 3.  I'll be sure to let you know when it is released.
+It's especially hard to find tutorials that encompass all of the above concepts.  Because of this, I can't recommend a complete tutorial.  Instead, you'll need to piece things together from the above tutorials.  Because that's not ideal for you, I'm working on a course that will teach you everything from project 2.  I'll be sure to let you know when it is released.
 
 ## Practicing
 
@@ -332,7 +338,7 @@ On the other side of the spectrum, smaller companies are generally going to be e
 
 **Don't give up your dreams of working at Google just yet, though!**
 
-After your first job, you'll have no problem getting interviews and opportunities at large tech companies.  Your goal at your first job should be to learn as much as you can about working in a tech company.  Pay attention to how things work, what processes they use, and industry standards.  Even with the practice you have, you will still a lot to learn at your first job.  After about a year or so, you will have the experience to get a job at just about any tech company you want.
+After your first job, you'll have no problem getting interviews and opportunities at large tech companies.  Your goal at your first job should be to learn as much as you can about working in a tech company.  Pay attention to how things work, what processes they use, and industry standards.  Even with the practice you have, you will still learn a lot at your first job.  After about a year or so, you will have the experience to get a job at just about any tech company you want!
 
 ### Make finding a job easier
 
