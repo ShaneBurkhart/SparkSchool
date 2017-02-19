@@ -24,6 +24,10 @@ block content
             .graphic
                 .signup-form
                     h3.bold 35% off for the next 24 hours!
+                    p.light
+                        | This course is where you will make the
+                        b &nbsp;transition to a software developer.
+                        | &nbsp;Don't miss out on this limited time offer!
 
                     if abTests.timer_on_landing_page
                         .text-center
@@ -43,10 +47,6 @@ block content
 
                             +countdown_timer_code('box-clock', 24 * 60 * 60 - 1)
 
-                    p.light
-                        | This course is where you will make the
-                        b &nbsp;transition to a software developer.
-                        | &nbsp;Don't miss out on this limited time offer!
                     a.button.block.yellow(href='/twitter-clone-course-24-hour-sale-checkout?email=' + currentQuery.email) Get the course for only $19!
 
     .section

@@ -276,7 +276,6 @@
         & > div {
             display: inline-block;
             width: 65px;
-            padding: 10px 0px;
             border-radius: 3px;
             margin: 0px 5px;
 
@@ -286,6 +285,11 @@
 
             span {
                 font-size: 24px;
+                font-weight: bold;
+            }
+
+            .smalltext {
+                font-size: 14px;
             }
         }
     }
