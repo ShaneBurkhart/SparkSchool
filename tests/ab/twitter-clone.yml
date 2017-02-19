@@ -12,7 +12,7 @@
     paths:
         - '/twitter-clone-course-checkout'
         - '/project-2-course-24-hour-sale-checkout'
-    conversion_path: '/project-2-course-thank-you'
+    conversion_path: '/twitter-clone-course-thank-you'
     alternatives:
         - 'true'
         - 'false'
