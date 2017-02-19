@@ -38,7 +38,7 @@ Below, I've added links to learn each concept you need to build a small version 
 This 7 day course will teach you everything from project 1 and is where **you will make the transition to a software developer!**
 
 <div class='content-upgrade'>
-    <a class='button' href='https://trysparkschool.com/twitter-clone-course?utm_source=guide&utm_campaign=project_2&utm_medium=link&utm_content=intro'>Make the transition to a software developer!</a>
+    <a class='button' href='https://trysparkschool.com/twitter-clone-course?utm_source=guide&utm_campaign=twitter_clone&utm_medium=link&utm_content=intro'>Make the transition to a software developer!</a>
 </div>
 
 **You should focus on the following in this project:**
@@ -108,7 +108,7 @@ Like HTML and CSS, you don't need to learn the command line intimately.  You wil
 [Here's a guide to learn the command line.](https://www.codecademy.com/learn/learn-the-command-line)
 
 <p class="info">
-The windows command line is lacking a lot of features Mac OS X and Linux have.  There are ways to get around this and my <a href="https://trysparkschool.com/twitter-clone-course?utm_source=guide&utm_campaign=project_2&utm_medium=link&utm_content=windows_upsell">Twitter clone course</a> addresses this.  If you are on Windows, I highly recommend taking the Twitter clone course. <a href="https://trysparkschool.com/twitter-clone-course?utm_source=guide&utm_campaign=project_2&utm_medium=link&utm_content=windows_upsell">Click here to learn more about the course!</a>
+The windows command line is lacking a lot of features Mac OS X and Linux have.  There are ways to get around this and my <a href="https://trysparkschool.com/twitter-clone-course?utm_source=guide&utm_campaign=twitter_clone&utm_medium=link&utm_content=windows_upsell">Twitter clone course</a> addresses this.  If you are on Windows, I highly recommend taking the Twitter clone course. <a href="https://trysparkschool.com/twitter-clone-course?utm_source=guide&utm_campaign=twitter_clone&utm_medium=link&utm_content=windows_upsell">Click here to learn more about the course!</a>
 </p>
 
 #### My course teaches you all of this
@@ -121,7 +121,7 @@ In my course, you will build a small version of Twitter from scratch in 7 days. 
 
 
 <div class='content-upgrade'>
-    <a class='button' href='https://trysparkschool.com/twitter-clone-course?utm_source=guide&utm_campaign=project_2&utm_medium=link&utm_content=project_1'>Click here to make your transition to a developer!</a>
+    <a class='button' href='https://trysparkschool.com/twitter-clone-course?utm_source=guide&utm_campaign=twitter_clone&utm_medium=link&utm_content=project_1'>Click here to make your transition to a developer!</a>
 </div>
 
 
