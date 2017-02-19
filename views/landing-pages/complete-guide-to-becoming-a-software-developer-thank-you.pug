@@ -83,6 +83,24 @@ block content
                         | &nbsp;Don't miss out on this limited time offer!
                     a.button.block.yellow(href='/twitter-clone-course-24-hour-sale-checkout?email=' + currentQuery.email) Get the course for only $19!
 
+    if abTests.what_you_get_section_on_thank_you_page
+        .section
+            .container
+                .graphic
+                    img(src='/assets/images/web-pages-illustration.png' alt='Hello world program in Express.js.')
+                .description
+                    h2 Build projects from scratch
+                    p
+                        | To get a job as a software developer, you need a portfolio of projects. Unfortunately, you probably don't have the knowledge to build a project on your own yet.
+                        b &nbsp;This course will change that!
+                    p
+                        | By the end of this course, you will know
+                        b &nbsp;everything you need to build your own projects from scratch!
+
+        .section.cta.light-gray
+            .container
+                a.button.block(href='/twitter-clone-course-24-hour-sale-checkout?email=' + currentQuery.email) Learn how to build projects from scratch!
+
     .section
         .container
             .description
