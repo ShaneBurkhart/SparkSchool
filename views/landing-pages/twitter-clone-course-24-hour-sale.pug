@@ -2,7 +2,7 @@ extends ../layouts/landing-page-no-header
 include ../landing-pages/mixins
 
 block variables
-   - var title = '35% Off The Course For 24 Hours!';
+   - var title = '70% Off The Course For 24 Hours!';
 
 block no_hero
 
@@ -14,16 +14,16 @@ block content
             .description
                 h2.bold Make the transition to developer!
                 p
-                    | For the next 24 hours, I'm offering you 35% off the course where
-                    b &nbsp;you will make the transition to a software developer!
+                    | For the next 24 hours, I'm offering you 70% off the course where
+                    b  you will make the transition to a software developer!
                 p This is my favorite course because, by the end, you will know how to build your own software projects from scratch!
                 p
                     b Don't miss out on this limited time offer!
-                    | &nbsp;Purchase in the next 24 hours to get this course for only $19!
+                    |  Purchase in the next 24 hours to get this course for only $9!
 
             .graphic
                 .signup-form
-                    h3.bold 35% off for the next 24 hours!
+                    h3.bold 70% off for the next 24 hours!
                     if abTests.timer_on_landing_page === 'box'
                         .text-center
                             #box-clock
@@ -44,10 +44,29 @@ block content
 
                     p.light
                         | This course is where you will make the
-                        b &nbsp;transition to a software developer.
-                        | &nbsp;Don't miss out on this limited time offer!
+                        b  transition to a software developer.
+                        |  Don't miss out on this limited time offer!
 
-                    a.button.block.yellow(href='/twitter-clone-course-24-hour-sale-checkout?email=' + currentQuery.email) Get the course for only $19!
+                    a.button.block.yellow(href='/twitter-clone-course-24-hour-sale-checkout?email=' + currentQuery.email) Get the course for only $9!
+
+    if abTests.what_you_get_section_on_thank_you_page
+        .section
+            .container
+                .graphic
+                    img(src='/assets/images/web-pages-illustration.png' alt='Hello world program in Express.js.')
+                .description
+                    h2 Build projects from scratch
+                    p
+                        | To get a job as a software developer, you need a portfolio of projects. Unfortunately, you probably don't have the knowledge to build a project on your own yet.
+                        b  This course will change that!
+                    p
+                        | By the end of this course, you will know
+                        b  everything you need to build your own projects from scratch!
+
+        .section.cta.light-gray
+            .container
+                a.button.block(href='/twitter-clone-course-24-hour-sale-checkout?email=' + currentQuery.email) Learn how to build projects from scratch!
+
 
     .section
         .container
@@ -65,4 +84,4 @@ block content
 
     .section.cta.light-gray
         .container
-            a.button.block(href='/twitter-clone-course-24-hour-sale-checkout?email=' + currentQuery.email) Get the course for 35% off!
+            a.button.block(href='/twitter-clone-course-24-hour-sale-checkout?email=' + currentQuery.email) Get the course for 70% off!

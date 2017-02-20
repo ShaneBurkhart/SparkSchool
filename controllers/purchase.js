@@ -10,8 +10,9 @@ var activeCampaign = new ActiveCampaign(
 var TWITTER_CLONE_DESC = "Twitter Clone Course - Spark School";
 var TWITTER_CLONE_PRICE = 2900;
 
-var TWITTER_CLONE_24_HOUR_DESC = "Twitter Clone Course - 35% Off - Spark School";
-var TWITTER_CLONE_24_HOUR_PRICE = 1900;
+// Thank you sale
+var TWITTER_CLONE_24_HOUR_DESC = "Twitter Clone Course - 70% Off - Spark School";
+var TWITTER_CLONE_24_HOUR_PRICE = 900;
 
 var TWITTER_CLONE_FLASH_SALE_DESC = "Twitter Clone Course - 35% Off Flash Sale - Spark School";
 var TWITTER_CLONE_FLASH_SALE_PRICE = 1900;

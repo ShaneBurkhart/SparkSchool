@@ -2,7 +2,7 @@ extends ../layouts/landing-page-no-header
 include ../landing-pages/mixins
 
 block variables
-   - var title = 'Get The Course 35% Off For 24 Hours Only!';
+   - var title = 'Get The Course 70% Off For 24 Hours Only!';
 
 block no_hero
 
@@ -13,11 +13,11 @@ block content
             .description
                 h2.bold Transition To A Developer!
 
-                p.bold For the next 24 hours, you can make the transition to a software developer for only $19!
+                p.bold For the next 24 hours, you can make the transition to a software developer for only $9!
 
                 p
                     | In this 7-day course, you will build a
-                    b &nbsp;small version of Twitter from scratch.
+                    b  small version of Twitter from scratch.
 
                 p.bold By the end of the course, you will know how to:
 
@@ -39,11 +39,11 @@ block content
                     h3
                         | Get the course for&nbsp;
                         span(style="text-decoration: line-through;") $29
-                        b &nbsp;$
-                        b(style="font-size: 36px") 19!
+                        b  $
+                        b(style="font-size: 36px") 9!
                     p.light We'll send the course to your PayPal email.
                     input(type="hidden" name="cmd" value="_s-xclick")
-                    input(type="hidden" name="hosted_button_id" value="2L3FM5CM6YJ9C")
+                    input(type="hidden" name="hosted_button_id" value="CJNN49TMQETCE")
                     input(type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!")
                     img(alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1")
 
@@ -57,7 +57,7 @@ block content
 
                     +payment_cc_fields()
 
-                    button.yellow Buy the course for $19!
+                    button.yellow Buy the course for $9!
 
                 +payment_form_scripts()
 
@@ -76,4 +76,4 @@ block content
                 .graphic
                     img.circle(src="https://s3.amazonaws.com/spark-school/me_and_yogi.png" alt="Shane Burkhart with his dog, Yogi.")
 
-        +light_gray_CTA_anchor_section('Get the course for 35% off!')
+        +light_gray_CTA_anchor_section('Get the course for 70% off!')

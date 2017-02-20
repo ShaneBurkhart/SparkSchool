@@ -28,6 +28,7 @@
     name: 'what_you_get_section_on_thank_you_page'
     paths:
         - '/complete-guide-to-becoming-a-software-developer-thank-you'
+        - '/twitter-clone-course-24-hour-sale'
     conversion_path: '/twitter-clone-course-24-hour-sale-checkout'
     alternatives:
         - 'true'
