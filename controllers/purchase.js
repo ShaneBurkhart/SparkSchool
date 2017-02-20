@@ -103,18 +103,12 @@ module.exports = function (app) {
         chargeOpts.amount = TWITTER_CLONE_PRICE;
         break;
       case 'twitter-clone-course-24-hour-sale':
+      case 'twitter-clone-flash-sale':
         // Twitter clone list id
         contact['p[11]'] = '11';
         successRedirectURL = '/twitter-clone-course-thank-you';
         chargeOpts.description = TWITTER_CLONE_24_HOUR_DESC;
         chargeOpts.amount = TWITTER_CLONE_24_HOUR_PRICE;
-        break;
-      case 'flash-sale-bundle':
-        // Flash Sale Bundle list id
-        contact['p[12]'] = '12';
-        successRedirectURL = '/valentines-day-bundle-thank-you';
-        chargeOpts.description = V_DAY_BUNDLE_DESC;
-        chargeOpts.amount = V_DAY_BUNDLE_PRICE;
         break;
       case 'become-a-developer-guide':
         // Become software dev guide list id

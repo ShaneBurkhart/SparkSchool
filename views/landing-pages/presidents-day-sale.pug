@@ -1,0 +1,57 @@
+extends ../layouts/landing-page-no-header
+include ../landing-pages/mixins
+
+block variables
+   - var title = 'Presidents\' Day Sale!';
+
+block bg
+    .bg(style="background-image: url('/assets/images/american_flag.jpg')")
+
+block hero
+    - currentQuery.email = currentQuery.email || '';
+
+    h1 Presidents' Day Sale!
+    p.narrow
+        | Get 35% off on the course that
+        b &nbsp;transitions you to a software developer!
+    a.button.yellow(href='/twitter-clone-course-checkout?email=' + currentQuery.email) Make the transition to a software developer!
+
+block content
+    - currentQuery.email = currentQuery.email || '';
+
+    .section.dark-blue.signup-section#sign-up
+        .container
+            .description
+                h2.bold Presidents' Day Sale!
+              
+                p
+                    | It's Presidents' Day. So for today only, I am offering a
+                    b &nbsp;35% discount on the course where you make the transition to a software developer! 
+
+                p This is my favorite course because, by the end, you will know how to build your own software projects from scratch!
+               
+                p
+                    b Don't miss out on this limited time offer!
+                    | &nbsp;Purchase in the next 24 hours to get this course for only $19!
+
+                p
+                    b Normally the course  sells for $29, but if you purchase today, you can get it for just $19!
+                    | &nbsp;Click the link to the right to learn more.
+
+            .graphic
+                .signup-form
+                    h3.bold 35% off for the next 24 hours!
+                    
+                    p.light
+                        | This course is where you will make the
+                        b &nbsp;transition to a software developer.
+                        | &nbsp;Don't miss out on this special holiday offer!
+
+                    a.button.block.yellow(href='/presidents-day-sale-checkout?email=' + currentQuery.email) Get the course for only $19!
+
+
+    +guide_meet_the_instructor()
+
+    .section.cta.light-gray
+        .container
+            a.button.block(href='/presidents-day-sale-checkout?email=' + currentQuery.email) Get the course for 35% off!
