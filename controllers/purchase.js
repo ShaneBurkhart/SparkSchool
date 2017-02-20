@@ -13,6 +13,9 @@ var TWITTER_CLONE_PRICE = 2900;
 var TWITTER_CLONE_24_HOUR_DESC = "Twitter Clone Course - 35% Off - Spark School";
 var TWITTER_CLONE_24_HOUR_PRICE = 1900;
 
+var TWITTER_CLONE_FLASH_SALE_DESC = "Twitter Clone Course - 35% Off Flash Sale - Spark School";
+var TWITTER_CLONE_FLASH_SALE_PRICE = 1900;
+
 var V_DAY_BUNDLE_DESC = "Valentine's Day Bundle  - Spark School";
 var V_DAY_BUNDLE_PRICE = 1900;
 
@@ -103,12 +106,18 @@ module.exports = function (app) {
         chargeOpts.amount = TWITTER_CLONE_PRICE;
         break;
       case 'twitter-clone-course-24-hour-sale':
-      case 'twitter-clone-flash-sale':
         // Twitter clone list id
         contact['p[11]'] = '11';
         successRedirectURL = '/twitter-clone-course-thank-you';
         chargeOpts.description = TWITTER_CLONE_24_HOUR_DESC;
         chargeOpts.amount = TWITTER_CLONE_24_HOUR_PRICE;
+        break;
+      case 'twitter-clone-flash-sale':
+        // Twitter clone list id
+        contact['p[11]'] = '11';
+        successRedirectURL = '/twitter-clone-course-thank-you';
+        chargeOpts.description = TWITTER_CLONE_FLASH_SALE_DESC;
+        chargeOpts.amount = TWITTER_CLONE_FLASH_SALE_PRICE;
         break;
       case 'become-a-developer-guide':
         // Become software dev guide list id
