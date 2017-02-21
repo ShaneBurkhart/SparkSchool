@@ -140,8 +140,8 @@ h1, h2, h3, h4, h5, h6, p, span, a {
 
 blockquote {
     position: relative;
-    padding: 20px 40px 20px 40px;
-    margin: 0px 0px 25px 0px;
+    padding: 20px 40px 5px 40px;
+    margin: 0px;
 
     &:before {
         font-family: 'FontAwesome';
