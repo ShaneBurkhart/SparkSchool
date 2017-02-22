@@ -1,0 +1,113 @@
+extends ../layouts/landing-page-no-header
+include ../landing-pages/mixins
+
+block variables
+   - var title = 'Make The Transition To A Software Developer!';
+
+block no_hero
+    .section.small.dark-blue
+        .container
+            .full.text-center
+                h1
+                    span.light How My Course Helped Rodrigo
+                    br
+                    b(style="font-size: 64px;") Build 3 of His Own Projects
+
+    .section.light-gray.quote
+        .small-container
+            .full
+                img.circle(src="/assets/images/rodrigo-pontes.jpg" style="width: 100px;")
+                blockquote
+                    | I tried other learning resources, but
+                    b  I never found a better or more exciting course for beginners!
+                p.name Rodrigo Pontes
+
+    .section.small
+        .container
+            .half
+                h2 The Problem
+                p Rodrigo decided he was going to make a career change to a software developer. So he explored various learning resources.
+                p He finished a few course, but he ran into the same issue most people run into. The don't know how to use what they learned to build their own projects..
+            .half
+                h2 The Results
+                p Rodrigo signed up for my and built his first web app in only 7 days. He then continued adding his own style and feature to his web app.
+                p From there, he was able to use his knowledege from the course to build another website and is now working on a Facebook Messenger bot!
+
+    .section.tiny.light-gray
+        .container
+            .description
+                h2 He Tried Other Resources
+                p At the age of 37, Rodrigo decided it was time to start a career as a software developer.  He tried various resources like Lynda and Codecademy, but settled on free code camp.
+                p After getting 25% of the way through, he realized he needed to learn more than just how to code.  He needed to learn how to build his own project.
+                p Rodrigo tried other resources but nothing seemed to fit.  That is until he found my course.
+            .graphic
+                img(src="/assets/images/illustration-of-guy-on-laptop.png")
+
+    .section.tiny.light-gray
+        .container
+            .graphic
+                img(src="/assets/images/rodrigos-hacker-news-opinion-app.png")
+            .description
+                h2 Building His First Web App
+                p 7 days after starting the course, Rodrigo built his first web app from scratch, but he wasn't sinished.
+                p With his new knowledge from the course, Rodrigo was able to transform the website he just built in a Hacker News opinion forum.
+                p He posted his project to Hacker News and was greeted with a surprise. Someone was attacking his website!
+                p Luckily, my course taught him how to secure his site against common vulnerabilities so the attacker had no luck!
+
+    .section.tiny.light-gray
+        .container
+            .description
+                h2 Now He's Working On His Own Projects
+                p He didn't stop there.  He is using what he learned to buidl his own project.
+                p Since the course he built another website to track personal growth.
+                p He wants to use this site to help people manager thier goals and their progress.
+                p After completing that project, he is now building a Facebook Messanger bot to remind you of your new years resolution.
+            .graphic
+                img(src="/assets/images/rodrigos-personal-growth-tracker-app.png")
+
+
+    .section.small
+        .container
+            .description
+                h2 How is my course different?
+                p Most courses assume you already have some kind of knowledge.
+                p They don't teach you anything practical that you can use.
+                p This course has you working on your own computer and will learn most efficiently.
+            .graphic
+                .bullet-points
+                    ul
+                        li Developer on your own computer
+                        li Learn most efficient way to learn
+                        li Learn how to build your own projects
+
+    .section.light-gray.quote
+        .small-container
+            .full
+                img.circle(src="/assets/images/rodrigo-pontes.jpg" style="width: 100px;")
+                blockquote
+                    | This course does a great job of guiding you on what to install, how to install and how to use.  It sounds too basic, but It would've been nearly impossible to figure out on my own!
+                p.name Rodrigo Pontes
+
+    .section.dark-blue.signup-section#sign-up
+        .container
+            .description
+                    h2.bold Learn How To Build Your Own Projects Like Rodrigo!
+                    p
+                        | This course teaches you the fundamentals of software development and is where
+                        b &nbsp;you will make the transition to a software developer!
+                    p
+                        | In 7 days, you will go from no programming experience to building a small version of Twitter.
+                        b  No prior knowledge required!
+                    p This is my favorite course because, by the end, you will know how to build your own software projects from scratch!
+                    p.bold I highly recommend this course if you want to get a job as a developer and build software like you would at a software company!
+
+            .graphic
+                .signup-form
+                    h3.bold Get the course for $29!
+                    p.light
+                        | This course will teach you everything you need to
+                        b &nbsp;build your own projects
+                        | &nbsp;and is where you will make the
+                        b &nbsp;transition to a software developer.
+                    a.button.block.yellow(href='/twitter-clone-course-checkout?email=' + currentQuery.email) Get the course for $29!
+

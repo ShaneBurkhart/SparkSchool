@@ -9,6 +9,11 @@
         width: 900px;
     }
 
+    // Don't keep this pattern.  Move to a generic set of container sizes.
+    .small-container {
+        width: 700px;
+    }
+
     .hero {
         position: relative;
         height: 350px;
@@ -182,6 +187,14 @@
                 }
             }
 
+            & > .full {
+                width: 100%;
+            }
+
+            & > .half {
+                width: 48%;
+            }
+
             & > .description {
                 width: 55%;
             }
@@ -191,10 +204,6 @@
 
                 img {
                     width: 100%;
-                }
-
-                & .circle {
-                    border-radius: 50%;
                 }
 
                 & .rounded {
@@ -221,6 +230,24 @@
 
             .button {
                 width: 40%;
+            }
+        }
+
+        &.quote {
+            padding: 40px 0px;
+            text-align: center;
+
+            blockquote {
+                font-size: 22px;
+                line-height: 1.6;
+
+                &:before, &:after {
+                    content: none;
+                }
+            }
+
+            .name {
+                color: #777777;
             }
         }
     }
