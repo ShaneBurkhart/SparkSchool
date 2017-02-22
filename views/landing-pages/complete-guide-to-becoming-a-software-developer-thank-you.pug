@@ -12,7 +12,7 @@ block content
     iframe.hidden(src="https://s3.amazonaws.com/spark-school/guide-to-becoming-a-software-developer.pdf")
     +lead_tracking()
 
-    .section.tiny
+    .section.micro
         .container
             .full
                 h1 Thanks! Keep reading for a special offer!
@@ -42,7 +42,7 @@ block content
 
                     +countdown_timer_code('section-clock', 24 * 60 * 60 - 1)
 
-    .section.dark-blue.signup-section#sign-up
+    .section.tiny.dark-blue.signup-section#sign-up
         .container
             .description
                 h2.bold Make the transition to developer!
@@ -86,23 +86,46 @@ block content
                         |  Don't miss out on this limited time offer!
                     a.button.block.yellow(href='/twitter-clone-course-24-hour-sale-checkout?email=' + currentQuery.email) Get the course for only $9!
 
-    if abTests.what_you_get_section_on_thank_you_page
-        .section
-            .container
-                .graphic
-                    img(src='/assets/images/web-pages-illustration.png' alt='Hello world program in Express.js.')
-                .description
-                    h2 Build projects from scratch
-                    p
-                        | To get a job as a software developer, you need a portfolio of projects. Unfortunately, you probably don't have the knowledge to build a project on your own yet.
-                        b  This course will change that!
-                    p
-                        | By the end of this course, you will know
-                        b  everything you need to build your own projects from scratch!
+    .section.small
+        .container
+            .graphic
+                img(src='/assets/images/monitor-on-desk.png' alt='Illustration of monitor on desk with code.')
+            .description
+                h2 Develop on your computer
+                p A lot of coding courses don't teach you how to build projects on your own computer. Instead, they teach you how to write code in a web browser.  This misses the entire point!
+                p
+                    b Professional developers write code on their own computers so why wouldn't you?
+                p
+                    | This course teaches you how to write and run code on your own computer
+                    b &nbsplike you would at a real software company.
 
-        .section.cta.light-gray
-            .container
-                a.button.block(href='/twitter-clone-course-24-hour-sale-checkout?email=' + currentQuery.email) Learn how to build projects from scratch!
+    .section.small.light-gray
+        .container
+            .description
+                h2 Learn as efficiently as possible
+                p I am a completely self-taught developer, so I know how slow it can be to teach yourself how to code.
+                p
+                    | Over the years, I have learned what works and what doesn't. Now I'm using this knowledge to
+                    b &nbsp;teach you as efficiently as possible!
+            .graphic
+                img(src='/assets/images/hello-world-code-snippet.png' alt='Hello world program in Express.js.')
+
+    .section.small
+        .container
+            .graphic
+                img(src='/assets/images/web-pages-illustration.png' alt='Hello world program in Express.js.')
+            .description
+                h2 Build projects from scratch
+                p
+                    | To get a job as a software developer, you need a portfolio of projects. Unfortunately, you probably don't have the knowledge to build a project on your own yet.
+                    b &nbsp;This course will change that!
+                p
+                    | By the end of this course, you will know
+                    b &nbsp;everything you need to build your own projects from scratch!
+
+    .section.cta.light-gray
+        .container
+            a.button.block(href='/twitter-clone-course-24-hour-sale-checkout?email=' + currentQuery.email) Get the course for only $9!
 
     .section
         .container

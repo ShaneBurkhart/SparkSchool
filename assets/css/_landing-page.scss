@@ -119,6 +119,10 @@
             padding: 40px 0px;
         }
 
+        &.micro {
+            padding: 20px 0px;
+        }
+
         h2 {
             margin-bottom: 10px;
         }
@@ -221,6 +225,7 @@
 
             .button {
                 width: 40%;
+                margin-bottom: 0px;
             }
         }
     }
