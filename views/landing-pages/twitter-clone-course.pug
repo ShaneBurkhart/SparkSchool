@@ -10,10 +10,10 @@ block hero
     h1 Make The Transition To A Software Developer
     p.narrow
         | This
-        b &nbsp;7-day course
-        | &nbsp;teaches you everything you need to
-        b &nbsp;build your own projects from scratch!
-    a.button.yellow(href='/twitter-clone-course-checkout?email=' + currentQuery.email) Make the transition to a software developer!
+        b  7-day course
+        |  takes you from no programming experience to
+        b  building Twitter from scratch!
+    a.button.yellow(href='http://twitter-clone-demo.trysparkschool.com?email=' + currentQuery.email) View a demo of the completed project!
 
 block content
     - currentQuery.email = currentQuery.email || '';
@@ -33,13 +33,11 @@ block content
 
             .graphic
                 .signup-form
-                    h3.bold Get the course for $29!
+                    h3.bold Try the completed project!
                     p.light
-                        | This course will teach you everything you need to
-                        b &nbsp;build your own projects
-                        | &nbsp;and is where you will make the
-                        b &nbsp;transition to a software developer.
-                    a.button.block.yellow(href='/twitter-clone-course-checkout?email=' + currentQuery.email) Get the course for $29!
+                        | In 7 days, you will build a small version of Twitter. Click the button below to
+                        b  see a demo of what you will build!
+                    a.button.block.yellow(href='http://twitter-clone-demo.trysparkschool.com?email=' + currentQuery.email) View the completed project!
 
     .section
         .container
