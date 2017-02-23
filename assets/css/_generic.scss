@@ -31,10 +31,15 @@ header {
 }
 
 iframe.hidden {
-    width: 0;
-    height: 0;
-    border: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0px;
+    height: 0px;
     border: none;
+    padding: 0px;
+    margin: 0px;
+    line-height: 0;
 }
 
 #site-logo {
