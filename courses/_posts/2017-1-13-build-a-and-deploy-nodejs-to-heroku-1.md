@@ -12,16 +12,7 @@ image: https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/coding-o
 I am running this tutorial on a Mac.  If you are on Windows or Linux, a few things will be slightly different.  I make a note of these things, but if you have issues, leave a comment and I'll check it out.
 </p>
 
-### Table of Contents
-- [Introduction](/tutorials/build-and-deploy-nodejs-app-to-heroku/intro)
-- **Step 1: Setup and installation**
-- [Step 2: Creating your project and installing Express.js](/tutorials/build-and-deploy-nodejs-app-to-heroku/2)
-- [Step 3: Writing your first web app with Node.js and Express.js](/tutorials/build-and-deploy-nodejs-app-to-heroku/3)
-- [Step 4: Running your Node.js web app locally](/tutorials/build-and-deploy-nodejs-app-to-heroku/4)
-- [Step 5: Add HTML for home, contact, and about pages](/tutorials/build-and-deploy-nodejs-app-to-heroku/5)
-- [Step 6: Getting your Node.js app ready for deploy to Heroku](/tutorials/build-and-deploy-nodejs-app-to-heroku/6)
-- [Step 7: Commiting your files with Git](/tutorials/build-and-deploy-nodejs-app-to-heroku/7)
-- [Step 8: Deploying your web app to Heroku](/tutorials/build-and-deploy-nodejs-app-to-heroku/8)
+{% include nodejs-to-heroku-tutorial-toc.html %}
 
 Before we get started, you need to do the following things.  Don't worry, all of the tools and services we use in this tutorial are free!
 

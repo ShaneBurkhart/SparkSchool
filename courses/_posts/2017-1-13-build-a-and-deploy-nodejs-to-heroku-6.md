@@ -1,10 +1,10 @@
 ---
 layout: default
 permalink: /tutorials/build-and-deploy-nodejs-app-to-heroku/6
-title: 'Step 6: Getting Your Node.js App Ready For Deploy To Heroku'
+title: 'Step 6: Add HTML For Home, Contact, and About Page'
 course: Project 1 Course
-fb-title: 'Step 6: Getting Your Node.js App Ready For Deploy To Heroku'
-description: In this step, we are getting our Node.js web app ready to be deployed to our Heroku web server.
+fb-title: 'Step 6: Add HTML For Home, Contact, and About Page'
+description: In this step, we are adding HTML for our home, contact and about pages.
 image: https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/coding-on-a-laptop.jpg
 ---
 
@@ -12,134 +12,189 @@ image: https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/coding-o
 I am running this tutorial on a Mac.  If you are on Windows or Linux, a few things will be slightly different.  I make a note of these things, but if you have issues, leave a comment and I'll check it out.
 </p>
 
-### Table of Contents
-- [Introduction](/tutorials/build-and-deploy-nodejs-app-to-heroku/intro)
-- [Step 1: Setup and installation](/tutorials/build-and-deploy-nodejs-app-to-heroku/1)
-- [Step 2: Creating your project and installing Express.js](/tutorials/build-and-deploy-nodejs-app-to-heroku/2)
-- [Step 3: Writing your first web app with Node.js and Express.js](/tutorials/build-and-deploy-nodejs-app-to-heroku/3)
-- [Step 4: Running your Node.js web app locally](/tutorials/build-and-deploy-nodejs-app-to-heroku/4)
-- [Step 5: Add HTML for home, contact, and about pages](/tutorials/build-and-deploy-nodejs-app-to-heroku/5)
-- **Step 6: Getting your Node.js app ready for deploy to Heroku**
-- [Step 7: Commiting your files with Git](/tutorials/build-and-deploy-nodejs-app-to-heroku/7)
-- [Step 8: Deploying your web app to Heroku](/tutorials/build-and-deploy-nodejs-app-to-heroku/8)
+{% include nodejs-to-heroku-tutorial-toc.html %}
 
-## Getting our project ready for deploy
+## Add HTML files
 
-To deploy to Heroku, we need to add a few things to our package.json.  The first is the Node.js version we are using.  You can check this by running the following.
+HTML and CSS are out of the scope of this tutorial since we are focusing on building and deploying a Node.js server.  If you want to learn about these, Codecademy has a good [HTML/CSS course](https://www.codecademy.com/learn/web).
 
-##### Terminal
-```bash
-node --version
+Add "index.html", "about.html", "contact.html" and "404.html" files to the root of our project.
+
+##### index.html
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body style="padding-top: 70px;">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="/">Node App</a>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="jumbotron">
+        <div class="container">
+          <h1>The Homepage</h1>
+          <p>This is a jumbotron section where you can put information that you want to stand out!</p>
+          <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h3>Section 1</h3>
+            <p>You can add sub information about your website here.  Check the bootstrap docs to add to this page.</p>
+          </div>
+          <div class="col-md-4">
+            <h3>Section 2</h3>
+            <p>You can add sub information about your website here.  Check the bootstrap docs to add to this page.</p>
+          </div>
+          <div class="col-md-4">
+            <h3>Section 3</h3>
+            <p>You can add sub information about your website here.  Check the bootstrap docs to add to this page.</p>
+          </div>
+        </div>
+      </div>
+    </body>
+</html>
+```
+##### about.html
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body style="padding-top: 70px;">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="/">Node App</a>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="page-header">
+              <h1>About Node App <small>All you need to know</small></h1>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Section 1</h3>
+            <p>You can add sub information about your website here.  Check the bootstrap docs to add to this page.</p>
+          </div>
+          <div class="col-md-6">
+            <h3>Section 2</h3>
+            <p>You can add sub information about your website here.  Check the bootstrap docs to add to this page.</p>
+          </div>
+        </div>
+      </div>
+    </body>
+</html>
 ```
 
-![](https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/terminal-nodejs-version.png)
-
-My node version is "6.9.4".  Let's add this to the bottom of our package.json file. Your package.json file will now look like the following.
-
-##### package.json
-```json
-{
-  "name": "NodeApp",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.14.0"
-  },
-  "engines": {
-    "node": "6.9.4"
-  }
-}
+##### contact.html
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body style="padding-top: 70px;">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="/">Node App</a>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="page-header">
+              <h1>Contact Us</h1>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Enter your information</h2>
+            <form>
+              <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea class="form-control" id="message"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </body>
+</html>
 ```
 
-Next, let's specify a start script in package.json.  We are adding this part to the "scripts" section.  Your package.json will look like the following.
-
-##### package.json
-```json
-{
-  "name": "NodeApp",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.14.0"
-  },
-  "engines": {
-    "node": "6.9.4"
-  }
-}
+##### 404.html
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body style="padding-top: 70px;">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="/">Node App</a>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="jumbotron">
+        <div class="container">
+          <h1>Oooopps...</h1>
+          <p>This page couldn't be found.  Click the link below to go to the home page.</p>
+          <p><a class="btn btn-primary btn-lg" href="/" role="button">Homepage</a></p>
+        </div>
+      </div>
+    </body>
+</html>
 ```
 
-Now that we've specified the start script, let's add a ".gitignore" file to our project.  This file tells git to ignore the files listed in it.  Create the ".gitignore" file in the root of your project and add the following.
+<p class="info">
+I'm using a common CSS library called Bootstrap to style the page.  If you want to add to these pages, you can read the <a href="http://getbootstrap.com/getting-started/">Bootstrap docs here</a>.
+</p>
 
-##### .gitignore
-```
-/node_modules
-npm-debug.log
-.DS_Store
-/*.env
-```
+Save those files and visit [http://localhost:8080](http://localhost:8080) in your browser. You should see the following.
 
-Next, we need to have our server listen for the "PORT" environment variable.  Heroku requires us to listen on the port it specifies with that variable.   Your "index.js" file will now look like the following.
+![](https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/final-home-page.png)
 
-##### index.js
-```javascript
-'use strict'
-
-var express = require('express');
-var app = express();
-
-var port = process.env.PORT || 8080;
-
-app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/index.html');
-});
-
-app.get('/about', function (req, res) {
-  res.sendFile(__dirname + '/about.html');
-});
-
-app.get('/contact', function (req, res) {
-  res.sendFile(__dirname + '/contact.html');
-});
-
-app.use(function (req, res) {
-  res.status(404).sendFile(__dirname + '/404.html');
-});
-
-app.listen(port, function () {
-  console.log('Web server listening on port ' + port + '!');
-});
-```
-
-All we did was add a "port" variable to the top of the file that checks for the "PORT" environment variable and if it doesn't exist, sets the port to 8080 for development.  Then we changed our "app.listen()" call to take the "port" variable and added the "port" variable to our "console.log" output.
-
-We can make sure everything is working correctly by running our app locally with Heroku Toolbelt.  Run the following in your terminal.
-
-##### Terminal
-```bash
-heroku local web
-```
-
-You'll see the following.
-
-![](https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/heroku-running-nodejs-locally.png)
-
-Visit [http://localhost:5000](http://localhost:5000) in your browser and make sure you can see your website.
-
-If everything is working correctly, you're ready to deploy your app to the web.
+Now that our server is working, let's deploy it to Heroku.
 
 <p class="next-lesson">
-    <a class="button block" href="/tutorials/build-and-deploy-nodejs-app-to-heroku/7">Start Step 7: Committing Your Files To Git!</a>
+    <a class="button block" href="/tutorials/build-and-deploy-nodejs-app-to-heroku/7">Start Step 7: Getting Your Web App Ready For Deploy!</a>
 </p>

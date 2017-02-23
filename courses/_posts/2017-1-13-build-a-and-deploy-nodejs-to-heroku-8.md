@@ -1,10 +1,10 @@
 ---
 layout: default
 permalink: /tutorials/build-and-deploy-nodejs-app-to-heroku/8
-title: 'Step 8: Deploying Your Node.js Web App To Heroku'
+title: 'Step 8: Committing Your Node.js Web App To Git'
 course: Project 1 Course
-fb-title: 'Step 8: Deploying Your Node.js Web App To Heroku'
-description: In this step, we are creating a Heroku web server and deploying our Node.js web app to Heroku.
+fb-title: 'Step 8: Committing Your Node.js Web App To Git'
+description: In this step, we are creating a Git repository and committing our project files so we can deploy to Heroku.
 image: https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/coding-on-a-laptop.jpg
 ---
 
@@ -12,65 +12,45 @@ image: https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/coding-o
 I am running this tutorial on a Mac.  If you are on Windows or Linux, a few things will be slightly different.  I make a note of these things, but if you have issues, leave a comment and I'll check it out.
 </p>
 
-### Table of Contents
-- [Introduction](/tutorials/build-and-deploy-nodejs-app-to-heroku/intro)
-- [Step 1: Setup and installation](/tutorials/build-and-deploy-nodejs-app-to-heroku/1)
-- [Step 2: Creating your project and installing Express.js](/tutorials/build-and-deploy-nodejs-app-to-heroku/2)
-- [Step 3: Writing your first web app with Node.js and Express.js](/tutorials/build-and-deploy-nodejs-app-to-heroku/3)
-- [Step 4: Running your Node.js web app locally](/tutorials/build-and-deploy-nodejs-app-to-heroku/4)
-- [Step 5: Add HTML for home, contact, and about pages](/tutorials/build-and-deploy-nodejs-app-to-heroku/5)
-- [Step 6: Getting your Node.js app ready for deploy to Heroku](/tutorials/build-and-deploy-nodejs-app-to-heroku/6)
-- [Step 7: Commiting your files with Git](/tutorials/build-and-deploy-nodejs-app-to-heroku/7)
-- **Step 8: Deploying your web app to Heroku**
+{% include nodejs-to-heroku-tutorial-toc.html %}
 
-## Deploying your app to Heroku
+## Initializing your project as a Git repository
 
-Let's first login to Heroku in our Terminal.
+Heroku uses Git to deploy so we need to make our project a git repository.  We only need to do this once for our project.
 
 ##### Terminal
 ```bash
-heroku login
+git init
 ```
 
-Enter your Heroku login credentials.  When it asks for your password, you'll type but you won't see any characters appear.  They are still being entered, just type your password and press enter.
+<p class="info">
+When deploying new changes, you don't need to run this command again.  Instead, skip to the "Committing your files" section below.
+</p>
 
-Let's create a Heroku server for our app.
+<span data-sumome-listbuilder-embed-id="1778570efe1607df29fa777878e6f0f764db48b346ef4959d0256a69511ce6a5"></span>
+
+## Committing your files
+
+Now we need to add our project files to our git repository.  To commit files, we first add them to staging.  This command will add all changed files to staging.
 
 ##### Terminal
 ```bash
-heroku create
+git add .
 ```
 
-This will print a URL where you can view your website.
-
-![](https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/heroku-create-url.png)
-
-Let's push our code to our new server.
+Now we need to commit the files in staging and add a message.
 
 ##### Terminal
 ```bash
-git push heroku master
+git commit -m "Initial commit.  Deploying to Heroku."
 ```
 
-This will take a minute to run, but when it's finished, you should be able to visit the URL printed above to see your website.
+Your files are now committed, let's deploy them to Heroku.
 
-If you want to create a custom domain name, you can read this [guide on adding a custom domain to your Heroku app](https://devcenter.heroku.com/articles/custom-domains).
+<p class="info">
+Anytime you make changes to your project, you need to commit your files before pushing.  You can refer back here to see how.  There's no need to run "git init" again.
+</p>
 
-## Get the full course!
-
-Congratulations!  You just built your first Node.js web server from scratch and deployed it to the web with Heroku. **But there's more to learn!**
-
-This was a sample of [my full course that teaches you how to build Twitter in 7 days.](https://trysparkschool.com/twitter-clone-course?utm_source=beginner_tutorial&utm_campaign=twitter_clone&utm_medium=link&utm_content=end) In the full course, you will **learn everything you need to know to build your own projects from scratch!**
-
-I highly recommend this course if you want to get a job as a software developer as quickly as possible!
-
-**This is my favorite course because it's where I see students make the transition to a software developer!**
-
-<div class='content-upgrade'>
-    <a class='button' href='https://trysparkschool.com/twitter-clone-course?utm_source=beginner_tutorial&utm_campaign=twitter_clone&utm_medium=button&utm_content=end'>Make the transition to a software developer!</a>
-</div>
-
-**Don't waste another second!** Get the full course now to change your career and start your journey as a software developer!
-
-Cheers,<br>
-Shane
+<p class="next-lesson">
+    <a class="button block" href="/tutorials/build-and-deploy-nodejs-app-to-heroku/9">Start Step 9: Deploying Your Node.js Web App To Heroku</a>
+</p>

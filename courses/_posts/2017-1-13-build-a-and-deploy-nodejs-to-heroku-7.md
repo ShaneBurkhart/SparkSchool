@@ -1,10 +1,10 @@
 ---
 layout: default
-permalink: /tutorials/build-and-deploy-nodejs-app-to-heroku/7
-title: 'Step 7: Committing Your Node.js Web App To Git'
+permalink: /tutorials/build-and-deploy-nodejs-app-to-heroku/6
+title: 'Step 6: Getting Your Node.js App Ready For Deploy To Heroku'
 course: Project 1 Course
-fb-title: 'Step 7: Committing Your Node.js Web App To Git'
-description: In this step, we are creating a Git repository and committing our project files so we can deploy to Heroku.
+fb-title: 'Step 6: Getting Your Node.js App Ready For Deploy To Heroku'
+description: In this step, we are getting our Node.js web app ready to be deployed to our Heroku web server.
 image: https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/coding-on-a-laptop.jpg
 ---
 
@@ -12,54 +12,125 @@ image: https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/coding-o
 I am running this tutorial on a Mac.  If you are on Windows or Linux, a few things will be slightly different.  I make a note of these things, but if you have issues, leave a comment and I'll check it out.
 </p>
 
-### Table of Contents
-- [Introduction](/tutorials/build-and-deploy-nodejs-app-to-heroku/intro)
-- [Step 1: Setup and installation](/tutorials/build-and-deploy-nodejs-app-to-heroku/1)
-- [Step 2: Creating your project and installing Express.js](/tutorials/build-and-deploy-nodejs-app-to-heroku/2)
-- [Step 3: Writing your first web app with Node.js and Express.js](/tutorials/build-and-deploy-nodejs-app-to-heroku/3)
-- [Step 4: Running your Node.js web app locally](/tutorials/build-and-deploy-nodejs-app-to-heroku/4)
-- [Step 5: Add HTML for home, contact, and about pages](/tutorials/build-and-deploy-nodejs-app-to-heroku/5)
-- [Step 6: Getting your Node.js app ready for deploy to Heroku](/tutorials/build-and-deploy-nodejs-app-to-heroku/6)
-- **Step 7: Commiting your files with Git**
-- [Step 8: Deploying your web app to Heroku](/tutorials/build-and-deploy-nodejs-app-to-heroku/8)
+{% include nodejs-to-heroku-tutorial-toc.html %}
 
-## Initializing your project as a Git repository
+## Getting our project ready for deploy
 
-Heroku uses Git to deploy so we need to make our project a git repository.  We only need to do this once for our project.
+To deploy to Heroku, we need to add a few things to our package.json.  The first is the Node.js version we are using.  You can check this by running the following.
 
 ##### Terminal
 ```bash
-git init
+node --version
 ```
 
-<p class="info">
-When deploying new changes, you don't need to run this command again.  Instead, skip to the "Committing your files" section below.
-</p>
+![](https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/terminal-nodejs-version.png)
 
-<span data-sumome-listbuilder-embed-id="1778570efe1607df29fa777878e6f0f764db48b346ef4959d0256a69511ce6a5"></span>
+My node version is "6.9.4".  Let's add this to the bottom of our package.json file. Your package.json file will now look like the following.
 
-## Committing your files
+##### package.json
+```json
+{
+  "name": "NodeApp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "engines": {
+    "node": "6.9.4"
+  }
+}
+```
 
-Now we need to add our project files to our git repository.  To commit files, we first add them to staging.  This command will add all changed files to staging.
+Next, let's specify a start script in package.json.  We are adding this part to the "scripts" section.  Your package.json will look like the following.
+
+##### package.json
+```json
+{
+  "name": "NodeApp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "engines": {
+    "node": "6.9.4"
+  }
+}
+```
+
+Now that we've specified the start script, let's add a ".gitignore" file to our project.  This file tells git to ignore the files listed in it.  Create the ".gitignore" file in the root of your project and add the following.
+
+##### .gitignore
+```
+/node_modules
+npm-debug.log
+.DS_Store
+/*.env
+```
+
+Next, we need to have our server listen for the "PORT" environment variable.  Heroku requires us to listen on the port it specifies with that variable.   Your "index.js" file will now look like the following.
+
+##### index.js
+```javascript
+'use strict'
+
+var express = require('express');
+var app = express();
+
+var port = process.env.PORT || 8080;
+
+app.get('/', function (req, res) {
+  res.sendFile(__dirname + '/index.html');
+});
+
+app.get('/about', function (req, res) {
+  res.sendFile(__dirname + '/about.html');
+});
+
+app.get('/contact', function (req, res) {
+  res.sendFile(__dirname + '/contact.html');
+});
+
+app.use(function (req, res) {
+  res.status(404).sendFile(__dirname + '/404.html');
+});
+
+app.listen(port, function () {
+  console.log('Web server listening on port ' + port + '!');
+});
+```
+
+All we did was add a "port" variable to the top of the file that checks for the "PORT" environment variable and if it doesn't exist, sets the port to 8080 for development.  Then we changed our "app.listen()" call to take the "port" variable and added the "port" variable to our "console.log" output.
+
+We can make sure everything is working correctly by running our app locally with Heroku Toolbelt.  Run the following in your terminal.
 
 ##### Terminal
 ```bash
-git add .
+heroku local web
 ```
 
-Now we need to commit the files in staging and add a message.
+You'll see the following.
 
-##### Terminal
-```bash
-git commit -m "Initial commit.  Deploying to Heroku."
-```
+![](https://s3.amazonaws.com/spark-school/tutorials/nodejs-to-heroku/heroku-running-nodejs-locally.png)
 
-Your files are now committed, let's deploy them to Heroku.
+Visit [http://localhost:5000](http://localhost:5000) in your browser and make sure you can see your website.
 
-<p class="info">
-Anytime you make changes to your project, you need to commit your files before pushing.  You can refer back here to see how.  There's no need to run "git init" again.
-</p>
+If everything is working correctly, you're ready to deploy your app to the web.
 
 <p class="next-lesson">
-    <a class="button block" href="/tutorials/build-and-deploy-nodejs-app-to-heroku/8">Start Step 8: Deploying Your Web App To Heroku!</a>
+    <a class="button block" href="/tutorials/build-and-deploy-nodejs-app-to-heroku/8">Start Step 8: Committing Your Node.js Web App To Git</a>
 </p>
