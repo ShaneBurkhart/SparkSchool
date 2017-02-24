@@ -20,6 +20,7 @@
     name: 'tripwire_teaser'
     paths:
         - '/complete-guide-to-becoming-a-software-developer-thank-you'
+        - '/twitter-clone-course-24-hour-sale'
     conversion_path: '/twitter-clone-course-24-hour-sale-checkout'
     alternatives:
         - 'true'
