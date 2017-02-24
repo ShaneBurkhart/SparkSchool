@@ -55,6 +55,7 @@ function getSession(req, res) {
 
 // Loads tests for various routes and adds their values to template variables.
 module.exports = function (req, res, next) {
+  var query = req.query || req.body;
   var path = req.path.replace(/\/$/, '');
   var abSession = getSession(req, res);
   var currentPathTests = TESTS_BY_PATH[path];
@@ -65,7 +66,7 @@ module.exports = function (req, res, next) {
   async.parallel([
     function loadTests(loadTestsCallback) {
       async.each(currentPathTests, function loadTest(test, loadTestCallback) {
-        abSession.participate(test.name, test.alternatives, function (err, sixpackRes) {
+        abSession.participate(test.name, test.alternatives, query['sixpack_force_' + test.name], function (err, sixpackRes) {
           if (err) console.log(err);
 
           var alternative = test.alternatives[0];
