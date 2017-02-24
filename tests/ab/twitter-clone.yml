@@ -8,23 +8,6 @@
         - 'true'
         - 'false'
 -
-    name: 'timer_on_guide_thank_you'
-    paths:
-        - '/complete-guide-to-becoming-a-software-developer-thank-you'
-    conversion_path: '/twitter-clone-course-24-hour-sale-checkout'
-    alternatives:
-        - 'section'
-        - 'box'
-        - 'false'
--
-    name: 'timer_on_landing_page'
-    paths:
-        - '/twitter-clone-course-24-hour-sale'
-    conversion_path: '/twitter-clone-course-24-hour-sale-checkout'
-    alternatives:
-        - 'box'
-        - 'false'
--
     name: 'what_you_get_section_on_thank_you_page'
     paths:
         - '/complete-guide-to-becoming-a-software-developer-thank-you'
