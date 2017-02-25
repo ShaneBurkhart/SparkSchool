@@ -13,11 +13,6 @@ block content
 
     .section.dark-blue#sign-up
         .container
-            if abTests['guide_ecover']
-                .graphic
-                    img(src="/assets/images/guide-ebook-cover.jpg")
-                    a.button.block.bright-yellow(data-sumome-listbuilder-id="d9ee1ab8-2552-4bfe-aa16-ffb541da1c2b") Get the guide for FREE!
-
             .description
                 h2.bold Become A Software Developer Without A College Degree!
 
@@ -35,7 +30,7 @@ block content
                 p
                     | If you are interested in becoming a software developer, I
                     b &nbsp;highly recommend
-                    | &nbsp;signing up to receive my FREE #{abTests['20_page_guide_wording']} guide that
+                    | &nbsp;signing up to receive my FREE 25-page guide that
                     b &nbsp;teaches you how to become a software developer.
                 p
                     | The guide assumes you have
@@ -43,22 +38,21 @@ block content
                     | &nbsp;and walks you through getting a job as a software developer. Sign up now and take the
                     b &nbsp;first step towards becoming a software developer!
 
-            if !abTests['guide_ecover']
-                .graphic
-                    form.signup-form.text-center(action='/complete-guide-to-becoming-a-software-developer/signup' method='POST')
-                        h3.bold Take the first step!
-                        p.light
-                            | Enter your email to receive my
-                            b &nbsp;FREE guide
-                            | &nbsp;that teaches you how to become a
-                            b &nbsp;software developer.
+            .graphic
+                form.signup-form.text-center(action='/complete-guide-to-becoming-a-software-developer/signup' method='POST')
+                    h3.bold Take the first step!
+                    p.light
+                        | Enter your email to receive my
+                        b &nbsp;FREE guide
+                        | &nbsp;that teaches you how to become a
+                        b &nbsp;software developer.
 
-                        +error_notice()
+                    +error_notice()
 
-                        input(type='hidden' name='origin' value='/complete-guide-to-becoming-a-software-developer-without-a-college-degree')
-                        .input-group
-                            input(type='text' name='email' placeholder='Enter your email' value=currentQuery.email)
-                        button.bright-yellow Get the guide for FREE!
+                    input(type='hidden' name='origin' value='/complete-guide-to-becoming-a-software-developer-without-a-college-degree')
+                    .input-group
+                        input(type='text' name='email' placeholder='Enter your email' value=currentQuery.email)
+                    button.bright-yellow Get the guide for FREE!
 
     .section
         .container
@@ -75,10 +69,5 @@ block content
                 img.circle(src="https://s3.amazonaws.com/spark-school/me_and_yogi.png" alt="Shane Burkhart with his dog, Yogi.")
 
 
-    if abTests['guide_ecover']
-        .section.cta.light-gray
-            .container
-                a.button.block(data-sumome-listbuilder-id="d9ee1ab8-2552-4bfe-aa16-ffb541da1c2b") Get the guide for FREE!
-    else
-        +light_gray_CTA_anchor_section('Sign up for the FREE guide!')
+    +light_gray_CTA_anchor_section('Sign up for the FREE guide!')
 

@@ -20,7 +20,8 @@ var TESTS_BY_CONVERSION_PATH = {};
 // Load test files
 _.each(AB_TEST_FILES, function (file) {
   var absolutePath = path.join(AB_TEST_DIRECTORY, file);
-  TESTS = TESTS.concat(yaml.load(fs.readFileSync(absolutePath, 'utf8')));
+  var tests = yaml.load(fs.readFileSync(absolutePath, 'utf8'));
+  if (tests) TESTS = TESTS.concat(tests);
 });
 
 // Index test files accounting for path/paths, etc.
