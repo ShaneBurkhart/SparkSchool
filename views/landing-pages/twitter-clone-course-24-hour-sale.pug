@@ -13,40 +13,14 @@ block hero
         b  7-day course
         |  takes you from no programming experience to
         b  building Twitter from scratch!
-    if abTests.tripwire_teaser
-        a.button.yellow(href='/twitter-clone-course-24-hour-sale-checkout?email=' + currentQuery.email) Get the course for only $9!
+
+    if abTests['24_hour_sale_hero_button'] === 'demo'
+        a.button.yellow(href='http://twitter-clone-demo.trysparkschool.com/') Take a look at what you will build!
     else
-        a.button.yellow(href='/twitter-clone-course-24-hour-sale-checkout?email=' + currentQuery.email) Get 70% off the course for 24 hours!
+        a.button.yellow(href='/twitter-clone-course-24-hour-sale-checkout?email=' + currentQuery.email) Get the course for only $9!
 
 block content
     - currentQuery.email = currentQuery.email || ''
-
-    if !abTests.tripwire_teaser
-        .section.dark-blue.signup-section
-            .container
-                .description
-                    h2.bold Make the transition to developer!
-                    p
-                        | For the next 24 hours, I'm offering you 70% off the course where
-                        b  you will make the transition to a software developer!
-                    p
-                        | In 7 days, you will go from no programming experience to building a small version of Twitter.
-                        b  No prior knowledge required!
-                    p This is my favorite course because, by the end, you will know how to build your own software projects from scratch!
-                    p
-                        b Don't miss out on this limited time offer!
-                        |  Purchase in the next 24 hours to get this course for only $9!
-
-                .graphic
-                    .signup-form
-                        h3.bold 70% off for the next 24 hours!
-
-                        p.light
-                            | This course is where you will make the
-                            b  transition to a software developer.
-                            |  Don't miss out on this limited time offer!
-
-                        a.button.block.yellow(href='/twitter-clone-course-24-hour-sale-checkout?email=' + currentQuery.email) Get the course for only $9!
 
     .section.small
         .container

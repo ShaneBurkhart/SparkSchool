@@ -1,27 +1,17 @@
 -
-    name: 'checkout_meet_the_instructor'
+    name: 'complete_guide_thank_you_tripwire'
     paths:
-        - '/twitter-clone-course-checkout'
-        - '/twitter-clone-course-24-hour-sale-checkout'
+        - '/complete-guide-to-becoming-a-software-developer-thank-you'
     conversion_path: '/twitter-clone-course-thank-you'
     alternatives:
-        - 'true'
-        - 'false'
+        - 'demo'
+        - 'checkout'
+        - 'landing-page'
 -
-    name: 'what_you_get_section_on_thank_you_page'
+    name: '24_hour_sale_hero_button'
     paths:
-        - '/complete-guide-to-becoming-a-software-developer-thank-you'
         - '/twitter-clone-course-24-hour-sale'
-    conversion_path: '/twitter-clone-course-24-hour-sale-checkout'
+    conversion_path: '/twitter-clone-course-thank-you'
     alternatives:
-        - 'true'
-        - 'false'
--
-    name: 'tripwire_teaser'
-    paths:
-        - '/complete-guide-to-becoming-a-software-developer-thank-you'
-        - '/twitter-clone-course-24-hour-sale'
-    conversion_path: '/twitter-clone-course-24-hour-sale-checkout'
-    alternatives:
-        - 'true'
-        - 'false'
+        - 'demo'
+        - 'checkout'
