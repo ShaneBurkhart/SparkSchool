@@ -8,20 +8,7 @@ var activeCampaign = new ActiveCampaign(
 );
 
 var TWITTER_CLONE_DESC = "Twitter Clone Course - Spark School";
-var TWITTER_CLONE_PRICE = 2900;
-
-// Thank you sale
-var TWITTER_CLONE_24_HOUR_DESC = "Twitter Clone Course - 70% Off - Spark School";
-var TWITTER_CLONE_24_HOUR_PRICE = 900;
-
-var TWITTER_CLONE_FLASH_SALE_DESC = "Twitter Clone Course - 35% Off Flash Sale - Spark School";
-var TWITTER_CLONE_FLASH_SALE_PRICE = 1900;
-
-var V_DAY_BUNDLE_DESC = "Valentine's Day Bundle  - Spark School";
-var V_DAY_BUNDLE_PRICE = 1900;
-
-var BECOME_DEV_GUIDE_DESC = "The Complete Guide to Becoming a Software Developer - Spark School";
-var BECOME_DEV_GUIDE_PRICE= 700;
+var TWITTER_CLONE_PRICE = 900;
 
 module.exports = function (app) {
   app.post('/:type/signup', function (req, res) {
@@ -44,14 +31,6 @@ module.exports = function (app) {
     };
 
     switch (type) {
-      case 'nodejs-tutorial':
-        contact['p[7]'] = '7';
-        thankYouPage = '/take-tutorial-later-thank-you';
-        break;
-      case 'become-a-software-developer-email-series':
-        contact['p[8]'] = '8';
-        thankYouPage = '/become-a-software-developer-email-series-thank-you';
-        break;
       case 'complete-guide-to-becoming-a-software-developer':
       default:
         contact['p[13]'] = '13';
@@ -81,7 +60,7 @@ module.exports = function (app) {
     var email = req.body.email;
     var origin = req.body.origin || '/';
     var stripeToken = req.body.stripeToken;
-    var successRedirectURL = '/guide-to-becoming-a-software-developer-thank-you'
+    var successRedirectURL = '/twitter-clone-course-thank-you';
     var contact = { 'email': email };
     var chargeOpts = {
       currency: 'usd',
@@ -100,34 +79,6 @@ module.exports = function (app) {
 
     switch (product) {
       case 'twitter-clone':
-        // Twitter clone list id
-        contact['p[11]'] = '11';
-        successRedirectURL = '/twitter-clone-course-thank-you';
-        chargeOpts.description = TWITTER_CLONE_DESC;
-        chargeOpts.amount = TWITTER_CLONE_PRICE;
-        break;
-      case 'twitter-clone-course-24-hour-sale':
-        // Twitter clone list id
-        contact['p[11]'] = '11';
-        successRedirectURL = '/twitter-clone-course-thank-you';
-        chargeOpts.description = TWITTER_CLONE_24_HOUR_DESC;
-        chargeOpts.amount = TWITTER_CLONE_24_HOUR_PRICE;
-        break;
-      case 'twitter-clone-flash-sale':
-        // Twitter clone list id
-        contact['p[11]'] = '11';
-        successRedirectURL = '/twitter-clone-course-thank-you';
-        chargeOpts.description = TWITTER_CLONE_FLASH_SALE_DESC;
-        chargeOpts.amount = TWITTER_CLONE_FLASH_SALE_PRICE;
-        break;
-      case 'become-a-developer-guide':
-        // Become software dev guide list id
-        contact['p[9]'] = '9';
-        successRedirectURL = '/guide-to-becoming-a-software-developer-thank-you';
-        chargeOpts.description = BECOME_DEV_GUIDE_DESC;
-        chargeOpts.amount = BECOME_DEV_GUIDE_PRICE;
-        break;
-      case 'twitter-clone-course':
       default:
         // Twitter clone list id
         contact['p[11]'] = '11';

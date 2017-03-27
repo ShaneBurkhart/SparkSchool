@@ -14,6 +14,10 @@ var REDIRECTS = {
   '/project-2-course-24-hour-sale': '/twitter-clone-course-24-hour-sale',
   '/project-2-course-24-hour-sale-checkout': '/twitter-clone-course-24-hour-sale-checkout',
   '/become-a-software-developer-project-2': '/twitter-clone-course',
+
+  // Get rid of 24 hour sale for twitter clone course
+  '/twitter-clone-course-24-hour-sale': '/twitter-clone-course',
+  '/twitter-clone-course-24-hour-sale-checkout': '/twitter-clone-course-checkout',
 };
 
 module.exports = function (req, res, next) {

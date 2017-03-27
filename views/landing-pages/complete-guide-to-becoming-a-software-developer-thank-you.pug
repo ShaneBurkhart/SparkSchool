@@ -1,73 +1,13 @@
-extends ../layouts/landing-page-no-header
-include ../landing-pages/mixins
+extends ../landing-pages/twitter-clone-course
 
 block variables
-   - var title = 'Complete Guide To Becoming A Software Developer Download';
+   - var title = 'You guide is on it\'s way!';
 
-block no_hero
-
-block content
-    - currentQuery.email = currentQuery.email || ''
-
-    +lead_tracking()
-
-    .section.tiny
+prepend no_hero
+    .section.micro
         .container
             .full
-                h1 Your guide is on it's way!
+                h2.bold Your guide is on it's way!
                 p
-                    | Thanks for signing up! You will receive an email shortly with your guide.
-                    b  Keep reading for a limited time offer!
-
-    .section.tiny.dark-blue.signup-section#sign-up
-        .container
-            .description
-                h2.bold Make the transition to developer!
-                p
-                    | For the next 24 hours, I'm offering you 70% off the course where
-                    b  you will make the transition to a software developer!
-                p
-                    | In 7 days, you will go from no programming experience to building a small version of Twitter.
-                    b  No prior knowledge required!
-                p
-                    b Don't miss out on this limited time offer!
-                    |  Purchase in the next 24 hours to get this course for only $9!
-
-            .graphic
-                .signup-form
-                    h3.bold 70% off for the next 24 hours!
-
-                    p.light
-                        | This course is where you will make the
-                        b  transition to a software developer.
-                        |  Don't miss out on this limited time offer!
-
-                    if abTests.complete_guide_thank_you_tripwire === 'demo'
-                        a.button.yellow.block(href='http://twitter-clone-demo.trysparkschool.com/') Take a look at what you will build!
-                    else if abTests.complete_guide_thank_you_tripwire === 'checkout'
-                        a.button.yellow.block(href='/twitter-clone-course-24-hour-sale-checkout?email=' + currentQuery.email) Get the course for only $9!
-                    else
-                        a.button.yellow.block(href='/twitter-clone-course-24-hour-sale?email=' + currentQuery.email) Learn more about the course!
-
-    .section
-        .container
-            .description
-                h2 Meet The Instructor
-                p Hey, I'm Shane! I’ve been a software developer for a little over 5 years now, and have worked at Yelp, Carfax, and a startup called SumoMe.
-
-                p The crazy part is I didn’t go to school to be a software developer. In fact, I am completely self-taught.
-
-                p Probably not unlike some of you, when I first started learning to code, I didn't know what I was doing so it took me much longer than it should have to learn. My goal is to fix that. This course is designed so you don't ever have to go through the same unnecessarily long process I did.
-
-                p I've spent the last 5 years teaching myself software development and over time, I have learned what works and what doesn't. Now, I want to use my course to help you learn as efficiently as possible.
-            .graphic
-                img.circle(src="https://s3.amazonaws.com/spark-school/me_and_yogi.png" alt="Shane Burkhart with his dog, Yogi.")
-
-    .section.cta.light-gray
-        .container
-            if abTests.complete_guide_thank_you_tripwire === 'demo'
-                a.button.block(href='http://twitter-clone-demo.trysparkschool.com/') Take a look at what you will build!
-            else if abTests.complete_guide_thank_you_tripwire === 'checkout'
-                a.button.block(href='/twitter-clone-course-24-hour-sale-checkout?email=' + currentQuery.email) Get the course for only $9!
-            else
-                a.button.block(href='/twitter-clone-course-24-hour-sale?email=' + currentQuery.email) Learn more about the course!
+                    | Thanks for signing up!
+                    b  You will receive an email with your guide shortly.
