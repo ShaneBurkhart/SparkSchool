@@ -41,19 +41,10 @@ block content
                     p This is my favorite course because it's where I see students make a noticeable transition towards becoming a software developer.
 
             .graphic
-                form.signup-form#paypal-form(action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top")
-                    h3
-                        | Get the course for
-                        b &nbsp;$9!
-                    p.light We'll send the course to your PayPal email.
-                    input(type="hidden" name="cmd" value="_s-xclick")
-                    input(type="hidden" name="hosted_button_id" value="S7VF865JX84QU")
-                    input(type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!")
-                    img(alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1")
-
-
                 form.signup-form#payment-form(action='/twitter-clone-course/purchase' method='POST')
-                    h3.text-center.margin-small Or pay with a credit card!
+                    h3
+                        | Get the entire course for
+                        b &nbsp;$9!
 
                     +error_notice()
 
@@ -62,5 +53,15 @@ block content
                     +payment_cc_fields()
 
                     button.yellow Buy the course for $9!
+
+                form.signup-form#paypal-form(action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top")
+                    h3.text-center.margin-small Or pay with a PayPal!
+                    p.light We'll send the course to your PayPal email.
+                    input(type="hidden" name="cmd" value="_s-xclick")
+                    input(type="hidden" name="hosted_button_id" value="S7VF865JX84QU")
+                    input(type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!")
+                    img(alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1")
+
+
 
                 +payment_form_scripts()
