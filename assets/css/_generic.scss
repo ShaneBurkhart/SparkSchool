@@ -164,11 +164,22 @@ blockquote {
 
     &:before {
         font-family: 'FontAwesome';
+        display: block;
         position: absolute;
         top: 20px;
         left: 0;
         font-size: 30px;
         content: '\f10d';
+    }
+
+    &:after{
+        font-family: 'FontAwesome';
+        display: block;
+        position: absolute;
+        bottom: 20px;
+        right: 0;
+        font-size: 30px;
+        content: '\f10e';
     }
 }
 
