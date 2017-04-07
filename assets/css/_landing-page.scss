@@ -214,6 +214,14 @@
                     border-radius: 3px;
                 }
             }
+
+            & > .snippet {
+                width: 65%;
+            }
+
+            & > .link {
+                width: 31%;
+            }
         }
 
         .bullet-points {

@@ -10,8 +10,8 @@ module.exports = function (app) {
     var gidCookie = req.cookies.ssgid;
     var priceInCents = gidUtil.PRICES[gidCookie] || gidUtil.PRICES[gidUtil.DEFAULT_PRICE_ID];
 
-    res.render('landing-pages/complete-guide-to-becoming-a-software-developer-without-a-college-degree.pug', {
-      currentPath: '/complete-guide-to-becoming-a-software-developer-without-a-college-degree',
+    res.render('landing-pages/twitter-clone-course.pug', {
+      currentPath: '/twitter-clone-course',
       price: Math.floor(priceInCents / 100),
       stripePublicKey: process.env.STRIPE_PUBLIC_KEY,
     });
