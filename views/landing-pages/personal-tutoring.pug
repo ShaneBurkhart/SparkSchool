@@ -1,0 +1,121 @@
+extends ../layouts/landing-page-no-header
+include ../landing-pages/mixins
+
+block variables
+   - var title = 'Make The Transition To A Software Developer!';
+
+block no_hero
+
+block content
+    - currentQuery.email = currentQuery.email || '';
+
+    .section.small.dark-blue.signup-section
+        .container
+            .description
+                h2.bold Get personal tutoring from an experienced web developer!
+                p Hey, I'm Shane! You know me as the author of the complete guide to becoming a software developer and the Twitter clone course.
+                p I'm a self-taught software developer that specializes in web development. I have worked at Yelp, Carfax, and a startup called Sumo.
+                p Being a self-taught developer, I know exactly what it takes to teach yourself how to code and get a job as a software developer without a college degree.
+                p
+                    | I'm now offering personal tutoring for a limited time only.
+                    b  Keep reading if you are interested in getting hands-on tutoring from a seasoned web developer.
+            .graphic
+                img.circle(src="https://s3.amazonaws.com/spark-school/me_and_yogi.png" alt="Shane Burkhart with his dog, Yogi.")
+
+    .section.tiny.light-gray
+        .small-container
+            .full.text-center
+                h2.bold Who is this personal tutoring for?
+                p.text-left My tutoring is for people looking to do one of these two things:
+                p.text-left
+                    b Get a job as a web developer without a college degree.
+                    |  If you want to get a job as a web developer, but don't want to go back to school to do it, my tutoring is perfect for you.  I'm a completely self-taught developer, so I can guide you through every step.
+                p.text-left
+                    b Build the website you have always wanted to build.
+                    |  If you have a website that you've always wanted to build, but never knew how, I can help you do it. Our tutoring session will be directly tailored to building the website of your dreams.
+                p.text-left Above all else, you need to be ready to learn.  Learning software development takes time and you will inevitably run into problems.  You need to be ready to push through the slow parts and work hard towards your goal.
+
+                p.text-center
+                    a.button Apply For Personal Tutoring
+
+    .section
+        .small-container
+            .full.text-center
+                h2.bold What to expect from your personal tutoring.
+                p.text-left Each tutoring session consists of a 1-hour video call with me personally where we talk about issues you are running into as well as what to learn next.
+                p.text-left My job is to make sure you are on the right track to achieve your goal and I will do just that.
+                p.text-left In our first session, we'll talk about your goals and make a plan to get you there.  Each session after that will focus on guiding you through your plan so you can achieve your goal.
+
+                p.text-left
+                    b If you sign up for 4 tutoring session a month, you'll also be invited to a Slack group
+                    |  where you can ask me questions personally. This way, if you get stuck between our weekly sessions, I can help you.
+
+    .section.light-gray
+        .small-container
+            .full.text-center
+                h2.bold Personal Tutoring Plans
+
+        .container
+            .half.text-center
+                p.money
+                    span.dollar-sign $
+                    span.amount 120
+                    span.interval  / month
+                    br
+                    span.unit  ($60 per session)
+                h4.bold 2 Sessions / Month
+                ul.text-left
+                    li If you need minor guidance, this is the plan for you.
+                    li We'll have a tutoring session every other week.
+                    li This plan is better for people that don't have a lot of time.
+
+            .half.text-center
+                p.money
+                    span.dollar-sign $
+                    span.amount 200
+                    span.interval  / month
+                    br
+                    span.unit  ($50 per session)
+                h4.bold 4 Sessions / Month
+                ul.text-left
+                    li This is the best value and most hands on!
+                    li We'll meet once a week so you'll progress quickly.
+                    li You'll be invited to an exclusive Slack group where you can ask me questions between sessions.
+
+        .small-container
+            .full
+                br
+                p.text-center Applying is free and you can cancel at any time :)
+                p.text-center
+                    a.button Apply For Personal Tutoring
+    .section
+        .small-container
+            .full
+                h2.bold.text-center Frequently Asked Questions
+                p.small-margin.bold What can you teach me?
+                p I specialize in web development so I can teach you Python, Ruby, Javascript, HTML and CSS.
+                p If you aren't sure which languages you want to learn, I'll help you decide based on your goals. A lot of times the project or job you want decides the language to learn.
+                p I'm a full-stack developer which means I can do both frontend and backend web development.  If you don't know what that means, don't worry.  I'll help you :)
+
+                br
+
+                p.small-margin.bold How many spots are available?
+                p I only have enough time to tutor 20 people so I'm taking applications since spots are limited. Applications will be accepted for the next 7 days, so gets yours in early to secure a spot.
+
+                br
+
+                p.small-margin.bold How will we schedule sessions?
+                p There's a place in the application that asks for your availability. When applications close, I'll contact you so we can schedule your sessions.
+
+                br
+
+                p.small-margin.bold Can I cancel at any time?
+                p Tutoring sessions are paid at the beginning of each month, so once the month is over, you are free to cancel.
+
+                br
+
+                p.small-margin.bold How can I ask you more questions about tutoring?
+                p Feel free to reach out to me on Facebook Messenger or email me at shane@trysparkschool.com with any questions you might have.
+
+                p.text-center
+                    a.button Apply For Personal Tutoring
